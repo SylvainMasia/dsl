@@ -1,0 +1,13 @@
+Program prog { 
+	bricks {
+		Sensor led {
+			pin 1
+		},
+		Trigger button {
+			pin 10
+		}
+	}
+	states {
+		State off
+	}
+}
