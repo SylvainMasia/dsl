@@ -61,7 +61,7 @@ public class StateItemProvider extends NamedElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ArduinoMLPackage.Literals.STATE__ACTION);
+			childrenFeatures.add(ArduinoMLPackage.Literals.STATE__ACTIONS);
 			childrenFeatures.add(ArduinoMLPackage.Literals.STATE__TRANSITION);
 		}
 		return childrenFeatures;
@@ -126,7 +126,7 @@ public class StateItemProvider extends NamedElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(State.class)) {
-		case ArduinoMLPackage.STATE__ACTION:
+		case ArduinoMLPackage.STATE__ACTIONS:
 		case ArduinoMLPackage.STATE__TRANSITION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
@@ -145,7 +145,7 @@ public class StateItemProvider extends NamedElementItemProvider {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(ArduinoMLPackage.Literals.STATE__ACTION,
+		newChildDescriptors.add(createChildParameter(ArduinoMLPackage.Literals.STATE__ACTIONS,
 				ArduinoMLFactory.eINSTANCE.createAction()));
 
 		newChildDescriptors.add(createChildParameter(ArduinoMLPackage.Literals.STATE__TRANSITION,

@@ -77,8 +77,8 @@ public class ArduinoMLAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter casePlugedElement(PlugedElement object) {
-			return createPlugedElementAdapter();
+		public Adapter casePluggedElement(PluggedElement object) {
+			return createPluggedElementAdapter();
 		}
 
 		@Override
@@ -87,8 +87,8 @@ public class ArduinoMLAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseTrigger(Trigger object) {
-			return createTriggerAdapter();
+		public Adapter caseActuator(Actuator object) {
+			return createActuatorAdapter();
 		}
 
 		@Override
@@ -154,16 +154,16 @@ public class ArduinoMLAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link arduinoML.PlugedElement <em>Pluged Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link arduinoML.PluggedElement <em>Plugged Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see arduinoML.PlugedElement
+	 * @see arduinoML.PluggedElement
 	 * @generated
 	 */
-	public Adapter createPlugedElementAdapter() {
+	public Adapter createPluggedElementAdapter() {
 		return null;
 	}
 
@@ -182,16 +182,16 @@ public class ArduinoMLAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link arduinoML.Trigger <em>Trigger</em>}'.
+	 * Creates a new adapter for an object of class '{@link arduinoML.Actuator <em>Actuator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see arduinoML.Trigger
+	 * @see arduinoML.Actuator
 	 * @generated
 	 */
-	public Adapter createTriggerAdapter() {
+	public Adapter createActuatorAdapter() {
 		return null;
 	}
 

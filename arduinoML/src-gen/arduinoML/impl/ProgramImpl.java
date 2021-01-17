@@ -3,7 +3,7 @@
 package arduinoML.impl;
 
 import arduinoML.ArduinoMLPackage;
-import arduinoML.PlugedElement;
+import arduinoML.PluggedElement;
 import arduinoML.Program;
 import arduinoML.State;
 
@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link arduinoML.impl.ProgramImpl#getBricks <em>Bricks</em>}</li>
+ *   <li>{@link arduinoML.impl.ProgramImpl#getPluggedElements <em>Plugged Elements</em>}</li>
  *   <li>{@link arduinoML.impl.ProgramImpl#getStates <em>States</em>}</li>
  *   <li>{@link arduinoML.impl.ProgramImpl#getInitialState <em>Initial State</em>}</li>
  * </ul>
@@ -39,14 +39,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class ProgramImpl extends NamedElementImpl implements Program {
 	/**
-	 * The cached value of the '{@link #getBricks() <em>Bricks</em>}' containment reference list.
+	 * The cached value of the '{@link #getPluggedElements() <em>Plugged Elements</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBricks()
+	 * @see #getPluggedElements()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<PlugedElement> bricks;
+	protected EList<PluggedElement> pluggedElements;
 
 	/**
 	 * The cached value of the '{@link #getStates() <em>States</em>}' containment reference list.
@@ -92,12 +92,12 @@ public class ProgramImpl extends NamedElementImpl implements Program {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<PlugedElement> getBricks() {
-		if (bricks == null) {
-			bricks = new EObjectContainmentEList<PlugedElement>(PlugedElement.class, this,
-					ArduinoMLPackage.PROGRAM__BRICKS);
+	public EList<PluggedElement> getPluggedElements() {
+		if (pluggedElements == null) {
+			pluggedElements = new EObjectContainmentEList<PluggedElement>(PluggedElement.class, this,
+					ArduinoMLPackage.PROGRAM__PLUGGED_ELEMENTS);
 		}
-		return bricks;
+		return pluggedElements;
 	}
 
 	/**
@@ -160,8 +160,8 @@ public class ProgramImpl extends NamedElementImpl implements Program {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case ArduinoMLPackage.PROGRAM__BRICKS:
-			return ((InternalEList<?>) getBricks()).basicRemove(otherEnd, msgs);
+		case ArduinoMLPackage.PROGRAM__PLUGGED_ELEMENTS:
+			return ((InternalEList<?>) getPluggedElements()).basicRemove(otherEnd, msgs);
 		case ArduinoMLPackage.PROGRAM__STATES:
 			return ((InternalEList<?>) getStates()).basicRemove(otherEnd, msgs);
 		}
@@ -176,8 +176,8 @@ public class ProgramImpl extends NamedElementImpl implements Program {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ArduinoMLPackage.PROGRAM__BRICKS:
-			return getBricks();
+		case ArduinoMLPackage.PROGRAM__PLUGGED_ELEMENTS:
+			return getPluggedElements();
 		case ArduinoMLPackage.PROGRAM__STATES:
 			return getStates();
 		case ArduinoMLPackage.PROGRAM__INITIAL_STATE:
@@ -197,9 +197,9 @@ public class ProgramImpl extends NamedElementImpl implements Program {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ArduinoMLPackage.PROGRAM__BRICKS:
-			getBricks().clear();
-			getBricks().addAll((Collection<? extends PlugedElement>) newValue);
+		case ArduinoMLPackage.PROGRAM__PLUGGED_ELEMENTS:
+			getPluggedElements().clear();
+			getPluggedElements().addAll((Collection<? extends PluggedElement>) newValue);
 			return;
 		case ArduinoMLPackage.PROGRAM__STATES:
 			getStates().clear();
@@ -220,8 +220,8 @@ public class ProgramImpl extends NamedElementImpl implements Program {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ArduinoMLPackage.PROGRAM__BRICKS:
-			getBricks().clear();
+		case ArduinoMLPackage.PROGRAM__PLUGGED_ELEMENTS:
+			getPluggedElements().clear();
 			return;
 		case ArduinoMLPackage.PROGRAM__STATES:
 			getStates().clear();
@@ -241,8 +241,8 @@ public class ProgramImpl extends NamedElementImpl implements Program {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ArduinoMLPackage.PROGRAM__BRICKS:
-			return bricks != null && !bricks.isEmpty();
+		case ArduinoMLPackage.PROGRAM__PLUGGED_ELEMENTS:
+			return pluggedElements != null && !pluggedElements.isEmpty();
 		case ArduinoMLPackage.PROGRAM__STATES:
 			return states != null && !states.isEmpty();
 		case ArduinoMLPackage.PROGRAM__INITIAL_STATE:

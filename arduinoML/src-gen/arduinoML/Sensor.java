@@ -12,5 +12,5 @@ package arduinoML;
  * @model
  * @generated
  */
-public interface Sensor extends PlugedElement {
+public interface Sensor extends PluggedElement {
 } // Sensor

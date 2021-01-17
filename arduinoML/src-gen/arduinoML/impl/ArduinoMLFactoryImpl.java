@@ -61,8 +61,8 @@ public class ArduinoMLFactoryImpl extends EFactoryImpl implements ArduinoMLFacto
 			return createProgram();
 		case ArduinoMLPackage.SENSOR:
 			return createSensor();
-		case ArduinoMLPackage.TRIGGER:
-			return createTrigger();
+		case ArduinoMLPackage.ACTUATOR:
+			return createActuator();
 		case ArduinoMLPackage.STATE:
 			return createState();
 		case ArduinoMLPackage.ACTION:
@@ -129,9 +129,9 @@ public class ArduinoMLFactoryImpl extends EFactoryImpl implements ArduinoMLFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Trigger createTrigger() {
-		TriggerImpl trigger = new TriggerImpl();
-		return trigger;
+	public Actuator createActuator() {
+		ActuatorImpl actuator = new ActuatorImpl();
+		return actuator;
 	}
 
 	/**

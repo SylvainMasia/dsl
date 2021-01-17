@@ -18,7 +18,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SensorItemProvider extends PlugedElementItemProvider {
+public class SensorItemProvider extends PluggedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

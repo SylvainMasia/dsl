@@ -31,12 +31,12 @@ public interface Action extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Actuator</em>' reference.
-	 * @see #setActuator(Trigger)
+	 * @see #setActuator(Actuator)
 	 * @see arduinoML.ArduinoMLPackage#getAction_Actuator()
 	 * @model required="true"
 	 * @generated
 	 */
-	Trigger getActuator();
+	Actuator getActuator();
 
 	/**
 	 * Sets the value of the '{@link arduinoML.Action#getActuator <em>Actuator</em>}' reference.
@@ -46,7 +46,7 @@ public interface Action extends EObject {
 	 * @see #getActuator()
 	 * @generated
 	 */
-	void setActuator(Trigger value);
+	void setActuator(Actuator value);
 
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' attribute.

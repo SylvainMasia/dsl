@@ -3,7 +3,7 @@
 package arduinoML.impl;
 
 import arduinoML.ArduinoMLPackage;
-import arduinoML.PlugedElement;
+import arduinoML.PluggedElement;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -13,18 +13,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Pluged Element</b></em>'.
+ * An implementation of the model object '<em><b>Plugged Element</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link arduinoML.impl.PlugedElementImpl#getPin <em>Pin</em>}</li>
+ *   <li>{@link arduinoML.impl.PluggedElementImpl#getPin <em>Pin</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class PlugedElementImpl extends NamedElementImpl implements PlugedElement {
+public abstract class PluggedElementImpl extends NamedElementImpl implements PluggedElement {
 	/**
 	 * The default value of the '{@link #getPin() <em>Pin</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -50,7 +50,7 @@ public abstract class PlugedElementImpl extends NamedElementImpl implements Plug
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PlugedElementImpl() {
+	protected PluggedElementImpl() {
 		super();
 	}
 
@@ -61,7 +61,7 @@ public abstract class PlugedElementImpl extends NamedElementImpl implements Plug
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ArduinoMLPackage.Literals.PLUGED_ELEMENT;
+		return ArduinoMLPackage.Literals.PLUGGED_ELEMENT;
 	}
 
 	/**
@@ -82,7 +82,7 @@ public abstract class PlugedElementImpl extends NamedElementImpl implements Plug
 		int oldPin = pin;
 		pin = newPin;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoMLPackage.PLUGED_ELEMENT__PIN, oldPin, pin));
+			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoMLPackage.PLUGGED_ELEMENT__PIN, oldPin, pin));
 	}
 
 	/**
@@ -93,7 +93,7 @@ public abstract class PlugedElementImpl extends NamedElementImpl implements Plug
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ArduinoMLPackage.PLUGED_ELEMENT__PIN:
+		case ArduinoMLPackage.PLUGGED_ELEMENT__PIN:
 			return getPin();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -107,7 +107,7 @@ public abstract class PlugedElementImpl extends NamedElementImpl implements Plug
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ArduinoMLPackage.PLUGED_ELEMENT__PIN:
+		case ArduinoMLPackage.PLUGGED_ELEMENT__PIN:
 			setPin((Integer) newValue);
 			return;
 		}
@@ -122,7 +122,7 @@ public abstract class PlugedElementImpl extends NamedElementImpl implements Plug
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ArduinoMLPackage.PLUGED_ELEMENT__PIN:
+		case ArduinoMLPackage.PLUGGED_ELEMENT__PIN:
 			setPin(PIN_EDEFAULT);
 			return;
 		}
@@ -137,7 +137,7 @@ public abstract class PlugedElementImpl extends NamedElementImpl implements Plug
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ArduinoMLPackage.PLUGED_ELEMENT__PIN:
+		case ArduinoMLPackage.PLUGGED_ELEMENT__PIN:
 			return pin != PIN_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -160,4 +160,4 @@ public abstract class PlugedElementImpl extends NamedElementImpl implements Plug
 		return result.toString();
 	}
 
-} //PlugedElementImpl
+} //PluggedElementImpl

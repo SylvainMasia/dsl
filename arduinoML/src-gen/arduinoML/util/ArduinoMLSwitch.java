@@ -82,11 +82,11 @@ public class ArduinoMLSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case ArduinoMLPackage.PLUGED_ELEMENT: {
-			PlugedElement plugedElement = (PlugedElement) theEObject;
-			T result = casePlugedElement(plugedElement);
+		case ArduinoMLPackage.PLUGGED_ELEMENT: {
+			PluggedElement pluggedElement = (PluggedElement) theEObject;
+			T result = casePluggedElement(pluggedElement);
 			if (result == null)
-				result = caseNamedElement(plugedElement);
+				result = caseNamedElement(pluggedElement);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -95,20 +95,20 @@ public class ArduinoMLSwitch<T> extends Switch<T> {
 			Sensor sensor = (Sensor) theEObject;
 			T result = caseSensor(sensor);
 			if (result == null)
-				result = casePlugedElement(sensor);
+				result = casePluggedElement(sensor);
 			if (result == null)
 				result = caseNamedElement(sensor);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case ArduinoMLPackage.TRIGGER: {
-			Trigger trigger = (Trigger) theEObject;
-			T result = caseTrigger(trigger);
+		case ArduinoMLPackage.ACTUATOR: {
+			Actuator actuator = (Actuator) theEObject;
+			T result = caseActuator(actuator);
 			if (result == null)
-				result = casePlugedElement(trigger);
+				result = casePluggedElement(actuator);
 			if (result == null)
-				result = caseNamedElement(trigger);
+				result = caseNamedElement(actuator);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -172,17 +172,17 @@ public class ArduinoMLSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Pluged Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Plugged Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Pluged Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Plugged Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePlugedElement(PlugedElement object) {
+	public T casePluggedElement(PluggedElement object) {
 		return null;
 	}
 
@@ -202,17 +202,17 @@ public class ArduinoMLSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Trigger</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Actuator</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Trigger</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Actuator</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseTrigger(Trigger object) {
+	public T caseActuator(Actuator object) {
 		return null;
 	}
 

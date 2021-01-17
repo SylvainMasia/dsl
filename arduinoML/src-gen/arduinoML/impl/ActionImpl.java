@@ -3,10 +3,9 @@
 package arduinoML.impl;
 
 import arduinoML.Action;
+import arduinoML.Actuator;
 import arduinoML.ArduinoMLPackage;
 import arduinoML.SIGNAL;
-import arduinoML.Trigger;
-
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -38,7 +37,7 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	 * @generated
 	 * @ordered
 	 */
-	protected Trigger actuator;
+	protected Actuator actuator;
 
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -84,10 +83,10 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Trigger getActuator() {
+	public Actuator getActuator() {
 		if (actuator != null && actuator.eIsProxy()) {
 			InternalEObject oldActuator = (InternalEObject) actuator;
-			actuator = (Trigger) eResolveProxy(oldActuator);
+			actuator = (Actuator) eResolveProxy(oldActuator);
 			if (actuator != oldActuator) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ArduinoMLPackage.ACTION__ACTUATOR,
@@ -102,7 +101,7 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Trigger basicGetActuator() {
+	public Actuator basicGetActuator() {
 		return actuator;
 	}
 
@@ -111,8 +110,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setActuator(Trigger newActuator) {
-		Trigger oldActuator = actuator;
+	public void setActuator(Actuator newActuator) {
+		Actuator oldActuator = actuator;
 		actuator = newActuator;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoMLPackage.ACTION__ACTUATOR, oldActuator,
@@ -167,7 +166,7 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case ArduinoMLPackage.ACTION__ACTUATOR:
-			setActuator((Trigger) newValue);
+			setActuator((Actuator) newValue);
 			return;
 		case ArduinoMLPackage.ACTION__VALUE:
 			setValue((SIGNAL) newValue);
@@ -185,7 +184,7 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case ArduinoMLPackage.ACTION__ACTUATOR:
-			setActuator((Trigger) null);
+			setActuator((Actuator) null);
 			return;
 		case ArduinoMLPackage.ACTION__VALUE:
 			setValue(VALUE_EDEFAULT);

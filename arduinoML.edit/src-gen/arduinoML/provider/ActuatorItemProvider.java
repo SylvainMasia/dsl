@@ -2,7 +2,7 @@
  */
 package arduinoML.provider;
 
-import arduinoML.Trigger;
+import arduinoML.Actuator;
 
 import java.util.Collection;
 import java.util.List;
@@ -13,19 +13,19 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
- * This is the item provider adapter for a {@link arduinoML.Trigger} object.
+ * This is the item provider adapter for a {@link arduinoML.Actuator} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class TriggerItemProvider extends PlugedElementItemProvider {
+public class ActuatorItemProvider extends PluggedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TriggerItemProvider(AdapterFactory adapterFactory) {
+	public ActuatorItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -45,14 +45,14 @@ public class TriggerItemProvider extends PlugedElementItemProvider {
 	}
 
 	/**
-	 * This returns Trigger.gif.
+	 * This returns Actuator.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Trigger"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Actuator"));
 	}
 
 	/**
@@ -73,9 +73,9 @@ public class TriggerItemProvider extends PlugedElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Trigger) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Trigger_type")
-				: getString("_UI_Trigger_type") + " " + label;
+		String label = ((Actuator) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_Actuator_type")
+				: getString("_UI_Actuator_type") + " " + label;
 	}
 
 	/**

@@ -40,13 +40,13 @@ public interface ArduinoMLFactory extends EFactory {
 	Sensor createSensor();
 
 	/**
-	 * Returns a new object of class '<em>Trigger</em>'.
+	 * Returns a new object of class '<em>Actuator</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Trigger</em>'.
+	 * @return a new object of class '<em>Actuator</em>'.
 	 * @generated
 	 */
-	Trigger createTrigger();
+	Actuator createActuator();
 
 	/**
 	 * Returns a new object of class '<em>State</em>'.

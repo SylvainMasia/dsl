@@ -114,13 +114,13 @@ public interface ArduinoMLPackage extends EPackage {
 	int PROGRAM__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Bricks</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Plugged Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAM__BRICKS = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int PROGRAM__PLUGGED_ELEMENTS = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>States</b></em>' containment reference list.
@@ -159,14 +159,14 @@ public interface ArduinoMLPackage extends EPackage {
 	int PROGRAM_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link arduinoML.impl.PlugedElementImpl <em>Pluged Element</em>}' class.
+	 * The meta object id for the '{@link arduinoML.impl.PluggedElementImpl <em>Plugged Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see arduinoML.impl.PlugedElementImpl
-	 * @see arduinoML.impl.ArduinoMLPackageImpl#getPlugedElement()
+	 * @see arduinoML.impl.PluggedElementImpl
+	 * @see arduinoML.impl.ArduinoMLPackageImpl#getPluggedElement()
 	 * @generated
 	 */
-	int PLUGED_ELEMENT = 2;
+	int PLUGGED_ELEMENT = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -175,7 +175,7 @@ public interface ArduinoMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLUGED_ELEMENT__NAME = NAMED_ELEMENT__NAME;
+	int PLUGGED_ELEMENT__NAME = NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Pin</b></em>' attribute.
@@ -184,25 +184,25 @@ public interface ArduinoMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLUGED_ELEMENT__PIN = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int PLUGGED_ELEMENT__PIN = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Pluged Element</em>' class.
+	 * The number of structural features of the '<em>Plugged Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PLUGED_ELEMENT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int PLUGGED_ELEMENT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of operations of the '<em>Pluged Element</em>' class.
+	 * The number of operations of the '<em>Plugged Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PLUGED_ELEMENT_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int PLUGGED_ELEMENT_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link arduinoML.impl.SensorImpl <em>Sensor</em>}' class.
@@ -221,7 +221,7 @@ public interface ArduinoMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SENSOR__NAME = PLUGED_ELEMENT__NAME;
+	int SENSOR__NAME = PLUGGED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Pin</b></em>' attribute.
@@ -230,7 +230,7 @@ public interface ArduinoMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SENSOR__PIN = PLUGED_ELEMENT__PIN;
+	int SENSOR__PIN = PLUGGED_ELEMENT__PIN;
 
 	/**
 	 * The number of structural features of the '<em>Sensor</em>' class.
@@ -239,7 +239,7 @@ public interface ArduinoMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SENSOR_FEATURE_COUNT = PLUGED_ELEMENT_FEATURE_COUNT + 0;
+	int SENSOR_FEATURE_COUNT = PLUGGED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Sensor</em>' class.
@@ -248,17 +248,17 @@ public interface ArduinoMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SENSOR_OPERATION_COUNT = PLUGED_ELEMENT_OPERATION_COUNT + 0;
+	int SENSOR_OPERATION_COUNT = PLUGGED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link arduinoML.impl.TriggerImpl <em>Trigger</em>}' class.
+	 * The meta object id for the '{@link arduinoML.impl.ActuatorImpl <em>Actuator</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see arduinoML.impl.TriggerImpl
-	 * @see arduinoML.impl.ArduinoMLPackageImpl#getTrigger()
+	 * @see arduinoML.impl.ActuatorImpl
+	 * @see arduinoML.impl.ArduinoMLPackageImpl#getActuator()
 	 * @generated
 	 */
-	int TRIGGER = 4;
+	int ACTUATOR = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -267,7 +267,7 @@ public interface ArduinoMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRIGGER__NAME = PLUGED_ELEMENT__NAME;
+	int ACTUATOR__NAME = PLUGGED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Pin</b></em>' attribute.
@@ -276,25 +276,25 @@ public interface ArduinoMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRIGGER__PIN = PLUGED_ELEMENT__PIN;
+	int ACTUATOR__PIN = PLUGGED_ELEMENT__PIN;
 
 	/**
-	 * The number of structural features of the '<em>Trigger</em>' class.
+	 * The number of structural features of the '<em>Actuator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRIGGER_FEATURE_COUNT = PLUGED_ELEMENT_FEATURE_COUNT + 0;
+	int ACTUATOR_FEATURE_COUNT = PLUGGED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>Trigger</em>' class.
+	 * The number of operations of the '<em>Actuator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRIGGER_OPERATION_COUNT = PLUGED_ELEMENT_OPERATION_COUNT + 0;
+	int ACTUATOR_OPERATION_COUNT = PLUGGED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link arduinoML.impl.StateImpl <em>State</em>}' class.
@@ -316,13 +316,13 @@ public interface ArduinoMLPackage extends EPackage {
 	int STATE__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Action</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__ACTION = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int STATE__ACTIONS = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Transition</b></em>' containment reference.
@@ -494,15 +494,15 @@ public interface ArduinoMLPackage extends EPackage {
 	EClass getProgram();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link arduinoML.Program#getBricks <em>Bricks</em>}'.
+	 * Returns the meta object for the containment reference list '{@link arduinoML.Program#getPluggedElements <em>Plugged Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Bricks</em>'.
-	 * @see arduinoML.Program#getBricks()
+	 * @return the meta object for the containment reference list '<em>Plugged Elements</em>'.
+	 * @see arduinoML.Program#getPluggedElements()
 	 * @see #getProgram()
 	 * @generated
 	 */
-	EReference getProgram_Bricks();
+	EReference getProgram_PluggedElements();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link arduinoML.Program#getStates <em>States</em>}'.
@@ -527,25 +527,25 @@ public interface ArduinoMLPackage extends EPackage {
 	EReference getProgram_InitialState();
 
 	/**
-	 * Returns the meta object for class '{@link arduinoML.PlugedElement <em>Pluged Element</em>}'.
+	 * Returns the meta object for class '{@link arduinoML.PluggedElement <em>Plugged Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Pluged Element</em>'.
-	 * @see arduinoML.PlugedElement
+	 * @return the meta object for class '<em>Plugged Element</em>'.
+	 * @see arduinoML.PluggedElement
 	 * @generated
 	 */
-	EClass getPlugedElement();
+	EClass getPluggedElement();
 
 	/**
-	 * Returns the meta object for the attribute '{@link arduinoML.PlugedElement#getPin <em>Pin</em>}'.
+	 * Returns the meta object for the attribute '{@link arduinoML.PluggedElement#getPin <em>Pin</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Pin</em>'.
-	 * @see arduinoML.PlugedElement#getPin()
-	 * @see #getPlugedElement()
+	 * @see arduinoML.PluggedElement#getPin()
+	 * @see #getPluggedElement()
 	 * @generated
 	 */
-	EAttribute getPlugedElement_Pin();
+	EAttribute getPluggedElement_Pin();
 
 	/**
 	 * Returns the meta object for class '{@link arduinoML.Sensor <em>Sensor</em>}'.
@@ -558,14 +558,14 @@ public interface ArduinoMLPackage extends EPackage {
 	EClass getSensor();
 
 	/**
-	 * Returns the meta object for class '{@link arduinoML.Trigger <em>Trigger</em>}'.
+	 * Returns the meta object for class '{@link arduinoML.Actuator <em>Actuator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Trigger</em>'.
-	 * @see arduinoML.Trigger
+	 * @return the meta object for class '<em>Actuator</em>'.
+	 * @see arduinoML.Actuator
 	 * @generated
 	 */
-	EClass getTrigger();
+	EClass getActuator();
 
 	/**
 	 * Returns the meta object for class '{@link arduinoML.State <em>State</em>}'.
@@ -578,15 +578,15 @@ public interface ArduinoMLPackage extends EPackage {
 	EClass getState();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link arduinoML.State#getAction <em>Action</em>}'.
+	 * Returns the meta object for the containment reference list '{@link arduinoML.State#getActions <em>Actions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Action</em>'.
-	 * @see arduinoML.State#getAction()
+	 * @return the meta object for the containment reference list '<em>Actions</em>'.
+	 * @see arduinoML.State#getActions()
 	 * @see #getState()
 	 * @generated
 	 */
-	EReference getState_Action();
+	EReference getState_Actions();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link arduinoML.State#getTransition <em>Transition</em>}'.
@@ -736,12 +736,12 @@ public interface ArduinoMLPackage extends EPackage {
 		EClass PROGRAM = eINSTANCE.getProgram();
 
 		/**
-		 * The meta object literal for the '<em><b>Bricks</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Plugged Elements</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PROGRAM__BRICKS = eINSTANCE.getProgram_Bricks();
+		EReference PROGRAM__PLUGGED_ELEMENTS = eINSTANCE.getProgram_PluggedElements();
 
 		/**
 		 * The meta object literal for the '<em><b>States</b></em>' containment reference list feature.
@@ -760,14 +760,14 @@ public interface ArduinoMLPackage extends EPackage {
 		EReference PROGRAM__INITIAL_STATE = eINSTANCE.getProgram_InitialState();
 
 		/**
-		 * The meta object literal for the '{@link arduinoML.impl.PlugedElementImpl <em>Pluged Element</em>}' class.
+		 * The meta object literal for the '{@link arduinoML.impl.PluggedElementImpl <em>Plugged Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see arduinoML.impl.PlugedElementImpl
-		 * @see arduinoML.impl.ArduinoMLPackageImpl#getPlugedElement()
+		 * @see arduinoML.impl.PluggedElementImpl
+		 * @see arduinoML.impl.ArduinoMLPackageImpl#getPluggedElement()
 		 * @generated
 		 */
-		EClass PLUGED_ELEMENT = eINSTANCE.getPlugedElement();
+		EClass PLUGGED_ELEMENT = eINSTANCE.getPluggedElement();
 
 		/**
 		 * The meta object literal for the '<em><b>Pin</b></em>' attribute feature.
@@ -775,7 +775,7 @@ public interface ArduinoMLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PLUGED_ELEMENT__PIN = eINSTANCE.getPlugedElement_Pin();
+		EAttribute PLUGGED_ELEMENT__PIN = eINSTANCE.getPluggedElement_Pin();
 
 		/**
 		 * The meta object literal for the '{@link arduinoML.impl.SensorImpl <em>Sensor</em>}' class.
@@ -788,14 +788,14 @@ public interface ArduinoMLPackage extends EPackage {
 		EClass SENSOR = eINSTANCE.getSensor();
 
 		/**
-		 * The meta object literal for the '{@link arduinoML.impl.TriggerImpl <em>Trigger</em>}' class.
+		 * The meta object literal for the '{@link arduinoML.impl.ActuatorImpl <em>Actuator</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see arduinoML.impl.TriggerImpl
-		 * @see arduinoML.impl.ArduinoMLPackageImpl#getTrigger()
+		 * @see arduinoML.impl.ActuatorImpl
+		 * @see arduinoML.impl.ArduinoMLPackageImpl#getActuator()
 		 * @generated
 		 */
-		EClass TRIGGER = eINSTANCE.getTrigger();
+		EClass ACTUATOR = eINSTANCE.getActuator();
 
 		/**
 		 * The meta object literal for the '{@link arduinoML.impl.StateImpl <em>State</em>}' class.
@@ -808,12 +808,12 @@ public interface ArduinoMLPackage extends EPackage {
 		EClass STATE = eINSTANCE.getState();
 
 		/**
-		 * The meta object literal for the '<em><b>Action</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Actions</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STATE__ACTION = eINSTANCE.getState_Action();
+		EReference STATE__ACTIONS = eINSTANCE.getState_Actions();
 
 		/**
 		 * The meta object literal for the '<em><b>Transition</b></em>' containment reference feature.

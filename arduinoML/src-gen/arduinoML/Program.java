@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link arduinoML.Program#getBricks <em>Bricks</em>}</li>
+ *   <li>{@link arduinoML.Program#getPluggedElements <em>Plugged Elements</em>}</li>
  *   <li>{@link arduinoML.Program#getStates <em>States</em>}</li>
  *   <li>{@link arduinoML.Program#getInitialState <em>Initial State</em>}</li>
  * </ul>
@@ -24,20 +24,20 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Program extends NamedElement {
 	/**
-	 * Returns the value of the '<em><b>Bricks</b></em>' containment reference list.
-	 * The list contents are of type {@link arduinoML.PlugedElement}.
+	 * Returns the value of the '<em><b>Plugged Elements</b></em>' containment reference list.
+	 * The list contents are of type {@link arduinoML.PluggedElement}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Bricks</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Plugged Elements</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Bricks</em>' containment reference list.
-	 * @see arduinoML.ArduinoMLPackage#getProgram_Bricks()
+	 * @return the value of the '<em>Plugged Elements</em>' containment reference list.
+	 * @see arduinoML.ArduinoMLPackage#getProgram_PluggedElements()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<PlugedElement> getBricks();
+	EList<PluggedElement> getPluggedElements();
 
 	/**
 	 * Returns the value of the '<em><b>States</b></em>' containment reference list.

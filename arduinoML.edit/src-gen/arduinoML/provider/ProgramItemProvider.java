@@ -78,7 +78,7 @@ public class ProgramItemProvider extends NamedElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ArduinoMLPackage.Literals.PROGRAM__BRICKS);
+			childrenFeatures.add(ArduinoMLPackage.Literals.PROGRAM__PLUGGED_ELEMENTS);
 			childrenFeatures.add(ArduinoMLPackage.Literals.PROGRAM__STATES);
 		}
 		return childrenFeatures;
@@ -143,7 +143,7 @@ public class ProgramItemProvider extends NamedElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Program.class)) {
-		case ArduinoMLPackage.PROGRAM__BRICKS:
+		case ArduinoMLPackage.PROGRAM__PLUGGED_ELEMENTS:
 		case ArduinoMLPackage.PROGRAM__STATES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
@@ -162,11 +162,11 @@ public class ProgramItemProvider extends NamedElementItemProvider {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(ArduinoMLPackage.Literals.PROGRAM__BRICKS,
+		newChildDescriptors.add(createChildParameter(ArduinoMLPackage.Literals.PROGRAM__PLUGGED_ELEMENTS,
 				ArduinoMLFactory.eINSTANCE.createSensor()));
 
-		newChildDescriptors.add(createChildParameter(ArduinoMLPackage.Literals.PROGRAM__BRICKS,
-				ArduinoMLFactory.eINSTANCE.createTrigger()));
+		newChildDescriptors.add(createChildParameter(ArduinoMLPackage.Literals.PROGRAM__PLUGGED_ELEMENTS,
+				ArduinoMLFactory.eINSTANCE.createActuator()));
 
 		newChildDescriptors.add(createChildParameter(ArduinoMLPackage.Literals.PROGRAM__STATES,
 				ArduinoMLFactory.eINSTANCE.createState()));

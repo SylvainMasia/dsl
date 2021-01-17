@@ -119,26 +119,26 @@ public class ArduinoMLItemProviderAdapterFactory extends ArduinoMLAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link arduinoML.Trigger} instances.
+	 * This keeps track of the one adapter used for all {@link arduinoML.Actuator} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TriggerItemProvider triggerItemProvider;
+	protected ActuatorItemProvider actuatorItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link arduinoML.Trigger}.
+	 * This creates an adapter for a {@link arduinoML.Actuator}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createTriggerAdapter() {
-		if (triggerItemProvider == null) {
-			triggerItemProvider = new TriggerItemProvider(this);
+	public Adapter createActuatorAdapter() {
+		if (actuatorItemProvider == null) {
+			actuatorItemProvider = new ActuatorItemProvider(this);
 		}
 
-		return triggerItemProvider;
+		return actuatorItemProvider;
 	}
 
 	/**
@@ -313,8 +313,8 @@ public class ArduinoMLItemProviderAdapterFactory extends ArduinoMLAdapterFactory
 			programItemProvider.dispose();
 		if (sensorItemProvider != null)
 			sensorItemProvider.dispose();
-		if (triggerItemProvider != null)
-			triggerItemProvider.dispose();
+		if (actuatorItemProvider != null)
+			actuatorItemProvider.dispose();
 		if (stateItemProvider != null)
 			stateItemProvider.dispose();
 		if (actionItemProvider != null)

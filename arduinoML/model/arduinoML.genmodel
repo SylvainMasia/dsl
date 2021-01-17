@@ -17,17 +17,17 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arduinoML.ecore#//NamedElement/name"/>
     </genClasses>
     <genClasses ecoreClass="arduinoML.ecore#//Program">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arduinoML.ecore#//Program/bricks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arduinoML.ecore#//Program/pluggedElements"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arduinoML.ecore#//Program/states"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arduinoML.ecore#//Program/initialState"/>
     </genClasses>
-    <genClasses ecoreClass="arduinoML.ecore#//PlugedElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arduinoML.ecore#//PlugedElement/pin"/>
+    <genClasses ecoreClass="arduinoML.ecore#//PluggedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arduinoML.ecore#//PluggedElement/pin"/>
     </genClasses>
     <genClasses ecoreClass="arduinoML.ecore#//Sensor"/>
-    <genClasses ecoreClass="arduinoML.ecore#//Trigger"/>
+    <genClasses ecoreClass="arduinoML.ecore#//Actuator"/>
     <genClasses ecoreClass="arduinoML.ecore#//State">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arduinoML.ecore#//State/action"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arduinoML.ecore#//State/actions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arduinoML.ecore#//State/transition"/>
     </genClasses>
     <genClasses ecoreClass="arduinoML.ecore#//Action">

@@ -3,16 +3,15 @@
 package arduinoML.impl;
 
 import arduinoML.Action;
+import arduinoML.Actuator;
 import arduinoML.ArduinoMLFactory;
 import arduinoML.ArduinoMLPackage;
 import arduinoML.NamedElement;
-import arduinoML.PlugedElement;
+import arduinoML.PluggedElement;
 import arduinoML.Program;
 import arduinoML.Sensor;
 import arduinoML.State;
 import arduinoML.Transition;
-import arduinoML.Trigger;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -47,7 +46,7 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass plugedElementEClass = null;
+	private EClass pluggedElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -61,7 +60,7 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass triggerEClass = null;
+	private EClass actuatorEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -187,7 +186,7 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProgram_Bricks() {
+	public EReference getProgram_PluggedElements() {
 		return (EReference) programEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -214,8 +213,8 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPlugedElement() {
-		return plugedElementEClass;
+	public EClass getPluggedElement() {
+		return pluggedElementEClass;
 	}
 
 	/**
@@ -223,8 +222,8 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPlugedElement_Pin() {
-		return (EAttribute) plugedElementEClass.getEStructuralFeatures().get(0);
+	public EAttribute getPluggedElement_Pin() {
+		return (EAttribute) pluggedElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -241,8 +240,8 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getTrigger() {
-		return triggerEClass;
+	public EClass getActuator() {
+		return actuatorEClass;
 	}
 
 	/**
@@ -259,7 +258,7 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getState_Action() {
+	public EReference getState_Actions() {
 		return (EReference) stateEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -377,19 +376,19 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
 
 		programEClass = createEClass(PROGRAM);
-		createEReference(programEClass, PROGRAM__BRICKS);
+		createEReference(programEClass, PROGRAM__PLUGGED_ELEMENTS);
 		createEReference(programEClass, PROGRAM__STATES);
 		createEReference(programEClass, PROGRAM__INITIAL_STATE);
 
-		plugedElementEClass = createEClass(PLUGED_ELEMENT);
-		createEAttribute(plugedElementEClass, PLUGED_ELEMENT__PIN);
+		pluggedElementEClass = createEClass(PLUGGED_ELEMENT);
+		createEAttribute(pluggedElementEClass, PLUGGED_ELEMENT__PIN);
 
 		sensorEClass = createEClass(SENSOR);
 
-		triggerEClass = createEClass(TRIGGER);
+		actuatorEClass = createEClass(ACTUATOR);
 
 		stateEClass = createEClass(STATE);
-		createEReference(stateEClass, STATE__ACTION);
+		createEReference(stateEClass, STATE__ACTIONS);
 		createEReference(stateEClass, STATE__TRANSITION);
 
 		actionEClass = createEClass(ACTION);
@@ -435,9 +434,9 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 
 		// Add supertypes to classes
 		programEClass.getESuperTypes().add(this.getNamedElement());
-		plugedElementEClass.getESuperTypes().add(this.getNamedElement());
-		sensorEClass.getESuperTypes().add(this.getPlugedElement());
-		triggerEClass.getESuperTypes().add(this.getPlugedElement());
+		pluggedElementEClass.getESuperTypes().add(this.getNamedElement());
+		sensorEClass.getESuperTypes().add(this.getPluggedElement());
+		actuatorEClass.getESuperTypes().add(this.getPluggedElement());
 		stateEClass.getESuperTypes().add(this.getNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
@@ -447,9 +446,9 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(programEClass, Program.class, "Program", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getProgram_Bricks(), this.getPlugedElement(), null, "bricks", null, 1, -1, Program.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProgram_PluggedElements(), this.getPluggedElement(), null, "pluggedElements", null, 1, -1,
+				Program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProgram_States(), this.getState(), null, "states", null, 1, -1, Program.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
@@ -457,17 +456,18 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(plugedElementEClass, PlugedElement.class, "PlugedElement", IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(pluggedElementEClass, PluggedElement.class, "PluggedElement", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPlugedElement_Pin(), ecorePackage.getEInt(), "pin", null, 1, 1, PlugedElement.class,
+		initEAttribute(getPluggedElement_Pin(), ecorePackage.getEInt(), "pin", null, 1, 1, PluggedElement.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sensorEClass, Sensor.class, "Sensor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(triggerEClass, Trigger.class, "Trigger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(actuatorEClass, Actuator.class, "Actuator", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(stateEClass, State.class, "State", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getState_Action(), this.getAction(), null, "action", null, 1, -1, State.class, !IS_TRANSIENT,
+		initEReference(getState_Actions(), this.getAction(), null, "actions", null, 1, -1, State.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 		initEReference(getState_Transition(), this.getTransition(), null, "transition", null, 1, 1, State.class,
@@ -475,7 +475,7 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAction_Actuator(), this.getTrigger(), null, "actuator", null, 1, 1, Action.class,
+		initEReference(getAction_Actuator(), this.getActuator(), null, "actuator", null, 1, 1, Action.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAction_Value(), this.getSIGNAL(), "value", null, 1, 1, Action.class, !IS_TRANSIENT,

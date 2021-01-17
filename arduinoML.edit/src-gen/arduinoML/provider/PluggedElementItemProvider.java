@@ -3,7 +3,7 @@
 package arduinoML.provider;
 
 import arduinoML.ArduinoMLPackage;
-import arduinoML.PlugedElement;
+import arduinoML.PluggedElement;
 
 import java.util.Collection;
 import java.util.List;
@@ -17,19 +17,19 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link arduinoML.PlugedElement} object.
+ * This is the item provider adapter for a {@link arduinoML.PluggedElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class PlugedElementItemProvider extends NamedElementItemProvider {
+public class PluggedElementItemProvider extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PlugedElementItemProvider(AdapterFactory adapterFactory) {
+	public PluggedElementItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -58,22 +58,22 @@ public class PlugedElementItemProvider extends NamedElementItemProvider {
 	protected void addPinPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_PlugedElement_pin_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_PlugedElement_pin_feature",
-								"_UI_PlugedElement_type"),
-						ArduinoMLPackage.Literals.PLUGED_ELEMENT__PIN, true, false, false,
+						getResourceLocator(), getString("_UI_PluggedElement_pin_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_PluggedElement_pin_feature",
+								"_UI_PluggedElement_type"),
+						ArduinoMLPackage.Literals.PLUGGED_ELEMENT__PIN, true, false, false,
 						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This returns PlugedElement.gif.
+	 * This returns PluggedElement.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/PlugedElement"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/PluggedElement"));
 	}
 
 	/**
@@ -94,9 +94,9 @@ public class PlugedElementItemProvider extends NamedElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((PlugedElement) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_PlugedElement_type")
-				: getString("_UI_PlugedElement_type") + " " + label;
+		String label = ((PluggedElement) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_PluggedElement_type")
+				: getString("_UI_PluggedElement_type") + " " + label;
 	}
 
 	/**
@@ -110,8 +110,8 @@ public class PlugedElementItemProvider extends NamedElementItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(PlugedElement.class)) {
-		case ArduinoMLPackage.PLUGED_ELEMENT__PIN:
+		switch (notification.getFeatureID(PluggedElement.class)) {
+		case ArduinoMLPackage.PLUGGED_ELEMENT__PIN:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
