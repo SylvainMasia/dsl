@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ArduinoML_kernel
+Bundle-SymbolicName: arduinoML_kernel
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: arduinoML_kernel
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: io.github.mosser.arduinoml.kernel,
+ io.github.mosser.arduinoml.kernel.behavioral,
+ io.github.mosser.arduinoml.kernel.generator,
+ io.github.mosser.arduinoml.kernel.structural

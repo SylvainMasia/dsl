@@ -7,6 +7,20 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import arduinoML.Program
+import org.eclipse.xtext.naming.IQualifiedNameProvider
+import javax.inject.Inject
+import io.github.mosser.arduinoml.kernel.App
+import io.github.mosser.arduinoml.kernel.structural.Brick
+import java.util.ArrayList
+import arduinoML.PluggedElement
+import arduinoML.Sensor
+import arduinoML.Actuator
+import java.util.List
+import arduinoML.State
+import io.github.mosser.arduinoml.kernel.generator.ToWiring
+import arduinoML.Action
+import arduinoML.SIGNAL
 
 /**
  * Generates code from your model files on save.
@@ -14,12 +28,109 @@ import org.eclipse.xtext.generator.IGeneratorContext
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 class SpamlGenerator extends AbstractGenerator {
+	
+	@Inject extension IQualifiedNameProvider
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(Greeting)
-//				.map[name]
-//				.join(', '))
+		val program = resource.contents.head as Program;
+		fsa.generateFile(
+            program.fullyQualifiedName + ".ino",
+            program.compile)
+	}
+	
+	private def String compile(Program program) {
+		val app = new App();
+		
+		app.bricks = constructPluggedElements(program);
+		app.initial = constructInitialState(program);
+		app.states = constructStates(program);
+		
+		val toWiring = new ToWiring();
+		toWiring.visit(app);
+		return toWiring.result.toString();
+	}
+	
+	private def List<Brick> constructPluggedElements(Program program) {
+		val bricks = new ArrayList<Brick>();
+		for (PluggedElement pe : program.pluggedElements) {
+			bricks.add(convertSpamlBrickToMosserBrick(pe));
+		}
+		return bricks;
+	}
+	
+	private def Brick convertSpamlBrickToMosserBrick(PluggedElement pe) {
+		if (pe instanceof Sensor) {
+			return convertSpamlSensorToMosser(pe);
+		} else if (pe instanceof Actuator) {
+			return convertSpamlActuatorToMosser(pe);
+		}
+		return null;
+	}
+	
+	private def io.github.mosser.arduinoml.kernel.structural.Sensor convertSpamlSensorToMosser(Sensor pe) {
+		val sensor = new io.github.mosser.arduinoml.kernel.structural.Sensor();
+		sensor.name = pe.name;
+		sensor.pin = pe.pin;
+		return sensor;
+	}
+	
+	private def io.github.mosser.arduinoml.kernel.structural.Actuator convertSpamlActuatorToMosser(Actuator pe) {
+		val actuator = new io.github.mosser.arduinoml.kernel.structural.Actuator();
+		actuator.name = pe.name;
+		actuator.pin = pe.pin;
+		return actuator;
+	}
+	
+	private def io.github.mosser.arduinoml.kernel.behavioral.State constructInitialState(Program program) {
+		val initialState = new io.github.mosser.arduinoml.kernel.behavioral.State();
+		initialState.name = program.initialState.name;
+		initialState.transition = getTransitionFromState(program.initialState);
+		initialState.actions = getActionsFromState(program.initialState);
+		return initialState;
+	}
+	
+	private def io.github.mosser.arduinoml.kernel.behavioral.Transition getTransitionFromState(State state) {
+		val transition = new io.github.mosser.arduinoml.kernel.behavioral.Transition();
+		transition.sensor = convertSpamlSensorToMosser(state.transition.sensor);
+		val nextState = new io.github.mosser.arduinoml.kernel.behavioral.State();
+		nextState.name = state.transition.next.name;
+		transition.next = nextState;
+		if (state.transition.value === SIGNAL.HIGH) {
+			transition.value = io.github.mosser.arduinoml.kernel.structural.SIGNAL.HIGH;
+		} else {
+			transition.value = io.github.mosser.arduinoml.kernel.structural.SIGNAL.LOW;
+		}
+		return transition;
+	}
+	
+	private def List<io.github.mosser.arduinoml.kernel.behavioral.Action> getActionsFromState(State state) {
+		val actions = new ArrayList<io.github.mosser.arduinoml.kernel.behavioral.Action>();
+		
+		for (Action a : state.actions) {
+			val action = new io.github.mosser.arduinoml.kernel.behavioral.Action();
+			action.actuator = convertSpamlActuatorToMosser(a.actuator);
+			if (state.transition.value === SIGNAL.HIGH) {
+				action.value = io.github.mosser.arduinoml.kernel.structural.SIGNAL.HIGH;
+			} else {
+				action.value = io.github.mosser.arduinoml.kernel.structural.SIGNAL.LOW;
+			}
+			actions.add(action);
+		}
+		
+		return actions;
+	}
+	
+	private def List<io.github.mosser.arduinoml.kernel.behavioral.State> constructStates(Program program) {
+		val states = new ArrayList<io.github.mosser.arduinoml.kernel.behavioral.State>();
+		
+		for (State s : program.states) {
+			val state = new io.github.mosser.arduinoml.kernel.behavioral.State();
+			state.name = s.name;
+			state.transition = getTransitionFromState(s);
+			state.actions = getActionsFromState(s);
+			states.add(state);
+		}
+		
+		return states;
 	}
 }
