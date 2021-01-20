@@ -12,6 +12,7 @@ import arduinoML.Program;
 import arduinoML.Sensor;
 import arduinoML.State;
 import arduinoML.Transition;
+import arduinoML.TransitionHandler;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -82,6 +83,13 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 * @generated
 	 */
 	private EClass transitionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass transitionHandlerEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -321,8 +329,8 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTransition_Value() {
-		return (EAttribute) transitionEClass.getEStructuralFeatures().get(1);
+	public EReference getTransition_Handlers() {
+		return (EReference) transitionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -330,8 +338,26 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTransition_Sensor() {
-		return (EReference) transitionEClass.getEStructuralFeatures().get(2);
+	public EClass getTransitionHandler() {
+		return transitionHandlerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTransitionHandler_Sensor() {
+		return (EReference) transitionHandlerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTransitionHandler_Value() {
+		return (EAttribute) transitionHandlerEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -397,8 +423,11 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 
 		transitionEClass = createEClass(TRANSITION);
 		createEReference(transitionEClass, TRANSITION__NEXT);
-		createEAttribute(transitionEClass, TRANSITION__VALUE);
-		createEReference(transitionEClass, TRANSITION__SENSOR);
+		createEReference(transitionEClass, TRANSITION__HANDLERS);
+
+		transitionHandlerEClass = createEClass(TRANSITION_HANDLER);
+		createEReference(transitionHandlerEClass, TRANSITION_HANDLER__SENSOR);
+		createEAttribute(transitionHandlerEClass, TRANSITION_HANDLER__VALUE);
 
 		// Create enums
 		signalEEnum = createEEnum(SIGNAL);
@@ -486,11 +515,17 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 		initEReference(getTransition_Next(), this.getState(), null, "next", null, 1, 1, Transition.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEAttribute(getTransition_Value(), this.getSIGNAL(), "value", null, 1, 1, Transition.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTransition_Sensor(), this.getSensor(), null, "sensor", null, 1, 1, Transition.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTransition_Handlers(), this.getTransitionHandler(), null, "handlers", null, 1, -1,
+				Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(transitionHandlerEClass, TransitionHandler.class, "TransitionHandler", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTransitionHandler_Sensor(), this.getSensor(), null, "sensor", null, 1, 1,
+				TransitionHandler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTransitionHandler_Value(), this.getSIGNAL(), "value", null, 1, 1, TransitionHandler.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(signalEEnum, arduinoML.SIGNAL.class, "SIGNAL");

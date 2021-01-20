@@ -8,10 +8,12 @@ import arduinoML.PluggedElement;
 import arduinoML.Program;
 import arduinoML.SIGNAL;
 import arduinoML.Sensor;
+import com.google.common.collect.Iterables;
 import io.github.mosser.arduinoml.kernel.App;
 import io.github.mosser.arduinoml.kernel.behavioral.Action;
 import io.github.mosser.arduinoml.kernel.behavioral.State;
 import io.github.mosser.arduinoml.kernel.behavioral.Transition;
+import io.github.mosser.arduinoml.kernel.behavioral.TransitionHandler;
 import io.github.mosser.arduinoml.kernel.generator.ToWiring;
 import io.github.mosser.arduinoml.kernel.structural.Brick;
 import java.util.ArrayList;
@@ -26,7 +28,7 @@ import org.eclipse.xtext.generator.IGeneratorContext;
 import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.xbase.lib.Extension;
-import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 
 /**
  * Generates code from your model files on save.
@@ -41,12 +43,13 @@ public class SpamlGenerator extends AbstractGenerator {
   
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
-    EObject _head = IterableExtensions.<EObject>head(resource.getContents());
-    final Program program = ((Program) _head);
-    QualifiedName _fullyQualifiedName = this._iQualifiedNameProvider.getFullyQualifiedName(program);
-    String _plus = (_fullyQualifiedName + ".ino");
-    fsa.generateFile(_plus, 
-      this.compile(program));
+    Iterable<Program> _filter = Iterables.<Program>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Program.class);
+    for (final Program program : _filter) {
+      QualifiedName _fullyQualifiedName = this._iQualifiedNameProvider.getFullyQualifiedName(program);
+      String _plus = (_fullyQualifiedName + ".ino");
+      fsa.generateFile(_plus, 
+        this.compile(program));
+    }
   }
   
   private String compile(final Program program) {
@@ -101,19 +104,30 @@ public class SpamlGenerator extends AbstractGenerator {
     return initialState;
   }
   
+  private TransitionHandler convertTransitionHandlerToMosser(final arduinoML.TransitionHandler transitionHandler) {
+    final TransitionHandler handler = new TransitionHandler();
+    SIGNAL _value = transitionHandler.getValue();
+    boolean _tripleEquals = (_value == SIGNAL.HIGH);
+    if (_tripleEquals) {
+      handler.setValue(io.github.mosser.arduinoml.kernel.structural.SIGNAL.HIGH);
+    } else {
+      handler.setValue(io.github.mosser.arduinoml.kernel.structural.SIGNAL.LOW);
+    }
+    handler.setSensor(this.convertSpamlSensorToMosser(transitionHandler.getSensor()));
+    return handler;
+  }
+  
   private Transition getTransitionFromState(final arduinoML.State state) {
     final Transition transition = new Transition();
-    transition.setSensor(this.convertSpamlSensorToMosser(state.getTransition().getSensor()));
+    final ArrayList<TransitionHandler> handlers = new ArrayList<TransitionHandler>();
+    EList<arduinoML.TransitionHandler> _handlers = state.getTransition().getHandlers();
+    for (final arduinoML.TransitionHandler t : _handlers) {
+      handlers.add(this.convertTransitionHandlerToMosser(t));
+    }
+    transition.setHandlers(handlers);
     final State nextState = new State();
     nextState.setName(state.getTransition().getNext().getName());
     transition.setNext(nextState);
-    SIGNAL _value = state.getTransition().getValue();
-    boolean _tripleEquals = (_value == SIGNAL.HIGH);
-    if (_tripleEquals) {
-      transition.setValue(io.github.mosser.arduinoml.kernel.structural.SIGNAL.HIGH);
-    } else {
-      transition.setValue(io.github.mosser.arduinoml.kernel.structural.SIGNAL.LOW);
-    }
     return transition;
   }
   
@@ -124,7 +138,7 @@ public class SpamlGenerator extends AbstractGenerator {
       {
         final Action action = new Action();
         action.setActuator(this.convertSpamlActuatorToMosser(a.getActuator()));
-        SIGNAL _value = state.getTransition().getValue();
+        SIGNAL _value = a.getValue();
         boolean _tripleEquals = (_value == SIGNAL.HIGH);
         if (_tripleEquals) {
           action.setValue(io.github.mosser.arduinoml.kernel.structural.SIGNAL.HIGH);

@@ -153,43 +153,24 @@ ruleProgram returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
+		)+
 		(
-			(
-				{
-					newCompositeNode(grammarAccess.getProgramAccess().getPluggedElementsPluggedElementParserRuleCall_7_0());
-				}
-				lv_pluggedElements_8_0=rulePluggedElement
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getProgramRule());
-					}
-					add(
-						$current,
-						"pluggedElements",
-						lv_pluggedElements_8_0,
-						"polytech.dsl.spaceteam.spaml.Spaml.PluggedElement");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-		(
-			otherlv_9='states'
+			otherlv_8='states'
 			{
-				newLeafNode(otherlv_9, grammarAccess.getProgramAccess().getStatesKeyword_8_0());
+				newLeafNode(otherlv_8, grammarAccess.getProgramAccess().getStatesKeyword_7_0());
 			}
 			    |
-			otherlv_10='states:'
+			otherlv_9='states:'
 			{
-				newLeafNode(otherlv_10, grammarAccess.getProgramAccess().getStatesKeyword_8_1());
+				newLeafNode(otherlv_9, grammarAccess.getProgramAccess().getStatesKeyword_7_1());
 			}
 		)
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getProgramAccess().getStatesStateParserRuleCall_9_0());
+					newCompositeNode(grammarAccess.getProgramAccess().getStatesStateParserRuleCall_8_0());
 				}
-				lv_states_11_0=ruleState
+				lv_states_10_0=ruleState
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getProgramRule());
@@ -197,34 +178,15 @@ ruleProgram returns [EObject current=null]
 					add(
 						$current,
 						"states",
-						lv_states_11_0,
+						lv_states_10_0,
 						"polytech.dsl.spaceteam.spaml.Spaml.State");
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getProgramAccess().getStatesStateParserRuleCall_10_0());
-				}
-				lv_states_12_0=ruleState
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getProgramRule());
-					}
-					add(
-						$current,
-						"states",
-						lv_states_12_0,
-						"polytech.dsl.spaceteam.spaml.Spaml.State");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-		otherlv_13='}'
+		)+
+		otherlv_11='}'
 		{
-			newLeafNode(otherlv_13, grammarAccess.getProgramAccess().getRightCurlyBracketKeyword_11());
+			newLeafNode(otherlv_11, grammarAccess.getProgramAccess().getRightCurlyBracketKeyword_9());
 		}
 	)
 ;
@@ -631,58 +593,63 @@ ruleTransition returns [EObject current=null]
 		(
 			(
 				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getTransitionRule());
-					}
+					newCompositeNode(grammarAccess.getTransitionAccess().getHandlersTransitionHandlerParserRuleCall_1_0());
 				}
-				{
-					newCompositeNode(grammarAccess.getTransitionAccess().getSensorSensorCrossReference_1_0());
-				}
-				ruleEString
-				{
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			otherlv_2='='
-			{
-				newLeafNode(otherlv_2, grammarAccess.getTransitionAccess().getEqualsSignKeyword_2_0());
-			}
-			    |
-			otherlv_3='is'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getTransitionAccess().getIsKeyword_2_1());
-			}
-		)
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getTransitionAccess().getValueSIGNALEnumRuleCall_3_0());
-				}
-				lv_value_4_0=ruleSIGNAL
+				lv_handlers_1_0=ruleTransitionHandler
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getTransitionRule());
 					}
-					set(
+					add(
 						$current,
-						"value",
-						lv_value_4_0,
-						"polytech.dsl.spaceteam.spaml.Spaml.SIGNAL");
+						"handlers",
+						lv_handlers_1_0,
+						"polytech.dsl.spaceteam.spaml.Spaml.TransitionHandler");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
+			(
+				otherlv_2='&&'
+				{
+					newLeafNode(otherlv_2, grammarAccess.getTransitionAccess().getAmpersandAmpersandKeyword_2_0_0());
+				}
+				    |
+				otherlv_3='and'
+				{
+					newLeafNode(otherlv_3, grammarAccess.getTransitionAccess().getAndKeyword_2_0_1());
+				}
+			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getTransitionAccess().getHandlersTransitionHandlerParserRuleCall_2_1_0());
+					}
+					lv_handlers_4_0=ruleTransitionHandler
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getTransitionRule());
+						}
+						add(
+							$current,
+							"handlers",
+							lv_handlers_4_0,
+							"polytech.dsl.spaceteam.spaml.Spaml.TransitionHandler");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)*
+		(
 			otherlv_5='->'
 			{
-				newLeafNode(otherlv_5, grammarAccess.getTransitionAccess().getHyphenMinusGreaterThanSignKeyword_4_0());
+				newLeafNode(otherlv_5, grammarAccess.getTransitionAccess().getHyphenMinusGreaterThanSignKeyword_3_0());
 			}
 			    |
 			otherlv_6='then'
 			{
-				newLeafNode(otherlv_6, grammarAccess.getTransitionAccess().getThenKeyword_4_1());
+				newLeafNode(otherlv_6, grammarAccess.getTransitionAccess().getThenKeyword_3_1());
 			}
 		)
 		(
@@ -693,10 +660,72 @@ ruleTransition returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getTransitionAccess().getNextStateCrossReference_5_0());
+					newCompositeNode(grammarAccess.getTransitionAccess().getNextStateCrossReference_4_0());
 				}
 				ruleEString
 				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleTransitionHandler
+entryRuleTransitionHandler returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTransitionHandlerRule()); }
+	iv_ruleTransitionHandler=ruleTransitionHandler
+	{ $current=$iv_ruleTransitionHandler.current; }
+	EOF;
+
+// Rule TransitionHandler
+ruleTransitionHandler returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getTransitionHandlerRule());
+					}
+				}
+				otherlv_0=RULE_ID
+				{
+					newLeafNode(otherlv_0, grammarAccess.getTransitionHandlerAccess().getSensorSensorCrossReference_0_0());
+				}
+			)
+		)
+		(
+			otherlv_1='='
+			{
+				newLeafNode(otherlv_1, grammarAccess.getTransitionHandlerAccess().getEqualsSignKeyword_1_0());
+			}
+			    |
+			otherlv_2='is'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getTransitionHandlerAccess().getIsKeyword_1_1());
+			}
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getTransitionHandlerAccess().getValueSIGNALEnumRuleCall_2_0());
+				}
+				lv_value_3_0=ruleSIGNAL
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getTransitionHandlerRule());
+					}
+					set(
+						$current,
+						"value",
+						lv_value_3_0,
+						"polytech.dsl.spaceteam.spaml.Spaml.SIGNAL");
 					afterParserOrEnumRuleCall();
 				}
 			)

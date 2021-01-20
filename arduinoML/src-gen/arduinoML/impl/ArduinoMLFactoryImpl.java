@@ -69,6 +69,8 @@ public class ArduinoMLFactoryImpl extends EFactoryImpl implements ArduinoMLFacto
 			return createAction();
 		case ArduinoMLPackage.TRANSITION:
 			return createTransition();
+		case ArduinoMLPackage.TRANSITION_HANDLER:
+			return createTransitionHandler();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -162,6 +164,16 @@ public class ArduinoMLFactoryImpl extends EFactoryImpl implements ArduinoMLFacto
 	public Transition createTransition() {
 		TransitionImpl transition = new TransitionImpl();
 		return transition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TransitionHandler createTransitionHandler() {
+		TransitionHandlerImpl transitionHandler = new TransitionHandlerImpl();
+		return transitionHandler;
 	}
 
 	/**

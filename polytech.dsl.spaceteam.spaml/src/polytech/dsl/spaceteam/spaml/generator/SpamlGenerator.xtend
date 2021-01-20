@@ -21,6 +21,7 @@ import arduinoML.State
 import io.github.mosser.arduinoml.kernel.generator.ToWiring
 import arduinoML.Action
 import arduinoML.SIGNAL
+import arduinoML.TransitionHandler
 
 /**
  * Generates code from your model files on save.
@@ -32,10 +33,11 @@ class SpamlGenerator extends AbstractGenerator {
 	@Inject extension IQualifiedNameProvider
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		val program = resource.contents.head as Program;
-		fsa.generateFile(
+		for (program : resource.allContents.toIterable.filter(Program)) {
+			fsa.generateFile(
             program.fullyQualifiedName + ".ino",
             program.compile)
+		}
 	}
 	
 	private def String compile(Program program) {
@@ -89,17 +91,29 @@ class SpamlGenerator extends AbstractGenerator {
 		return initialState;
 	}
 	
+	private def io.github.mosser.arduinoml.kernel.behavioral.TransitionHandler convertTransitionHandlerToMosser(TransitionHandler transitionHandler) {
+		val handler = new io.github.mosser.arduinoml.kernel.behavioral.TransitionHandler();
+		if (transitionHandler.value === SIGNAL.HIGH) {
+			handler.value = io.github.mosser.arduinoml.kernel.structural.SIGNAL.HIGH;
+		} else {
+			handler.value = io.github.mosser.arduinoml.kernel.structural.SIGNAL.LOW;
+		}
+		handler.sensor = convertSpamlSensorToMosser(transitionHandler.sensor);
+		return handler;
+	}
+	
 	private def io.github.mosser.arduinoml.kernel.behavioral.Transition getTransitionFromState(State state) {
 		val transition = new io.github.mosser.arduinoml.kernel.behavioral.Transition();
-		transition.sensor = convertSpamlSensorToMosser(state.transition.sensor);
+		
+		val handlers = new ArrayList<io.github.mosser.arduinoml.kernel.behavioral.TransitionHandler>();
+		for (TransitionHandler t : state.transition.handlers) {
+			handlers.add(convertTransitionHandlerToMosser(t));
+		}
+		transition.handlers = handlers;
+		
 		val nextState = new io.github.mosser.arduinoml.kernel.behavioral.State();
 		nextState.name = state.transition.next.name;
 		transition.next = nextState;
-		if (state.transition.value === SIGNAL.HIGH) {
-			transition.value = io.github.mosser.arduinoml.kernel.structural.SIGNAL.HIGH;
-		} else {
-			transition.value = io.github.mosser.arduinoml.kernel.structural.SIGNAL.LOW;
-		}
 		return transition;
 	}
 	
@@ -109,7 +123,7 @@ class SpamlGenerator extends AbstractGenerator {
 		for (Action a : state.actions) {
 			val action = new io.github.mosser.arduinoml.kernel.behavioral.Action();
 			action.actuator = convertSpamlActuatorToMosser(a.actuator);
-			if (state.transition.value === SIGNAL.HIGH) {
+			if (a.value === SIGNAL.HIGH) {
 				action.value = io.github.mosser.arduinoml.kernel.structural.SIGNAL.HIGH;
 			} else {
 				action.value = io.github.mosser.arduinoml.kernel.structural.SIGNAL.LOW;

@@ -43,28 +43,21 @@ public class SpamlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cPluggedElementsKeyword_5_1 = (Keyword)cAlternatives_5.eContents().get(1);
 		private final Assignment cPluggedElementsAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cPluggedElementsPluggedElementParserRuleCall_6_0 = (RuleCall)cPluggedElementsAssignment_6.eContents().get(0);
-		private final Assignment cPluggedElementsAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cPluggedElementsPluggedElementParserRuleCall_7_0 = (RuleCall)cPluggedElementsAssignment_7.eContents().get(0);
-		private final Alternatives cAlternatives_8 = (Alternatives)cGroup.eContents().get(8);
-		private final Keyword cStatesKeyword_8_0 = (Keyword)cAlternatives_8.eContents().get(0);
-		private final Keyword cStatesKeyword_8_1 = (Keyword)cAlternatives_8.eContents().get(1);
-		private final Assignment cStatesAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cStatesStateParserRuleCall_9_0 = (RuleCall)cStatesAssignment_9.eContents().get(0);
-		private final Assignment cStatesAssignment_10 = (Assignment)cGroup.eContents().get(10);
-		private final RuleCall cStatesStateParserRuleCall_10_0 = (RuleCall)cStatesAssignment_10.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Alternatives cAlternatives_7 = (Alternatives)cGroup.eContents().get(7);
+		private final Keyword cStatesKeyword_7_0 = (Keyword)cAlternatives_7.eContents().get(0);
+		private final Keyword cStatesKeyword_7_1 = (Keyword)cAlternatives_7.eContents().get(1);
+		private final Assignment cStatesAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cStatesStateParserRuleCall_8_0 = (RuleCall)cStatesAssignment_8.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//Program:
 		//	'Program' name=EString 'initialState' initialState=[State|EString]
-		//	'{' ('pluggedElements' | 'pluggedElements:') pluggedElements+=PluggedElement
-		//	pluggedElements+=PluggedElement* ('states' | 'states:') states+=State
-		//	states+=State*
+		//	'{' ('pluggedElements' | 'pluggedElements:') pluggedElements+=PluggedElement+ ('states' | 'states:') states+=State+
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Program' name=EString 'initialState' initialState=[State|EString] '{' ('pluggedElements' | 'pluggedElements:')
-		//pluggedElements+=PluggedElement pluggedElements+=PluggedElement* ('states' | 'states:') states+=State states+=State*
-		//'}'
+		//pluggedElements+=PluggedElement+ ('states' | 'states:') states+=State+ '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Program'
@@ -100,41 +93,29 @@ public class SpamlGrammarAccess extends AbstractGrammarElementFinder {
 		//'pluggedElements:'
 		public Keyword getPluggedElementsKeyword_5_1() { return cPluggedElementsKeyword_5_1; }
 		
-		//pluggedElements+=PluggedElement
+		//pluggedElements+=PluggedElement+
 		public Assignment getPluggedElementsAssignment_6() { return cPluggedElementsAssignment_6; }
 		
 		//PluggedElement
 		public RuleCall getPluggedElementsPluggedElementParserRuleCall_6_0() { return cPluggedElementsPluggedElementParserRuleCall_6_0; }
 		
-		//pluggedElements+=PluggedElement*
-		public Assignment getPluggedElementsAssignment_7() { return cPluggedElementsAssignment_7; }
-		
-		//PluggedElement
-		public RuleCall getPluggedElementsPluggedElementParserRuleCall_7_0() { return cPluggedElementsPluggedElementParserRuleCall_7_0; }
-		
 		//'states' | 'states:'
-		public Alternatives getAlternatives_8() { return cAlternatives_8; }
+		public Alternatives getAlternatives_7() { return cAlternatives_7; }
 		
 		//'states'
-		public Keyword getStatesKeyword_8_0() { return cStatesKeyword_8_0; }
+		public Keyword getStatesKeyword_7_0() { return cStatesKeyword_7_0; }
 		
 		//'states:'
-		public Keyword getStatesKeyword_8_1() { return cStatesKeyword_8_1; }
+		public Keyword getStatesKeyword_7_1() { return cStatesKeyword_7_1; }
 		
-		//states+=State
-		public Assignment getStatesAssignment_9() { return cStatesAssignment_9; }
-		
-		//State
-		public RuleCall getStatesStateParserRuleCall_9_0() { return cStatesStateParserRuleCall_9_0; }
-		
-		//states+=State*
-		public Assignment getStatesAssignment_10() { return cStatesAssignment_10; }
+		//states+=State+
+		public Assignment getStatesAssignment_8() { return cStatesAssignment_8; }
 		
 		//State
-		public RuleCall getStatesStateParserRuleCall_10_0() { return cStatesStateParserRuleCall_10_0; }
+		public RuleCall getStatesStateParserRuleCall_8_0() { return cStatesStateParserRuleCall_8_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
+		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
 	}
 	public class PluggedElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "polytech.dsl.spaceteam.spaml.Spaml.PluggedElement");
@@ -359,72 +340,116 @@ public class SpamlGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "polytech.dsl.spaceteam.spaml.Spaml.Transition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cWhenKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cSensorAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cSensorSensorCrossReference_1_0 = (CrossReference)cSensorAssignment_1.eContents().get(0);
-		private final RuleCall cSensorSensorEStringParserRuleCall_1_0_1 = (RuleCall)cSensorSensorCrossReference_1_0.eContents().get(1);
-		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
-		private final Keyword cEqualsSignKeyword_2_0 = (Keyword)cAlternatives_2.eContents().get(0);
-		private final Keyword cIsKeyword_2_1 = (Keyword)cAlternatives_2.eContents().get(1);
-		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cValueSIGNALEnumRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
-		private final Alternatives cAlternatives_4 = (Alternatives)cGroup.eContents().get(4);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_4_0 = (Keyword)cAlternatives_4.eContents().get(0);
-		private final Keyword cThenKeyword_4_1 = (Keyword)cAlternatives_4.eContents().get(1);
-		private final Assignment cNextAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final CrossReference cNextStateCrossReference_5_0 = (CrossReference)cNextAssignment_5.eContents().get(0);
-		private final RuleCall cNextStateEStringParserRuleCall_5_0_1 = (RuleCall)cNextStateCrossReference_5_0.eContents().get(1);
+		private final Assignment cHandlersAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cHandlersTransitionHandlerParserRuleCall_1_0 = (RuleCall)cHandlersAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Alternatives cAlternatives_2_0 = (Alternatives)cGroup_2.eContents().get(0);
+		private final Keyword cAmpersandAmpersandKeyword_2_0_0 = (Keyword)cAlternatives_2_0.eContents().get(0);
+		private final Keyword cAndKeyword_2_0_1 = (Keyword)cAlternatives_2_0.eContents().get(1);
+		private final Assignment cHandlersAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cHandlersTransitionHandlerParserRuleCall_2_1_0 = (RuleCall)cHandlersAssignment_2_1.eContents().get(0);
+		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
+		private final Keyword cHyphenMinusGreaterThanSignKeyword_3_0 = (Keyword)cAlternatives_3.eContents().get(0);
+		private final Keyword cThenKeyword_3_1 = (Keyword)cAlternatives_3.eContents().get(1);
+		private final Assignment cNextAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final CrossReference cNextStateCrossReference_4_0 = (CrossReference)cNextAssignment_4.eContents().get(0);
+		private final RuleCall cNextStateEStringParserRuleCall_4_0_1 = (RuleCall)cNextStateCrossReference_4_0.eContents().get(1);
 		
 		//Transition:
-		//	'when'? sensor=[Sensor|EString] ('=' | 'is') value=SIGNAL ('->' | 'then') next=[State|EString];
+		//	'when'? handlers+=TransitionHandler (('&&' | 'and') handlers+=TransitionHandler)* ('->' | 'then')
+		//	next=[State|EString];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'when'? sensor=[Sensor|EString] ('=' | 'is') value=SIGNAL ('->' | 'then') next=[State|EString]
+		//'when'? handlers+=TransitionHandler (('&&' | 'and') handlers+=TransitionHandler)* ('->' | 'then') next=[State|EString]
 		public Group getGroup() { return cGroup; }
 		
 		//'when'?
 		public Keyword getWhenKeyword_0() { return cWhenKeyword_0; }
 		
-		//sensor=[Sensor|EString]
-		public Assignment getSensorAssignment_1() { return cSensorAssignment_1; }
+		//handlers+=TransitionHandler
+		public Assignment getHandlersAssignment_1() { return cHandlersAssignment_1; }
 		
-		//[Sensor|EString]
-		public CrossReference getSensorSensorCrossReference_1_0() { return cSensorSensorCrossReference_1_0; }
+		//TransitionHandler
+		public RuleCall getHandlersTransitionHandlerParserRuleCall_1_0() { return cHandlersTransitionHandlerParserRuleCall_1_0; }
 		
-		//EString
-		public RuleCall getSensorSensorEStringParserRuleCall_1_0_1() { return cSensorSensorEStringParserRuleCall_1_0_1; }
+		//(('&&' | 'and') handlers+=TransitionHandler)*
+		public Group getGroup_2() { return cGroup_2; }
 		
-		//'=' | 'is'
-		public Alternatives getAlternatives_2() { return cAlternatives_2; }
+		//'&&' | 'and'
+		public Alternatives getAlternatives_2_0() { return cAlternatives_2_0; }
 		
-		//'='
-		public Keyword getEqualsSignKeyword_2_0() { return cEqualsSignKeyword_2_0; }
+		//'&&'
+		public Keyword getAmpersandAmpersandKeyword_2_0_0() { return cAmpersandAmpersandKeyword_2_0_0; }
 		
-		//'is'
-		public Keyword getIsKeyword_2_1() { return cIsKeyword_2_1; }
+		//'and'
+		public Keyword getAndKeyword_2_0_1() { return cAndKeyword_2_0_1; }
 		
-		//value=SIGNAL
-		public Assignment getValueAssignment_3() { return cValueAssignment_3; }
+		//handlers+=TransitionHandler
+		public Assignment getHandlersAssignment_2_1() { return cHandlersAssignment_2_1; }
 		
-		//SIGNAL
-		public RuleCall getValueSIGNALEnumRuleCall_3_0() { return cValueSIGNALEnumRuleCall_3_0; }
+		//TransitionHandler
+		public RuleCall getHandlersTransitionHandlerParserRuleCall_2_1_0() { return cHandlersTransitionHandlerParserRuleCall_2_1_0; }
 		
 		//'->' | 'then'
-		public Alternatives getAlternatives_4() { return cAlternatives_4; }
+		public Alternatives getAlternatives_3() { return cAlternatives_3; }
 		
 		//'->'
-		public Keyword getHyphenMinusGreaterThanSignKeyword_4_0() { return cHyphenMinusGreaterThanSignKeyword_4_0; }
+		public Keyword getHyphenMinusGreaterThanSignKeyword_3_0() { return cHyphenMinusGreaterThanSignKeyword_3_0; }
 		
 		//'then'
-		public Keyword getThenKeyword_4_1() { return cThenKeyword_4_1; }
+		public Keyword getThenKeyword_3_1() { return cThenKeyword_3_1; }
 		
 		//next=[State|EString]
-		public Assignment getNextAssignment_5() { return cNextAssignment_5; }
+		public Assignment getNextAssignment_4() { return cNextAssignment_4; }
 		
 		//[State|EString]
-		public CrossReference getNextStateCrossReference_5_0() { return cNextStateCrossReference_5_0; }
+		public CrossReference getNextStateCrossReference_4_0() { return cNextStateCrossReference_4_0; }
 		
 		//EString
-		public RuleCall getNextStateEStringParserRuleCall_5_0_1() { return cNextStateEStringParserRuleCall_5_0_1; }
+		public RuleCall getNextStateEStringParserRuleCall_4_0_1() { return cNextStateEStringParserRuleCall_4_0_1; }
+	}
+	public class TransitionHandlerElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "polytech.dsl.spaceteam.spaml.Spaml.TransitionHandler");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cSensorAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cSensorSensorCrossReference_0_0 = (CrossReference)cSensorAssignment_0.eContents().get(0);
+		private final RuleCall cSensorSensorIDTerminalRuleCall_0_0_1 = (RuleCall)cSensorSensorCrossReference_0_0.eContents().get(1);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Keyword cEqualsSignKeyword_1_0 = (Keyword)cAlternatives_1.eContents().get(0);
+		private final Keyword cIsKeyword_1_1 = (Keyword)cAlternatives_1.eContents().get(1);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cValueSIGNALEnumRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		
+		//TransitionHandler:
+		//	sensor=[Sensor] ('=' | 'is') value=SIGNAL;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//sensor=[Sensor] ('=' | 'is') value=SIGNAL
+		public Group getGroup() { return cGroup; }
+		
+		//sensor=[Sensor]
+		public Assignment getSensorAssignment_0() { return cSensorAssignment_0; }
+		
+		//[Sensor]
+		public CrossReference getSensorSensorCrossReference_0_0() { return cSensorSensorCrossReference_0_0; }
+		
+		//ID
+		public RuleCall getSensorSensorIDTerminalRuleCall_0_0_1() { return cSensorSensorIDTerminalRuleCall_0_0_1; }
+		
+		//'=' | 'is'
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+		
+		//'='
+		public Keyword getEqualsSignKeyword_1_0() { return cEqualsSignKeyword_1_0; }
+		
+		//'is'
+		public Keyword getIsKeyword_1_1() { return cIsKeyword_1_1; }
+		
+		//value=SIGNAL
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+		
+		//SIGNAL
+		public RuleCall getValueSIGNALEnumRuleCall_2_0() { return cValueSIGNALEnumRuleCall_2_0; }
 	}
 	
 	public class SIGNALElements extends AbstractEnumRuleElementFinder {
@@ -464,6 +489,7 @@ public class SpamlGrammarAccess extends AbstractGrammarElementFinder {
 	private final ActuatorElements pActuator;
 	private final ActionElements pAction;
 	private final TransitionElements pTransition;
+	private final TransitionHandlerElements pTransitionHandler;
 	private final SIGNALElements eSIGNAL;
 	
 	private final Grammar grammar;
@@ -484,6 +510,7 @@ public class SpamlGrammarAccess extends AbstractGrammarElementFinder {
 		this.pActuator = new ActuatorElements();
 		this.pAction = new ActionElements();
 		this.pTransition = new TransitionElements();
+		this.pTransitionHandler = new TransitionHandlerElements();
 		this.eSIGNAL = new SIGNALElements();
 	}
 	
@@ -516,9 +543,7 @@ public class SpamlGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Program:
 	//	'Program' name=EString 'initialState' initialState=[State|EString]
-	//	'{' ('pluggedElements' | 'pluggedElements:') pluggedElements+=PluggedElement
-	//	pluggedElements+=PluggedElement* ('states' | 'states:') states+=State
-	//	states+=State*
+	//	'{' ('pluggedElements' | 'pluggedElements:') pluggedElements+=PluggedElement+ ('states' | 'states:') states+=State+
 	//	'}';
 	public ProgramElements getProgramAccess() {
 		return pProgram;
@@ -605,13 +630,24 @@ public class SpamlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Transition:
-	//	'when'? sensor=[Sensor|EString] ('=' | 'is') value=SIGNAL ('->' | 'then') next=[State|EString];
+	//	'when'? handlers+=TransitionHandler (('&&' | 'and') handlers+=TransitionHandler)* ('->' | 'then')
+	//	next=[State|EString];
 	public TransitionElements getTransitionAccess() {
 		return pTransition;
 	}
 	
 	public ParserRule getTransitionRule() {
 		return getTransitionAccess().getRule();
+	}
+	
+	//TransitionHandler:
+	//	sensor=[Sensor] ('=' | 'is') value=SIGNAL;
+	public TransitionHandlerElements getTransitionHandlerAccess() {
+		return pTransitionHandler;
+	}
+	
+	public ParserRule getTransitionHandlerRule() {
+		return getTransitionHandlerAccess().getRule();
 	}
 	
 	//enum SIGNAL:

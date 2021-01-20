@@ -3,18 +3,22 @@
 package arduinoML.impl;
 
 import arduinoML.ArduinoMLPackage;
-import arduinoML.SIGNAL;
-import arduinoML.Sensor;
 import arduinoML.State;
 import arduinoML.Transition;
 
+import arduinoML.TransitionHandler;
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,8 +29,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link arduinoML.impl.TransitionImpl#getNext <em>Next</em>}</li>
- *   <li>{@link arduinoML.impl.TransitionImpl#getValue <em>Value</em>}</li>
- *   <li>{@link arduinoML.impl.TransitionImpl#getSensor <em>Sensor</em>}</li>
+ *   <li>{@link arduinoML.impl.TransitionImpl#getHandlers <em>Handlers</em>}</li>
  * </ul>
  *
  * @generated
@@ -43,34 +46,14 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	protected State next;
 
 	/**
-	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * The cached value of the '{@link #getHandlers() <em>Handlers</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getValue()
+	 * @see #getHandlers()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final SIGNAL VALUE_EDEFAULT = SIGNAL.LOW;
-
-	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected SIGNAL value = VALUE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getSensor() <em>Sensor</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSensor()
-	 * @generated
-	 * @ordered
-	 */
-	protected Sensor sensor;
+	protected EList<TransitionHandler> handlers;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -135,38 +118,12 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SIGNAL getValue() {
-		return value;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setValue(SIGNAL newValue) {
-		SIGNAL oldValue = value;
-		value = newValue == null ? VALUE_EDEFAULT : newValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoMLPackage.TRANSITION__VALUE, oldValue, value));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Sensor getSensor() {
-		if (sensor != null && sensor.eIsProxy()) {
-			InternalEObject oldSensor = (InternalEObject) sensor;
-			sensor = (Sensor) eResolveProxy(oldSensor);
-			if (sensor != oldSensor) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ArduinoMLPackage.TRANSITION__SENSOR,
-							oldSensor, sensor));
-			}
+	public EList<TransitionHandler> getHandlers() {
+		if (handlers == null) {
+			handlers = new EObjectContainmentEList<TransitionHandler>(TransitionHandler.class, this,
+					ArduinoMLPackage.TRANSITION__HANDLERS);
 		}
-		return sensor;
+		return handlers;
 	}
 
 	/**
@@ -174,21 +131,13 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Sensor basicGetSensor() {
-		return sensor;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSensor(Sensor newSensor) {
-		Sensor oldSensor = sensor;
-		sensor = newSensor;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoMLPackage.TRANSITION__SENSOR, oldSensor,
-					sensor));
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case ArduinoMLPackage.TRANSITION__HANDLERS:
+			return ((InternalEList<?>) getHandlers()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -203,12 +152,8 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 			if (resolve)
 				return getNext();
 			return basicGetNext();
-		case ArduinoMLPackage.TRANSITION__VALUE:
-			return getValue();
-		case ArduinoMLPackage.TRANSITION__SENSOR:
-			if (resolve)
-				return getSensor();
-			return basicGetSensor();
+		case ArduinoMLPackage.TRANSITION__HANDLERS:
+			return getHandlers();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -218,17 +163,16 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case ArduinoMLPackage.TRANSITION__NEXT:
 			setNext((State) newValue);
 			return;
-		case ArduinoMLPackage.TRANSITION__VALUE:
-			setValue((SIGNAL) newValue);
-			return;
-		case ArduinoMLPackage.TRANSITION__SENSOR:
-			setSensor((Sensor) newValue);
+		case ArduinoMLPackage.TRANSITION__HANDLERS:
+			getHandlers().clear();
+			getHandlers().addAll((Collection<? extends TransitionHandler>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -245,11 +189,8 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 		case ArduinoMLPackage.TRANSITION__NEXT:
 			setNext((State) null);
 			return;
-		case ArduinoMLPackage.TRANSITION__VALUE:
-			setValue(VALUE_EDEFAULT);
-			return;
-		case ArduinoMLPackage.TRANSITION__SENSOR:
-			setSensor((Sensor) null);
+		case ArduinoMLPackage.TRANSITION__HANDLERS:
+			getHandlers().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -265,29 +206,10 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 		switch (featureID) {
 		case ArduinoMLPackage.TRANSITION__NEXT:
 			return next != null;
-		case ArduinoMLPackage.TRANSITION__VALUE:
-			return value != VALUE_EDEFAULT;
-		case ArduinoMLPackage.TRANSITION__SENSOR:
-			return sensor != null;
+		case ArduinoMLPackage.TRANSITION__HANDLERS:
+			return handlers != null && !handlers.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (value: ");
-		result.append(value);
-		result.append(')');
-		return result.toString();
 	}
 
 } //TransitionImpl

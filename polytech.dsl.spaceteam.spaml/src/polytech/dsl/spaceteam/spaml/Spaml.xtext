@@ -8,12 +8,10 @@ Program returns Program:
 	'Program' name=EString 'initialState' initialState=[State|EString]
 	'{'
 		('pluggedElements' | 'pluggedElements:')
-		pluggedElements+=PluggedElement
-		(pluggedElements+=PluggedElement)* 
+		(pluggedElements+=PluggedElement)+ 
 		
 		('states' | 'states:')
-		states+=State
-		( states+=State)* 		
+		( states+=State)+ 		
 	'}';
 
 PluggedElement returns PluggedElement:
@@ -44,7 +42,10 @@ Action returns Action:
 	actuator=[Actuator|EString] ('=' | 'setTo') value=SIGNAL;
 
 Transition returns Transition:
-	('when'?) sensor=[Sensor|EString] ('=' | 'is') value=SIGNAL ('->' | 'then') next=[State|EString];
+	('when'?)  handlers+=TransitionHandler (('&&' | 'and') handlers+=TransitionHandler)* ('->' | 'then') next=[State|EString];
+	
+TransitionHandler returns TransitionHandler:
+	sensor=[Sensor] ('=' | 'is') value=SIGNAL;
 
 enum SIGNAL returns SIGNAL:
 				LOW = 'LOW' | HIGH = 'HIGH';

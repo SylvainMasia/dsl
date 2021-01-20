@@ -2,6 +2,7 @@
  */
 package arduinoML;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,8 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link arduinoML.Transition#getNext <em>Next</em>}</li>
- *   <li>{@link arduinoML.Transition#getValue <em>Value</em>}</li>
- *   <li>{@link arduinoML.Transition#getSensor <em>Sensor</em>}</li>
+ *   <li>{@link arduinoML.Transition#getHandlers <em>Handlers</em>}</li>
  * </ul>
  *
  * @see arduinoML.ArduinoMLPackage#getTransition()
@@ -50,58 +50,19 @@ public interface Transition extends EObject {
 	void setNext(State value);
 
 	/**
-	 * Returns the value of the '<em><b>Value</b></em>' attribute.
-	 * The literals are from the enumeration {@link arduinoML.SIGNAL}.
+	 * Returns the value of the '<em><b>Handlers</b></em>' containment reference list.
+	 * The list contents are of type {@link arduinoML.TransitionHandler}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Value</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Handlers</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Value</em>' attribute.
-	 * @see arduinoML.SIGNAL
-	 * @see #setValue(SIGNAL)
-	 * @see arduinoML.ArduinoMLPackage#getTransition_Value()
-	 * @model required="true"
+	 * @return the value of the '<em>Handlers</em>' containment reference list.
+	 * @see arduinoML.ArduinoMLPackage#getTransition_Handlers()
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	SIGNAL getValue();
-
-	/**
-	 * Sets the value of the '{@link arduinoML.Transition#getValue <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value</em>' attribute.
-	 * @see arduinoML.SIGNAL
-	 * @see #getValue()
-	 * @generated
-	 */
-	void setValue(SIGNAL value);
-
-	/**
-	 * Returns the value of the '<em><b>Sensor</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Sensor</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Sensor</em>' reference.
-	 * @see #setSensor(Sensor)
-	 * @see arduinoML.ArduinoMLPackage#getTransition_Sensor()
-	 * @model required="true"
-	 * @generated
-	 */
-	Sensor getSensor();
-
-	/**
-	 * Sets the value of the '{@link arduinoML.Transition#getSensor <em>Sensor</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Sensor</em>' reference.
-	 * @see #getSensor()
-	 * @generated
-	 */
-	void setSensor(Sensor value);
+	EList<TransitionHandler> getHandlers();
 
 } // Transition

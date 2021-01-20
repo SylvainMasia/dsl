@@ -211,6 +211,29 @@ public class ArduinoMLItemProviderAdapterFactory extends ArduinoMLAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link arduinoML.TransitionHandler} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TransitionHandlerItemProvider transitionHandlerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link arduinoML.TransitionHandler}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTransitionHandlerAdapter() {
+		if (transitionHandlerItemProvider == null) {
+			transitionHandlerItemProvider = new TransitionHandlerItemProvider(this);
+		}
+
+		return transitionHandlerItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -321,6 +344,8 @@ public class ArduinoMLItemProviderAdapterFactory extends ArduinoMLAdapterFactory
 			actionItemProvider.dispose();
 		if (transitionItemProvider != null)
 			transitionItemProvider.dispose();
+		if (transitionHandlerItemProvider != null)
+			transitionHandlerItemProvider.dispose();
 	}
 
 }
