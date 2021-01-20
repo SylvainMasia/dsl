@@ -27,6 +27,7 @@ public class SpamlSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Program_StatesKeyword_7_0_or_StatesKeyword_7_1;
 	protected AbstractElementAlias match_TransitionHandler_EqualsSignKeyword_1_0_or_IsKeyword_1_1;
 	protected AbstractElementAlias match_Transition_AmpersandAmpersandKeyword_2_0_0_or_AndKeyword_2_0_1;
+	protected AbstractElementAlias match_Transition_AssociateKeyword_5_0_1_or_LessThanSignHyphenMinusKeyword_5_0_0;
 	protected AbstractElementAlias match_Transition_HyphenMinusGreaterThanSignKeyword_3_0_or_ThenKeyword_3_1;
 	protected AbstractElementAlias match_Transition_WhenKeyword_0_q;
 	
@@ -39,6 +40,7 @@ public class SpamlSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Program_StatesKeyword_7_0_or_StatesKeyword_7_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getProgramAccess().getStatesKeyword_7_0()), new TokenAlias(false, false, grammarAccess.getProgramAccess().getStatesKeyword_7_1()));
 		match_TransitionHandler_EqualsSignKeyword_1_0_or_IsKeyword_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTransitionHandlerAccess().getEqualsSignKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getTransitionHandlerAccess().getIsKeyword_1_1()));
 		match_Transition_AmpersandAmpersandKeyword_2_0_0_or_AndKeyword_2_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTransitionAccess().getAmpersandAmpersandKeyword_2_0_0()), new TokenAlias(false, false, grammarAccess.getTransitionAccess().getAndKeyword_2_0_1()));
+		match_Transition_AssociateKeyword_5_0_1_or_LessThanSignHyphenMinusKeyword_5_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTransitionAccess().getAssociateKeyword_5_0_1()), new TokenAlias(false, false, grammarAccess.getTransitionAccess().getLessThanSignHyphenMinusKeyword_5_0_0()));
 		match_Transition_HyphenMinusGreaterThanSignKeyword_3_0_or_ThenKeyword_3_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTransitionAccess().getHyphenMinusGreaterThanSignKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getTransitionAccess().getThenKeyword_3_1()));
 		match_Transition_WhenKeyword_0_q = new TokenAlias(false, true, grammarAccess.getTransitionAccess().getWhenKeyword_0());
 	}
@@ -67,6 +69,8 @@ public class SpamlSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_TransitionHandler_EqualsSignKeyword_1_0_or_IsKeyword_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Transition_AmpersandAmpersandKeyword_2_0_0_or_AndKeyword_2_0_1.equals(syntax))
 				emit_Transition_AmpersandAmpersandKeyword_2_0_0_or_AndKeyword_2_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Transition_AssociateKeyword_5_0_1_or_LessThanSignHyphenMinusKeyword_5_0_0.equals(syntax))
+				emit_Transition_AssociateKeyword_5_0_1_or_LessThanSignHyphenMinusKeyword_5_0_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Transition_HyphenMinusGreaterThanSignKeyword_3_0_or_ThenKeyword_3_1.equals(syntax))
 				emit_Transition_HyphenMinusGreaterThanSignKeyword_3_0_or_ThenKeyword_3_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Transition_WhenKeyword_0_q.equals(syntax))
@@ -138,6 +142,17 @@ public class SpamlSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     handlers+=TransitionHandler (ambiguity) handlers+=TransitionHandler
 	 */
 	protected void emit_Transition_AmpersandAmpersandKeyword_2_0_0_or_AndKeyword_2_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     '<-' | 'associate'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     next=[State|EString] (ambiguity) operation=OPERATION
+	 */
+	protected void emit_Transition_AssociateKeyword_5_0_1_or_LessThanSignHyphenMinusKeyword_5_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

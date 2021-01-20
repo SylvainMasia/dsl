@@ -86,6 +86,8 @@ public class ArduinoMLFactoryImpl extends EFactoryImpl implements ArduinoMLFacto
 		switch (eDataType.getClassifierID()) {
 		case ArduinoMLPackage.SIGNAL:
 			return createSIGNALFromString(eDataType, initialValue);
+		case ArduinoMLPackage.OPERATION:
+			return createOPERATIONFromString(eDataType, initialValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -101,6 +103,8 @@ public class ArduinoMLFactoryImpl extends EFactoryImpl implements ArduinoMLFacto
 		switch (eDataType.getClassifierID()) {
 		case ArduinoMLPackage.SIGNAL:
 			return convertSIGNALToString(eDataType, instanceValue);
+		case ArduinoMLPackage.OPERATION:
+			return convertOPERATIONToString(eDataType, instanceValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -195,6 +199,28 @@ public class ArduinoMLFactoryImpl extends EFactoryImpl implements ArduinoMLFacto
 	 * @generated
 	 */
 	public String convertSIGNALToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OPERATION createOPERATIONFromString(EDataType eDataType, String initialValue) {
+		OPERATION result = OPERATION.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertOPERATIONToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

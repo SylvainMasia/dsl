@@ -72,16 +72,23 @@ public class ToWiring extends Visitor<StringBuffer> {
 	
 	@Override
 	public void visit(TransitionHandler handler) {
-		w(String.format("    digitalRead(%d) == %s && ", handler.getSensor().getPin(), handler.getValue()));
+		w(String.format("    digitalRead(%d) == %s ", handler.getSensor().getPin(), handler.getValue()));
 	}
 
 	@Override
 	public void visit(Transition transition) {
-		w(String.format("  if("));
-		for (TransitionHandler t : transition.getHandlers()) {
-			this.visit(t);
+		w(String.format("  if(("));
+		for (int i = 0; i < transition.getHandlers().size(); i++) {
+			this.visit(transition.getHandlers().get(i));
+			if (i < transition.getHandlers().size() -1) {
+				if (transition.getOperation().equals(OPERATION.AND)) {
+					w(String.format(" && "));
+				} else {
+					w(String.format(" || "));
+				}
+			}
 		}
-		w(String.format("    guard ) {"));
+		w(String.format("    ) && guard ) {"));
 		
 		
 		w("    time = millis();");

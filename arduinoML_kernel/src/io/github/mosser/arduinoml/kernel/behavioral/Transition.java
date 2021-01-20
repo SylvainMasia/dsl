@@ -4,12 +4,22 @@ import java.util.List;
 
 import io.github.mosser.arduinoml.kernel.generator.Visitable;
 import io.github.mosser.arduinoml.kernel.generator.Visitor;
+import io.github.mosser.arduinoml.kernel.structural.OPERATION;
 
 public class Transition implements Visitable {
 
 	private List<TransitionHandler> handlers;
 	private State next;
+	private OPERATION operation;
 	
+	
+	public OPERATION getOperation() {
+		return operation;
+	}
+
+	public void setOperation(OPERATION operation) {
+		this.operation = operation;
+	}
 
 	public State getNext() {
 		return next;

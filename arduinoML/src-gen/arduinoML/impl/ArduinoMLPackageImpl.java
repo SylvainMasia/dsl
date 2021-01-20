@@ -99,6 +99,13 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	private EEnum signalEEnum = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum operationEEnum = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -338,6 +345,15 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getTransition_Operation() {
+		return (EAttribute) transitionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getTransitionHandler() {
 		return transitionHandlerEClass;
 	}
@@ -367,6 +383,15 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 */
 	public EEnum getSIGNAL() {
 		return signalEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getOPERATION() {
+		return operationEEnum;
 	}
 
 	/**
@@ -424,6 +449,7 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 		transitionEClass = createEClass(TRANSITION);
 		createEReference(transitionEClass, TRANSITION__NEXT);
 		createEReference(transitionEClass, TRANSITION__HANDLERS);
+		createEAttribute(transitionEClass, TRANSITION__OPERATION);
 
 		transitionHandlerEClass = createEClass(TRANSITION_HANDLER);
 		createEReference(transitionHandlerEClass, TRANSITION_HANDLER__SENSOR);
@@ -431,6 +457,7 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 
 		// Create enums
 		signalEEnum = createEEnum(SIGNAL);
+		operationEEnum = createEEnum(OPERATION);
 	}
 
 	/**
@@ -518,6 +545,8 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 		initEReference(getTransition_Handlers(), this.getTransitionHandler(), null, "handlers", null, 1, -1,
 				Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTransition_Operation(), this.getOPERATION(), "operation", null, 1, 1, Transition.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(transitionHandlerEClass, TransitionHandler.class, "TransitionHandler", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -531,6 +560,10 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 		initEEnum(signalEEnum, arduinoML.SIGNAL.class, "SIGNAL");
 		addEEnumLiteral(signalEEnum, arduinoML.SIGNAL.LOW);
 		addEEnumLiteral(signalEEnum, arduinoML.SIGNAL.HIGH);
+
+		initEEnum(operationEEnum, arduinoML.OPERATION.class, "OPERATION");
+		addEEnumLiteral(operationEEnum, arduinoML.OPERATION.OR);
+		addEEnumLiteral(operationEEnum, arduinoML.OPERATION.AND);
 
 		// Create resource
 		createResource(eNS_URI);

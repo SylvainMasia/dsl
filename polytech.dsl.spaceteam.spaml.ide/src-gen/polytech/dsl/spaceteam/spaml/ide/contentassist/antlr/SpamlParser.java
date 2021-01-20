@@ -38,8 +38,10 @@ public class SpamlParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getActionAccess().getAlternatives_1(), "rule__Action__Alternatives_1");
 			builder.put(grammarAccess.getTransitionAccess().getAlternatives_2_0(), "rule__Transition__Alternatives_2_0");
 			builder.put(grammarAccess.getTransitionAccess().getAlternatives_3(), "rule__Transition__Alternatives_3");
+			builder.put(grammarAccess.getTransitionAccess().getAlternatives_5_0(), "rule__Transition__Alternatives_5_0");
 			builder.put(grammarAccess.getTransitionHandlerAccess().getAlternatives_1(), "rule__TransitionHandler__Alternatives_1");
 			builder.put(grammarAccess.getSIGNALAccess().getAlternatives(), "rule__SIGNAL__Alternatives");
+			builder.put(grammarAccess.getOPERATIONAccess().getAlternatives(), "rule__OPERATION__Alternatives");
 			builder.put(grammarAccess.getProgramAccess().getGroup(), "rule__Program__Group__0");
 			builder.put(grammarAccess.getPluggedElementAccess().getGroup(), "rule__PluggedElement__Group__0");
 			builder.put(grammarAccess.getStateAccess().getGroup(), "rule__State__Group__0");
@@ -49,6 +51,7 @@ public class SpamlParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getActionAccess().getGroup(), "rule__Action__Group__0");
 			builder.put(grammarAccess.getTransitionAccess().getGroup(), "rule__Transition__Group__0");
 			builder.put(grammarAccess.getTransitionAccess().getGroup_2(), "rule__Transition__Group_2__0");
+			builder.put(grammarAccess.getTransitionAccess().getGroup_5(), "rule__Transition__Group_5__0");
 			builder.put(grammarAccess.getTransitionHandlerAccess().getGroup(), "rule__TransitionHandler__Group__0");
 			builder.put(grammarAccess.getProgramAccess().getNameAssignment_1(), "rule__Program__NameAssignment_1");
 			builder.put(grammarAccess.getProgramAccess().getInitialStateAssignment_3(), "rule__Program__InitialStateAssignment_3");
@@ -65,6 +68,7 @@ public class SpamlParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getTransitionAccess().getHandlersAssignment_1(), "rule__Transition__HandlersAssignment_1");
 			builder.put(grammarAccess.getTransitionAccess().getHandlersAssignment_2_1(), "rule__Transition__HandlersAssignment_2_1");
 			builder.put(grammarAccess.getTransitionAccess().getNextAssignment_4(), "rule__Transition__NextAssignment_4");
+			builder.put(grammarAccess.getTransitionAccess().getOperationAssignment_5_1(), "rule__Transition__OperationAssignment_5_1");
 			builder.put(grammarAccess.getTransitionHandlerAccess().getSensorAssignment_0(), "rule__TransitionHandler__SensorAssignment_0");
 			builder.put(grammarAccess.getTransitionHandlerAccess().getValueAssignment_2(), "rule__TransitionHandler__ValueAssignment_2");
 		}

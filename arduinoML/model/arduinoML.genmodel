@@ -13,6 +13,10 @@
       <genEnumLiterals ecoreEnumLiteral="arduinoML.ecore#//SIGNAL/LOW"/>
       <genEnumLiterals ecoreEnumLiteral="arduinoML.ecore#//SIGNAL/HIGH"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="arduinoML.ecore#//OPERATION">
+      <genEnumLiterals ecoreEnumLiteral="arduinoML.ecore#//OPERATION/OR"/>
+      <genEnumLiterals ecoreEnumLiteral="arduinoML.ecore#//OPERATION/AND"/>
+    </genEnums>
     <genClasses ecoreClass="arduinoML.ecore#//NamedElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arduinoML.ecore#//NamedElement/name"/>
     </genClasses>
@@ -37,6 +41,7 @@
     <genClasses ecoreClass="arduinoML.ecore#//Transition">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arduinoML.ecore#//Transition/next"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference arduinoML.ecore#//Transition/handlers"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arduinoML.ecore#//Transition/operation"/>
     </genClasses>
     <genClasses ecoreClass="arduinoML.ecore#//TransitionHandler">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arduinoML.ecore#//TransitionHandler/sensor"/>

@@ -354,13 +354,20 @@ public class SpamlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNextAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final CrossReference cNextStateCrossReference_4_0 = (CrossReference)cNextAssignment_4.eContents().get(0);
 		private final RuleCall cNextStateEStringParserRuleCall_4_0_1 = (RuleCall)cNextStateCrossReference_4_0.eContents().get(1);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Alternatives cAlternatives_5_0 = (Alternatives)cGroup_5.eContents().get(0);
+		private final Keyword cLessThanSignHyphenMinusKeyword_5_0_0 = (Keyword)cAlternatives_5_0.eContents().get(0);
+		private final Keyword cAssociateKeyword_5_0_1 = (Keyword)cAlternatives_5_0.eContents().get(1);
+		private final Assignment cOperationAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cOperationOPERATIONEnumRuleCall_5_1_0 = (RuleCall)cOperationAssignment_5_1.eContents().get(0);
 		
 		//Transition:
 		//	'when'? handlers+=TransitionHandler (('&&' | 'and') handlers+=TransitionHandler)* ('->' | 'then')
-		//	next=[State|EString];
+		//	next=[State|EString] (('<-' | 'associate') operation=OPERATION)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'when'? handlers+=TransitionHandler (('&&' | 'and') handlers+=TransitionHandler)* ('->' | 'then') next=[State|EString]
+		//(('<-' | 'associate') operation=OPERATION)?
 		public Group getGroup() { return cGroup; }
 		
 		//'when'?
@@ -407,6 +414,24 @@ public class SpamlGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//EString
 		public RuleCall getNextStateEStringParserRuleCall_4_0_1() { return cNextStateEStringParserRuleCall_4_0_1; }
+		
+		//(('<-' | 'associate') operation=OPERATION)?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//'<-' | 'associate'
+		public Alternatives getAlternatives_5_0() { return cAlternatives_5_0; }
+		
+		//'<-'
+		public Keyword getLessThanSignHyphenMinusKeyword_5_0_0() { return cLessThanSignHyphenMinusKeyword_5_0_0; }
+		
+		//'associate'
+		public Keyword getAssociateKeyword_5_0_1() { return cAssociateKeyword_5_0_1; }
+		
+		//operation=OPERATION
+		public Assignment getOperationAssignment_5_1() { return cOperationAssignment_5_1; }
+		
+		//OPERATION
+		public RuleCall getOperationOPERATIONEnumRuleCall_5_1_0() { return cOperationOPERATIONEnumRuleCall_5_1_0; }
 	}
 	public class TransitionHandlerElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "polytech.dsl.spaceteam.spaml.Spaml.TransitionHandler");
@@ -479,6 +504,33 @@ public class SpamlGrammarAccess extends AbstractGrammarElementFinder {
 		//'HIGH'
 		public Keyword getHIGHHIGHKeyword_1_0() { return cHIGHHIGHKeyword_1_0; }
 	}
+	public class OPERATIONElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "polytech.dsl.spaceteam.spaml.Spaml.OPERATION");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cANDEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cANDANDKeyword_0_0 = (Keyword)cANDEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cOREnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cORORKeyword_1_0 = (Keyword)cOREnumLiteralDeclaration_1.eContents().get(0);
+		
+		//enum OPERATION:
+		//	AND | OR;
+		public EnumRule getRule() { return rule; }
+		
+		//AND | OR
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//AND
+		public EnumLiteralDeclaration getANDEnumLiteralDeclaration_0() { return cANDEnumLiteralDeclaration_0; }
+		
+		//'AND'
+		public Keyword getANDANDKeyword_0_0() { return cANDANDKeyword_0_0; }
+		
+		//OR
+		public EnumLiteralDeclaration getOREnumLiteralDeclaration_1() { return cOREnumLiteralDeclaration_1; }
+		
+		//'OR'
+		public Keyword getORORKeyword_1_0() { return cORORKeyword_1_0; }
+	}
 	
 	private final ProgramElements pProgram;
 	private final PluggedElementElements pPluggedElement;
@@ -491,6 +543,7 @@ public class SpamlGrammarAccess extends AbstractGrammarElementFinder {
 	private final TransitionElements pTransition;
 	private final TransitionHandlerElements pTransitionHandler;
 	private final SIGNALElements eSIGNAL;
+	private final OPERATIONElements eOPERATION;
 	
 	private final Grammar grammar;
 	
@@ -512,6 +565,7 @@ public class SpamlGrammarAccess extends AbstractGrammarElementFinder {
 		this.pTransition = new TransitionElements();
 		this.pTransitionHandler = new TransitionHandlerElements();
 		this.eSIGNAL = new SIGNALElements();
+		this.eOPERATION = new OPERATIONElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -631,7 +685,7 @@ public class SpamlGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Transition:
 	//	'when'? handlers+=TransitionHandler (('&&' | 'and') handlers+=TransitionHandler)* ('->' | 'then')
-	//	next=[State|EString];
+	//	next=[State|EString] (('<-' | 'associate') operation=OPERATION)?;
 	public TransitionElements getTransitionAccess() {
 		return pTransition;
 	}
@@ -658,6 +712,16 @@ public class SpamlGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public EnumRule getSIGNALRule() {
 		return getSIGNALAccess().getRule();
+	}
+	
+	//enum OPERATION:
+	//	AND | OR;
+	public OPERATIONElements getOPERATIONAccess() {
+		return eOPERATION;
+	}
+	
+	public EnumRule getOPERATIONRule() {
+		return getOPERATIONAccess().getRule();
 	}
 	
 	//terminal ID:

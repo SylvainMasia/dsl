@@ -42,10 +42,13 @@ Action returns Action:
 	actuator=[Actuator|EString] ('=' | 'setTo') value=SIGNAL;
 
 Transition returns Transition:
-	('when'?)  handlers+=TransitionHandler (('&&' | 'and') handlers+=TransitionHandler)* ('->' | 'then') next=[State|EString];
+	('when'?)  handlers+=TransitionHandler (('&&' | 'and') handlers+=TransitionHandler)* ('->' | 'then') next=[State|EString] (('<-' | 'associate') operation=OPERATION)?;
 	
 TransitionHandler returns TransitionHandler:
 	sensor=[Sensor] ('=' | 'is') value=SIGNAL;
 
 enum SIGNAL returns SIGNAL:
 				LOW = 'LOW' | HIGH = 'HIGH';
+				
+enum OPERATION returns OPERATION:
+				AND = 'AND' | OR = 'OR';

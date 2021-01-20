@@ -3,6 +3,7 @@
 package arduinoML.impl;
 
 import arduinoML.ArduinoMLPackage;
+import arduinoML.OPERATION;
 import arduinoML.State;
 import arduinoML.Transition;
 
@@ -30,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link arduinoML.impl.TransitionImpl#getNext <em>Next</em>}</li>
  *   <li>{@link arduinoML.impl.TransitionImpl#getHandlers <em>Handlers</em>}</li>
+ *   <li>{@link arduinoML.impl.TransitionImpl#getOperation <em>Operation</em>}</li>
  * </ul>
  *
  * @generated
@@ -54,6 +56,26 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	 * @ordered
 	 */
 	protected EList<TransitionHandler> handlers;
+
+	/**
+	 * The default value of the '{@link #getOperation() <em>Operation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOperation()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final OPERATION OPERATION_EDEFAULT = OPERATION.OR;
+
+	/**
+	 * The cached value of the '{@link #getOperation() <em>Operation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOperation()
+	 * @generated
+	 * @ordered
+	 */
+	protected OPERATION operation = OPERATION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -131,6 +153,28 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public OPERATION getOperation() {
+		return operation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOperation(OPERATION newOperation) {
+		OPERATION oldOperation = operation;
+		operation = newOperation == null ? OPERATION_EDEFAULT : newOperation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoMLPackage.TRANSITION__OPERATION, oldOperation,
+					operation));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -154,6 +198,8 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 			return basicGetNext();
 		case ArduinoMLPackage.TRANSITION__HANDLERS:
 			return getHandlers();
+		case ArduinoMLPackage.TRANSITION__OPERATION:
+			return getOperation();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -174,6 +220,9 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 			getHandlers().clear();
 			getHandlers().addAll((Collection<? extends TransitionHandler>) newValue);
 			return;
+		case ArduinoMLPackage.TRANSITION__OPERATION:
+			setOperation((OPERATION) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -192,6 +241,9 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 		case ArduinoMLPackage.TRANSITION__HANDLERS:
 			getHandlers().clear();
 			return;
+		case ArduinoMLPackage.TRANSITION__OPERATION:
+			setOperation(OPERATION_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -208,8 +260,27 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 			return next != null;
 		case ArduinoMLPackage.TRANSITION__HANDLERS:
 			return handlers != null && !handlers.isEmpty();
+		case ArduinoMLPackage.TRANSITION__OPERATION:
+			return operation != OPERATION_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy())
+			return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (operation: ");
+		result.append(operation);
+		result.append(')');
+		return result.toString();
 	}
 
 } //TransitionImpl

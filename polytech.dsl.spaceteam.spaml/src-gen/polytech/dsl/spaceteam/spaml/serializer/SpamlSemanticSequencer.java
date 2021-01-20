@@ -214,7 +214,7 @@ public class SpamlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Transition returns Transition
 	 *
 	 * Constraint:
-	 *     (handlers+=TransitionHandler handlers+=TransitionHandler* next=[State|EString])
+	 *     (handlers+=TransitionHandler handlers+=TransitionHandler* next=[State|EString] operation=OPERATION?)
 	 */
 	protected void sequence_Transition(ISerializationContext context, Transition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

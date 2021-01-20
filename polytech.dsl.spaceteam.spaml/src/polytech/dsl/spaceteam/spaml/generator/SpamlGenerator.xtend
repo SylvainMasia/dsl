@@ -22,6 +22,7 @@ import io.github.mosser.arduinoml.kernel.generator.ToWiring
 import arduinoML.Action
 import arduinoML.SIGNAL
 import arduinoML.TransitionHandler
+import arduinoML.OPERATION
 
 /**
  * Generates code from your model files on save.
@@ -110,6 +111,12 @@ class SpamlGenerator extends AbstractGenerator {
 			handlers.add(convertTransitionHandlerToMosser(t));
 		}
 		transition.handlers = handlers;
+		
+		if (state.transition.operation === OPERATION.AND) {
+				transition.operation = io.github.mosser.arduinoml.kernel.structural.OPERATION.AND;
+			} else {
+				transition.operation = io.github.mosser.arduinoml.kernel.structural.OPERATION.OR;
+			}
 		
 		val nextState = new io.github.mosser.arduinoml.kernel.behavioral.State();
 		nextState.name = state.transition.next.name;

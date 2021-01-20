@@ -4,6 +4,7 @@
 package polytech.dsl.spaceteam.spaml.generator;
 
 import arduinoML.Actuator;
+import arduinoML.OPERATION;
 import arduinoML.PluggedElement;
 import arduinoML.Program;
 import arduinoML.SIGNAL;
@@ -125,6 +126,13 @@ public class SpamlGenerator extends AbstractGenerator {
       handlers.add(this.convertTransitionHandlerToMosser(t));
     }
     transition.setHandlers(handlers);
+    OPERATION _operation = state.getTransition().getOperation();
+    boolean _tripleEquals = (_operation == OPERATION.AND);
+    if (_tripleEquals) {
+      transition.setOperation(io.github.mosser.arduinoml.kernel.structural.OPERATION.AND);
+    } else {
+      transition.setOperation(io.github.mosser.arduinoml.kernel.structural.OPERATION.OR);
+    }
     final State nextState = new State();
     nextState.setName(state.getTransition().getNext().getName());
     transition.setNext(nextState);

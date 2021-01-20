@@ -426,13 +426,22 @@ public interface ArduinoMLPackage extends EPackage {
 	int TRANSITION__HANDLERS = 1;
 
 	/**
+	 * The feature id for the '<em><b>Operation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__OPERATION = 2;
+
+	/**
 	 * The number of structural features of the '<em>Transition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_FEATURE_COUNT = 2;
+	int TRANSITION_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Transition</em>' class.
@@ -498,6 +507,16 @@ public interface ArduinoMLPackage extends EPackage {
 	 * @generated
 	 */
 	int SIGNAL = 9;
+
+	/**
+	 * The meta object id for the '{@link arduinoML.OPERATION <em>OPERATION</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see arduinoML.OPERATION
+	 * @see arduinoML.impl.ArduinoMLPackageImpl#getOPERATION()
+	 * @generated
+	 */
+	int OPERATION = 10;
 
 	/**
 	 * Returns the meta object for class '{@link arduinoML.NamedElement <em>Named Element</em>}'.
@@ -701,6 +720,17 @@ public interface ArduinoMLPackage extends EPackage {
 	EReference getTransition_Handlers();
 
 	/**
+	 * Returns the meta object for the attribute '{@link arduinoML.Transition#getOperation <em>Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Operation</em>'.
+	 * @see arduinoML.Transition#getOperation()
+	 * @see #getTransition()
+	 * @generated
+	 */
+	EAttribute getTransition_Operation();
+
+	/**
 	 * Returns the meta object for class '{@link arduinoML.TransitionHandler <em>Transition Handler</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -741,6 +771,16 @@ public interface ArduinoMLPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getSIGNAL();
+
+	/**
+	 * Returns the meta object for enum '{@link arduinoML.OPERATION <em>OPERATION</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>OPERATION</em>'.
+	 * @see arduinoML.OPERATION
+	 * @generated
+	 */
+	EEnum getOPERATION();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -934,6 +974,14 @@ public interface ArduinoMLPackage extends EPackage {
 		EReference TRANSITION__HANDLERS = eINSTANCE.getTransition_Handlers();
 
 		/**
+		 * The meta object literal for the '<em><b>Operation</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRANSITION__OPERATION = eINSTANCE.getTransition_Operation();
+
+		/**
 		 * The meta object literal for the '{@link arduinoML.impl.TransitionHandlerImpl <em>Transition Handler</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -968,6 +1016,16 @@ public interface ArduinoMLPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum SIGNAL = eINSTANCE.getSIGNAL();
+
+		/**
+		 * The meta object literal for the '{@link arduinoML.OPERATION <em>OPERATION</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see arduinoML.OPERATION
+		 * @see arduinoML.impl.ArduinoMLPackageImpl#getOPERATION()
+		 * @generated
+		 */
+		EEnum OPERATION = eINSTANCE.getOPERATION();
 
 	}
 

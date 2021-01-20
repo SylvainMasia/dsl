@@ -668,6 +668,38 @@ ruleTransition returns [EObject current=null]
 				}
 			)
 		)
+		(
+			(
+				otherlv_8='<-'
+				{
+					newLeafNode(otherlv_8, grammarAccess.getTransitionAccess().getLessThanSignHyphenMinusKeyword_5_0_0());
+				}
+				    |
+				otherlv_9='associate'
+				{
+					newLeafNode(otherlv_9, grammarAccess.getTransitionAccess().getAssociateKeyword_5_0_1());
+				}
+			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getTransitionAccess().getOperationOPERATIONEnumRuleCall_5_1_0());
+					}
+					lv_operation_10_0=ruleOPERATION
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getTransitionRule());
+						}
+						set(
+							$current,
+							"operation",
+							lv_operation_10_0,
+							"polytech.dsl.spaceteam.spaml.Spaml.OPERATION");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
 	)
 ;
 
@@ -755,6 +787,33 @@ ruleSIGNAL returns [Enumerator current=null]
 			{
 				$current = grammarAccess.getSIGNALAccess().getHIGHEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
 				newLeafNode(enumLiteral_1, grammarAccess.getSIGNALAccess().getHIGHEnumLiteralDeclaration_1());
+			}
+		)
+	)
+;
+
+// Rule OPERATION
+ruleOPERATION returns [Enumerator current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			enumLiteral_0='AND'
+			{
+				$current = grammarAccess.getOPERATIONAccess().getANDEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getOPERATIONAccess().getANDEnumLiteralDeclaration_0());
+			}
+		)
+		    |
+		(
+			enumLiteral_1='OR'
+			{
+				$current = grammarAccess.getOPERATIONAccess().getOREnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getOPERATIONAccess().getOREnumLiteralDeclaration_1());
 			}
 		)
 	)

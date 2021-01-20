@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link arduinoML.Transition#getNext <em>Next</em>}</li>
  *   <li>{@link arduinoML.Transition#getHandlers <em>Handlers</em>}</li>
+ *   <li>{@link arduinoML.Transition#getOperation <em>Operation</em>}</li>
  * </ul>
  *
  * @see arduinoML.ArduinoMLPackage#getTransition()
@@ -64,5 +65,34 @@ public interface Transition extends EObject {
 	 * @generated
 	 */
 	EList<TransitionHandler> getHandlers();
+
+	/**
+	 * Returns the value of the '<em><b>Operation</b></em>' attribute.
+	 * The literals are from the enumeration {@link arduinoML.OPERATION}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Operation</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Operation</em>' attribute.
+	 * @see arduinoML.OPERATION
+	 * @see #setOperation(OPERATION)
+	 * @see arduinoML.ArduinoMLPackage#getTransition_Operation()
+	 * @model required="true"
+	 * @generated
+	 */
+	OPERATION getOperation();
+
+	/**
+	 * Sets the value of the '{@link arduinoML.Transition#getOperation <em>Operation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Operation</em>' attribute.
+	 * @see arduinoML.OPERATION
+	 * @see #getOperation()
+	 * @generated
+	 */
+	void setOperation(OPERATION value);
 
 } // Transition
