@@ -3,6 +3,10 @@
  */
 package polytech.dsl.spaceteam.spaml.validation
 
+import arduinoML.PluggedElement
+import org.eclipse.xtext.validation.Check
+import java.util.HashSet
+import arduinoML.Program
 
 /**
  * This class contains custom validation rules. 
@@ -11,15 +15,33 @@ package polytech.dsl.spaceteam.spaml.validation
  */
 class SpamlValidator extends AbstractSpamlValidator {
 	
-//	public static val INVALID_NAME = 'invalidName'
-//
-//	@Check
-//	def checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.name.charAt(0))) {
-//			warning('Name should start with a capital', 
-//					SpamlPackage.Literals.GREETING__NAME,
-//					INVALID_NAME)
-//		}
-//	}
+	public static val INVALID_PIN = 'invalidPin'
+
+	@Check
+	def checkPluggedElementPinValid(PluggedElement pluggedElement) {
+		if (pluggedElement.pin < 0 || pluggedElement.pin > 13) {
+			System.err.println("OH NO, THERE IS AN ERROR THERE ======> pin should be 0 => pin <= 13 <======");
+			//warning('Pin should be 0 => pin <= 13', 
+			//		PluggedElement.s,
+			//		INVALID_PIN)
+			return;
+		}
+	}
+	
+	@Check
+	def checkPluggedElementPinNotDouble(Program program) {
+		val pinsUsed = new HashSet<Integer>();
+		val texts = new HashSet<String>();
+		for (PluggedElement pluggedElement : program.pluggedElements) {
+			if (pinsUsed.contains(pluggedElement.pin)) {
+				texts.add("OH NO, THERE IS AN ERROR THERE ======> pin " + pluggedElement.pin + " is already used <======");
+			} else {
+				pinsUsed.add(pluggedElement.pin);
+			}
+		}
+		for (String text : texts) {
+			System.err.println(text);
+		}
+	}
 	
 }

@@ -3,6 +3,11 @@
  */
 package polytech.dsl.spaceteam.spaml.validation;
 
+import arduinoML.PluggedElement;
+import arduinoML.Program;
+import java.util.HashSet;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.xtext.validation.Check;
 import polytech.dsl.spaceteam.spaml.validation.AbstractSpamlValidator;
 
 /**
@@ -12,4 +17,34 @@ import polytech.dsl.spaceteam.spaml.validation.AbstractSpamlValidator;
  */
 @SuppressWarnings("all")
 public class SpamlValidator extends AbstractSpamlValidator {
+  public final static String INVALID_PIN = "invalidPin";
+  
+  @Check
+  public void checkPluggedElementPinValid(final PluggedElement pluggedElement) {
+    if (((pluggedElement.getPin() < 0) || (pluggedElement.getPin() > 13))) {
+      System.err.println("OH NO, THERE IS AN ERROR THERE ======> pin should be 0 => pin <= 13 <======");
+      return;
+    }
+  }
+  
+  @Check
+  public void checkPluggedElementPinNotDouble(final Program program) {
+    final HashSet<Integer> pinsUsed = new HashSet<Integer>();
+    final HashSet<String> texts = new HashSet<String>();
+    EList<PluggedElement> _pluggedElements = program.getPluggedElements();
+    for (final PluggedElement pluggedElement : _pluggedElements) {
+      boolean _contains = pinsUsed.contains(Integer.valueOf(pluggedElement.getPin()));
+      if (_contains) {
+        int _pin = pluggedElement.getPin();
+        String _plus = ("OH NO, THERE IS AN ERROR THERE ======> pin " + Integer.valueOf(_pin));
+        String _plus_1 = (_plus + " is already used <======");
+        texts.add(_plus_1);
+      } else {
+        pinsUsed.add(Integer.valueOf(pluggedElement.getPin()));
+      }
+    }
+    for (final String text : texts) {
+      System.err.println(text);
+    }
+  }
 }
