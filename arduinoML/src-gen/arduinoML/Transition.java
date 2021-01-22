@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link arduinoML.Transition#getNext <em>Next</em>}</li>
  *   <li>{@link arduinoML.Transition#getHandlers <em>Handlers</em>}</li>
  *   <li>{@link arduinoML.Transition#getOperation <em>Operation</em>}</li>
+ *   <li>{@link arduinoML.Transition#getDelay <em>Delay</em>}</li>
  * </ul>
  *
  * @see arduinoML.ArduinoMLPackage#getTransition()
@@ -61,7 +62,7 @@ public interface Transition extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Handlers</em>' containment reference list.
 	 * @see arduinoML.ArduinoMLPackage#getTransition_Handlers()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<TransitionHandler> getHandlers();
@@ -94,5 +95,32 @@ public interface Transition extends EObject {
 	 * @generated
 	 */
 	void setOperation(OPERATION value);
+
+	/**
+	 * Returns the value of the '<em><b>Delay</b></em>' attribute.
+	 * The default value is <code>"0"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Delay</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Delay</em>' attribute.
+	 * @see #setDelay(int)
+	 * @see arduinoML.ArduinoMLPackage#getTransition_Delay()
+	 * @model default="0" required="true"
+	 * @generated
+	 */
+	int getDelay();
+
+	/**
+	 * Sets the value of the '{@link arduinoML.Transition#getDelay <em>Delay</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Delay</em>' attribute.
+	 * @see #getDelay()
+	 * @generated
+	 */
+	void setDelay(int value);
 
 } // Transition

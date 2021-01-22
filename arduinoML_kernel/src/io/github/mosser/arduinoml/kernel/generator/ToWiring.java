@@ -38,20 +38,20 @@ public class ToWiring extends Visitor<StringBuffer> {
 
 		if (app.getInitial() != null) {
 			w("void loop() {");
-			w(String.format("  state_%s();", app.getInitial().getName()));
+			w(String.format("	state_%s();", app.getInitial().getName()));
 			w("}");
 		}
 	}
 
 	@Override
 	public void visit(Actuator actuator) {
-	 	w(String.format("  pinMode(%d, OUTPUT); // %s [Actuator]", actuator.getPin(), actuator.getName()));
+	 	w(String.format("	pinMode(%d, OUTPUT); // %s [Actuator]", actuator.getPin(), actuator.getName()));
 	}
 
 
 	@Override
 	public void visit(Sensor sensor) {
-		w(String.format("  pinMode(%d, INPUT);  // %s [Sensor]", sensor.getPin(), sensor.getName()));
+		w(String.format("	pinMode(%d, INPUT);  // %s [Sensor]", sensor.getPin(), sensor.getName()));
 	}
 
 	@Override
@@ -62,7 +62,7 @@ public class ToWiring extends Visitor<StringBuffer> {
 		}
 
 		if (state.getTransition() != null) {
-			w("  boolean guard = millis() - time > debounce;");
+			w("	boolean guard = millis() - time > debounce;");
 			context.put(CURRENT_STATE, state);
 			state.getTransition().accept(this);
 			w("}\n");
@@ -72,30 +72,36 @@ public class ToWiring extends Visitor<StringBuffer> {
 	
 	@Override
 	public void visit(TransitionHandler handler) {
-		w(String.format("    digitalRead(%d) == %s ", handler.getSensor().getPin(), handler.getValue()));
+		w(String.format("	digitalRead(%d) == %s ", handler.getSensor().getPin(), handler.getValue()));
 	}
 
 	@Override
 	public void visit(Transition transition) {
-		w(String.format("  if(("));
-		for (int i = 0; i < transition.getHandlers().size(); i++) {
-			this.visit(transition.getHandlers().get(i));
-			if (i < transition.getHandlers().size() -1) {
-				if (transition.getOperation().equals(OPERATION.AND)) {
-					w(String.format(" && "));
-				} else {
-					w(String.format(" || "));
+		if (transition.getDelay() > 0) {
+			w(String.format("	delay(%d)", transition.getDelay()));
+			w("	time = millis();");
+			w(String.format("	state_%s();",transition.getNext().getName()));
+		} else {
+			w(String.format("	if(("));
+			for (int i = 0; i < transition.getHandlers().size(); i++) {
+				this.visit(transition.getHandlers().get(i));
+				if (i < transition.getHandlers().size() -1) {
+					if (transition.getOperation().equals(OPERATION.AND)) {
+						w(String.format(" && "));
+					} else {
+						w(String.format(" || "));
+					}
 				}
 			}
+			w(String.format("    ) && guard ) {"));
+			
+			
+			w("	time = millis();");
+			w(String.format("	state_%s();",transition.getNext().getName()));
+			w("  } else {");
+			w(String.format("	state_%s();",((State) context.get(CURRENT_STATE)).getName()));
+			w("  }");
 		}
-		w(String.format("    ) && guard ) {"));
-		
-		
-		w("    time = millis();");
-		w(String.format("    state_%s();",transition.getNext().getName()));
-		w("  } else {");
-		w(String.format("    state_%s();",((State) context.get(CURRENT_STATE)).getName()));
-		w("  }");
 	}
 
 	@Override

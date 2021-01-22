@@ -112,6 +112,7 @@ class SpamlGenerator extends AbstractGenerator {
 		}
 		transition.handlers = handlers;
 		
+		transition.delay = state.transition.delay;
 		if (state.transition.operation === OPERATION.AND) {
 				transition.operation = io.github.mosser.arduinoml.kernel.structural.OPERATION.AND;
 			} else {

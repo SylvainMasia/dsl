@@ -40,6 +40,15 @@
           <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
         </computedStyleDescriptions>
+        <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_Few7sFzIEeuToNncnoaG6Q" sourceArrow="FillDiamond" routingStyle="manhattan">
+          <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_Few7sVzIEeuToNncnoaG6Q" showIcon="false" labelExpression="service:render">
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </centerLabelStyleDescription>
+          <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_Few7slzIEeuToNncnoaG6Q" labelSize="6" showIcon="false" labelExpression="service:eKeysLabel">
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+          </endLabelStyleDescription>
+        </computedStyleDescriptions>
       </data>
     </ownedAnnotationEntries>
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_9elzkFWJEeuvYrBbhhA-vQ" source="GMF_DIAGRAMS">
@@ -125,6 +134,10 @@
             <children xmi:type="notation:Node" xmi:id="_Fjd7AFtTEeuUftAsnC5ZhA" type="3010" element="_FjYbcFtTEeuUftAsnC5ZhA">
               <styles xmi:type="notation:FontStyle" xmi:id="_Fjd7AVtTEeuUftAsnC5ZhA" fontColor="2697711" fontName="Segoe UI" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_Fjd7AltTEeuUftAsnC5ZhA"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Htxb0FzGEeuToNncnoaG6Q" type="3010" element="_HtV-AFzGEeuToNncnoaG6Q">
+              <styles xmi:type="notation:FontStyle" xmi:id="_Htxb0VzGEeuToNncnoaG6Q" fontColor="2697711" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_Htxb0lzGEeuToNncnoaG6Q"/>
             </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_CJSLpVWLEeuvYrBbhhA-vQ"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_CJSLplWLEeuvYrBbhhA-vQ"/>
@@ -608,7 +621,7 @@
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_Hk4ZL1tTEeuUftAsnC5ZhA" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_KV8X81zGEeuToNncnoaG6Q" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
@@ -616,6 +629,14 @@
         <target xmi:type="ecore:EAttribute" href="arduinoML.ecore#//Transition/operation"/>
         <semanticElements xmi:type="ecore:EAttribute" href="arduinoML.ecore#//Transition/operation"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_Hk5ANFtTEeuUftAsnC5ZhA" labelAlignment="LEFT" description="_lSGvgFWLEeuvYrBbhhA-vQ">
+          <labelFormat>bold</labelFormat>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_HtV-AFzGEeuToNncnoaG6Q" name="delay : EInt = 0" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="arduinoML.ecore#//Transition/delay"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="arduinoML.ecore#//Transition/delay"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_KV-NIlzGEeuToNncnoaG6Q" labelAlignment="LEFT" description="_lSGvgFWLEeuvYrBbhhA-vQ">
           <labelFormat>bold</labelFormat>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
@@ -722,14 +743,12 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_03tsQltOEeudW7GAXqrkNg" name="[1..*] handlers" sourceNode="_CJOhQFWLEeuvYrBbhhA-vQ" targetNode="_wCuTMFtOEeudW7GAXqrkNg">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_03tsQltOEeudW7GAXqrkNg" name="[0..*] handlers" sourceNode="_CJOhQFWLEeuvYrBbhhA-vQ" targetNode="_wCuTMFtOEeudW7GAXqrkNg">
       <target xmi:type="ecore:EReference" href="arduinoML.ecore#//Transition/handlers"/>
       <semanticElements xmi:type="ecore:EReference" href="arduinoML.ecore#//Transition/handlers"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_TqI3lltPEeudW7GAXqrkNg" description="_Wfz1VlWKEeuvYrBbhhA-vQ" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_TqI3mFtPEeudW7GAXqrkNg" showIcon="false">
-          <labelFormat>bold</labelFormat>
-        </centerLabelStyle>
-        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_TqI3l1tPEeudW7GAXqrkNg" labelSize="6" showIcon="false" labelColor="39,76,114"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_Few7s1zIEeuToNncnoaG6Q" description="_Few7sFzIEeuToNncnoaG6Q" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_Few7tVzIEeuToNncnoaG6Q" showIcon="false"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_Few7tFzIEeuToNncnoaG6Q" labelSize="6" showIcon="false" labelColor="39,76,114"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>

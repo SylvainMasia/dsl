@@ -585,71 +585,127 @@ ruleTransition returns [EObject current=null]
 }:
 	(
 		(
-			otherlv_0='when'
-			{
-				newLeafNode(otherlv_0, grammarAccess.getTransitionAccess().getWhenKeyword_0());
-			}
-		)?
-		(
 			(
-				{
-					newCompositeNode(grammarAccess.getTransitionAccess().getHandlersTransitionHandlerParserRuleCall_1_0());
-				}
-				lv_handlers_1_0=ruleTransitionHandler
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getTransitionRule());
+				(
+					otherlv_0='when'
+					{
+						newLeafNode(otherlv_0, grammarAccess.getTransitionAccess().getWhenKeyword_0_0_0());
 					}
-					add(
-						$current,
-						"handlers",
-						lv_handlers_1_0,
-						"polytech.dsl.spaceteam.spaml.Spaml.TransitionHandler");
-					afterParserOrEnumRuleCall();
-				}
+				)?
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getTransitionAccess().getHandlersTransitionHandlerParserRuleCall_0_0_1_0());
+						}
+						lv_handlers_1_0=ruleTransitionHandler
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getTransitionRule());
+							}
+							add(
+								$current,
+								"handlers",
+								lv_handlers_1_0,
+								"polytech.dsl.spaceteam.spaml.Spaml.TransitionHandler");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+				(
+					(
+						otherlv_2='&&'
+						{
+							newLeafNode(otherlv_2, grammarAccess.getTransitionAccess().getAmpersandAmpersandKeyword_0_0_2_0_0());
+						}
+						    |
+						otherlv_3='and'
+						{
+							newLeafNode(otherlv_3, grammarAccess.getTransitionAccess().getAndKeyword_0_0_2_0_1());
+						}
+					)
+					(
+						(
+							{
+								newCompositeNode(grammarAccess.getTransitionAccess().getHandlersTransitionHandlerParserRuleCall_0_0_2_1_0());
+							}
+							lv_handlers_4_0=ruleTransitionHandler
+							{
+								if ($current==null) {
+									$current = createModelElementForParent(grammarAccess.getTransitionRule());
+								}
+								add(
+									$current,
+									"handlers",
+									lv_handlers_4_0,
+									"polytech.dsl.spaceteam.spaml.Spaml.TransitionHandler");
+								afterParserOrEnumRuleCall();
+							}
+						)
+					)
+				)*
+				(
+					(
+						otherlv_5='<-'
+						{
+							newLeafNode(otherlv_5, grammarAccess.getTransitionAccess().getLessThanSignHyphenMinusKeyword_0_0_3_0_0());
+						}
+						    |
+						otherlv_6='associate'
+						{
+							newLeafNode(otherlv_6, grammarAccess.getTransitionAccess().getAssociateKeyword_0_0_3_0_1());
+						}
+					)
+					(
+						(
+							{
+								newCompositeNode(grammarAccess.getTransitionAccess().getOperationOPERATIONEnumRuleCall_0_0_3_1_0());
+							}
+							lv_operation_7_0=ruleOPERATION
+							{
+								if ($current==null) {
+									$current = createModelElementForParent(grammarAccess.getTransitionRule());
+								}
+								set(
+									$current,
+									"operation",
+									lv_operation_7_0,
+									"polytech.dsl.spaceteam.spaml.Spaml.OPERATION");
+								afterParserOrEnumRuleCall();
+							}
+						)
+					)
+				)?
 			)
-		)
-		(
-			(
-				otherlv_2='&&'
-				{
-					newLeafNode(otherlv_2, grammarAccess.getTransitionAccess().getAmpersandAmpersandKeyword_2_0_0());
-				}
-				    |
-				otherlv_3='and'
-				{
-					newLeafNode(otherlv_3, grammarAccess.getTransitionAccess().getAndKeyword_2_0_1());
-				}
-			)
+			    |
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getTransitionAccess().getHandlersTransitionHandlerParserRuleCall_2_1_0());
+						newCompositeNode(grammarAccess.getTransitionAccess().getDelayEIntParserRuleCall_0_1_0());
 					}
-					lv_handlers_4_0=ruleTransitionHandler
+					lv_delay_8_0=ruleEInt
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getTransitionRule());
 						}
-						add(
+						set(
 							$current,
-							"handlers",
-							lv_handlers_4_0,
-							"polytech.dsl.spaceteam.spaml.Spaml.TransitionHandler");
+							"delay",
+							lv_delay_8_0,
+							"polytech.dsl.spaceteam.spaml.Spaml.EInt");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-		)*
+		)
 		(
-			otherlv_5='->'
+			otherlv_9='->'
 			{
-				newLeafNode(otherlv_5, grammarAccess.getTransitionAccess().getHyphenMinusGreaterThanSignKeyword_3_0());
+				newLeafNode(otherlv_9, grammarAccess.getTransitionAccess().getHyphenMinusGreaterThanSignKeyword_1_0());
 			}
 			    |
-			otherlv_6='then'
+			otherlv_10='then'
 			{
-				newLeafNode(otherlv_6, grammarAccess.getTransitionAccess().getThenKeyword_3_1());
+				newLeafNode(otherlv_10, grammarAccess.getTransitionAccess().getThenKeyword_1_1());
 			}
 		)
 		(
@@ -660,7 +716,7 @@ ruleTransition returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getTransitionAccess().getNextStateCrossReference_4_0());
+					newCompositeNode(grammarAccess.getTransitionAccess().getNextStateCrossReference_2_0());
 				}
 				ruleEString
 				{
@@ -668,38 +724,6 @@ ruleTransition returns [EObject current=null]
 				}
 			)
 		)
-		(
-			(
-				otherlv_8='<-'
-				{
-					newLeafNode(otherlv_8, grammarAccess.getTransitionAccess().getLessThanSignHyphenMinusKeyword_5_0_0());
-				}
-				    |
-				otherlv_9='associate'
-				{
-					newLeafNode(otherlv_9, grammarAccess.getTransitionAccess().getAssociateKeyword_5_0_1());
-				}
-			)
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getTransitionAccess().getOperationOPERATIONEnumRuleCall_5_1_0());
-					}
-					lv_operation_10_0=ruleOPERATION
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getTransitionRule());
-						}
-						set(
-							$current,
-							"operation",
-							lv_operation_10_0,
-							"polytech.dsl.spaceteam.spaml.Spaml.OPERATION");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
 	)
 ;
 

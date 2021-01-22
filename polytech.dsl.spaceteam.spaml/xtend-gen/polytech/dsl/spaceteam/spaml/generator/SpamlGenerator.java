@@ -126,6 +126,7 @@ public class SpamlGenerator extends AbstractGenerator {
       handlers.add(this.convertTransitionHandlerToMosser(t));
     }
     transition.setHandlers(handlers);
+    transition.setDelay(state.getTransition().getDelay());
     OPERATION _operation = state.getTransition().getOperation();
     boolean _tripleEquals = (_operation == OPERATION.AND);
     if (_tripleEquals) {

@@ -26,10 +26,10 @@ public class SpamlSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Program_PluggedElementsKeyword_5_0_or_PluggedElementsKeyword_5_1;
 	protected AbstractElementAlias match_Program_StatesKeyword_7_0_or_StatesKeyword_7_1;
 	protected AbstractElementAlias match_TransitionHandler_EqualsSignKeyword_1_0_or_IsKeyword_1_1;
-	protected AbstractElementAlias match_Transition_AmpersandAmpersandKeyword_2_0_0_or_AndKeyword_2_0_1;
-	protected AbstractElementAlias match_Transition_AssociateKeyword_5_0_1_or_LessThanSignHyphenMinusKeyword_5_0_0;
-	protected AbstractElementAlias match_Transition_HyphenMinusGreaterThanSignKeyword_3_0_or_ThenKeyword_3_1;
-	protected AbstractElementAlias match_Transition_WhenKeyword_0_q;
+	protected AbstractElementAlias match_Transition_AmpersandAmpersandKeyword_0_0_2_0_0_or_AndKeyword_0_0_2_0_1;
+	protected AbstractElementAlias match_Transition_AssociateKeyword_0_0_3_0_1_or_LessThanSignHyphenMinusKeyword_0_0_3_0_0;
+	protected AbstractElementAlias match_Transition_HyphenMinusGreaterThanSignKeyword_1_0_or_ThenKeyword_1_1;
+	protected AbstractElementAlias match_Transition_WhenKeyword_0_0_0_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
@@ -39,10 +39,10 @@ public class SpamlSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Program_PluggedElementsKeyword_5_0_or_PluggedElementsKeyword_5_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getProgramAccess().getPluggedElementsKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getProgramAccess().getPluggedElementsKeyword_5_1()));
 		match_Program_StatesKeyword_7_0_or_StatesKeyword_7_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getProgramAccess().getStatesKeyword_7_0()), new TokenAlias(false, false, grammarAccess.getProgramAccess().getStatesKeyword_7_1()));
 		match_TransitionHandler_EqualsSignKeyword_1_0_or_IsKeyword_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTransitionHandlerAccess().getEqualsSignKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getTransitionHandlerAccess().getIsKeyword_1_1()));
-		match_Transition_AmpersandAmpersandKeyword_2_0_0_or_AndKeyword_2_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTransitionAccess().getAmpersandAmpersandKeyword_2_0_0()), new TokenAlias(false, false, grammarAccess.getTransitionAccess().getAndKeyword_2_0_1()));
-		match_Transition_AssociateKeyword_5_0_1_or_LessThanSignHyphenMinusKeyword_5_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTransitionAccess().getAssociateKeyword_5_0_1()), new TokenAlias(false, false, grammarAccess.getTransitionAccess().getLessThanSignHyphenMinusKeyword_5_0_0()));
-		match_Transition_HyphenMinusGreaterThanSignKeyword_3_0_or_ThenKeyword_3_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTransitionAccess().getHyphenMinusGreaterThanSignKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getTransitionAccess().getThenKeyword_3_1()));
-		match_Transition_WhenKeyword_0_q = new TokenAlias(false, true, grammarAccess.getTransitionAccess().getWhenKeyword_0());
+		match_Transition_AmpersandAmpersandKeyword_0_0_2_0_0_or_AndKeyword_0_0_2_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTransitionAccess().getAmpersandAmpersandKeyword_0_0_2_0_0()), new TokenAlias(false, false, grammarAccess.getTransitionAccess().getAndKeyword_0_0_2_0_1()));
+		match_Transition_AssociateKeyword_0_0_3_0_1_or_LessThanSignHyphenMinusKeyword_0_0_3_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTransitionAccess().getAssociateKeyword_0_0_3_0_1()), new TokenAlias(false, false, grammarAccess.getTransitionAccess().getLessThanSignHyphenMinusKeyword_0_0_3_0_0()));
+		match_Transition_HyphenMinusGreaterThanSignKeyword_1_0_or_ThenKeyword_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTransitionAccess().getHyphenMinusGreaterThanSignKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getTransitionAccess().getThenKeyword_1_1()));
+		match_Transition_WhenKeyword_0_0_0_q = new TokenAlias(false, true, grammarAccess.getTransitionAccess().getWhenKeyword_0_0_0());
 	}
 	
 	@Override
@@ -67,14 +67,14 @@ public class SpamlSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Program_StatesKeyword_7_0_or_StatesKeyword_7_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_TransitionHandler_EqualsSignKeyword_1_0_or_IsKeyword_1_1.equals(syntax))
 				emit_TransitionHandler_EqualsSignKeyword_1_0_or_IsKeyword_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Transition_AmpersandAmpersandKeyword_2_0_0_or_AndKeyword_2_0_1.equals(syntax))
-				emit_Transition_AmpersandAmpersandKeyword_2_0_0_or_AndKeyword_2_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Transition_AssociateKeyword_5_0_1_or_LessThanSignHyphenMinusKeyword_5_0_0.equals(syntax))
-				emit_Transition_AssociateKeyword_5_0_1_or_LessThanSignHyphenMinusKeyword_5_0_0(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Transition_HyphenMinusGreaterThanSignKeyword_3_0_or_ThenKeyword_3_1.equals(syntax))
-				emit_Transition_HyphenMinusGreaterThanSignKeyword_3_0_or_ThenKeyword_3_1(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Transition_WhenKeyword_0_q.equals(syntax))
-				emit_Transition_WhenKeyword_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Transition_AmpersandAmpersandKeyword_0_0_2_0_0_or_AndKeyword_0_0_2_0_1.equals(syntax))
+				emit_Transition_AmpersandAmpersandKeyword_0_0_2_0_0_or_AndKeyword_0_0_2_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Transition_AssociateKeyword_0_0_3_0_1_or_LessThanSignHyphenMinusKeyword_0_0_3_0_0.equals(syntax))
+				emit_Transition_AssociateKeyword_0_0_3_0_1_or_LessThanSignHyphenMinusKeyword_0_0_3_0_0(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Transition_HyphenMinusGreaterThanSignKeyword_1_0_or_ThenKeyword_1_1.equals(syntax))
+				emit_Transition_HyphenMinusGreaterThanSignKeyword_1_0_or_ThenKeyword_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Transition_WhenKeyword_0_0_0_q.equals(syntax))
+				emit_Transition_WhenKeyword_0_0_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -141,7 +141,7 @@ public class SpamlSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     handlers+=TransitionHandler (ambiguity) handlers+=TransitionHandler
 	 */
-	protected void emit_Transition_AmpersandAmpersandKeyword_2_0_0_or_AndKeyword_2_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Transition_AmpersandAmpersandKeyword_0_0_2_0_0_or_AndKeyword_0_0_2_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -150,9 +150,9 @@ public class SpamlSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     '<-' | 'associate'
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     next=[State|EString] (ambiguity) operation=OPERATION
+	 *     handlers+=TransitionHandler (ambiguity) operation=OPERATION
 	 */
-	protected void emit_Transition_AssociateKeyword_5_0_1_or_LessThanSignHyphenMinusKeyword_5_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Transition_AssociateKeyword_0_0_3_0_1_or_LessThanSignHyphenMinusKeyword_0_0_3_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -161,9 +161,11 @@ public class SpamlSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     '->' | 'then'
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     delay=EInt (ambiguity) next=[State|EString]
 	 *     handlers+=TransitionHandler (ambiguity) next=[State|EString]
+	 *     operation=OPERATION (ambiguity) next=[State|EString]
 	 */
-	protected void emit_Transition_HyphenMinusGreaterThanSignKeyword_3_0_or_ThenKeyword_3_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Transition_HyphenMinusGreaterThanSignKeyword_1_0_or_ThenKeyword_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -174,7 +176,7 @@ public class SpamlSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) handlers+=TransitionHandler
 	 */
-	protected void emit_Transition_WhenKeyword_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Transition_WhenKeyword_0_0_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

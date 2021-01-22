@@ -435,13 +435,22 @@ public interface ArduinoMLPackage extends EPackage {
 	int TRANSITION__OPERATION = 2;
 
 	/**
+	 * The feature id for the '<em><b>Delay</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__DELAY = 3;
+
+	/**
 	 * The number of structural features of the '<em>Transition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_FEATURE_COUNT = 3;
+	int TRANSITION_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Transition</em>' class.
@@ -731,6 +740,17 @@ public interface ArduinoMLPackage extends EPackage {
 	EAttribute getTransition_Operation();
 
 	/**
+	 * Returns the meta object for the attribute '{@link arduinoML.Transition#getDelay <em>Delay</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Delay</em>'.
+	 * @see arduinoML.Transition#getDelay()
+	 * @see #getTransition()
+	 * @generated
+	 */
+	EAttribute getTransition_Delay();
+
+	/**
 	 * Returns the meta object for class '{@link arduinoML.TransitionHandler <em>Transition Handler</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -980,6 +1000,14 @@ public interface ArduinoMLPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TRANSITION__OPERATION = eINSTANCE.getTransition_Operation();
+
+		/**
+		 * The meta object literal for the '<em><b>Delay</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRANSITION__DELAY = eINSTANCE.getTransition_Delay();
 
 		/**
 		 * The meta object literal for the '{@link arduinoML.impl.TransitionHandlerImpl <em>Transition Handler</em>}' class.

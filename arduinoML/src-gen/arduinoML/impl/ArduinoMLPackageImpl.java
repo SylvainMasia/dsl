@@ -354,6 +354,15 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getTransition_Delay() {
+		return (EAttribute) transitionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getTransitionHandler() {
 		return transitionHandlerEClass;
 	}
@@ -450,6 +459,7 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 		createEReference(transitionEClass, TRANSITION__NEXT);
 		createEReference(transitionEClass, TRANSITION__HANDLERS);
 		createEAttribute(transitionEClass, TRANSITION__OPERATION);
+		createEAttribute(transitionEClass, TRANSITION__DELAY);
 
 		transitionHandlerEClass = createEClass(TRANSITION_HANDLER);
 		createEReference(transitionHandlerEClass, TRANSITION_HANDLER__SENSOR);
@@ -542,10 +552,12 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 		initEReference(getTransition_Next(), this.getState(), null, "next", null, 1, 1, Transition.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEReference(getTransition_Handlers(), this.getTransitionHandler(), null, "handlers", null, 1, -1,
+		initEReference(getTransition_Handlers(), this.getTransitionHandler(), null, "handlers", null, 0, -1,
 				Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTransition_Operation(), this.getOPERATION(), "operation", null, 1, 1, Transition.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTransition_Delay(), ecorePackage.getEInt(), "delay", "0", 1, 1, Transition.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(transitionHandlerEClass, TransitionHandler.class, "TransitionHandler", !IS_ABSTRACT, !IS_INTERFACE,

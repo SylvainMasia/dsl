@@ -42,7 +42,7 @@ Action returns Action:
 	actuator=[Actuator|EString] ('=' | 'setTo') value=SIGNAL;
 
 Transition returns Transition:
-	('when'?)  handlers+=TransitionHandler (('&&' | 'and') handlers+=TransitionHandler)* ('->' | 'then') next=[State|EString] (('<-' | 'associate') operation=OPERATION)?;
+	((('when'?)  handlers+=TransitionHandler (('&&' | 'and') handlers+=TransitionHandler)* (('<-' | 'associate') operation=OPERATION)?) | (delay=EInt)) ('->' | 'then') next=[State|EString];
 	
 TransitionHandler returns TransitionHandler:
 	sensor=[Sensor] ('=' | 'is') value=SIGNAL;

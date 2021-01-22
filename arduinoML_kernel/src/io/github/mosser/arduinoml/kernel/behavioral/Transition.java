@@ -11,6 +11,7 @@ public class Transition implements Visitable {
 	private List<TransitionHandler> handlers;
 	private State next;
 	private OPERATION operation;
+	private int delay = 0;
 	
 	
 	public OPERATION getOperation() {
@@ -35,6 +36,14 @@ public class Transition implements Visitable {
 
 	public void setHandlers(List<TransitionHandler> handlers) {
 		this.handlers = handlers;
+	}
+
+	public int getDelay() {
+		return delay;
+	}
+
+	public void setDelay(int delay) {
+		this.delay = delay;
 	}
 
 	@Override

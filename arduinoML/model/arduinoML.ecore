@@ -30,10 +30,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Transition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="next" lowerBound="1" eType="#//State"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="handlers" lowerBound="1"
-        upperBound="-1" eType="#//TransitionHandler" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="handlers" upperBound="-1"
+        eType="#//TransitionHandler" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operation" lowerBound="1"
         eType="#//OPERATION"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="delay" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="0"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="SIGNAL">
     <eLiterals name="LOW"/>

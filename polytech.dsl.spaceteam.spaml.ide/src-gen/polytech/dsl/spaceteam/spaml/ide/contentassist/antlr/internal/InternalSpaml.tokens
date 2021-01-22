@@ -1,7 +1,7 @@
 '&&'=17
 '-'=33
-'->'=19
-'<-'=21
+'->'=21
+'<-'=19
 '='=15
 'AND'=26
 'Actuator'=35
@@ -11,7 +11,7 @@
 'Program'=28
 'Sensor'=34
 'and'=18
-'associate'=22
+'associate'=20
 'initialState'=29
 'is'=23
 'onPin'=32
@@ -20,7 +20,7 @@
 'setTo'=16
 'states'=13
 'states:'=14
-'then'=20
+'then'=22
 'when'=36
 '{'=30
 '}'=31
