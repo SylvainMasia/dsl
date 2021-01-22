@@ -7,6 +7,7 @@ import arduinoML.PluggedElement
 import org.eclipse.xtext.validation.Check
 import java.util.HashSet
 import arduinoML.Program
+import arduinoML.ArduinoMLPackage
 
 /**
  * This class contains custom validation rules. 
@@ -20,10 +21,10 @@ class SpamlValidator extends AbstractSpamlValidator {
 	@Check
 	def checkPluggedElementPinValid(PluggedElement pluggedElement) {
 		if (pluggedElement.pin < 0 || pluggedElement.pin > 13) {
-			System.err.println("OH NO, THERE IS AN ERROR THERE ======> pin should be 0 => pin <= 13 <======");
-			//warning('Pin should be 0 => pin <= 13', 
-			//		PluggedElement.s,
-			//		INVALID_PIN)
+			//System.err.println("OH NO, THERE IS AN ERROR THERE ======> pin should be 0 => pin <= 13 <======");
+			error('Pin should be 0 => pin <= 13', 
+					ArduinoMLPackage.Literals.PLUGGED_ELEMENT__PIN,
+					0)
 			return;
 		}
 	}
@@ -31,16 +32,14 @@ class SpamlValidator extends AbstractSpamlValidator {
 	@Check
 	def checkPluggedElementPinNotDouble(Program program) {
 		val pinsUsed = new HashSet<Integer>();
-		val texts = new HashSet<String>();
-		for (PluggedElement pluggedElement : program.pluggedElements) {
-			if (pinsUsed.contains(pluggedElement.pin)) {
-				texts.add("OH NO, THERE IS AN ERROR THERE ======> pin " + pluggedElement.pin + " is already used <======");
+		for (var i = 0; i < program.pluggedElements.size; i++) {
+			if (pinsUsed.contains(program.pluggedElements.get(i).pin)) {
+				error('Pin ' + program.pluggedElements.get(i).pin + ' is already used', 
+					ArduinoMLPackage.Literals.PROGRAM__PLUGGED_ELEMENTS,
+					i)
 			} else {
-				pinsUsed.add(pluggedElement.pin);
+				pinsUsed.add(program.pluggedElements.get(i).pin);
 			}
-		}
-		for (String text : texts) {
-			System.err.println(text);
 		}
 	}
 	

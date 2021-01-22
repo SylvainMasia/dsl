@@ -3,10 +3,10 @@
  */
 package polytech.dsl.spaceteam.spaml.validation;
 
+import arduinoML.ArduinoMLPackage;
 import arduinoML.PluggedElement;
 import arduinoML.Program;
 import java.util.HashSet;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.validation.Check;
 import polytech.dsl.spaceteam.spaml.validation.AbstractSpamlValidator;
 
@@ -22,7 +22,9 @@ public class SpamlValidator extends AbstractSpamlValidator {
   @Check
   public void checkPluggedElementPinValid(final PluggedElement pluggedElement) {
     if (((pluggedElement.getPin() < 0) || (pluggedElement.getPin() > 13))) {
-      System.err.println("OH NO, THERE IS AN ERROR THERE ======> pin should be 0 => pin <= 13 <======");
+      this.error("Pin should be 0 => pin <= 13", 
+        ArduinoMLPackage.Literals.PLUGGED_ELEMENT__PIN, 
+        0);
       return;
     }
   }
@@ -30,21 +32,17 @@ public class SpamlValidator extends AbstractSpamlValidator {
   @Check
   public void checkPluggedElementPinNotDouble(final Program program) {
     final HashSet<Integer> pinsUsed = new HashSet<Integer>();
-    final HashSet<String> texts = new HashSet<String>();
-    EList<PluggedElement> _pluggedElements = program.getPluggedElements();
-    for (final PluggedElement pluggedElement : _pluggedElements) {
-      boolean _contains = pinsUsed.contains(Integer.valueOf(pluggedElement.getPin()));
+    for (int i = 0; (i < program.getPluggedElements().size()); i++) {
+      boolean _contains = pinsUsed.contains(Integer.valueOf(program.getPluggedElements().get(i).getPin()));
       if (_contains) {
-        int _pin = pluggedElement.getPin();
-        String _plus = ("OH NO, THERE IS AN ERROR THERE ======> pin " + Integer.valueOf(_pin));
-        String _plus_1 = (_plus + " is already used <======");
-        texts.add(_plus_1);
+        int _pin = program.getPluggedElements().get(i).getPin();
+        String _plus = ("Pin " + Integer.valueOf(_pin));
+        String _plus_1 = (_plus + " is already used");
+        this.error(_plus_1, 
+          ArduinoMLPackage.Literals.PROGRAM__PLUGGED_ELEMENTS, i);
       } else {
-        pinsUsed.add(Integer.valueOf(pluggedElement.getPin()));
+        pinsUsed.add(Integer.valueOf(program.getPluggedElements().get(i).getPin()));
       }
-    }
-    for (final String text : texts) {
-      System.err.println(text);
     }
   }
 }
