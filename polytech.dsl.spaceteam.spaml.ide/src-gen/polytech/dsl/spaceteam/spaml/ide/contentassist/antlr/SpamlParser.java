@@ -35,6 +35,7 @@ public class SpamlParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getProgramAccess().getAlternatives_7(), "rule__Program__Alternatives_7");
 			builder.put(grammarAccess.getPluggedElementAccess().getAlternatives_0(), "rule__PluggedElement__Alternatives_0");
 			builder.put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
+			builder.put(grammarAccess.getSensorAccess().getAlternatives(), "rule__Sensor__Alternatives");
 			builder.put(grammarAccess.getActionAccess().getAlternatives_1(), "rule__Action__Alternatives_1");
 			builder.put(grammarAccess.getTransitionAccess().getAlternatives_0(), "rule__Transition__Alternatives_0");
 			builder.put(grammarAccess.getTransitionAccess().getAlternatives_0_0_2_0(), "rule__Transition__Alternatives_0_0_2_0");
@@ -47,7 +48,8 @@ public class SpamlParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPluggedElementAccess().getGroup(), "rule__PluggedElement__Group__0");
 			builder.put(grammarAccess.getStateAccess().getGroup(), "rule__State__Group__0");
 			builder.put(grammarAccess.getEIntAccess().getGroup(), "rule__EInt__Group__0");
-			builder.put(grammarAccess.getSensorAccess().getGroup(), "rule__Sensor__Group__0");
+			builder.put(grammarAccess.getSensorDigitalAccess().getGroup(), "rule__SensorDigital__Group__0");
+			builder.put(grammarAccess.getSensorAnalogAccess().getGroup(), "rule__SensorAnalog__Group__0");
 			builder.put(grammarAccess.getActuatorAccess().getGroup(), "rule__Actuator__Group__0");
 			builder.put(grammarAccess.getActionAccess().getGroup(), "rule__Action__Group__0");
 			builder.put(grammarAccess.getTransitionAccess().getGroup(), "rule__Transition__Group__0");

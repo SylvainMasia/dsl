@@ -4,12 +4,13 @@
 '<-'=19
 '='=15
 'AND'=26
-'Actuator'=35
+'Actuator'=36
 'HIGH'=25
 'LOW'=24
 'OR'=27
 'Program'=28
-'Sensor'=34
+'SensorAnalog'=35
+'SensorDigital'=34
 'and'=18
 'associate'=20
 'initialState'=29
@@ -21,7 +22,7 @@
 'states'=13
 'states:'=14
 'then'=22
-'when'=36
+'when'=37
 '{'=30
 '}'=31
 RULE_ANY_OTHER=10
@@ -57,3 +58,4 @@ T__33=33
 T__34=34
 T__35=35
 T__36=36
+T__37=37

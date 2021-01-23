@@ -255,23 +255,62 @@ public class SpamlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class SensorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "polytech.dsl.spaceteam.spaml.Spaml.Sensor");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cSensorAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cSensorKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cSensorDigitalParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cSensorAnalogParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//Sensor:
-		//	{Sensor}
-		//	'Sensor';
+		//	SensorDigital | SensorAnalog;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Sensor} 'Sensor'
+		//SensorDigital | SensorAnalog
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//SensorDigital
+		public RuleCall getSensorDigitalParserRuleCall_0() { return cSensorDigitalParserRuleCall_0; }
+		
+		//SensorAnalog
+		public RuleCall getSensorAnalogParserRuleCall_1() { return cSensorAnalogParserRuleCall_1; }
+	}
+	public class SensorDigitalElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "polytech.dsl.spaceteam.spaml.Spaml.SensorDigital");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cSensorDigitalAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cSensorDigitalKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//SensorDigital:
+		//	{SensorDigital}
+		//	'SensorDigital';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{SensorDigital} 'SensorDigital'
 		public Group getGroup() { return cGroup; }
 		
-		//{Sensor}
-		public Action getSensorAction_0() { return cSensorAction_0; }
+		//{SensorDigital}
+		public Action getSensorDigitalAction_0() { return cSensorDigitalAction_0; }
 		
-		//'Sensor'
-		public Keyword getSensorKeyword_1() { return cSensorKeyword_1; }
+		//'SensorDigital'
+		public Keyword getSensorDigitalKeyword_1() { return cSensorDigitalKeyword_1; }
+	}
+	public class SensorAnalogElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "polytech.dsl.spaceteam.spaml.Spaml.SensorAnalog");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cSensorAnalogAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cSensorAnalogKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//SensorAnalog:
+		//	{SensorAnalog}
+		//	'SensorAnalog';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{SensorAnalog} 'SensorAnalog'
+		public Group getGroup() { return cGroup; }
+		
+		//{SensorAnalog}
+		public Action getSensorAnalogAction_0() { return cSensorAnalogAction_0; }
+		
+		//'SensorAnalog'
+		public Keyword getSensorAnalogKeyword_1() { return cSensorAnalogKeyword_1; }
 	}
 	public class ActuatorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "polytech.dsl.spaceteam.spaml.Spaml.Actuator");
@@ -556,6 +595,8 @@ public class SpamlGrammarAccess extends AbstractGrammarElementFinder {
 	private final StateElements pState;
 	private final EIntElements pEInt;
 	private final SensorElements pSensor;
+	private final SensorDigitalElements pSensorDigital;
+	private final SensorAnalogElements pSensorAnalog;
 	private final ActuatorElements pActuator;
 	private final ActionElements pAction;
 	private final TransitionElements pTransition;
@@ -578,6 +619,8 @@ public class SpamlGrammarAccess extends AbstractGrammarElementFinder {
 		this.pState = new StateElements();
 		this.pEInt = new EIntElements();
 		this.pSensor = new SensorElements();
+		this.pSensorDigital = new SensorDigitalElements();
+		this.pSensorAnalog = new SensorAnalogElements();
 		this.pActuator = new ActuatorElements();
 		this.pAction = new ActionElements();
 		this.pTransition = new TransitionElements();
@@ -670,14 +713,35 @@ public class SpamlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Sensor:
-	//	{Sensor}
-	//	'Sensor';
+	//	SensorDigital | SensorAnalog;
 	public SensorElements getSensorAccess() {
 		return pSensor;
 	}
 	
 	public ParserRule getSensorRule() {
 		return getSensorAccess().getRule();
+	}
+	
+	//SensorDigital:
+	//	{SensorDigital}
+	//	'SensorDigital';
+	public SensorDigitalElements getSensorDigitalAccess() {
+		return pSensorDigital;
+	}
+	
+	public ParserRule getSensorDigitalRule() {
+		return getSensorDigitalAccess().getRule();
+	}
+	
+	//SensorAnalog:
+	//	{SensorAnalog}
+	//	'SensorAnalog';
+	public SensorAnalogElements getSensorAnalogAccess() {
+		return pSensorAnalog;
+	}
+	
+	public ParserRule getSensorAnalogRule() {
+		return getSensorAnalogAccess().getRule();
 	}
 	
 	//Actuator:

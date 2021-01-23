@@ -459,16 +459,82 @@ ruleSensor returns [EObject current=null]
 	leaveRule();
 }:
 	(
+		{
+			newCompositeNode(grammarAccess.getSensorAccess().getSensorDigitalParserRuleCall_0());
+		}
+		this_SensorDigital_0=ruleSensorDigital
+		{
+			$current = $this_SensorDigital_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getSensorAccess().getSensorAnalogParserRuleCall_1());
+		}
+		this_SensorAnalog_1=ruleSensorAnalog
+		{
+			$current = $this_SensorAnalog_1.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleSensorDigital
+entryRuleSensorDigital returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSensorDigitalRule()); }
+	iv_ruleSensorDigital=ruleSensorDigital
+	{ $current=$iv_ruleSensorDigital.current; }
+	EOF;
+
+// Rule SensorDigital
+ruleSensorDigital returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getSensorAccess().getSensorAction_0(),
+					grammarAccess.getSensorDigitalAccess().getSensorDigitalAction_0(),
 					$current);
 			}
 		)
-		otherlv_1='Sensor'
+		otherlv_1='SensorDigital'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getSensorAccess().getSensorKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getSensorDigitalAccess().getSensorDigitalKeyword_1());
+		}
+	)
+;
+
+// Entry rule entryRuleSensorAnalog
+entryRuleSensorAnalog returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSensorAnalogRule()); }
+	iv_ruleSensorAnalog=ruleSensorAnalog
+	{ $current=$iv_ruleSensorAnalog.current; }
+	EOF;
+
+// Rule SensorAnalog
+ruleSensorAnalog returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getSensorAnalogAccess().getSensorAnalogAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='SensorAnalog'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getSensorAnalogAccess().getSensorAnalogKeyword_1());
 		}
 	)
 ;

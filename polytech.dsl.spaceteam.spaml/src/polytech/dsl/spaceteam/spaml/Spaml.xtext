@@ -31,8 +31,15 @@ EInt returns ecore::EInt:
 	'-'? INT;
 
 Sensor returns Sensor:
-	{Sensor}
-	'Sensor';
+	(SensorDigital | SensorAnalog);
+	
+SensorDigital returns SensorDigital:
+	{SensorDigital}
+	'SensorDigital';
+	
+SensorAnalog returns SensorAnalog:
+	{SensorAnalog}
+	'SensorAnalog';
 
 Actuator returns Actuator:
 	{Actuator}

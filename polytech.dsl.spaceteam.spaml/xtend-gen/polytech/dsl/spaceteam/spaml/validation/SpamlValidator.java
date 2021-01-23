@@ -3,9 +3,11 @@
  */
 package polytech.dsl.spaceteam.spaml.validation;
 
+import arduinoML.Actuator;
 import arduinoML.ArduinoMLPackage;
 import arduinoML.PluggedElement;
 import arduinoML.Program;
+import arduinoML.SensorDigital;
 import java.util.HashSet;
 import org.eclipse.xtext.validation.Check;
 import polytech.dsl.spaceteam.spaml.validation.AbstractSpamlValidator;
@@ -21,27 +23,71 @@ public class SpamlValidator extends AbstractSpamlValidator {
   
   @Check
   public void checkPluggedElementPinValid(final PluggedElement pluggedElement) {
-    if (((pluggedElement.getPin() < 0) || (pluggedElement.getPin() > 13))) {
-      this.error("Pin should be 0 => pin <= 13", 
-        ArduinoMLPackage.Literals.PLUGGED_ELEMENT__PIN, 
-        0);
-      return;
+    if (((pluggedElement instanceof SensorDigital) || (pluggedElement instanceof Actuator))) {
+      if (((pluggedElement.getPin() < 0) || (pluggedElement.getPin() > 13))) {
+        this.error("Pin should be 0 => pin <= 13", ArduinoMLPackage.Literals.PLUGGED_ELEMENT__PIN, 0);
+      }
+    } else {
+      if (((pluggedElement.getPin() < 14) || (pluggedElement.getPin() > 19))) {
+        this.error("Pin should be 14 => pin <= 19", ArduinoMLPackage.Literals.PLUGGED_ELEMENT__PIN, 0);
+      }
     }
+    return;
   }
   
   @Check
   public void checkPluggedElementPinNotDouble(final Program program) {
-    final HashSet<Integer> pinsUsed = new HashSet<Integer>();
+    final HashSet<Integer> pinsUsedDigital = new HashSet<Integer>();
+    final HashSet<String> pinName = new HashSet<String>();
+    final HashSet<String> stateName = new HashSet<String>();
+    final HashSet<Integer> pinsUsedAnalog = new HashSet<Integer>();
     for (int i = 0; (i < program.getPluggedElements().size()); i++) {
-      boolean _contains = pinsUsed.contains(Integer.valueOf(program.getPluggedElements().get(i).getPin()));
-      if (_contains) {
-        int _pin = program.getPluggedElements().get(i).getPin();
-        String _plus = ("Pin " + Integer.valueOf(_pin));
-        String _plus_1 = (_plus + " is already used");
-        this.error(_plus_1, 
-          ArduinoMLPackage.Literals.PROGRAM__PLUGGED_ELEMENTS, i);
-      } else {
-        pinsUsed.add(Integer.valueOf(program.getPluggedElements().get(i).getPin()));
+      {
+        final PluggedElement pluggedElement = program.getPluggedElements().get(i);
+        if (((pluggedElement instanceof SensorDigital) || (pluggedElement instanceof Actuator))) {
+          boolean _contains = pinsUsedDigital.contains(Integer.valueOf(pluggedElement.getPin()));
+          if (_contains) {
+            int _pin = pluggedElement.getPin();
+            String _plus = ("Pin digital " + Integer.valueOf(_pin));
+            String _plus_1 = (_plus + " is already used");
+            this.error(_plus_1, ArduinoMLPackage.Literals.PROGRAM__PLUGGED_ELEMENTS, i);
+          } else {
+            pinsUsedDigital.add(Integer.valueOf(pluggedElement.getPin()));
+          }
+        } else {
+          boolean _contains_1 = pinsUsedAnalog.contains(Integer.valueOf(pluggedElement.getPin()));
+          if (_contains_1) {
+            int _pin_1 = pluggedElement.getPin();
+            String _plus_2 = ("Pin analog " + Integer.valueOf(_pin_1));
+            String _plus_3 = (_plus_2 + " is already used");
+            this.error(_plus_3, ArduinoMLPackage.Literals.PROGRAM__PLUGGED_ELEMENTS, i);
+          } else {
+            pinsUsedAnalog.add(Integer.valueOf(pluggedElement.getPin()));
+          }
+        }
+        boolean _contains_2 = pinName.contains(pluggedElement.getName());
+        if (_contains_2) {
+          String _name = pluggedElement.getName();
+          String _plus_4 = ("Pin name " + _name);
+          String _plus_5 = (_plus_4 + " is already used");
+          this.error(_plus_5, ArduinoMLPackage.Literals.PROGRAM__PLUGGED_ELEMENTS, i);
+        } else {
+          pinName.add(pluggedElement.getName());
+        }
+      }
+    }
+    for (int i = 0; (i < program.getStates().size()); i++) {
+      {
+        final arduinoML.State state = program.getStates().get(i);
+        boolean _contains = stateName.contains(state.getName());
+        if (_contains) {
+          String _name = state.getName();
+          String _plus = ("State name " + _name);
+          String _plus_1 = (_plus + " is already used");
+          this.error(_plus_1, ArduinoMLPackage.Literals.PROGRAM__STATES, i);
+        } else {
+          stateName.add(state.getName());
+        }
       }
     }
   }

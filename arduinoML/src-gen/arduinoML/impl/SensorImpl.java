@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class SensorImpl extends PluggedElementImpl implements Sensor {
+public abstract class SensorImpl extends PluggedElementImpl implements Sensor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

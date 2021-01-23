@@ -23,6 +23,8 @@ import arduinoML.Action
 import arduinoML.SIGNAL
 import arduinoML.TransitionHandler
 import arduinoML.OPERATION
+import arduinoML.SensorAnalog
+import arduinoML.SensorDigital
 
 /**
  * Generates code from your model files on save.
@@ -71,10 +73,18 @@ class SpamlGenerator extends AbstractGenerator {
 	}
 	
 	private def io.github.mosser.arduinoml.kernel.structural.Sensor convertSpamlSensorToMosser(Sensor pe) {
-		val sensor = new io.github.mosser.arduinoml.kernel.structural.Sensor();
-		sensor.name = pe.name;
-		sensor.pin = pe.pin;
-		return sensor;
+		if (pe instanceof SensorAnalog) {
+			var sensor = new io.github.mosser.arduinoml.kernel.structural.SensorAnalog();
+			sensor.name = pe.name;
+			sensor.pin = pe.pin;
+			return sensor;
+		} else if (pe instanceof SensorDigital) {
+			var sensor = new io.github.mosser.arduinoml.kernel.structural.SensorDigital();
+			sensor.name = pe.name;
+			sensor.pin = pe.pin;
+			return sensor;
+		}
+		return null;
 	}
 	
 	private def io.github.mosser.arduinoml.kernel.structural.Actuator convertSpamlActuatorToMosser(Actuator pe) {

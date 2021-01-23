@@ -1,0 +1,26 @@
+Program multi_state_alarm initialState initial {
+    pluggedElements
+    Actuator red_led 1
+    Actuator buzzer 2
+    SensorDigital button 3
+    SensorDigital button2 4
+
+    states
+    initial {
+        red_led = LOW
+        buzzer = LOW
+        button = HIGH -> noiseon
+    }
+    
+    noiseon {
+    	red_led = LOW
+    	buzzer = HIGH
+    	button = HIGH -> ledon
+    }
+    
+    ledon {
+    	red_led = HIGH
+    	buzzer = LOW
+    	button = HIGH -> initial
+    }
+}

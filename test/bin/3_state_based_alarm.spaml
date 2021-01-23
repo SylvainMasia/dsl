@@ -1,18 +1,17 @@
-Program Scenario1 initialState off {
+Program state_based_alarm initialState off {
     pluggedElements
     Actuator red_led 1
-    Actuator buzzer 2
-    Sensor button 8
+    SensorDigital button 2
+    SensorDigital button2 3
 
     states
     off {
         red_led = LOW
-        buzzer = LOW
         button = HIGH -> on
     }
+    
     on {
         red_led = HIGH
-        buzzer = HIGH
-        button = LOW -> off
+        button = HIGH -> off
     }
 }

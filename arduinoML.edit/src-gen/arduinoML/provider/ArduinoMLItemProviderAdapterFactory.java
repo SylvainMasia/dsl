@@ -96,29 +96,6 @@ public class ArduinoMLItemProviderAdapterFactory extends ArduinoMLAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link arduinoML.Sensor} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SensorItemProvider sensorItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link arduinoML.Sensor}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createSensorAdapter() {
-		if (sensorItemProvider == null) {
-			sensorItemProvider = new SensorItemProvider(this);
-		}
-
-		return sensorItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link arduinoML.Actuator} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -234,6 +211,52 @@ public class ArduinoMLItemProviderAdapterFactory extends ArduinoMLAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link arduinoML.SensorAnalog} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SensorAnalogItemProvider sensorAnalogItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link arduinoML.SensorAnalog}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSensorAnalogAdapter() {
+		if (sensorAnalogItemProvider == null) {
+			sensorAnalogItemProvider = new SensorAnalogItemProvider(this);
+		}
+
+		return sensorAnalogItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link arduinoML.SensorDigital} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SensorDigitalItemProvider sensorDigitalItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link arduinoML.SensorDigital}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSensorDigitalAdapter() {
+		if (sensorDigitalItemProvider == null) {
+			sensorDigitalItemProvider = new SensorDigitalItemProvider(this);
+		}
+
+		return sensorDigitalItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -334,8 +357,6 @@ public class ArduinoMLItemProviderAdapterFactory extends ArduinoMLAdapterFactory
 	public void dispose() {
 		if (programItemProvider != null)
 			programItemProvider.dispose();
-		if (sensorItemProvider != null)
-			sensorItemProvider.dispose();
 		if (actuatorItemProvider != null)
 			actuatorItemProvider.dispose();
 		if (stateItemProvider != null)
@@ -346,6 +367,10 @@ public class ArduinoMLItemProviderAdapterFactory extends ArduinoMLAdapterFactory
 			transitionItemProvider.dispose();
 		if (transitionHandlerItemProvider != null)
 			transitionHandlerItemProvider.dispose();
+		if (sensorAnalogItemProvider != null)
+			sensorAnalogItemProvider.dispose();
+		if (sensorDigitalItemProvider != null)
+			sensorDigitalItemProvider.dispose();
 	}
 
 }

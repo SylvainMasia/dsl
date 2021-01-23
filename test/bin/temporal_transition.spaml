@@ -1,0 +1,15 @@
+Program temporal_transition initialState off {
+    pluggedElements
+    ActuatorDigital LED1 1
+    SensorDigital B1 2
+
+    states
+    off {
+        LED1 = LOW
+        B1 = HIGH -> on
+    }
+    on {
+        LED1 = HIGH
+        800 -> off
+    }
+}

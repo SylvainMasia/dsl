@@ -15,7 +15,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="PluggedElement" abstract="true" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pin" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Sensor" eSuperTypes="#//PluggedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Sensor" abstract="true" eSuperTypes="#//PluggedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Actuator" eSuperTypes="#//PluggedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="actions" lowerBound="1"
@@ -50,4 +50,6 @@
     <eLiterals name="OR"/>
     <eLiterals name="AND" value="1"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SensorAnalog" eSuperTypes="#//Sensor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SensorDigital" eSuperTypes="#//Sensor"/>
 </ecore:EPackage>

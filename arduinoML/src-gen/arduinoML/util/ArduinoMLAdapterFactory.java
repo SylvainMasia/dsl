@@ -112,6 +112,16 @@ public class ArduinoMLAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseSensorAnalog(SensorAnalog object) {
+			return createSensorAnalogAdapter();
+		}
+
+		@Override
+		public Adapter caseSensorDigital(SensorDigital object) {
+			return createSensorDigitalAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -253,6 +263,34 @@ public class ArduinoMLAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTransitionHandlerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link arduinoML.SensorAnalog <em>Sensor Analog</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see arduinoML.SensorAnalog
+	 * @generated
+	 */
+	public Adapter createSensorAnalogAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link arduinoML.SensorDigital <em>Sensor Digital</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see arduinoML.SensorDigital
+	 * @generated
+	 */
+	public Adapter createSensorDigitalAdapter() {
 		return null;
 	}
 

@@ -59,8 +59,6 @@ public class ArduinoMLFactoryImpl extends EFactoryImpl implements ArduinoMLFacto
 		switch (eClass.getClassifierID()) {
 		case ArduinoMLPackage.PROGRAM:
 			return createProgram();
-		case ArduinoMLPackage.SENSOR:
-			return createSensor();
 		case ArduinoMLPackage.ACTUATOR:
 			return createActuator();
 		case ArduinoMLPackage.STATE:
@@ -71,6 +69,10 @@ public class ArduinoMLFactoryImpl extends EFactoryImpl implements ArduinoMLFacto
 			return createTransition();
 		case ArduinoMLPackage.TRANSITION_HANDLER:
 			return createTransitionHandler();
+		case ArduinoMLPackage.SENSOR_ANALOG:
+			return createSensorAnalog();
+		case ArduinoMLPackage.SENSOR_DIGITAL:
+			return createSensorDigital();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -125,16 +127,6 @@ public class ArduinoMLFactoryImpl extends EFactoryImpl implements ArduinoMLFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Sensor createSensor() {
-		SensorImpl sensor = new SensorImpl();
-		return sensor;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Actuator createActuator() {
 		ActuatorImpl actuator = new ActuatorImpl();
 		return actuator;
@@ -178,6 +170,26 @@ public class ArduinoMLFactoryImpl extends EFactoryImpl implements ArduinoMLFacto
 	public TransitionHandler createTransitionHandler() {
 		TransitionHandlerImpl transitionHandler = new TransitionHandlerImpl();
 		return transitionHandler;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SensorAnalog createSensorAnalog() {
+		SensorAnalogImpl sensorAnalog = new SensorAnalogImpl();
+		return sensorAnalog;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SensorDigital createSensorDigital() {
+		SensorDigitalImpl sensorDigital = new SensorDigitalImpl();
+		return sensorDigital;
 	}
 
 	/**

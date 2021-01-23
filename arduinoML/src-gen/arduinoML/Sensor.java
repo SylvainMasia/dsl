@@ -9,7 +9,7 @@ package arduinoML;
  *
  *
  * @see arduinoML.ArduinoMLPackage#getSensor()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Sensor extends PluggedElement {

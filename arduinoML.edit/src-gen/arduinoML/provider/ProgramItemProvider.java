@@ -163,10 +163,13 @@ public class ProgramItemProvider extends NamedElementItemProvider {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(ArduinoMLPackage.Literals.PROGRAM__PLUGGED_ELEMENTS,
-				ArduinoMLFactory.eINSTANCE.createSensor()));
+				ArduinoMLFactory.eINSTANCE.createActuator()));
 
 		newChildDescriptors.add(createChildParameter(ArduinoMLPackage.Literals.PROGRAM__PLUGGED_ELEMENTS,
-				ArduinoMLFactory.eINSTANCE.createActuator()));
+				ArduinoMLFactory.eINSTANCE.createSensorAnalog()));
+
+		newChildDescriptors.add(createChildParameter(ArduinoMLPackage.Literals.PROGRAM__PLUGGED_ELEMENTS,
+				ArduinoMLFactory.eINSTANCE.createSensorDigital()));
 
 		newChildDescriptors.add(createChildParameter(ArduinoMLPackage.Literals.PROGRAM__STATES,
 				ArduinoMLFactory.eINSTANCE.createState()));

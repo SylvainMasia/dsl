@@ -9,6 +9,8 @@ import arduinoML.PluggedElement;
 import arduinoML.Program;
 import arduinoML.SIGNAL;
 import arduinoML.Sensor;
+import arduinoML.SensorAnalog;
+import arduinoML.SensorDigital;
 import com.google.common.collect.Iterables;
 import io.github.mosser.arduinoml.kernel.App;
 import io.github.mosser.arduinoml.kernel.behavioral.Action;
@@ -84,10 +86,20 @@ public class SpamlGenerator extends AbstractGenerator {
   }
   
   private io.github.mosser.arduinoml.kernel.structural.Sensor convertSpamlSensorToMosser(final Sensor pe) {
-    final io.github.mosser.arduinoml.kernel.structural.Sensor sensor = new io.github.mosser.arduinoml.kernel.structural.Sensor();
-    sensor.setName(pe.getName());
-    sensor.setPin(pe.getPin());
-    return sensor;
+    if ((pe instanceof SensorAnalog)) {
+      io.github.mosser.arduinoml.kernel.structural.SensorAnalog sensor = new io.github.mosser.arduinoml.kernel.structural.SensorAnalog();
+      sensor.setName(((SensorAnalog)pe).getName());
+      sensor.setPin(((SensorAnalog)pe).getPin());
+      return sensor;
+    } else {
+      if ((pe instanceof SensorDigital)) {
+        io.github.mosser.arduinoml.kernel.structural.SensorDigital sensor_1 = new io.github.mosser.arduinoml.kernel.structural.SensorDigital();
+        sensor_1.setName(((SensorDigital)pe).getName());
+        sensor_1.setPin(((SensorDigital)pe).getPin());
+        return sensor_1;
+      }
+    }
+    return null;
   }
   
   private io.github.mosser.arduinoml.kernel.structural.Actuator convertSpamlActuatorToMosser(final Actuator pe) {

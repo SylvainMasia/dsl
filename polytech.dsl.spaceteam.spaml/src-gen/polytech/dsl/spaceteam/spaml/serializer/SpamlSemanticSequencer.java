@@ -6,7 +6,8 @@ package polytech.dsl.spaceteam.spaml.serializer;
 import arduinoML.Actuator;
 import arduinoML.ArduinoMLPackage;
 import arduinoML.Program;
-import arduinoML.Sensor;
+import arduinoML.SensorAnalog;
+import arduinoML.SensorDigital;
 import arduinoML.State;
 import arduinoML.Transition;
 import arduinoML.TransitionHandler;
@@ -53,13 +54,25 @@ public class SpamlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case ArduinoMLPackage.PROGRAM:
 				sequence_Program(context, (Program) semanticObject); 
 				return; 
-			case ArduinoMLPackage.SENSOR:
+			case ArduinoMLPackage.SENSOR_ANALOG:
 				if (rule == grammarAccess.getPluggedElementRule()) {
-					sequence_PluggedElement_Sensor(context, (Sensor) semanticObject); 
+					sequence_PluggedElement_SensorAnalog(context, (SensorAnalog) semanticObject); 
 					return; 
 				}
-				else if (rule == grammarAccess.getSensorRule()) {
-					sequence_Sensor(context, (Sensor) semanticObject); 
+				else if (rule == grammarAccess.getSensorRule()
+						|| rule == grammarAccess.getSensorAnalogRule()) {
+					sequence_SensorAnalog(context, (SensorAnalog) semanticObject); 
+					return; 
+				}
+				else break;
+			case ArduinoMLPackage.SENSOR_DIGITAL:
+				if (rule == grammarAccess.getPluggedElementRule()) {
+					sequence_PluggedElement_SensorDigital(context, (SensorDigital) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getSensorRule()
+						|| rule == grammarAccess.getSensorDigitalRule()) {
+					sequence_SensorDigital(context, (SensorDigital) semanticObject); 
 					return; 
 				}
 				else break;
@@ -133,12 +146,33 @@ public class SpamlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
-	 *     PluggedElement returns Sensor
+	 *     PluggedElement returns SensorAnalog
 	 *
 	 * Constraint:
 	 *     (name=EString pin=EInt)
 	 */
-	protected void sequence_PluggedElement_Sensor(ISerializationContext context, Sensor semanticObject) {
+	protected void sequence_PluggedElement_SensorAnalog(ISerializationContext context, SensorAnalog semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ArduinoMLPackage.Literals.NAMED_ELEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArduinoMLPackage.Literals.NAMED_ELEMENT__NAME));
+			if (transientValues.isValueTransient(semanticObject, ArduinoMLPackage.Literals.PLUGGED_ELEMENT__PIN) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArduinoMLPackage.Literals.PLUGGED_ELEMENT__PIN));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPluggedElementAccess().getNameEStringParserRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getPluggedElementAccess().getPinEIntParserRuleCall_3_0(), semanticObject.getPin());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     PluggedElement returns SensorDigital
+	 *
+	 * Constraint:
+	 *     (name=EString pin=EInt)
+	 */
+	protected void sequence_PluggedElement_SensorDigital(ISerializationContext context, SensorDigital semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, ArduinoMLPackage.Literals.NAMED_ELEMENT__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArduinoMLPackage.Literals.NAMED_ELEMENT__NAME));
@@ -166,12 +200,26 @@ public class SpamlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
-	 *     Sensor returns Sensor
+	 *     Sensor returns SensorAnalog
+	 *     SensorAnalog returns SensorAnalog
 	 *
 	 * Constraint:
-	 *     {Sensor}
+	 *     {SensorAnalog}
 	 */
-	protected void sequence_Sensor(ISerializationContext context, Sensor semanticObject) {
+	protected void sequence_SensorAnalog(ISerializationContext context, SensorAnalog semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Sensor returns SensorDigital
+	 *     SensorDigital returns SensorDigital
+	 *
+	 * Constraint:
+	 *     {SensorDigital}
+	 */
+	protected void sequence_SensorDigital(ISerializationContext context, SensorDigital semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

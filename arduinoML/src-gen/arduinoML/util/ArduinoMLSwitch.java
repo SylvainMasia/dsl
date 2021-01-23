@@ -143,6 +143,32 @@ public class ArduinoMLSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case ArduinoMLPackage.SENSOR_ANALOG: {
+			SensorAnalog sensorAnalog = (SensorAnalog) theEObject;
+			T result = caseSensorAnalog(sensorAnalog);
+			if (result == null)
+				result = caseSensor(sensorAnalog);
+			if (result == null)
+				result = casePluggedElement(sensorAnalog);
+			if (result == null)
+				result = caseNamedElement(sensorAnalog);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ArduinoMLPackage.SENSOR_DIGITAL: {
+			SensorDigital sensorDigital = (SensorDigital) theEObject;
+			T result = caseSensorDigital(sensorDigital);
+			if (result == null)
+				result = caseSensor(sensorDigital);
+			if (result == null)
+				result = casePluggedElement(sensorDigital);
+			if (result == null)
+				result = caseNamedElement(sensorDigital);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -280,6 +306,36 @@ public class ArduinoMLSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTransitionHandler(TransitionHandler object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Sensor Analog</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Sensor Analog</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSensorAnalog(SensorAnalog object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Sensor Digital</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Sensor Digital</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSensorDigital(SensorDigital object) {
 		return null;
 	}
 

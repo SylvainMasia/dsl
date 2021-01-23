@@ -10,6 +10,8 @@ import arduinoML.NamedElement;
 import arduinoML.PluggedElement;
 import arduinoML.Program;
 import arduinoML.Sensor;
+import arduinoML.SensorAnalog;
+import arduinoML.SensorDigital;
 import arduinoML.State;
 import arduinoML.Transition;
 import arduinoML.TransitionHandler;
@@ -90,6 +92,20 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 * @generated
 	 */
 	private EClass transitionHandlerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass sensorAnalogEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass sensorDigitalEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -390,6 +406,24 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getSensorAnalog() {
+		return sensorAnalogEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSensorDigital() {
+		return sensorDigitalEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getSIGNAL() {
 		return signalEEnum;
 	}
@@ -465,6 +499,10 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 		createEReference(transitionHandlerEClass, TRANSITION_HANDLER__SENSOR);
 		createEAttribute(transitionHandlerEClass, TRANSITION_HANDLER__VALUE);
 
+		sensorAnalogEClass = createEClass(SENSOR_ANALOG);
+
+		sensorDigitalEClass = createEClass(SENSOR_DIGITAL);
+
 		// Create enums
 		signalEEnum = createEEnum(SIGNAL);
 		operationEEnum = createEEnum(OPERATION);
@@ -504,6 +542,8 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 		sensorEClass.getESuperTypes().add(this.getPluggedElement());
 		actuatorEClass.getESuperTypes().add(this.getPluggedElement());
 		stateEClass.getESuperTypes().add(this.getNamedElement());
+		sensorAnalogEClass.getESuperTypes().add(this.getSensor());
+		sensorDigitalEClass.getESuperTypes().add(this.getSensor());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE,
@@ -527,7 +567,7 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 		initEAttribute(getPluggedElement_Pin(), ecorePackage.getEInt(), "pin", null, 1, 1, PluggedElement.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(sensorEClass, Sensor.class, "Sensor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(sensorEClass, Sensor.class, "Sensor", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(actuatorEClass, Actuator.class, "Actuator", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -567,6 +607,12 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTransitionHandler_Value(), this.getSIGNAL(), "value", null, 1, 1, TransitionHandler.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(sensorAnalogEClass, SensorAnalog.class, "SensorAnalog", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(sensorDigitalEClass, SensorDigital.class, "SensorDigital", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(signalEEnum, arduinoML.SIGNAL.class, "SIGNAL");

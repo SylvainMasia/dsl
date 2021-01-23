@@ -508,6 +508,98 @@ public interface ArduinoMLPackage extends EPackage {
 	int TRANSITION_HANDLER_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link arduinoML.impl.SensorAnalogImpl <em>Sensor Analog</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see arduinoML.impl.SensorAnalogImpl
+	 * @see arduinoML.impl.ArduinoMLPackageImpl#getSensorAnalog()
+	 * @generated
+	 */
+	int SENSOR_ANALOG = 9;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSOR_ANALOG__NAME = SENSOR__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Pin</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSOR_ANALOG__PIN = SENSOR__PIN;
+
+	/**
+	 * The number of structural features of the '<em>Sensor Analog</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSOR_ANALOG_FEATURE_COUNT = SENSOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Sensor Analog</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSOR_ANALOG_OPERATION_COUNT = SENSOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link arduinoML.impl.SensorDigitalImpl <em>Sensor Digital</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see arduinoML.impl.SensorDigitalImpl
+	 * @see arduinoML.impl.ArduinoMLPackageImpl#getSensorDigital()
+	 * @generated
+	 */
+	int SENSOR_DIGITAL = 10;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSOR_DIGITAL__NAME = SENSOR__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Pin</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSOR_DIGITAL__PIN = SENSOR__PIN;
+
+	/**
+	 * The number of structural features of the '<em>Sensor Digital</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSOR_DIGITAL_FEATURE_COUNT = SENSOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Sensor Digital</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSOR_DIGITAL_OPERATION_COUNT = SENSOR_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link arduinoML.SIGNAL <em>SIGNAL</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -515,7 +607,7 @@ public interface ArduinoMLPackage extends EPackage {
 	 * @see arduinoML.impl.ArduinoMLPackageImpl#getSIGNAL()
 	 * @generated
 	 */
-	int SIGNAL = 9;
+	int SIGNAL = 11;
 
 	/**
 	 * The meta object id for the '{@link arduinoML.OPERATION <em>OPERATION</em>}' enum.
@@ -525,7 +617,7 @@ public interface ArduinoMLPackage extends EPackage {
 	 * @see arduinoML.impl.ArduinoMLPackageImpl#getOPERATION()
 	 * @generated
 	 */
-	int OPERATION = 10;
+	int OPERATION = 12;
 
 	/**
 	 * Returns the meta object for class '{@link arduinoML.NamedElement <em>Named Element</em>}'.
@@ -783,6 +875,26 @@ public interface ArduinoMLPackage extends EPackage {
 	EAttribute getTransitionHandler_Value();
 
 	/**
+	 * Returns the meta object for class '{@link arduinoML.SensorAnalog <em>Sensor Analog</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Sensor Analog</em>'.
+	 * @see arduinoML.SensorAnalog
+	 * @generated
+	 */
+	EClass getSensorAnalog();
+
+	/**
+	 * Returns the meta object for class '{@link arduinoML.SensorDigital <em>Sensor Digital</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Sensor Digital</em>'.
+	 * @see arduinoML.SensorDigital
+	 * @generated
+	 */
+	EClass getSensorDigital();
+
+	/**
 	 * Returns the meta object for enum '{@link arduinoML.SIGNAL <em>SIGNAL</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1034,6 +1146,26 @@ public interface ArduinoMLPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TRANSITION_HANDLER__VALUE = eINSTANCE.getTransitionHandler_Value();
+
+		/**
+		 * The meta object literal for the '{@link arduinoML.impl.SensorAnalogImpl <em>Sensor Analog</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see arduinoML.impl.SensorAnalogImpl
+		 * @see arduinoML.impl.ArduinoMLPackageImpl#getSensorAnalog()
+		 * @generated
+		 */
+		EClass SENSOR_ANALOG = eINSTANCE.getSensorAnalog();
+
+		/**
+		 * The meta object literal for the '{@link arduinoML.impl.SensorDigitalImpl <em>Sensor Digital</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see arduinoML.impl.SensorDigitalImpl
+		 * @see arduinoML.impl.ArduinoMLPackageImpl#getSensorDigital()
+		 * @generated
+		 */
+		EClass SENSOR_DIGITAL = eINSTANCE.getSensorDigital();
 
 		/**
 		 * The meta object literal for the '{@link arduinoML.SIGNAL <em>SIGNAL</em>}' enum.

@@ -8,6 +8,8 @@ import org.eclipse.xtext.validation.Check
 import java.util.HashSet
 import arduinoML.Program
 import arduinoML.ArduinoMLPackage
+import arduinoML.SensorDigital
+import arduinoML.Actuator
 
 /**
  * This class contains custom validation rules. 
@@ -20,25 +22,54 @@ class SpamlValidator extends AbstractSpamlValidator {
 
 	@Check
 	def checkPluggedElementPinValid(PluggedElement pluggedElement) {
-		if (pluggedElement.pin < 0 || pluggedElement.pin > 13) {
-			//System.err.println("OH NO, THERE IS AN ERROR THERE ======> pin should be 0 => pin <= 13 <======");
-			error('Pin should be 0 => pin <= 13', 
-					ArduinoMLPackage.Literals.PLUGGED_ELEMENT__PIN,
-					0)
-			return;
+		if (pluggedElement instanceof SensorDigital || pluggedElement instanceof Actuator) {
+			if (pluggedElement.pin < 0 || pluggedElement.pin > 13) {
+				error('Pin should be 0 => pin <= 13', ArduinoMLPackage.Literals.PLUGGED_ELEMENT__PIN, 0);
+			}
+		} else {
+			if (pluggedElement.pin < 14 || pluggedElement.pin > 19) {
+				error('Pin should be 14 => pin <= 19', ArduinoMLPackage.Literals.PLUGGED_ELEMENT__PIN, 0);
+				// cause A0 = 14 and A5 = 19
+			}
 		}
+		return;
 	}
 	
 	@Check
 	def checkPluggedElementPinNotDouble(Program program) {
-		val pinsUsed = new HashSet<Integer>();
+		val pinsUsedDigital = new HashSet<Integer>();
+		val pinName = new HashSet<String>();
+		val stateName = new HashSet<String>();
+		val pinsUsedAnalog = new HashSet<Integer>();
 		for (var i = 0; i < program.pluggedElements.size; i++) {
-			if (pinsUsed.contains(program.pluggedElements.get(i).pin)) {
-				error('Pin ' + program.pluggedElements.get(i).pin + ' is already used', 
-					ArduinoMLPackage.Literals.PROGRAM__PLUGGED_ELEMENTS,
-					i)
+			val pluggedElement = program.pluggedElements.get(i);
+			if (pluggedElement instanceof SensorDigital || pluggedElement instanceof Actuator) {
+				if (pinsUsedDigital.contains(pluggedElement.pin)) {
+					error('Pin digital ' + pluggedElement.pin + ' is already used', ArduinoMLPackage.Literals.PROGRAM__PLUGGED_ELEMENTS, i)
+				} else {
+					pinsUsedDigital.add(pluggedElement.pin);
+				}
 			} else {
-				pinsUsed.add(program.pluggedElements.get(i).pin);
+				if (pinsUsedAnalog.contains(pluggedElement.pin)) {
+					error('Pin analog ' + pluggedElement.pin + ' is already used', ArduinoMLPackage.Literals.PROGRAM__PLUGGED_ELEMENTS,  i)
+				} else {
+					pinsUsedAnalog.add(pluggedElement.pin);
+				}
+			}
+			
+			if (pinName.contains(pluggedElement.name)) {
+				error('Pin name ' + pluggedElement.name + ' is already used', ArduinoMLPackage.Literals.PROGRAM__PLUGGED_ELEMENTS, i)
+			} else {
+				pinName.add(pluggedElement.name);
+			}
+		}
+		
+		for (var i = 0; i < program.states.size; i++) {
+			val state = program.states.get(i);
+			if (stateName.contains(state.name)) {
+				error('State name ' + state.name + ' is already used', ArduinoMLPackage.Literals.PROGRAM__STATES, i)
+			} else {
+				stateName.add(state.name);
 			}
 		}
 	}

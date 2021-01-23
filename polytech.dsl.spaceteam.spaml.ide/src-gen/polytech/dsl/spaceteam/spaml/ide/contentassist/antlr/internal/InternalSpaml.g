@@ -190,9 +190,59 @@ ruleSensor
 	}
 	:
 	(
-		{ before(grammarAccess.getSensorAccess().getGroup()); }
-		(rule__Sensor__Group__0)
-		{ after(grammarAccess.getSensorAccess().getGroup()); }
+		{ before(grammarAccess.getSensorAccess().getAlternatives()); }
+		(rule__Sensor__Alternatives)
+		{ after(grammarAccess.getSensorAccess().getAlternatives()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+// Entry rule entryRuleSensorDigital
+entryRuleSensorDigital
+:
+{ before(grammarAccess.getSensorDigitalRule()); }
+	 ruleSensorDigital
+{ after(grammarAccess.getSensorDigitalRule()); } 
+	 EOF 
+;
+
+// Rule SensorDigital
+ruleSensorDigital 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getSensorDigitalAccess().getGroup()); }
+		(rule__SensorDigital__Group__0)
+		{ after(grammarAccess.getSensorDigitalAccess().getGroup()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+// Entry rule entryRuleSensorAnalog
+entryRuleSensorAnalog
+:
+{ before(grammarAccess.getSensorAnalogRule()); }
+	 ruleSensorAnalog
+{ after(grammarAccess.getSensorAnalogRule()); } 
+	 EOF 
+;
+
+// Rule SensorAnalog
+ruleSensorAnalog 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getSensorAnalogAccess().getGroup()); }
+		(rule__SensorAnalog__Group__0)
+		{ after(grammarAccess.getSensorAnalogAccess().getGroup()); }
 	)
 ;
 finally {
@@ -409,6 +459,27 @@ rule__EString__Alternatives
 		{ before(grammarAccess.getEStringAccess().getIDTerminalRuleCall_1()); }
 		RULE_ID
 		{ after(grammarAccess.getEStringAccess().getIDTerminalRuleCall_1()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Sensor__Alternatives
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getSensorAccess().getSensorDigitalParserRuleCall_0()); }
+		ruleSensorDigital
+		{ after(grammarAccess.getSensorAccess().getSensorDigitalParserRuleCall_0()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getSensorAccess().getSensorAnalogParserRuleCall_1()); }
+		ruleSensorAnalog
+		{ after(grammarAccess.getSensorAccess().getSensorAnalogParserRuleCall_1()); }
 	)
 ;
 finally {
@@ -1191,53 +1262,107 @@ finally {
 }
 
 
-rule__Sensor__Group__0
+rule__SensorDigital__Group__0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__Sensor__Group__0__Impl
-	rule__Sensor__Group__1
+	rule__SensorDigital__Group__0__Impl
+	rule__SensorDigital__Group__1
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Sensor__Group__0__Impl
+rule__SensorDigital__Group__0__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getSensorAccess().getSensorAction_0()); }
+	{ before(grammarAccess.getSensorDigitalAccess().getSensorDigitalAction_0()); }
 	()
-	{ after(grammarAccess.getSensorAccess().getSensorAction_0()); }
+	{ after(grammarAccess.getSensorDigitalAccess().getSensorDigitalAction_0()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Sensor__Group__1
+rule__SensorDigital__Group__1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__Sensor__Group__1__Impl
+	rule__SensorDigital__Group__1__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Sensor__Group__1__Impl
+rule__SensorDigital__Group__1__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getSensorAccess().getSensorKeyword_1()); }
-	'Sensor'
-	{ after(grammarAccess.getSensorAccess().getSensorKeyword_1()); }
+	{ before(grammarAccess.getSensorDigitalAccess().getSensorDigitalKeyword_1()); }
+	'SensorDigital'
+	{ after(grammarAccess.getSensorDigitalAccess().getSensorDigitalKeyword_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__SensorAnalog__Group__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SensorAnalog__Group__0__Impl
+	rule__SensorAnalog__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SensorAnalog__Group__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSensorAnalogAccess().getSensorAnalogAction_0()); }
+	()
+	{ after(grammarAccess.getSensorAnalogAccess().getSensorAnalogAction_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SensorAnalog__Group__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SensorAnalog__Group__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SensorAnalog__Group__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSensorAnalogAccess().getSensorAnalogKeyword_1()); }
+	'SensorAnalog'
+	{ after(grammarAccess.getSensorAnalogAccess().getSensorAnalogKeyword_1()); }
 )
 ;
 finally {

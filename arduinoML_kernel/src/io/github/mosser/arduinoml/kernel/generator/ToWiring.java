@@ -72,7 +72,11 @@ public class ToWiring extends Visitor<StringBuffer> {
 	
 	@Override
 	public void visit(TransitionHandler handler) {
-		w(String.format("	digitalRead(%d) == %s ", handler.getSensor().getPin(), handler.getValue()));
+		if (handler.getSensor() instanceof SensorDigital) {
+			w(String.format("	digitalRead(%d) == %s ", handler.getSensor().getPin(), handler.getValue()));
+		} else {
+			w(String.format("	analogRead(%d) == %s ", handler.getSensor().getPin(), handler.getValue()));
+		}
 	}
 
 	@Override

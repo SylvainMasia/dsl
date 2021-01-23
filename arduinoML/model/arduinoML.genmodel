@@ -48,5 +48,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arduinoML.ecore#//TransitionHandler/sensor"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arduinoML.ecore#//TransitionHandler/value"/>
     </genClasses>
+    <genClasses ecoreClass="arduinoML.ecore#//SensorAnalog"/>
+    <genClasses ecoreClass="arduinoML.ecore#//SensorDigital"/>
   </genPackages>
 </genmodel:GenModel>
