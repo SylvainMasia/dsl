@@ -764,9 +764,9 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
       </ownedElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_wCuTMFtOEeudW7GAXqrkNg" name="TransitionHandler" tooltipText="" outgoingEdges="_zMaA_FtOEeudW7GAXqrkNg" incomingEdges="_03tsQltOEeudW7GAXqrkNg" width="12" height="10">
-      <target xmi:type="ecore:EClass" href="arduinoML.ecore#//TransitionHandler"/>
-      <semanticElements xmi:type="ecore:EClass" href="arduinoML.ecore#//TransitionHandler"/>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_wCuTMFtOEeudW7GAXqrkNg" name="Condition" tooltipText="" outgoingEdges="_zMaA_FtOEeudW7GAXqrkNg" incomingEdges="_03tsQltOEeudW7GAXqrkNg" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="arduinoML.ecore#//Condition"/>
+      <semanticElements xmi:type="ecore:EClass" href="arduinoML.ecore#//Condition"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -775,8 +775,8 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_8NshgFWLEeuvYrBbhhA-vQ" name="value : SIGNAL = LOW" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="arduinoML.ecore#//TransitionHandler/value"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="arduinoML.ecore#//TransitionHandler/value"/>
+        <target xmi:type="ecore:EAttribute" href="arduinoML.ecore#//Condition/value"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="arduinoML.ecore#//Condition/value"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_-MnFRVWLEeuvYrBbhhA-vQ" labelAlignment="LEFT" description="_lSGvgFWLEeuvYrBbhhA-vQ">
           <labelFormat>bold</labelFormat>
         </ownedStyle>
@@ -784,8 +784,8 @@
       </ownedElements>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_zMaA_FtOEeudW7GAXqrkNg" name="[1..1] sensor" sourceNode="_wCuTMFtOEeudW7GAXqrkNg" targetNode="_caz0IFWKEeuvYrBbhhA-vQ">
-      <target xmi:type="ecore:EReference" href="arduinoML.ecore#//TransitionHandler/sensor"/>
-      <semanticElements xmi:type="ecore:EReference" href="arduinoML.ecore#//TransitionHandler/sensor"/>
+      <target xmi:type="ecore:EReference" href="arduinoML.ecore#//Condition/sensor"/>
+      <semanticElements xmi:type="ecore:EReference" href="arduinoML.ecore#//Condition/sensor"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_0P76gFtOEeudW7GAXqrkNg" description="_-7pyAFWKEeuvYrBbhhA-vQ" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_0P76gltOEeudW7GAXqrkNg" showIcon="false">
           <labelFormat>bold</labelFormat>
@@ -794,9 +794,9 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_03tsQltOEeudW7GAXqrkNg" name="[0..*] handlers" sourceNode="_CJOhQFWLEeuvYrBbhhA-vQ" targetNode="_wCuTMFtOEeudW7GAXqrkNg">
-      <target xmi:type="ecore:EReference" href="arduinoML.ecore#//Transition/handlers"/>
-      <semanticElements xmi:type="ecore:EReference" href="arduinoML.ecore#//Transition/handlers"/>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_03tsQltOEeudW7GAXqrkNg" name="[0..*] conditions" sourceNode="_CJOhQFWLEeuvYrBbhhA-vQ" targetNode="_wCuTMFtOEeudW7GAXqrkNg">
+      <target xmi:type="ecore:EReference" href="arduinoML.ecore#//Transition/conditions"/>
+      <semanticElements xmi:type="ecore:EReference" href="arduinoML.ecore#//Transition/conditions"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_Few7s1zIEeuToNncnoaG6Q" description="_Few7sFzIEeuToNncnoaG6Q" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_Few7tVzIEeuToNncnoaG6Q" showIcon="false"/>
         <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_Few7tFzIEeuToNncnoaG6Q" labelSize="6" showIcon="false" labelColor="39,76,114"/>

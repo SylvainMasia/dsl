@@ -3,9 +3,9 @@
 package arduinoML.impl;
 
 import arduinoML.ArduinoMLPackage;
+import arduinoML.Condition;
 import arduinoML.SIGNAL;
 import arduinoML.Sensor;
-import arduinoML.TransitionHandler;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -17,19 +17,19 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Transition Handler</b></em>'.
+ * An implementation of the model object '<em><b>Condition</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link arduinoML.impl.TransitionHandlerImpl#getSensor <em>Sensor</em>}</li>
- *   <li>{@link arduinoML.impl.TransitionHandlerImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link arduinoML.impl.ConditionImpl#getSensor <em>Sensor</em>}</li>
+ *   <li>{@link arduinoML.impl.ConditionImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class TransitionHandlerImpl extends MinimalEObjectImpl.Container implements TransitionHandler {
+public class ConditionImpl extends MinimalEObjectImpl.Container implements Condition {
 	/**
 	 * The cached value of the '{@link #getSensor() <em>Sensor</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -49,6 +49,7 @@ public class TransitionHandlerImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected static final SIGNAL VALUE_EDEFAULT = SIGNAL.LOW;
+
 	/**
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -64,7 +65,7 @@ public class TransitionHandlerImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TransitionHandlerImpl() {
+	protected ConditionImpl() {
 		super();
 	}
 
@@ -75,7 +76,7 @@ public class TransitionHandlerImpl extends MinimalEObjectImpl.Container implemen
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ArduinoMLPackage.Literals.TRANSITION_HANDLER;
+		return ArduinoMLPackage.Literals.CONDITION;
 	}
 
 	/**
@@ -89,8 +90,8 @@ public class TransitionHandlerImpl extends MinimalEObjectImpl.Container implemen
 			sensor = (Sensor) eResolveProxy(oldSensor);
 			if (sensor != oldSensor) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							ArduinoMLPackage.TRANSITION_HANDLER__SENSOR, oldSensor, sensor));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ArduinoMLPackage.CONDITION__SENSOR,
+							oldSensor, sensor));
 			}
 		}
 		return sensor;
@@ -114,8 +115,8 @@ public class TransitionHandlerImpl extends MinimalEObjectImpl.Container implemen
 		Sensor oldSensor = sensor;
 		sensor = newSensor;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoMLPackage.TRANSITION_HANDLER__SENSOR,
-					oldSensor, sensor));
+			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoMLPackage.CONDITION__SENSOR, oldSensor,
+					sensor));
 	}
 
 	/**
@@ -136,8 +137,7 @@ public class TransitionHandlerImpl extends MinimalEObjectImpl.Container implemen
 		SIGNAL oldValue = value;
 		value = newValue == null ? VALUE_EDEFAULT : newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoMLPackage.TRANSITION_HANDLER__VALUE, oldValue,
-					value));
+			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoMLPackage.CONDITION__VALUE, oldValue, value));
 	}
 
 	/**
@@ -148,11 +148,11 @@ public class TransitionHandlerImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ArduinoMLPackage.TRANSITION_HANDLER__SENSOR:
+		case ArduinoMLPackage.CONDITION__SENSOR:
 			if (resolve)
 				return getSensor();
 			return basicGetSensor();
-		case ArduinoMLPackage.TRANSITION_HANDLER__VALUE:
+		case ArduinoMLPackage.CONDITION__VALUE:
 			return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -166,10 +166,10 @@ public class TransitionHandlerImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ArduinoMLPackage.TRANSITION_HANDLER__SENSOR:
+		case ArduinoMLPackage.CONDITION__SENSOR:
 			setSensor((Sensor) newValue);
 			return;
-		case ArduinoMLPackage.TRANSITION_HANDLER__VALUE:
+		case ArduinoMLPackage.CONDITION__VALUE:
 			setValue((SIGNAL) newValue);
 			return;
 		}
@@ -184,10 +184,10 @@ public class TransitionHandlerImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ArduinoMLPackage.TRANSITION_HANDLER__SENSOR:
+		case ArduinoMLPackage.CONDITION__SENSOR:
 			setSensor((Sensor) null);
 			return;
-		case ArduinoMLPackage.TRANSITION_HANDLER__VALUE:
+		case ArduinoMLPackage.CONDITION__VALUE:
 			setValue(VALUE_EDEFAULT);
 			return;
 		}
@@ -202,9 +202,9 @@ public class TransitionHandlerImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ArduinoMLPackage.TRANSITION_HANDLER__SENSOR:
+		case ArduinoMLPackage.CONDITION__SENSOR:
 			return sensor != null;
-		case ArduinoMLPackage.TRANSITION_HANDLER__VALUE:
+		case ArduinoMLPackage.CONDITION__VALUE:
 			return value != VALUE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -227,4 +227,4 @@ public class TransitionHandlerImpl extends MinimalEObjectImpl.Container implemen
 		return result.toString();
 	}
 
-} //TransitionHandlerImpl
+} //ConditionImpl

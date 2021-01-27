@@ -21,10 +21,10 @@ import arduinoML.State
 import io.github.mosser.arduinoml.kernel.generator.ToWiring
 import arduinoML.Action
 import arduinoML.SIGNAL
-import arduinoML.TransitionHandler
 import arduinoML.OPERATION
 import arduinoML.SensorAnalog
 import arduinoML.SensorDigital
+import arduinoML.Condition
 
 /**
  * Generates code from your model files on save.
@@ -102,14 +102,14 @@ class SpamlGenerator extends AbstractGenerator {
 		return initialState;
 	}
 	
-	private def io.github.mosser.arduinoml.kernel.behavioral.TransitionHandler convertTransitionHandlerToMosser(TransitionHandler transitionHandler) {
+	private def io.github.mosser.arduinoml.kernel.behavioral.TransitionHandler convertTransitionHandlerToMosser(Condition condition) {
 		val handler = new io.github.mosser.arduinoml.kernel.behavioral.TransitionHandler();
-		if (transitionHandler.value === SIGNAL.HIGH) {
+		if (condition.value === SIGNAL.HIGH) {
 			handler.value = io.github.mosser.arduinoml.kernel.structural.SIGNAL.HIGH;
 		} else {
 			handler.value = io.github.mosser.arduinoml.kernel.structural.SIGNAL.LOW;
 		}
-		handler.sensor = convertSpamlSensorToMosser(transitionHandler.sensor);
+		handler.sensor = convertSpamlSensorToMosser(condition.sensor);
 		return handler;
 	}
 	
@@ -117,7 +117,7 @@ class SpamlGenerator extends AbstractGenerator {
 		val transition = new io.github.mosser.arduinoml.kernel.behavioral.Transition();
 		
 		val handlers = new ArrayList<io.github.mosser.arduinoml.kernel.behavioral.TransitionHandler>();
-		for (TransitionHandler t : state.transition.handlers) {
+		for (Condition t : state.transition.conditions) {
 			handlers.add(convertTransitionHandlerToMosser(t));
 		}
 		transition.handlers = handlers;

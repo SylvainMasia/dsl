@@ -3,11 +3,10 @@
 package arduinoML.impl;
 
 import arduinoML.ArduinoMLPackage;
+import arduinoML.Condition;
 import arduinoML.OPERATION;
 import arduinoML.State;
 import arduinoML.Transition;
-
-import arduinoML.TransitionHandler;
 import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -30,7 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link arduinoML.impl.TransitionImpl#getNext <em>Next</em>}</li>
- *   <li>{@link arduinoML.impl.TransitionImpl#getHandlers <em>Handlers</em>}</li>
+ *   <li>{@link arduinoML.impl.TransitionImpl#getConditions <em>Conditions</em>}</li>
  *   <li>{@link arduinoML.impl.TransitionImpl#getOperation <em>Operation</em>}</li>
  *   <li>{@link arduinoML.impl.TransitionImpl#getDelay <em>Delay</em>}</li>
  * </ul>
@@ -49,14 +48,14 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	protected State next;
 
 	/**
-	 * The cached value of the '{@link #getHandlers() <em>Handlers</em>}' containment reference list.
+	 * The cached value of the '{@link #getConditions() <em>Conditions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getHandlers()
+	 * @see #getConditions()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<TransitionHandler> handlers;
+	protected EList<Condition> conditions;
 
 	/**
 	 * The default value of the '{@link #getOperation() <em>Operation</em>}' attribute.
@@ -161,12 +160,12 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<TransitionHandler> getHandlers() {
-		if (handlers == null) {
-			handlers = new EObjectContainmentEList<TransitionHandler>(TransitionHandler.class, this,
-					ArduinoMLPackage.TRANSITION__HANDLERS);
+	public EList<Condition> getConditions() {
+		if (conditions == null) {
+			conditions = new EObjectContainmentEList<Condition>(Condition.class, this,
+					ArduinoMLPackage.TRANSITION__CONDITIONS);
 		}
-		return handlers;
+		return conditions;
 	}
 
 	/**
@@ -220,8 +219,8 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case ArduinoMLPackage.TRANSITION__HANDLERS:
-			return ((InternalEList<?>) getHandlers()).basicRemove(otherEnd, msgs);
+		case ArduinoMLPackage.TRANSITION__CONDITIONS:
+			return ((InternalEList<?>) getConditions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -238,8 +237,8 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 			if (resolve)
 				return getNext();
 			return basicGetNext();
-		case ArduinoMLPackage.TRANSITION__HANDLERS:
-			return getHandlers();
+		case ArduinoMLPackage.TRANSITION__CONDITIONS:
+			return getConditions();
 		case ArduinoMLPackage.TRANSITION__OPERATION:
 			return getOperation();
 		case ArduinoMLPackage.TRANSITION__DELAY:
@@ -260,9 +259,9 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 		case ArduinoMLPackage.TRANSITION__NEXT:
 			setNext((State) newValue);
 			return;
-		case ArduinoMLPackage.TRANSITION__HANDLERS:
-			getHandlers().clear();
-			getHandlers().addAll((Collection<? extends TransitionHandler>) newValue);
+		case ArduinoMLPackage.TRANSITION__CONDITIONS:
+			getConditions().clear();
+			getConditions().addAll((Collection<? extends Condition>) newValue);
 			return;
 		case ArduinoMLPackage.TRANSITION__OPERATION:
 			setOperation((OPERATION) newValue);
@@ -285,8 +284,8 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 		case ArduinoMLPackage.TRANSITION__NEXT:
 			setNext((State) null);
 			return;
-		case ArduinoMLPackage.TRANSITION__HANDLERS:
-			getHandlers().clear();
+		case ArduinoMLPackage.TRANSITION__CONDITIONS:
+			getConditions().clear();
 			return;
 		case ArduinoMLPackage.TRANSITION__OPERATION:
 			setOperation(OPERATION_EDEFAULT);
@@ -308,8 +307,8 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 		switch (featureID) {
 		case ArduinoMLPackage.TRANSITION__NEXT:
 			return next != null;
-		case ArduinoMLPackage.TRANSITION__HANDLERS:
-			return handlers != null && !handlers.isEmpty();
+		case ArduinoMLPackage.TRANSITION__CONDITIONS:
+			return conditions != null && !conditions.isEmpty();
 		case ArduinoMLPackage.TRANSITION__OPERATION:
 			return operation != OPERATION_EDEFAULT;
 		case ArduinoMLPackage.TRANSITION__DELAY:

@@ -6,22 +6,22 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Transition Handler</b></em>'.
+ * A representation of the model object '<em><b>Condition</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link arduinoML.TransitionHandler#getSensor <em>Sensor</em>}</li>
- *   <li>{@link arduinoML.TransitionHandler#getValue <em>Value</em>}</li>
+ *   <li>{@link arduinoML.Condition#getSensor <em>Sensor</em>}</li>
+ *   <li>{@link arduinoML.Condition#getValue <em>Value</em>}</li>
  * </ul>
  *
- * @see arduinoML.ArduinoMLPackage#getTransitionHandler()
+ * @see arduinoML.ArduinoMLPackage#getCondition()
  * @model
  * @generated
  */
-public interface TransitionHandler extends EObject {
+public interface Condition extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Sensor</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -32,14 +32,14 @@ public interface TransitionHandler extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sensor</em>' reference.
 	 * @see #setSensor(Sensor)
-	 * @see arduinoML.ArduinoMLPackage#getTransitionHandler_Sensor()
+	 * @see arduinoML.ArduinoMLPackage#getCondition_Sensor()
 	 * @model required="true"
 	 * @generated
 	 */
 	Sensor getSensor();
 
 	/**
-	 * Sets the value of the '{@link arduinoML.TransitionHandler#getSensor <em>Sensor</em>}' reference.
+	 * Sets the value of the '{@link arduinoML.Condition#getSensor <em>Sensor</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Sensor</em>' reference.
@@ -60,14 +60,14 @@ public interface TransitionHandler extends EObject {
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see arduinoML.SIGNAL
 	 * @see #setValue(SIGNAL)
-	 * @see arduinoML.ArduinoMLPackage#getTransitionHandler_Value()
+	 * @see arduinoML.ArduinoMLPackage#getCondition_Value()
 	 * @model required="true"
 	 * @generated
 	 */
 	SIGNAL getValue();
 
 	/**
-	 * Sets the value of the '{@link arduinoML.TransitionHandler#getValue <em>Value</em>}' attribute.
+	 * Sets the value of the '{@link arduinoML.Condition#getValue <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Value</em>' attribute.
@@ -77,4 +77,4 @@ public interface TransitionHandler extends EObject {
 	 */
 	void setValue(SIGNAL value);
 
-} // TransitionHandler
+} // Condition

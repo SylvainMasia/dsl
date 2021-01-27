@@ -49,9 +49,9 @@ Action returns Action:
 	actuator=[Actuator|EString] ('=' | 'setTo') value=SIGNAL;
 
 Transition returns Transition:
-	(('when'?)  ((handlers+=TransitionHandler (',' handlers+=TransitionHandler)*) | (operation=OPERATION '(' (handlers+=TransitionHandler (',' handlers+=TransitionHandler)*) ')')) | (delay=EInt)) ('->' | 'then') next=[State|EString];
+	(('when'?)  ((conditions+=Condition (',' conditions+=Condition)*) | (operation=OPERATION '(' (conditions+=Condition (',' conditions+=Condition)*) ')')) | (delay=EInt)) ('->' | 'then') next=[State|EString];
 	
-TransitionHandler returns TransitionHandler:
+Condition returns Condition:
 	sensor=[Sensor] ('=' | 'is') value=SIGNAL;
 
 enum SIGNAL returns SIGNAL:

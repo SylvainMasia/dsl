@@ -56,7 +56,7 @@ public class TransitionItemProvider extends ItemProviderAdapter implements IEdit
 			super.getPropertyDescriptors(object);
 
 			addNextPropertyDescriptor(object);
-			addHandlersPropertyDescriptor(object);
+			addConditionsPropertyDescriptor(object);
 			addOperationPropertyDescriptor(object);
 			addDelayPropertyDescriptor(object);
 		}
@@ -79,18 +79,18 @@ public class TransitionItemProvider extends ItemProviderAdapter implements IEdit
 	}
 
 	/**
-	 * This adds a property descriptor for the Handlers feature.
+	 * This adds a property descriptor for the Conditions feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addHandlersPropertyDescriptor(Object object) {
+	protected void addConditionsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Transition_handlers_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Transition_handlers_feature",
+						getResourceLocator(), getString("_UI_Transition_conditions_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Transition_conditions_feature",
 								"_UI_Transition_type"),
-						ArduinoMLPackage.Literals.TRANSITION__HANDLERS, true, false, true, null, null, null));
+						ArduinoMLPackage.Literals.TRANSITION__CONDITIONS, true, false, true, null, null, null));
 	}
 
 	/**
@@ -137,7 +137,7 @@ public class TransitionItemProvider extends ItemProviderAdapter implements IEdit
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ArduinoMLPackage.Literals.TRANSITION__HANDLERS);
+			childrenFeatures.add(ArduinoMLPackage.Literals.TRANSITION__CONDITIONS);
 		}
 		return childrenFeatures;
 	}
@@ -206,7 +206,7 @@ public class TransitionItemProvider extends ItemProviderAdapter implements IEdit
 		case ArduinoMLPackage.TRANSITION__DELAY:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case ArduinoMLPackage.TRANSITION__HANDLERS:
+		case ArduinoMLPackage.TRANSITION__CONDITIONS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -224,8 +224,8 @@ public class TransitionItemProvider extends ItemProviderAdapter implements IEdit
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(ArduinoMLPackage.Literals.TRANSITION__HANDLERS,
-				ArduinoMLFactory.eINSTANCE.createTransitionHandler()));
+		newChildDescriptors.add(createChildParameter(ArduinoMLPackage.Literals.TRANSITION__CONDITIONS,
+				ArduinoMLFactory.eINSTANCE.createCondition()));
 	}
 
 	/**

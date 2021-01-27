@@ -188,26 +188,26 @@ public class ArduinoMLItemProviderAdapterFactory extends ArduinoMLAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link arduinoML.TransitionHandler} instances.
+	 * This keeps track of the one adapter used for all {@link arduinoML.Condition} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TransitionHandlerItemProvider transitionHandlerItemProvider;
+	protected ConditionItemProvider conditionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link arduinoML.TransitionHandler}.
+	 * This creates an adapter for a {@link arduinoML.Condition}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createTransitionHandlerAdapter() {
-		if (transitionHandlerItemProvider == null) {
-			transitionHandlerItemProvider = new TransitionHandlerItemProvider(this);
+	public Adapter createConditionAdapter() {
+		if (conditionItemProvider == null) {
+			conditionItemProvider = new ConditionItemProvider(this);
 		}
 
-		return transitionHandlerItemProvider;
+		return conditionItemProvider;
 	}
 
 	/**
@@ -365,8 +365,8 @@ public class ArduinoMLItemProviderAdapterFactory extends ArduinoMLAdapterFactory
 			actionItemProvider.dispose();
 		if (transitionItemProvider != null)
 			transitionItemProvider.dispose();
-		if (transitionHandlerItemProvider != null)
-			transitionHandlerItemProvider.dispose();
+		if (conditionItemProvider != null)
+			conditionItemProvider.dispose();
 		if (sensorAnalogItemProvider != null)
 			sensorAnalogItemProvider.dispose();
 		if (sensorDigitalItemProvider != null)

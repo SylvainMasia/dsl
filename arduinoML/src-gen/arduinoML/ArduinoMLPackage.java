@@ -417,13 +417,13 @@ public interface ArduinoMLPackage extends EPackage {
 	int TRANSITION__NEXT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Handlers</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Conditions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__HANDLERS = 1;
+	int TRANSITION__CONDITIONS = 1;
 
 	/**
 	 * The feature id for the '<em><b>Operation</b></em>' attribute.
@@ -462,14 +462,14 @@ public interface ArduinoMLPackage extends EPackage {
 	int TRANSITION_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link arduinoML.impl.TransitionHandlerImpl <em>Transition Handler</em>}' class.
+	 * The meta object id for the '{@link arduinoML.impl.ConditionImpl <em>Condition</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see arduinoML.impl.TransitionHandlerImpl
-	 * @see arduinoML.impl.ArduinoMLPackageImpl#getTransitionHandler()
+	 * @see arduinoML.impl.ConditionImpl
+	 * @see arduinoML.impl.ArduinoMLPackageImpl#getCondition()
 	 * @generated
 	 */
-	int TRANSITION_HANDLER = 8;
+	int CONDITION = 8;
 
 	/**
 	 * The feature id for the '<em><b>Sensor</b></em>' reference.
@@ -478,7 +478,7 @@ public interface ArduinoMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_HANDLER__SENSOR = 0;
+	int CONDITION__SENSOR = 0;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -487,25 +487,25 @@ public interface ArduinoMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_HANDLER__VALUE = 1;
+	int CONDITION__VALUE = 1;
 
 	/**
-	 * The number of structural features of the '<em>Transition Handler</em>' class.
+	 * The number of structural features of the '<em>Condition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_HANDLER_FEATURE_COUNT = 2;
+	int CONDITION_FEATURE_COUNT = 2;
 
 	/**
-	 * The number of operations of the '<em>Transition Handler</em>' class.
+	 * The number of operations of the '<em>Condition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_HANDLER_OPERATION_COUNT = 0;
+	int CONDITION_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link arduinoML.impl.SensorAnalogImpl <em>Sensor Analog</em>}' class.
@@ -810,15 +810,15 @@ public interface ArduinoMLPackage extends EPackage {
 	EReference getTransition_Next();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link arduinoML.Transition#getHandlers <em>Handlers</em>}'.
+	 * Returns the meta object for the containment reference list '{@link arduinoML.Transition#getConditions <em>Conditions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Handlers</em>'.
-	 * @see arduinoML.Transition#getHandlers()
+	 * @return the meta object for the containment reference list '<em>Conditions</em>'.
+	 * @see arduinoML.Transition#getConditions()
 	 * @see #getTransition()
 	 * @generated
 	 */
-	EReference getTransition_Handlers();
+	EReference getTransition_Conditions();
 
 	/**
 	 * Returns the meta object for the attribute '{@link arduinoML.Transition#getOperation <em>Operation</em>}'.
@@ -843,36 +843,36 @@ public interface ArduinoMLPackage extends EPackage {
 	EAttribute getTransition_Delay();
 
 	/**
-	 * Returns the meta object for class '{@link arduinoML.TransitionHandler <em>Transition Handler</em>}'.
+	 * Returns the meta object for class '{@link arduinoML.Condition <em>Condition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Transition Handler</em>'.
-	 * @see arduinoML.TransitionHandler
+	 * @return the meta object for class '<em>Condition</em>'.
+	 * @see arduinoML.Condition
 	 * @generated
 	 */
-	EClass getTransitionHandler();
+	EClass getCondition();
 
 	/**
-	 * Returns the meta object for the reference '{@link arduinoML.TransitionHandler#getSensor <em>Sensor</em>}'.
+	 * Returns the meta object for the reference '{@link arduinoML.Condition#getSensor <em>Sensor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Sensor</em>'.
-	 * @see arduinoML.TransitionHandler#getSensor()
-	 * @see #getTransitionHandler()
+	 * @see arduinoML.Condition#getSensor()
+	 * @see #getCondition()
 	 * @generated
 	 */
-	EReference getTransitionHandler_Sensor();
+	EReference getCondition_Sensor();
 
 	/**
-	 * Returns the meta object for the attribute '{@link arduinoML.TransitionHandler#getValue <em>Value</em>}'.
+	 * Returns the meta object for the attribute '{@link arduinoML.Condition#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see arduinoML.TransitionHandler#getValue()
-	 * @see #getTransitionHandler()
+	 * @see arduinoML.Condition#getValue()
+	 * @see #getCondition()
 	 * @generated
 	 */
-	EAttribute getTransitionHandler_Value();
+	EAttribute getCondition_Value();
 
 	/**
 	 * Returns the meta object for class '{@link arduinoML.SensorAnalog <em>Sensor Analog</em>}'.
@@ -1098,12 +1098,12 @@ public interface ArduinoMLPackage extends EPackage {
 		EReference TRANSITION__NEXT = eINSTANCE.getTransition_Next();
 
 		/**
-		 * The meta object literal for the '<em><b>Handlers</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Conditions</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TRANSITION__HANDLERS = eINSTANCE.getTransition_Handlers();
+		EReference TRANSITION__CONDITIONS = eINSTANCE.getTransition_Conditions();
 
 		/**
 		 * The meta object literal for the '<em><b>Operation</b></em>' attribute feature.
@@ -1122,14 +1122,14 @@ public interface ArduinoMLPackage extends EPackage {
 		EAttribute TRANSITION__DELAY = eINSTANCE.getTransition_Delay();
 
 		/**
-		 * The meta object literal for the '{@link arduinoML.impl.TransitionHandlerImpl <em>Transition Handler</em>}' class.
+		 * The meta object literal for the '{@link arduinoML.impl.ConditionImpl <em>Condition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see arduinoML.impl.TransitionHandlerImpl
-		 * @see arduinoML.impl.ArduinoMLPackageImpl#getTransitionHandler()
+		 * @see arduinoML.impl.ConditionImpl
+		 * @see arduinoML.impl.ArduinoMLPackageImpl#getCondition()
 		 * @generated
 		 */
-		EClass TRANSITION_HANDLER = eINSTANCE.getTransitionHandler();
+		EClass CONDITION = eINSTANCE.getCondition();
 
 		/**
 		 * The meta object literal for the '<em><b>Sensor</b></em>' reference feature.
@@ -1137,7 +1137,7 @@ public interface ArduinoMLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TRANSITION_HANDLER__SENSOR = eINSTANCE.getTransitionHandler_Sensor();
+		EReference CONDITION__SENSOR = eINSTANCE.getCondition_Sensor();
 
 		/**
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
@@ -1145,7 +1145,7 @@ public interface ArduinoMLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TRANSITION_HANDLER__VALUE = eINSTANCE.getTransitionHandler_Value();
+		EAttribute CONDITION__VALUE = eINSTANCE.getCondition_Value();
 
 		/**
 		 * The meta object literal for the '{@link arduinoML.impl.SensorAnalogImpl <em>Sensor Analog</em>}' class.

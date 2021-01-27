@@ -67,8 +67,8 @@ public class ArduinoMLFactoryImpl extends EFactoryImpl implements ArduinoMLFacto
 			return createAction();
 		case ArduinoMLPackage.TRANSITION:
 			return createTransition();
-		case ArduinoMLPackage.TRANSITION_HANDLER:
-			return createTransitionHandler();
+		case ArduinoMLPackage.CONDITION:
+			return createCondition();
 		case ArduinoMLPackage.SENSOR_ANALOG:
 			return createSensorAnalog();
 		case ArduinoMLPackage.SENSOR_DIGITAL:
@@ -167,9 +167,9 @@ public class ArduinoMLFactoryImpl extends EFactoryImpl implements ArduinoMLFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TransitionHandler createTransitionHandler() {
-		TransitionHandlerImpl transitionHandler = new TransitionHandlerImpl();
-		return transitionHandler;
+	public Condition createCondition() {
+		ConditionImpl condition = new ConditionImpl();
+		return condition;
 	}
 
 	/**

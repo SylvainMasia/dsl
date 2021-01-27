@@ -107,8 +107,8 @@ public class ArduinoMLAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseTransitionHandler(TransitionHandler object) {
-			return createTransitionHandlerAdapter();
+		public Adapter caseCondition(Condition object) {
+			return createConditionAdapter();
 		}
 
 		@Override
@@ -253,16 +253,16 @@ public class ArduinoMLAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link arduinoML.TransitionHandler <em>Transition Handler</em>}'.
+	 * Creates a new adapter for an object of class '{@link arduinoML.Condition <em>Condition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see arduinoML.TransitionHandler
+	 * @see arduinoML.Condition
 	 * @generated
 	 */
-	public Adapter createTransitionHandlerAdapter() {
+	public Adapter createConditionAdapter() {
 		return null;
 	}
 

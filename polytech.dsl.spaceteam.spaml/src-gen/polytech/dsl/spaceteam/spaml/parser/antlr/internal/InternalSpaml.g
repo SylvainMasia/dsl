@@ -663,18 +663,18 @@ ruleTransition returns [EObject current=null]
 						(
 							(
 								{
-									newCompositeNode(grammarAccess.getTransitionAccess().getHandlersTransitionHandlerParserRuleCall_0_0_1_0_0_0());
+									newCompositeNode(grammarAccess.getTransitionAccess().getConditionsConditionParserRuleCall_0_0_1_0_0_0());
 								}
-								lv_handlers_1_0=ruleTransitionHandler
+								lv_conditions_1_0=ruleCondition
 								{
 									if ($current==null) {
 										$current = createModelElementForParent(grammarAccess.getTransitionRule());
 									}
 									add(
 										$current,
-										"handlers",
-										lv_handlers_1_0,
-										"polytech.dsl.spaceteam.spaml.Spaml.TransitionHandler");
+										"conditions",
+										lv_conditions_1_0,
+										"polytech.dsl.spaceteam.spaml.Spaml.Condition");
 									afterParserOrEnumRuleCall();
 								}
 							)
@@ -687,18 +687,18 @@ ruleTransition returns [EObject current=null]
 							(
 								(
 									{
-										newCompositeNode(grammarAccess.getTransitionAccess().getHandlersTransitionHandlerParserRuleCall_0_0_1_0_1_1_0());
+										newCompositeNode(grammarAccess.getTransitionAccess().getConditionsConditionParserRuleCall_0_0_1_0_1_1_0());
 									}
-									lv_handlers_3_0=ruleTransitionHandler
+									lv_conditions_3_0=ruleCondition
 									{
 										if ($current==null) {
 											$current = createModelElementForParent(grammarAccess.getTransitionRule());
 										}
 										add(
 											$current,
-											"handlers",
-											lv_handlers_3_0,
-											"polytech.dsl.spaceteam.spaml.Spaml.TransitionHandler");
+											"conditions",
+											lv_conditions_3_0,
+											"polytech.dsl.spaceteam.spaml.Spaml.Condition");
 										afterParserOrEnumRuleCall();
 									}
 								)
@@ -734,18 +734,18 @@ ruleTransition returns [EObject current=null]
 							(
 								(
 									{
-										newCompositeNode(grammarAccess.getTransitionAccess().getHandlersTransitionHandlerParserRuleCall_0_0_1_1_2_0_0());
+										newCompositeNode(grammarAccess.getTransitionAccess().getConditionsConditionParserRuleCall_0_0_1_1_2_0_0());
 									}
-									lv_handlers_6_0=ruleTransitionHandler
+									lv_conditions_6_0=ruleCondition
 									{
 										if ($current==null) {
 											$current = createModelElementForParent(grammarAccess.getTransitionRule());
 										}
 										add(
 											$current,
-											"handlers",
-											lv_handlers_6_0,
-											"polytech.dsl.spaceteam.spaml.Spaml.TransitionHandler");
+											"conditions",
+											lv_conditions_6_0,
+											"polytech.dsl.spaceteam.spaml.Spaml.Condition");
 										afterParserOrEnumRuleCall();
 									}
 								)
@@ -758,18 +758,18 @@ ruleTransition returns [EObject current=null]
 								(
 									(
 										{
-											newCompositeNode(grammarAccess.getTransitionAccess().getHandlersTransitionHandlerParserRuleCall_0_0_1_1_2_1_1_0());
+											newCompositeNode(grammarAccess.getTransitionAccess().getConditionsConditionParserRuleCall_0_0_1_1_2_1_1_0());
 										}
-										lv_handlers_8_0=ruleTransitionHandler
+										lv_conditions_8_0=ruleCondition
 										{
 											if ($current==null) {
 												$current = createModelElementForParent(grammarAccess.getTransitionRule());
 											}
 											add(
 												$current,
-												"handlers",
-												lv_handlers_8_0,
-												"polytech.dsl.spaceteam.spaml.Spaml.TransitionHandler");
+												"conditions",
+												lv_conditions_8_0,
+												"polytech.dsl.spaceteam.spaml.Spaml.Condition");
 											afterParserOrEnumRuleCall();
 										}
 									)
@@ -834,15 +834,15 @@ ruleTransition returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleTransitionHandler
-entryRuleTransitionHandler returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getTransitionHandlerRule()); }
-	iv_ruleTransitionHandler=ruleTransitionHandler
-	{ $current=$iv_ruleTransitionHandler.current; }
+// Entry rule entryRuleCondition
+entryRuleCondition returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getConditionRule()); }
+	iv_ruleCondition=ruleCondition
+	{ $current=$iv_ruleCondition.current; }
 	EOF;
 
-// Rule TransitionHandler
-ruleTransitionHandler returns [EObject current=null]
+// Rule Condition
+ruleCondition returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -854,35 +854,35 @@ ruleTransitionHandler returns [EObject current=null]
 			(
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getTransitionHandlerRule());
+						$current = createModelElement(grammarAccess.getConditionRule());
 					}
 				}
 				otherlv_0=RULE_ID
 				{
-					newLeafNode(otherlv_0, grammarAccess.getTransitionHandlerAccess().getSensorSensorCrossReference_0_0());
+					newLeafNode(otherlv_0, grammarAccess.getConditionAccess().getSensorSensorCrossReference_0_0());
 				}
 			)
 		)
 		(
 			otherlv_1='='
 			{
-				newLeafNode(otherlv_1, grammarAccess.getTransitionHandlerAccess().getEqualsSignKeyword_1_0());
+				newLeafNode(otherlv_1, grammarAccess.getConditionAccess().getEqualsSignKeyword_1_0());
 			}
 			    |
 			otherlv_2='is'
 			{
-				newLeafNode(otherlv_2, grammarAccess.getTransitionHandlerAccess().getIsKeyword_1_1());
+				newLeafNode(otherlv_2, grammarAccess.getConditionAccess().getIsKeyword_1_1());
 			}
 		)
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getTransitionHandlerAccess().getValueSIGNALEnumRuleCall_2_0());
+					newCompositeNode(grammarAccess.getConditionAccess().getValueSIGNALEnumRuleCall_2_0());
 				}
 				lv_value_3_0=ruleSIGNAL
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getTransitionHandlerRule());
+						$current = createModelElementForParent(grammarAccess.getConditionRule());
 					}
 					set(
 						$current,

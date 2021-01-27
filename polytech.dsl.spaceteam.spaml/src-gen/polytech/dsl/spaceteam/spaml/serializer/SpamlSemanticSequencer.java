@@ -5,12 +5,12 @@ package polytech.dsl.spaceteam.spaml.serializer;
 
 import arduinoML.Actuator;
 import arduinoML.ArduinoMLPackage;
+import arduinoML.Condition;
 import arduinoML.Program;
 import arduinoML.SensorAnalog;
 import arduinoML.SensorDigital;
 import arduinoML.State;
 import arduinoML.Transition;
-import arduinoML.TransitionHandler;
 import com.google.inject.Inject;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -51,6 +51,9 @@ public class SpamlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
+			case ArduinoMLPackage.CONDITION:
+				sequence_Condition(context, (Condition) semanticObject); 
+				return; 
 			case ArduinoMLPackage.PROGRAM:
 				sequence_Program(context, (Program) semanticObject); 
 				return; 
@@ -81,9 +84,6 @@ public class SpamlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case ArduinoMLPackage.TRANSITION:
 				sequence_Transition(context, (Transition) semanticObject); 
-				return; 
-			case ArduinoMLPackage.TRANSITION_HANDLER:
-				sequence_TransitionHandler(context, (TransitionHandler) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -140,6 +140,27 @@ public class SpamlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getPluggedElementAccess().getNameEStringParserRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getPluggedElementAccess().getPinEIntParserRuleCall_3_0(), semanticObject.getPin());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Condition returns Condition
+	 *
+	 * Constraint:
+	 *     (sensor=[Sensor|ID] value=SIGNAL)
+	 */
+	protected void sequence_Condition(ISerializationContext context, Condition semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ArduinoMLPackage.Literals.CONDITION__SENSOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArduinoMLPackage.Literals.CONDITION__SENSOR));
+			if (transientValues.isValueTransient(semanticObject, ArduinoMLPackage.Literals.CONDITION__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArduinoMLPackage.Literals.CONDITION__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getConditionAccess().getSensorSensorIDTerminalRuleCall_0_0_1(), semanticObject.eGet(ArduinoMLPackage.Literals.CONDITION__SENSOR, false));
+		feeder.accept(grammarAccess.getConditionAccess().getValueSIGNALEnumRuleCall_2_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -238,36 +259,11 @@ public class SpamlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
-	 *     TransitionHandler returns TransitionHandler
-	 *
-	 * Constraint:
-	 *     (sensor=[Sensor|ID] value=SIGNAL)
-	 */
-	protected void sequence_TransitionHandler(ISerializationContext context, TransitionHandler semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ArduinoMLPackage.Literals.TRANSITION_HANDLER__SENSOR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArduinoMLPackage.Literals.TRANSITION_HANDLER__SENSOR));
-			if (transientValues.isValueTransient(semanticObject, ArduinoMLPackage.Literals.TRANSITION_HANDLER__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArduinoMLPackage.Literals.TRANSITION_HANDLER__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTransitionHandlerAccess().getSensorSensorIDTerminalRuleCall_0_0_1(), semanticObject.eGet(ArduinoMLPackage.Literals.TRANSITION_HANDLER__SENSOR, false));
-		feeder.accept(grammarAccess.getTransitionHandlerAccess().getValueSIGNALEnumRuleCall_2_0(), semanticObject.getValue());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     Transition returns Transition
 	 *
 	 * Constraint:
 	 *     (
-	 *         (
-	 *             (handlers+=TransitionHandler handlers+=TransitionHandler*) | 
-	 *             (operation=OPERATION handlers+=TransitionHandler handlers+=TransitionHandler*) | 
-	 *             delay=EInt
-	 *         ) 
+	 *         ((conditions+=Condition conditions+=Condition*) | (operation=OPERATION conditions+=Condition conditions+=Condition*) | delay=EInt) 
 	 *         next=[State|EString]
 	 *     )
 	 */

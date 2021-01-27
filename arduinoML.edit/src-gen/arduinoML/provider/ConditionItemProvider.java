@@ -3,9 +3,9 @@
 package arduinoML.provider;
 
 import arduinoML.ArduinoMLPackage;
-
+import arduinoML.Condition;
 import arduinoML.SIGNAL;
-import arduinoML.TransitionHandler;
+
 import java.util.Collection;
 import java.util.List;
 
@@ -26,12 +26,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link arduinoML.TransitionHandler} object.
+ * This is the item provider adapter for a {@link arduinoML.Condition} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class TransitionHandlerItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class ConditionItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -39,7 +39,7 @@ public class TransitionHandlerItemProvider extends ItemProviderAdapter implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TransitionHandlerItemProvider(AdapterFactory adapterFactory) {
+	public ConditionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -69,10 +69,10 @@ public class TransitionHandlerItemProvider extends ItemProviderAdapter implement
 	protected void addSensorPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_TransitionHandler_sensor_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_TransitionHandler_sensor_feature",
-								"_UI_TransitionHandler_type"),
-						ArduinoMLPackage.Literals.TRANSITION_HANDLER__SENSOR, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_Condition_sensor_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Condition_sensor_feature",
+								"_UI_Condition_type"),
+						ArduinoMLPackage.Literals.CONDITION__SENSOR, true, false, true, null, null, null));
 	}
 
 	/**
@@ -84,22 +84,22 @@ public class TransitionHandlerItemProvider extends ItemProviderAdapter implement
 	protected void addValuePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_TransitionHandler_value_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_TransitionHandler_value_feature",
-								"_UI_TransitionHandler_type"),
-						ArduinoMLPackage.Literals.TRANSITION_HANDLER__VALUE, true, false, false,
+						getResourceLocator(), getString("_UI_Condition_value_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Condition_value_feature",
+								"_UI_Condition_type"),
+						ArduinoMLPackage.Literals.CONDITION__VALUE, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This returns TransitionHandler.gif.
+	 * This returns Condition.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/TransitionHandler"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Condition"));
 	}
 
 	/**
@@ -120,10 +120,10 @@ public class TransitionHandlerItemProvider extends ItemProviderAdapter implement
 	 */
 	@Override
 	public String getText(Object object) {
-		SIGNAL labelValue = ((TransitionHandler) object).getValue();
+		SIGNAL labelValue = ((Condition) object).getValue();
 		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ? getString("_UI_TransitionHandler_type")
-				: getString("_UI_TransitionHandler_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_Condition_type")
+				: getString("_UI_Condition_type") + " " + label;
 	}
 
 	/**
@@ -137,8 +137,8 @@ public class TransitionHandlerItemProvider extends ItemProviderAdapter implement
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(TransitionHandler.class)) {
-		case ArduinoMLPackage.TRANSITION_HANDLER__VALUE:
+		switch (notification.getFeatureID(Condition.class)) {
+		case ArduinoMLPackage.CONDITION__VALUE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

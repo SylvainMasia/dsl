@@ -22,10 +22,10 @@ public class SpamlSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected SpamlGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_Action_EqualsSignKeyword_1_0_or_SetToKeyword_1_1;
+	protected AbstractElementAlias match_Condition_EqualsSignKeyword_1_0_or_IsKeyword_1_1;
 	protected AbstractElementAlias match_PluggedElement_OnPinKeyword_2_q;
 	protected AbstractElementAlias match_Program_PluggedElementsKeyword_5_0_or_PluggedElementsKeyword_5_1;
 	protected AbstractElementAlias match_Program_StatesKeyword_7_0_or_StatesKeyword_7_1;
-	protected AbstractElementAlias match_TransitionHandler_EqualsSignKeyword_1_0_or_IsKeyword_1_1;
 	protected AbstractElementAlias match_Transition_HyphenMinusGreaterThanSignKeyword_1_0_or_ThenKeyword_1_1;
 	protected AbstractElementAlias match_Transition_WhenKeyword_0_0_0_q;
 	
@@ -33,10 +33,10 @@ public class SpamlSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (SpamlGrammarAccess) access;
 		match_Action_EqualsSignKeyword_1_0_or_SetToKeyword_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getActionAccess().getEqualsSignKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getActionAccess().getSetToKeyword_1_1()));
+		match_Condition_EqualsSignKeyword_1_0_or_IsKeyword_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getConditionAccess().getEqualsSignKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getConditionAccess().getIsKeyword_1_1()));
 		match_PluggedElement_OnPinKeyword_2_q = new TokenAlias(false, true, grammarAccess.getPluggedElementAccess().getOnPinKeyword_2());
 		match_Program_PluggedElementsKeyword_5_0_or_PluggedElementsKeyword_5_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getProgramAccess().getPluggedElementsKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getProgramAccess().getPluggedElementsKeyword_5_1()));
 		match_Program_StatesKeyword_7_0_or_StatesKeyword_7_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getProgramAccess().getStatesKeyword_7_0()), new TokenAlias(false, false, grammarAccess.getProgramAccess().getStatesKeyword_7_1()));
-		match_TransitionHandler_EqualsSignKeyword_1_0_or_IsKeyword_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTransitionHandlerAccess().getEqualsSignKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getTransitionHandlerAccess().getIsKeyword_1_1()));
 		match_Transition_HyphenMinusGreaterThanSignKeyword_1_0_or_ThenKeyword_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTransitionAccess().getHyphenMinusGreaterThanSignKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getTransitionAccess().getThenKeyword_1_1()));
 		match_Transition_WhenKeyword_0_0_0_q = new TokenAlias(false, true, grammarAccess.getTransitionAccess().getWhenKeyword_0_0_0());
 	}
@@ -55,14 +55,14 @@ public class SpamlSyntacticSequencer extends AbstractSyntacticSequencer {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
 			if (match_Action_EqualsSignKeyword_1_0_or_SetToKeyword_1_1.equals(syntax))
 				emit_Action_EqualsSignKeyword_1_0_or_SetToKeyword_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Condition_EqualsSignKeyword_1_0_or_IsKeyword_1_1.equals(syntax))
+				emit_Condition_EqualsSignKeyword_1_0_or_IsKeyword_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_PluggedElement_OnPinKeyword_2_q.equals(syntax))
 				emit_PluggedElement_OnPinKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Program_PluggedElementsKeyword_5_0_or_PluggedElementsKeyword_5_1.equals(syntax))
 				emit_Program_PluggedElementsKeyword_5_0_or_PluggedElementsKeyword_5_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Program_StatesKeyword_7_0_or_StatesKeyword_7_1.equals(syntax))
 				emit_Program_StatesKeyword_7_0_or_StatesKeyword_7_1(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_TransitionHandler_EqualsSignKeyword_1_0_or_IsKeyword_1_1.equals(syntax))
-				emit_TransitionHandler_EqualsSignKeyword_1_0_or_IsKeyword_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Transition_HyphenMinusGreaterThanSignKeyword_1_0_or_ThenKeyword_1_1.equals(syntax))
 				emit_Transition_HyphenMinusGreaterThanSignKeyword_1_0_or_ThenKeyword_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Transition_WhenKeyword_0_0_0_q.equals(syntax))
@@ -79,6 +79,17 @@ public class SpamlSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     actuator=[Actuator|EString] (ambiguity) value=SIGNAL
 	 */
 	protected void emit_Action_EqualsSignKeyword_1_0_or_SetToKeyword_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     '=' | 'is'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     sensor=[Sensor|ID] (ambiguity) value=SIGNAL
+	 */
+	protected void emit_Condition_EqualsSignKeyword_1_0_or_IsKeyword_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -117,23 +128,12 @@ public class SpamlSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     '=' | 'is'
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     sensor=[Sensor|ID] (ambiguity) value=SIGNAL
-	 */
-	protected void emit_TransitionHandler_EqualsSignKeyword_1_0_or_IsKeyword_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
 	 *     '->' | 'then'
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     conditions+=Condition ')' (ambiguity) next=[State|EString]
+	 *     conditions+=Condition (ambiguity) next=[State|EString]
 	 *     delay=EInt (ambiguity) next=[State|EString]
-	 *     handlers+=TransitionHandler ')' (ambiguity) next=[State|EString]
-	 *     handlers+=TransitionHandler (ambiguity) next=[State|EString]
 	 */
 	protected void emit_Transition_HyphenMinusGreaterThanSignKeyword_1_0_or_ThenKeyword_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -144,7 +144,7 @@ public class SpamlSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     'when'?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) handlers+=TransitionHandler
+	 *     (rule start) (ambiguity) conditions+=Condition
 	 *     (rule start) (ambiguity) operation=OPERATION
 	 */
 	protected void emit_Transition_WhenKeyword_0_0_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {

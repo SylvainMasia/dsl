@@ -383,23 +383,23 @@ public class SpamlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cWhenKeyword_0_0_0 = (Keyword)cGroup_0_0.eContents().get(0);
 		private final Alternatives cAlternatives_0_0_1 = (Alternatives)cGroup_0_0.eContents().get(1);
 		private final Group cGroup_0_0_1_0 = (Group)cAlternatives_0_0_1.eContents().get(0);
-		private final Assignment cHandlersAssignment_0_0_1_0_0 = (Assignment)cGroup_0_0_1_0.eContents().get(0);
-		private final RuleCall cHandlersTransitionHandlerParserRuleCall_0_0_1_0_0_0 = (RuleCall)cHandlersAssignment_0_0_1_0_0.eContents().get(0);
+		private final Assignment cConditionsAssignment_0_0_1_0_0 = (Assignment)cGroup_0_0_1_0.eContents().get(0);
+		private final RuleCall cConditionsConditionParserRuleCall_0_0_1_0_0_0 = (RuleCall)cConditionsAssignment_0_0_1_0_0.eContents().get(0);
 		private final Group cGroup_0_0_1_0_1 = (Group)cGroup_0_0_1_0.eContents().get(1);
 		private final Keyword cCommaKeyword_0_0_1_0_1_0 = (Keyword)cGroup_0_0_1_0_1.eContents().get(0);
-		private final Assignment cHandlersAssignment_0_0_1_0_1_1 = (Assignment)cGroup_0_0_1_0_1.eContents().get(1);
-		private final RuleCall cHandlersTransitionHandlerParserRuleCall_0_0_1_0_1_1_0 = (RuleCall)cHandlersAssignment_0_0_1_0_1_1.eContents().get(0);
+		private final Assignment cConditionsAssignment_0_0_1_0_1_1 = (Assignment)cGroup_0_0_1_0_1.eContents().get(1);
+		private final RuleCall cConditionsConditionParserRuleCall_0_0_1_0_1_1_0 = (RuleCall)cConditionsAssignment_0_0_1_0_1_1.eContents().get(0);
 		private final Group cGroup_0_0_1_1 = (Group)cAlternatives_0_0_1.eContents().get(1);
 		private final Assignment cOperationAssignment_0_0_1_1_0 = (Assignment)cGroup_0_0_1_1.eContents().get(0);
 		private final RuleCall cOperationOPERATIONEnumRuleCall_0_0_1_1_0_0 = (RuleCall)cOperationAssignment_0_0_1_1_0.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_0_0_1_1_1 = (Keyword)cGroup_0_0_1_1.eContents().get(1);
 		private final Group cGroup_0_0_1_1_2 = (Group)cGroup_0_0_1_1.eContents().get(2);
-		private final Assignment cHandlersAssignment_0_0_1_1_2_0 = (Assignment)cGroup_0_0_1_1_2.eContents().get(0);
-		private final RuleCall cHandlersTransitionHandlerParserRuleCall_0_0_1_1_2_0_0 = (RuleCall)cHandlersAssignment_0_0_1_1_2_0.eContents().get(0);
+		private final Assignment cConditionsAssignment_0_0_1_1_2_0 = (Assignment)cGroup_0_0_1_1_2.eContents().get(0);
+		private final RuleCall cConditionsConditionParserRuleCall_0_0_1_1_2_0_0 = (RuleCall)cConditionsAssignment_0_0_1_1_2_0.eContents().get(0);
 		private final Group cGroup_0_0_1_1_2_1 = (Group)cGroup_0_0_1_1_2.eContents().get(1);
 		private final Keyword cCommaKeyword_0_0_1_1_2_1_0 = (Keyword)cGroup_0_0_1_1_2_1.eContents().get(0);
-		private final Assignment cHandlersAssignment_0_0_1_1_2_1_1 = (Assignment)cGroup_0_0_1_1_2_1.eContents().get(1);
-		private final RuleCall cHandlersTransitionHandlerParserRuleCall_0_0_1_1_2_1_1_0 = (RuleCall)cHandlersAssignment_0_0_1_1_2_1_1.eContents().get(0);
+		private final Assignment cConditionsAssignment_0_0_1_1_2_1_1 = (Assignment)cGroup_0_0_1_1_2_1.eContents().get(1);
+		private final RuleCall cConditionsConditionParserRuleCall_0_0_1_1_2_1_1_0 = (RuleCall)cConditionsAssignment_0_0_1_1_2_1_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_0_0_1_1_3 = (Keyword)cGroup_0_0_1_1.eContents().get(3);
 		private final Assignment cDelayAssignment_0_1 = (Assignment)cAlternatives_0.eContents().get(1);
 		private final RuleCall cDelayEIntParserRuleCall_0_1_0 = (RuleCall)cDelayAssignment_0_1.eContents().get(0);
@@ -411,53 +411,51 @@ public class SpamlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNextStateEStringParserRuleCall_2_0_1 = (RuleCall)cNextStateCrossReference_2_0.eContents().get(1);
 		
 		//Transition:
-		//	('when'? (handlers+=TransitionHandler (',' handlers+=TransitionHandler)* | operation=OPERATION '('
-		//	(handlers+=TransitionHandler (',' handlers+=TransitionHandler)*) ')') | delay=EInt) ('->' | 'then')
-		//	next=[State|EString];
+		//	('when'? (conditions+=Condition (',' conditions+=Condition)* | operation=OPERATION '(' (conditions+=Condition (','
+		//	conditions+=Condition)*) ')') | delay=EInt) ('->' | 'then') next=[State|EString];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('when'? (handlers+=TransitionHandler (',' handlers+=TransitionHandler)* | operation=OPERATION '('
-		//(handlers+=TransitionHandler (',' handlers+=TransitionHandler)*) ')') | delay=EInt) ('->' | 'then')
-		//next=[State|EString]
+		//('when'? (conditions+=Condition (',' conditions+=Condition)* | operation=OPERATION '(' (conditions+=Condition (','
+		//conditions+=Condition)*) ')') | delay=EInt) ('->' | 'then') next=[State|EString]
 		public Group getGroup() { return cGroup; }
 		
-		//'when'? (handlers+=TransitionHandler (',' handlers+=TransitionHandler)* | operation=OPERATION '('
-		//(handlers+=TransitionHandler (',' handlers+=TransitionHandler)*) ')') | delay=EInt
+		//'when'? (conditions+=Condition (',' conditions+=Condition)* | operation=OPERATION '(' (conditions+=Condition (','
+		//conditions+=Condition)*) ')') | delay=EInt
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 		
-		//'when'? (handlers+=TransitionHandler (',' handlers+=TransitionHandler)* | operation=OPERATION '('
-		//(handlers+=TransitionHandler (',' handlers+=TransitionHandler)*) ')')
+		//'when'? (conditions+=Condition (',' conditions+=Condition)* | operation=OPERATION '(' (conditions+=Condition (','
+		//conditions+=Condition)*) ')')
 		public Group getGroup_0_0() { return cGroup_0_0; }
 		
 		//'when'?
 		public Keyword getWhenKeyword_0_0_0() { return cWhenKeyword_0_0_0; }
 		
-		//handlers+=TransitionHandler (',' handlers+=TransitionHandler)* | operation=OPERATION '(' (handlers+=TransitionHandler
-		//(',' handlers+=TransitionHandler)*) ')'
+		//conditions+=Condition (',' conditions+=Condition)* | operation=OPERATION '(' (conditions+=Condition (','
+		//conditions+=Condition)*) ')'
 		public Alternatives getAlternatives_0_0_1() { return cAlternatives_0_0_1; }
 		
-		//handlers+=TransitionHandler (',' handlers+=TransitionHandler)*
+		//conditions+=Condition (',' conditions+=Condition)*
 		public Group getGroup_0_0_1_0() { return cGroup_0_0_1_0; }
 		
-		//handlers+=TransitionHandler
-		public Assignment getHandlersAssignment_0_0_1_0_0() { return cHandlersAssignment_0_0_1_0_0; }
+		//conditions+=Condition
+		public Assignment getConditionsAssignment_0_0_1_0_0() { return cConditionsAssignment_0_0_1_0_0; }
 		
-		//TransitionHandler
-		public RuleCall getHandlersTransitionHandlerParserRuleCall_0_0_1_0_0_0() { return cHandlersTransitionHandlerParserRuleCall_0_0_1_0_0_0; }
+		//Condition
+		public RuleCall getConditionsConditionParserRuleCall_0_0_1_0_0_0() { return cConditionsConditionParserRuleCall_0_0_1_0_0_0; }
 		
-		//(',' handlers+=TransitionHandler)*
+		//(',' conditions+=Condition)*
 		public Group getGroup_0_0_1_0_1() { return cGroup_0_0_1_0_1; }
 		
 		//','
 		public Keyword getCommaKeyword_0_0_1_0_1_0() { return cCommaKeyword_0_0_1_0_1_0; }
 		
-		//handlers+=TransitionHandler
-		public Assignment getHandlersAssignment_0_0_1_0_1_1() { return cHandlersAssignment_0_0_1_0_1_1; }
+		//conditions+=Condition
+		public Assignment getConditionsAssignment_0_0_1_0_1_1() { return cConditionsAssignment_0_0_1_0_1_1; }
 		
-		//TransitionHandler
-		public RuleCall getHandlersTransitionHandlerParserRuleCall_0_0_1_0_1_1_0() { return cHandlersTransitionHandlerParserRuleCall_0_0_1_0_1_1_0; }
+		//Condition
+		public RuleCall getConditionsConditionParserRuleCall_0_0_1_0_1_1_0() { return cConditionsConditionParserRuleCall_0_0_1_0_1_1_0; }
 		
-		//operation=OPERATION '(' (handlers+=TransitionHandler (',' handlers+=TransitionHandler)*) ')'
+		//operation=OPERATION '(' (conditions+=Condition (',' conditions+=Condition)*) ')'
 		public Group getGroup_0_0_1_1() { return cGroup_0_0_1_1; }
 		
 		//operation=OPERATION
@@ -469,26 +467,26 @@ public class SpamlGrammarAccess extends AbstractGrammarElementFinder {
 		//'('
 		public Keyword getLeftParenthesisKeyword_0_0_1_1_1() { return cLeftParenthesisKeyword_0_0_1_1_1; }
 		
-		//handlers+=TransitionHandler (',' handlers+=TransitionHandler)*
+		//conditions+=Condition (',' conditions+=Condition)*
 		public Group getGroup_0_0_1_1_2() { return cGroup_0_0_1_1_2; }
 		
-		//handlers+=TransitionHandler
-		public Assignment getHandlersAssignment_0_0_1_1_2_0() { return cHandlersAssignment_0_0_1_1_2_0; }
+		//conditions+=Condition
+		public Assignment getConditionsAssignment_0_0_1_1_2_0() { return cConditionsAssignment_0_0_1_1_2_0; }
 		
-		//TransitionHandler
-		public RuleCall getHandlersTransitionHandlerParserRuleCall_0_0_1_1_2_0_0() { return cHandlersTransitionHandlerParserRuleCall_0_0_1_1_2_0_0; }
+		//Condition
+		public RuleCall getConditionsConditionParserRuleCall_0_0_1_1_2_0_0() { return cConditionsConditionParserRuleCall_0_0_1_1_2_0_0; }
 		
-		//(',' handlers+=TransitionHandler)*
+		//(',' conditions+=Condition)*
 		public Group getGroup_0_0_1_1_2_1() { return cGroup_0_0_1_1_2_1; }
 		
 		//','
 		public Keyword getCommaKeyword_0_0_1_1_2_1_0() { return cCommaKeyword_0_0_1_1_2_1_0; }
 		
-		//handlers+=TransitionHandler
-		public Assignment getHandlersAssignment_0_0_1_1_2_1_1() { return cHandlersAssignment_0_0_1_1_2_1_1; }
+		//conditions+=Condition
+		public Assignment getConditionsAssignment_0_0_1_1_2_1_1() { return cConditionsAssignment_0_0_1_1_2_1_1; }
 		
-		//TransitionHandler
-		public RuleCall getHandlersTransitionHandlerParserRuleCall_0_0_1_1_2_1_1_0() { return cHandlersTransitionHandlerParserRuleCall_0_0_1_1_2_1_1_0; }
+		//Condition
+		public RuleCall getConditionsConditionParserRuleCall_0_0_1_1_2_1_1_0() { return cConditionsConditionParserRuleCall_0_0_1_1_2_1_1_0; }
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_0_0_1_1_3() { return cRightParenthesisKeyword_0_0_1_1_3; }
@@ -517,8 +515,8 @@ public class SpamlGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getNextStateEStringParserRuleCall_2_0_1() { return cNextStateEStringParserRuleCall_2_0_1; }
 	}
-	public class TransitionHandlerElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "polytech.dsl.spaceteam.spaml.Spaml.TransitionHandler");
+	public class ConditionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "polytech.dsl.spaceteam.spaml.Spaml.Condition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cSensorAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final CrossReference cSensorSensorCrossReference_0_0 = (CrossReference)cSensorAssignment_0.eContents().get(0);
@@ -529,7 +527,7 @@ public class SpamlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cValueSIGNALEnumRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
 		
-		//TransitionHandler:
+		//Condition:
 		//	sensor=[Sensor] ('=' | 'is') value=SIGNAL;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -627,7 +625,7 @@ public class SpamlGrammarAccess extends AbstractGrammarElementFinder {
 	private final ActuatorElements pActuator;
 	private final ActionElements pAction;
 	private final TransitionElements pTransition;
-	private final TransitionHandlerElements pTransitionHandler;
+	private final ConditionElements pCondition;
 	private final SIGNALElements eSIGNAL;
 	private final OPERATIONElements eOPERATION;
 	
@@ -651,7 +649,7 @@ public class SpamlGrammarAccess extends AbstractGrammarElementFinder {
 		this.pActuator = new ActuatorElements();
 		this.pAction = new ActionElements();
 		this.pTransition = new TransitionElements();
-		this.pTransitionHandler = new TransitionHandlerElements();
+		this.pCondition = new ConditionElements();
 		this.eSIGNAL = new SIGNALElements();
 		this.eOPERATION = new OPERATIONElements();
 	}
@@ -793,9 +791,8 @@ public class SpamlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Transition:
-	//	('when'? (handlers+=TransitionHandler (',' handlers+=TransitionHandler)* | operation=OPERATION '('
-	//	(handlers+=TransitionHandler (',' handlers+=TransitionHandler)*) ')') | delay=EInt) ('->' | 'then')
-	//	next=[State|EString];
+	//	('when'? (conditions+=Condition (',' conditions+=Condition)* | operation=OPERATION '(' (conditions+=Condition (','
+	//	conditions+=Condition)*) ')') | delay=EInt) ('->' | 'then') next=[State|EString];
 	public TransitionElements getTransitionAccess() {
 		return pTransition;
 	}
@@ -804,14 +801,14 @@ public class SpamlGrammarAccess extends AbstractGrammarElementFinder {
 		return getTransitionAccess().getRule();
 	}
 	
-	//TransitionHandler:
+	//Condition:
 	//	sensor=[Sensor] ('=' | 'is') value=SIGNAL;
-	public TransitionHandlerElements getTransitionHandlerAccess() {
-		return pTransitionHandler;
+	public ConditionElements getConditionAccess() {
+		return pCondition;
 	}
 	
-	public ParserRule getTransitionHandlerRule() {
-		return getTransitionHandlerAccess().getRule();
+	public ParserRule getConditionRule() {
+		return getConditionAccess().getRule();
 	}
 	
 	//enum SIGNAL:

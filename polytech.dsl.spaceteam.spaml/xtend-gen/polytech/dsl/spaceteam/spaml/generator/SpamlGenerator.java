@@ -4,6 +4,7 @@
 package polytech.dsl.spaceteam.spaml.generator;
 
 import arduinoML.Actuator;
+import arduinoML.Condition;
 import arduinoML.OPERATION;
 import arduinoML.PluggedElement;
 import arduinoML.Program;
@@ -117,24 +118,24 @@ public class SpamlGenerator extends AbstractGenerator {
     return initialState;
   }
   
-  private TransitionHandler convertTransitionHandlerToMosser(final arduinoML.TransitionHandler transitionHandler) {
+  private TransitionHandler convertTransitionHandlerToMosser(final Condition condition) {
     final TransitionHandler handler = new TransitionHandler();
-    SIGNAL _value = transitionHandler.getValue();
+    SIGNAL _value = condition.getValue();
     boolean _tripleEquals = (_value == SIGNAL.HIGH);
     if (_tripleEquals) {
       handler.setValue(io.github.mosser.arduinoml.kernel.structural.SIGNAL.HIGH);
     } else {
       handler.setValue(io.github.mosser.arduinoml.kernel.structural.SIGNAL.LOW);
     }
-    handler.setSensor(this.convertSpamlSensorToMosser(transitionHandler.getSensor()));
+    handler.setSensor(this.convertSpamlSensorToMosser(condition.getSensor()));
     return handler;
   }
   
   private Transition getTransitionFromState(final arduinoML.State state) {
     final Transition transition = new Transition();
     final ArrayList<TransitionHandler> handlers = new ArrayList<TransitionHandler>();
-    EList<arduinoML.TransitionHandler> _handlers = state.getTransition().getHandlers();
-    for (final arduinoML.TransitionHandler t : _handlers) {
+    EList<Condition> _conditions = state.getTransition().getConditions();
+    for (final Condition t : _conditions) {
       handlers.add(this.convertTransitionHandlerToMosser(t));
     }
     transition.setHandlers(handlers);

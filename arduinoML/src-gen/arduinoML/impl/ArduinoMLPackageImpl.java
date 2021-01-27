@@ -6,6 +6,7 @@ import arduinoML.Action;
 import arduinoML.Actuator;
 import arduinoML.ArduinoMLFactory;
 import arduinoML.ArduinoMLPackage;
+import arduinoML.Condition;
 import arduinoML.NamedElement;
 import arduinoML.PluggedElement;
 import arduinoML.Program;
@@ -14,7 +15,6 @@ import arduinoML.SensorAnalog;
 import arduinoML.SensorDigital;
 import arduinoML.State;
 import arduinoML.Transition;
-import arduinoML.TransitionHandler;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -91,7 +91,7 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass transitionHandlerEClass = null;
+	private EClass conditionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -352,7 +352,7 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTransition_Handlers() {
+	public EReference getTransition_Conditions() {
 		return (EReference) transitionEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -379,8 +379,8 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getTransitionHandler() {
-		return transitionHandlerEClass;
+	public EClass getCondition() {
+		return conditionEClass;
 	}
 
 	/**
@@ -388,8 +388,8 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTransitionHandler_Sensor() {
-		return (EReference) transitionHandlerEClass.getEStructuralFeatures().get(0);
+	public EReference getCondition_Sensor() {
+		return (EReference) conditionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -397,8 +397,8 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTransitionHandler_Value() {
-		return (EAttribute) transitionHandlerEClass.getEStructuralFeatures().get(1);
+	public EAttribute getCondition_Value() {
+		return (EAttribute) conditionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -491,13 +491,13 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 
 		transitionEClass = createEClass(TRANSITION);
 		createEReference(transitionEClass, TRANSITION__NEXT);
-		createEReference(transitionEClass, TRANSITION__HANDLERS);
+		createEReference(transitionEClass, TRANSITION__CONDITIONS);
 		createEAttribute(transitionEClass, TRANSITION__OPERATION);
 		createEAttribute(transitionEClass, TRANSITION__DELAY);
 
-		transitionHandlerEClass = createEClass(TRANSITION_HANDLER);
-		createEReference(transitionHandlerEClass, TRANSITION_HANDLER__SENSOR);
-		createEAttribute(transitionHandlerEClass, TRANSITION_HANDLER__VALUE);
+		conditionEClass = createEClass(CONDITION);
+		createEReference(conditionEClass, CONDITION__SENSOR);
+		createEAttribute(conditionEClass, CONDITION__VALUE);
 
 		sensorAnalogEClass = createEClass(SENSOR_ANALOG);
 
@@ -592,7 +592,7 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 		initEReference(getTransition_Next(), this.getState(), null, "next", null, 1, 1, Transition.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEReference(getTransition_Handlers(), this.getTransitionHandler(), null, "handlers", null, 0, -1,
+		initEReference(getTransition_Conditions(), this.getCondition(), null, "conditions", null, 0, -1,
 				Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTransition_Operation(), this.getOPERATION(), "operation", null, 1, 1, Transition.class,
@@ -600,13 +600,13 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 		initEAttribute(getTransition_Delay(), ecorePackage.getEInt(), "delay", "0", 1, 1, Transition.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(transitionHandlerEClass, TransitionHandler.class, "TransitionHandler", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(conditionEClass, Condition.class, "Condition", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTransitionHandler_Sensor(), this.getSensor(), null, "sensor", null, 1, 1,
-				TransitionHandler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTransitionHandler_Value(), this.getSIGNAL(), "value", null, 1, 1, TransitionHandler.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCondition_Sensor(), this.getSensor(), null, "sensor", null, 1, 1, Condition.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCondition_Value(), this.getSIGNAL(), "value", null, 1, 1, Condition.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sensorAnalogEClass, SensorAnalog.class, "SensorAnalog", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

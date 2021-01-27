@@ -67,13 +67,13 @@ public interface ArduinoMLFactory extends EFactory {
 	Transition createTransition();
 
 	/**
-	 * Returns a new object of class '<em>Transition Handler</em>'.
+	 * Returns a new object of class '<em>Condition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Transition Handler</em>'.
+	 * @return a new object of class '<em>Condition</em>'.
 	 * @generated
 	 */
-	TransitionHandler createTransitionHandler();
+	Condition createCondition();
 
 	/**
 	 * Returns a new object of class '<em>Sensor Analog</em>'.

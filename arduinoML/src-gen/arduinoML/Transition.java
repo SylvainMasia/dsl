@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link arduinoML.Transition#getNext <em>Next</em>}</li>
- *   <li>{@link arduinoML.Transition#getHandlers <em>Handlers</em>}</li>
+ *   <li>{@link arduinoML.Transition#getConditions <em>Conditions</em>}</li>
  *   <li>{@link arduinoML.Transition#getOperation <em>Operation</em>}</li>
  *   <li>{@link arduinoML.Transition#getDelay <em>Delay</em>}</li>
  * </ul>
@@ -52,20 +52,20 @@ public interface Transition extends EObject {
 	void setNext(State value);
 
 	/**
-	 * Returns the value of the '<em><b>Handlers</b></em>' containment reference list.
-	 * The list contents are of type {@link arduinoML.TransitionHandler}.
+	 * Returns the value of the '<em><b>Conditions</b></em>' containment reference list.
+	 * The list contents are of type {@link arduinoML.Condition}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Handlers</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Conditions</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Handlers</em>' containment reference list.
-	 * @see arduinoML.ArduinoMLPackage#getTransition_Handlers()
+	 * @return the value of the '<em>Conditions</em>' containment reference list.
+	 * @see arduinoML.ArduinoMLPackage#getTransition_Conditions()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<TransitionHandler> getHandlers();
+	EList<Condition> getConditions();
 
 	/**
 	 * Returns the value of the '<em><b>Operation</b></em>' attribute.
