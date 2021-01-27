@@ -40,7 +40,10 @@ public class SpamlFormatter extends AbstractFormatter2 {
     for (final Action action : _actions) {
       document.<Action>format(action);
     }
-    document.<Transition>format(state.getTransition());
+    EList<Transition> _transitions = state.getTransitions();
+    for (final Transition transition : _transitions) {
+      document.<Transition>format(transition);
+    }
   }
   
   public void format(final Object program, final IFormattableDocument document) {

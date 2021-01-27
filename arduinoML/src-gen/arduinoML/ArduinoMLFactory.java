@@ -67,15 +67,6 @@ public interface ArduinoMLFactory extends EFactory {
 	Transition createTransition();
 
 	/**
-	 * Returns a new object of class '<em>Condition</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Condition</em>'.
-	 * @generated
-	 */
-	Condition createCondition();
-
-	/**
 	 * Returns a new object of class '<em>Sensor Analog</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -92,6 +83,24 @@ public interface ArduinoMLFactory extends EFactory {
 	 * @generated
 	 */
 	SensorDigital createSensorDigital();
+
+	/**
+	 * Returns a new object of class '<em>Temporal Condition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Temporal Condition</em>'.
+	 * @generated
+	 */
+	TemporalCondition createTemporalCondition();
+
+	/**
+	 * Returns a new object of class '<em>Logical Condition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Logical Condition</em>'.
+	 * @generated
+	 */
+	LogicalCondition createLogicalCondition();
 
 	/**
 	 * Returns the package supported by this factory.

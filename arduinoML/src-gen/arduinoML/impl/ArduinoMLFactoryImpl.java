@@ -67,12 +67,14 @@ public class ArduinoMLFactoryImpl extends EFactoryImpl implements ArduinoMLFacto
 			return createAction();
 		case ArduinoMLPackage.TRANSITION:
 			return createTransition();
-		case ArduinoMLPackage.CONDITION:
-			return createCondition();
 		case ArduinoMLPackage.SENSOR_ANALOG:
 			return createSensorAnalog();
 		case ArduinoMLPackage.SENSOR_DIGITAL:
 			return createSensorDigital();
+		case ArduinoMLPackage.TEMPORAL_CONDITION:
+			return createTemporalCondition();
+		case ArduinoMLPackage.LOGICAL_CONDITION:
+			return createLogicalCondition();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -167,16 +169,6 @@ public class ArduinoMLFactoryImpl extends EFactoryImpl implements ArduinoMLFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Condition createCondition() {
-		ConditionImpl condition = new ConditionImpl();
-		return condition;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public SensorAnalog createSensorAnalog() {
 		SensorAnalogImpl sensorAnalog = new SensorAnalogImpl();
 		return sensorAnalog;
@@ -190,6 +182,26 @@ public class ArduinoMLFactoryImpl extends EFactoryImpl implements ArduinoMLFacto
 	public SensorDigital createSensorDigital() {
 		SensorDigitalImpl sensorDigital = new SensorDigitalImpl();
 		return sensorDigital;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TemporalCondition createTemporalCondition() {
+		TemporalConditionImpl temporalCondition = new TemporalConditionImpl();
+		return temporalCondition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LogicalCondition createLogicalCondition() {
+		LogicalConditionImpl logicalCondition = new LogicalConditionImpl();
+		return logicalCondition;
 	}
 
 	/**

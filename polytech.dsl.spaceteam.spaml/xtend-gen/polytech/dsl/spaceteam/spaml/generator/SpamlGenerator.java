@@ -5,6 +5,7 @@ package polytech.dsl.spaceteam.spaml.generator;
 
 import arduinoML.Actuator;
 import arduinoML.Condition;
+import arduinoML.LogicalCondition;
 import arduinoML.OPERATION;
 import arduinoML.PluggedElement;
 import arduinoML.Program;
@@ -12,6 +13,7 @@ import arduinoML.SIGNAL;
 import arduinoML.Sensor;
 import arduinoML.SensorAnalog;
 import arduinoML.SensorDigital;
+import arduinoML.TemporalCondition;
 import com.google.common.collect.Iterables;
 import io.github.mosser.arduinoml.kernel.App;
 import io.github.mosser.arduinoml.kernel.behavioral.Action;
@@ -113,44 +115,44 @@ public class SpamlGenerator extends AbstractGenerator {
   private State constructInitialState(final Program program) {
     final State initialState = new State();
     initialState.setName(program.getInitialState().getName());
-    initialState.setTransition(this.getTransitionFromState(program.getInitialState()));
     initialState.setActions(this.getActionsFromState(program.getInitialState()));
     return initialState;
   }
   
-  private TransitionHandler convertTransitionHandlerToMosser(final Condition condition) {
-    final TransitionHandler handler = new TransitionHandler();
-    SIGNAL _value = condition.getValue();
-    boolean _tripleEquals = (_value == SIGNAL.HIGH);
-    if (_tripleEquals) {
-      handler.setValue(io.github.mosser.arduinoml.kernel.structural.SIGNAL.HIGH);
+  private TransitionHandler convertConditionToMosser(final Condition condition) {
+    Object _xifexpression = null;
+    if ((condition instanceof LogicalCondition)) {
+      _xifexpression = null;
     } else {
-      handler.setValue(io.github.mosser.arduinoml.kernel.structural.SIGNAL.LOW);
+      Object _xifexpression_1 = null;
+      if ((condition instanceof TemporalCondition)) {
+        _xifexpression_1 = null;
+      }
+      _xifexpression = _xifexpression_1;
     }
-    handler.setSensor(this.convertSpamlSensorToMosser(condition.getSensor()));
-    return handler;
+    return ((TransitionHandler)_xifexpression);
   }
   
-  private Transition getTransitionFromState(final arduinoML.State state) {
-    final Transition transition = new Transition();
-    final ArrayList<TransitionHandler> handlers = new ArrayList<TransitionHandler>();
-    EList<Condition> _conditions = state.getTransition().getConditions();
-    for (final Condition t : _conditions) {
-      handlers.add(this.convertTransitionHandlerToMosser(t));
+  private List<Transition> getTransitionsFromState(final arduinoML.State state) {
+    final ArrayList<Transition> transitions = new ArrayList<Transition>();
+    EList<arduinoML.Transition> _transitions = state.getTransitions();
+    for (final arduinoML.Transition t : _transitions) {
+      {
+        final Transition transition = new Transition();
+        final State nextState = new State();
+        nextState.setName(t.getNext().getName());
+        transition.setNext(nextState);
+        OPERATION _operation = t.getOperation();
+        boolean _tripleEquals = (_operation == OPERATION.AND);
+        if (_tripleEquals) {
+          transition.setOperation(io.github.mosser.arduinoml.kernel.structural.OPERATION.AND);
+        } else {
+          transition.setOperation(io.github.mosser.arduinoml.kernel.structural.OPERATION.OR);
+        }
+        transitions.add(transition);
+      }
     }
-    transition.setHandlers(handlers);
-    transition.setDelay(state.getTransition().getDelay());
-    OPERATION _operation = state.getTransition().getOperation();
-    boolean _tripleEquals = (_operation == OPERATION.AND);
-    if (_tripleEquals) {
-      transition.setOperation(io.github.mosser.arduinoml.kernel.structural.OPERATION.AND);
-    } else {
-      transition.setOperation(io.github.mosser.arduinoml.kernel.structural.OPERATION.OR);
-    }
-    final State nextState = new State();
-    nextState.setName(state.getTransition().getNext().getName());
-    transition.setNext(nextState);
-    return transition;
+    return transitions;
   }
   
   private List<Action> getActionsFromState(final arduinoML.State state) {
@@ -180,7 +182,6 @@ public class SpamlGenerator extends AbstractGenerator {
       {
         final State state = new State();
         state.setName(s.getName());
-        state.setTransition(this.getTransitionFromState(s));
         state.setActions(this.getActionsFromState(s));
         states.add(state);
       }

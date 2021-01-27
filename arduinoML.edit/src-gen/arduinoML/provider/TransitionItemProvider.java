@@ -58,7 +58,6 @@ public class TransitionItemProvider extends ItemProviderAdapter implements IEdit
 			addNextPropertyDescriptor(object);
 			addConditionsPropertyDescriptor(object);
 			addOperationPropertyDescriptor(object);
-			addDelayPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -107,22 +106,6 @@ public class TransitionItemProvider extends ItemProviderAdapter implements IEdit
 								"_UI_Transition_type"),
 						ArduinoMLPackage.Literals.TRANSITION__OPERATION, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Delay feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDelayPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Transition_delay_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Transition_delay_feature",
-								"_UI_Transition_type"),
-						ArduinoMLPackage.Literals.TRANSITION__DELAY, true, false, false,
-						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -203,7 +186,6 @@ public class TransitionItemProvider extends ItemProviderAdapter implements IEdit
 
 		switch (notification.getFeatureID(Transition.class)) {
 		case ArduinoMLPackage.TRANSITION__OPERATION:
-		case ArduinoMLPackage.TRANSITION__DELAY:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case ArduinoMLPackage.TRANSITION__CONDITIONS:
@@ -225,7 +207,10 @@ public class TransitionItemProvider extends ItemProviderAdapter implements IEdit
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(ArduinoMLPackage.Literals.TRANSITION__CONDITIONS,
-				ArduinoMLFactory.eINSTANCE.createCondition()));
+				ArduinoMLFactory.eINSTANCE.createTemporalCondition()));
+
+		newChildDescriptors.add(createChildParameter(ArduinoMLPackage.Literals.TRANSITION__CONDITIONS,
+				ArduinoMLFactory.eINSTANCE.createLogicalCondition()));
 	}
 
 	/**

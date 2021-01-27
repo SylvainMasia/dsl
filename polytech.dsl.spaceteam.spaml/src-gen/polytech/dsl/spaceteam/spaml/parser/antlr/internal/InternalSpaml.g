@@ -364,48 +364,29 @@ ruleState returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
+		)+
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getStateAccess().getActionsActionParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getStateAccess().getTransitionsTransitionParserRuleCall_3_0());
 				}
-				lv_actions_3_0=ruleAction
+				lv_transitions_3_0=ruleTransition
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getStateRule());
 					}
 					add(
 						$current,
-						"actions",
-						lv_actions_3_0,
-						"polytech.dsl.spaceteam.spaml.Spaml.Action");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getStateAccess().getTransitionTransitionParserRuleCall_4_0());
-				}
-				lv_transition_4_0=ruleTransition
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getStateRule());
-					}
-					set(
-						$current,
-						"transition",
-						lv_transition_4_0,
+						"transitions",
+						lv_transitions_3_0,
 						"polytech.dsl.spaceteam.spaml.Spaml.Transition");
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
-		otherlv_5='}'
+		)+
+		otherlv_4='}'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getStateAccess().getRightCurlyBracketKeyword_5());
+			newLeafNode(otherlv_4, grammarAccess.getStateAccess().getRightCurlyBracketKeyword_4());
 		}
 	)
 ;
@@ -661,11 +642,34 @@ ruleTransition returns [EObject current=null]
 				(
 					(
 						(
+							{
+								newCompositeNode(grammarAccess.getTransitionAccess().getConditionsConditionParserRuleCall_0_0_1_0_0());
+							}
+							lv_conditions_1_0=ruleCondition
+							{
+								if ($current==null) {
+									$current = createModelElementForParent(grammarAccess.getTransitionRule());
+								}
+								add(
+									$current,
+									"conditions",
+									lv_conditions_1_0,
+									"polytech.dsl.spaceteam.spaml.Spaml.Condition");
+								afterParserOrEnumRuleCall();
+							}
+						)
+					)
+					(
+						otherlv_2=','
+						{
+							newLeafNode(otherlv_2, grammarAccess.getTransitionAccess().getCommaKeyword_0_0_1_1_0());
+						}
+						(
 							(
 								{
-									newCompositeNode(grammarAccess.getTransitionAccess().getConditionsConditionParserRuleCall_0_0_1_0_0_0());
+									newCompositeNode(grammarAccess.getTransitionAccess().getConditionsConditionParserRuleCall_0_0_1_1_1_0());
 								}
-								lv_conditions_1_0=ruleCondition
+								lv_conditions_3_0=ruleCondition
 								{
 									if ($current==null) {
 										$current = createModelElementForParent(grammarAccess.getTransitionRule());
@@ -673,146 +677,101 @@ ruleTransition returns [EObject current=null]
 									add(
 										$current,
 										"conditions",
-										lv_conditions_1_0,
+										lv_conditions_3_0,
 										"polytech.dsl.spaceteam.spaml.Spaml.Condition");
 									afterParserOrEnumRuleCall();
 								}
 							)
 						)
-						(
-							otherlv_2=','
-							{
-								newLeafNode(otherlv_2, grammarAccess.getTransitionAccess().getCommaKeyword_0_0_1_0_1_0());
-							}
-							(
-								(
-									{
-										newCompositeNode(grammarAccess.getTransitionAccess().getConditionsConditionParserRuleCall_0_0_1_0_1_1_0());
-									}
-									lv_conditions_3_0=ruleCondition
-									{
-										if ($current==null) {
-											$current = createModelElementForParent(grammarAccess.getTransitionRule());
-										}
-										add(
-											$current,
-											"conditions",
-											lv_conditions_3_0,
-											"polytech.dsl.spaceteam.spaml.Spaml.Condition");
-										afterParserOrEnumRuleCall();
-									}
-								)
-							)
-						)*
-					)
-					    |
-					(
-						(
-							(
-								{
-									newCompositeNode(grammarAccess.getTransitionAccess().getOperationOPERATIONEnumRuleCall_0_0_1_1_0_0());
-								}
-								lv_operation_4_0=ruleOPERATION
-								{
-									if ($current==null) {
-										$current = createModelElementForParent(grammarAccess.getTransitionRule());
-									}
-									set(
-										$current,
-										"operation",
-										lv_operation_4_0,
-										"polytech.dsl.spaceteam.spaml.Spaml.OPERATION");
-									afterParserOrEnumRuleCall();
-								}
-							)
-						)
-						otherlv_5='('
-						{
-							newLeafNode(otherlv_5, grammarAccess.getTransitionAccess().getLeftParenthesisKeyword_0_0_1_1_1());
-						}
-						(
-							(
-								(
-									{
-										newCompositeNode(grammarAccess.getTransitionAccess().getConditionsConditionParserRuleCall_0_0_1_1_2_0_0());
-									}
-									lv_conditions_6_0=ruleCondition
-									{
-										if ($current==null) {
-											$current = createModelElementForParent(grammarAccess.getTransitionRule());
-										}
-										add(
-											$current,
-											"conditions",
-											lv_conditions_6_0,
-											"polytech.dsl.spaceteam.spaml.Spaml.Condition");
-										afterParserOrEnumRuleCall();
-									}
-								)
-							)
-							(
-								otherlv_7=','
-								{
-									newLeafNode(otherlv_7, grammarAccess.getTransitionAccess().getCommaKeyword_0_0_1_1_2_1_0());
-								}
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getTransitionAccess().getConditionsConditionParserRuleCall_0_0_1_1_2_1_1_0());
-										}
-										lv_conditions_8_0=ruleCondition
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getTransitionRule());
-											}
-											add(
-												$current,
-												"conditions",
-												lv_conditions_8_0,
-												"polytech.dsl.spaceteam.spaml.Spaml.Condition");
-											afterParserOrEnumRuleCall();
-										}
-									)
-								)
-							)*
-						)
-						otherlv_9=')'
-						{
-							newLeafNode(otherlv_9, grammarAccess.getTransitionAccess().getRightParenthesisKeyword_0_0_1_1_3());
-						}
-					)
+					)*
 				)
 			)
 			    |
 			(
 				(
-					{
-						newCompositeNode(grammarAccess.getTransitionAccess().getDelayEIntParserRuleCall_0_1_0());
-					}
-					lv_delay_10_0=ruleEInt
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getTransitionRule());
+					(
+						{
+							newCompositeNode(grammarAccess.getTransitionAccess().getOperationOPERATIONEnumRuleCall_0_1_0_0());
 						}
-						set(
-							$current,
-							"delay",
-							lv_delay_10_0,
-							"polytech.dsl.spaceteam.spaml.Spaml.EInt");
-						afterParserOrEnumRuleCall();
-					}
+						lv_operation_4_0=ruleOPERATION
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getTransitionRule());
+							}
+							set(
+								$current,
+								"operation",
+								lv_operation_4_0,
+								"polytech.dsl.spaceteam.spaml.Spaml.OPERATION");
+							afterParserOrEnumRuleCall();
+						}
+					)
 				)
+				otherlv_5='('
+				{
+					newLeafNode(otherlv_5, grammarAccess.getTransitionAccess().getLeftParenthesisKeyword_0_1_1());
+				}
+				(
+					(
+						(
+							{
+								newCompositeNode(grammarAccess.getTransitionAccess().getConditionsConditionParserRuleCall_0_1_2_0_0());
+							}
+							lv_conditions_6_0=ruleCondition
+							{
+								if ($current==null) {
+									$current = createModelElementForParent(grammarAccess.getTransitionRule());
+								}
+								add(
+									$current,
+									"conditions",
+									lv_conditions_6_0,
+									"polytech.dsl.spaceteam.spaml.Spaml.Condition");
+								afterParserOrEnumRuleCall();
+							}
+						)
+					)
+					(
+						otherlv_7=','
+						{
+							newLeafNode(otherlv_7, grammarAccess.getTransitionAccess().getCommaKeyword_0_1_2_1_0());
+						}
+						(
+							(
+								{
+									newCompositeNode(grammarAccess.getTransitionAccess().getConditionsConditionParserRuleCall_0_1_2_1_1_0());
+								}
+								lv_conditions_8_0=ruleCondition
+								{
+									if ($current==null) {
+										$current = createModelElementForParent(grammarAccess.getTransitionRule());
+									}
+									add(
+										$current,
+										"conditions",
+										lv_conditions_8_0,
+										"polytech.dsl.spaceteam.spaml.Spaml.Condition");
+									afterParserOrEnumRuleCall();
+								}
+							)
+						)
+					)*
+				)
+				otherlv_9=')'
+				{
+					newLeafNode(otherlv_9, grammarAccess.getTransitionAccess().getRightParenthesisKeyword_0_1_3());
+				}
 			)
 		)
 		(
-			otherlv_11='->'
+			otherlv_10='->'
 			{
-				newLeafNode(otherlv_11, grammarAccess.getTransitionAccess().getHyphenMinusGreaterThanSignKeyword_1_0());
+				newLeafNode(otherlv_10, grammarAccess.getTransitionAccess().getHyphenMinusGreaterThanSignKeyword_1_0());
 			}
 			    |
-			otherlv_12='then'
+			otherlv_11='then'
 			{
-				newLeafNode(otherlv_12, grammarAccess.getTransitionAccess().getThenKeyword_1_1());
+				newLeafNode(otherlv_11, grammarAccess.getTransitionAccess().getThenKeyword_1_1());
 			}
 		)
 		(
@@ -850,39 +809,111 @@ ruleCondition returns [EObject current=null]
 	leaveRule();
 }:
 	(
+		{
+			newCompositeNode(grammarAccess.getConditionAccess().getTemporalConditionParserRuleCall_0());
+		}
+		this_TemporalCondition_0=ruleTemporalCondition
+		{
+			$current = $this_TemporalCondition_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getConditionAccess().getLogicalConditionParserRuleCall_1());
+		}
+		this_LogicalCondition_1=ruleLogicalCondition
+		{
+			$current = $this_LogicalCondition_1.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleTemporalCondition
+entryRuleTemporalCondition returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTemporalConditionRule()); }
+	iv_ruleTemporalCondition=ruleTemporalCondition
+	{ $current=$iv_ruleTemporalCondition.current; }
+	EOF;
+
+// Rule TemporalCondition
+ruleTemporalCondition returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				newCompositeNode(grammarAccess.getTemporalConditionAccess().getDelayEIntParserRuleCall_0());
+			}
+			lv_delay_0_0=ruleEInt
+			{
+				if ($current==null) {
+					$current = createModelElementForParent(grammarAccess.getTemporalConditionRule());
+				}
+				set(
+					$current,
+					"delay",
+					lv_delay_0_0,
+					"polytech.dsl.spaceteam.spaml.Spaml.EInt");
+				afterParserOrEnumRuleCall();
+			}
+		)
+	)
+;
+
+// Entry rule entryRuleLogicalCondition
+entryRuleLogicalCondition returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getLogicalConditionRule()); }
+	iv_ruleLogicalCondition=ruleLogicalCondition
+	{ $current=$iv_ruleLogicalCondition.current; }
+	EOF;
+
+// Rule LogicalCondition
+ruleLogicalCondition returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
 		(
 			(
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getConditionRule());
+						$current = createModelElement(grammarAccess.getLogicalConditionRule());
 					}
 				}
 				otherlv_0=RULE_ID
 				{
-					newLeafNode(otherlv_0, grammarAccess.getConditionAccess().getSensorSensorCrossReference_0_0());
+					newLeafNode(otherlv_0, grammarAccess.getLogicalConditionAccess().getSensorSensorCrossReference_0_0());
 				}
 			)
 		)
 		(
 			otherlv_1='='
 			{
-				newLeafNode(otherlv_1, grammarAccess.getConditionAccess().getEqualsSignKeyword_1_0());
+				newLeafNode(otherlv_1, grammarAccess.getLogicalConditionAccess().getEqualsSignKeyword_1_0());
 			}
 			    |
 			otherlv_2='is'
 			{
-				newLeafNode(otherlv_2, grammarAccess.getConditionAccess().getIsKeyword_1_1());
+				newLeafNode(otherlv_2, grammarAccess.getLogicalConditionAccess().getIsKeyword_1_1());
 			}
 		)
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getConditionAccess().getValueSIGNALEnumRuleCall_2_0());
+					newCompositeNode(grammarAccess.getLogicalConditionAccess().getValueSIGNALEnumRuleCall_2_0());
 				}
 				lv_value_3_0=ruleSIGNAL
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getConditionRule());
+						$current = createModelElementForParent(grammarAccess.getLogicalConditionRule());
 					}
 					set(
 						$current,

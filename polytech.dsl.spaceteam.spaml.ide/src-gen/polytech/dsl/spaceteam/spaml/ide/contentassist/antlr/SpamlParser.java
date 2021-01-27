@@ -38,9 +38,9 @@ public class SpamlParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getSensorAccess().getAlternatives(), "rule__Sensor__Alternatives");
 			builder.put(grammarAccess.getActionAccess().getAlternatives_1(), "rule__Action__Alternatives_1");
 			builder.put(grammarAccess.getTransitionAccess().getAlternatives_0(), "rule__Transition__Alternatives_0");
-			builder.put(grammarAccess.getTransitionAccess().getAlternatives_0_0_1(), "rule__Transition__Alternatives_0_0_1");
 			builder.put(grammarAccess.getTransitionAccess().getAlternatives_1(), "rule__Transition__Alternatives_1");
-			builder.put(grammarAccess.getConditionAccess().getAlternatives_1(), "rule__Condition__Alternatives_1");
+			builder.put(grammarAccess.getConditionAccess().getAlternatives(), "rule__Condition__Alternatives");
+			builder.put(grammarAccess.getLogicalConditionAccess().getAlternatives_1(), "rule__LogicalCondition__Alternatives_1");
 			builder.put(grammarAccess.getSIGNALAccess().getAlternatives(), "rule__SIGNAL__Alternatives");
 			builder.put(grammarAccess.getOPERATIONAccess().getAlternatives(), "rule__OPERATION__Alternatives");
 			builder.put(grammarAccess.getProgramAccess().getGroup(), "rule__Program__Group__0");
@@ -53,12 +53,12 @@ public class SpamlParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getActionAccess().getGroup(), "rule__Action__Group__0");
 			builder.put(grammarAccess.getTransitionAccess().getGroup(), "rule__Transition__Group__0");
 			builder.put(grammarAccess.getTransitionAccess().getGroup_0_0(), "rule__Transition__Group_0_0__0");
-			builder.put(grammarAccess.getTransitionAccess().getGroup_0_0_1_0(), "rule__Transition__Group_0_0_1_0__0");
-			builder.put(grammarAccess.getTransitionAccess().getGroup_0_0_1_0_1(), "rule__Transition__Group_0_0_1_0_1__0");
+			builder.put(grammarAccess.getTransitionAccess().getGroup_0_0_1(), "rule__Transition__Group_0_0_1__0");
 			builder.put(grammarAccess.getTransitionAccess().getGroup_0_0_1_1(), "rule__Transition__Group_0_0_1_1__0");
-			builder.put(grammarAccess.getTransitionAccess().getGroup_0_0_1_1_2(), "rule__Transition__Group_0_0_1_1_2__0");
-			builder.put(grammarAccess.getTransitionAccess().getGroup_0_0_1_1_2_1(), "rule__Transition__Group_0_0_1_1_2_1__0");
-			builder.put(grammarAccess.getConditionAccess().getGroup(), "rule__Condition__Group__0");
+			builder.put(grammarAccess.getTransitionAccess().getGroup_0_1(), "rule__Transition__Group_0_1__0");
+			builder.put(grammarAccess.getTransitionAccess().getGroup_0_1_2(), "rule__Transition__Group_0_1_2__0");
+			builder.put(grammarAccess.getTransitionAccess().getGroup_0_1_2_1(), "rule__Transition__Group_0_1_2_1__0");
+			builder.put(grammarAccess.getLogicalConditionAccess().getGroup(), "rule__LogicalCondition__Group__0");
 			builder.put(grammarAccess.getProgramAccess().getNameAssignment_1(), "rule__Program__NameAssignment_1");
 			builder.put(grammarAccess.getProgramAccess().getInitialStateAssignment_3(), "rule__Program__InitialStateAssignment_3");
 			builder.put(grammarAccess.getProgramAccess().getPluggedElementsAssignment_6(), "rule__Program__PluggedElementsAssignment_6");
@@ -67,19 +67,18 @@ public class SpamlParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPluggedElementAccess().getPinAssignment_3(), "rule__PluggedElement__PinAssignment_3");
 			builder.put(grammarAccess.getStateAccess().getNameAssignment_0(), "rule__State__NameAssignment_0");
 			builder.put(grammarAccess.getStateAccess().getActionsAssignment_2(), "rule__State__ActionsAssignment_2");
-			builder.put(grammarAccess.getStateAccess().getActionsAssignment_3(), "rule__State__ActionsAssignment_3");
-			builder.put(grammarAccess.getStateAccess().getTransitionAssignment_4(), "rule__State__TransitionAssignment_4");
+			builder.put(grammarAccess.getStateAccess().getTransitionsAssignment_3(), "rule__State__TransitionsAssignment_3");
 			builder.put(grammarAccess.getActionAccess().getActuatorAssignment_0(), "rule__Action__ActuatorAssignment_0");
 			builder.put(grammarAccess.getActionAccess().getValueAssignment_2(), "rule__Action__ValueAssignment_2");
-			builder.put(grammarAccess.getTransitionAccess().getConditionsAssignment_0_0_1_0_0(), "rule__Transition__ConditionsAssignment_0_0_1_0_0");
-			builder.put(grammarAccess.getTransitionAccess().getConditionsAssignment_0_0_1_0_1_1(), "rule__Transition__ConditionsAssignment_0_0_1_0_1_1");
-			builder.put(grammarAccess.getTransitionAccess().getOperationAssignment_0_0_1_1_0(), "rule__Transition__OperationAssignment_0_0_1_1_0");
-			builder.put(grammarAccess.getTransitionAccess().getConditionsAssignment_0_0_1_1_2_0(), "rule__Transition__ConditionsAssignment_0_0_1_1_2_0");
-			builder.put(grammarAccess.getTransitionAccess().getConditionsAssignment_0_0_1_1_2_1_1(), "rule__Transition__ConditionsAssignment_0_0_1_1_2_1_1");
-			builder.put(grammarAccess.getTransitionAccess().getDelayAssignment_0_1(), "rule__Transition__DelayAssignment_0_1");
+			builder.put(grammarAccess.getTransitionAccess().getConditionsAssignment_0_0_1_0(), "rule__Transition__ConditionsAssignment_0_0_1_0");
+			builder.put(grammarAccess.getTransitionAccess().getConditionsAssignment_0_0_1_1_1(), "rule__Transition__ConditionsAssignment_0_0_1_1_1");
+			builder.put(grammarAccess.getTransitionAccess().getOperationAssignment_0_1_0(), "rule__Transition__OperationAssignment_0_1_0");
+			builder.put(grammarAccess.getTransitionAccess().getConditionsAssignment_0_1_2_0(), "rule__Transition__ConditionsAssignment_0_1_2_0");
+			builder.put(grammarAccess.getTransitionAccess().getConditionsAssignment_0_1_2_1_1(), "rule__Transition__ConditionsAssignment_0_1_2_1_1");
 			builder.put(grammarAccess.getTransitionAccess().getNextAssignment_2(), "rule__Transition__NextAssignment_2");
-			builder.put(grammarAccess.getConditionAccess().getSensorAssignment_0(), "rule__Condition__SensorAssignment_0");
-			builder.put(grammarAccess.getConditionAccess().getValueAssignment_2(), "rule__Condition__ValueAssignment_2");
+			builder.put(grammarAccess.getTemporalConditionAccess().getDelayAssignment(), "rule__TemporalCondition__DelayAssignment");
+			builder.put(grammarAccess.getLogicalConditionAccess().getSensorAssignment_0(), "rule__LogicalCondition__SensorAssignment_0");
+			builder.put(grammarAccess.getLogicalConditionAccess().getValueAssignment_2(), "rule__LogicalCondition__ValueAssignment_2");
 		}
 	}
 	

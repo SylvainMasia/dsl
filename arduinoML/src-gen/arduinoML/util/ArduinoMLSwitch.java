@@ -169,6 +169,24 @@ public class ArduinoMLSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case ArduinoMLPackage.TEMPORAL_CONDITION: {
+			TemporalCondition temporalCondition = (TemporalCondition) theEObject;
+			T result = caseTemporalCondition(temporalCondition);
+			if (result == null)
+				result = caseCondition(temporalCondition);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ArduinoMLPackage.LOGICAL_CONDITION: {
+			LogicalCondition logicalCondition = (LogicalCondition) theEObject;
+			T result = caseLogicalCondition(logicalCondition);
+			if (result == null)
+				result = caseCondition(logicalCondition);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -336,6 +354,36 @@ public class ArduinoMLSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSensorDigital(SensorDigital object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Temporal Condition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Temporal Condition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTemporalCondition(TemporalCondition object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Logical Condition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Logical Condition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLogicalCondition(LogicalCondition object) {
 		return null;
 	}
 

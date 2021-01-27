@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link arduinoML.State#getActions <em>Actions</em>}</li>
- *   <li>{@link arduinoML.State#getTransition <em>Transition</em>}</li>
+ *   <li>{@link arduinoML.State#getTransitions <em>Transitions</em>}</li>
  * </ul>
  *
  * @see arduinoML.ArduinoMLPackage#getState()
@@ -39,29 +39,19 @@ public interface State extends NamedElement {
 	EList<Action> getActions();
 
 	/**
-	 * Returns the value of the '<em><b>Transition</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Transitions</b></em>' containment reference list.
+	 * The list contents are of type {@link arduinoML.Transition}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Transition</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Transitions</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Transition</em>' containment reference.
-	 * @see #setTransition(Transition)
-	 * @see arduinoML.ArduinoMLPackage#getState_Transition()
+	 * @return the value of the '<em>Transitions</em>' containment reference list.
+	 * @see arduinoML.ArduinoMLPackage#getState_Transitions()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	Transition getTransition();
-
-	/**
-	 * Sets the value of the '{@link arduinoML.State#getTransition <em>Transition</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Transition</em>' containment reference.
-	 * @see #getTransition()
-	 * @generated
-	 */
-	void setTransition(Transition value);
+	EList<Transition> getTransitions();
 
 } // State

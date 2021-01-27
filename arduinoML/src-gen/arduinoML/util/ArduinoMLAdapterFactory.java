@@ -122,6 +122,16 @@ public class ArduinoMLAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseTemporalCondition(TemporalCondition object) {
+			return createTemporalConditionAdapter();
+		}
+
+		@Override
+		public Adapter caseLogicalCondition(LogicalCondition object) {
+			return createLogicalConditionAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -291,6 +301,34 @@ public class ArduinoMLAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSensorDigitalAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link arduinoML.TemporalCondition <em>Temporal Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see arduinoML.TemporalCondition
+	 * @generated
+	 */
+	public Adapter createTemporalConditionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link arduinoML.LogicalCondition <em>Logical Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see arduinoML.LogicalCondition
+	 * @generated
+	 */
+	public Adapter createLogicalConditionAdapter() {
 		return null;
 	}
 

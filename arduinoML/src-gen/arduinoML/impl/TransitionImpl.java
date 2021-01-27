@@ -31,7 +31,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link arduinoML.impl.TransitionImpl#getNext <em>Next</em>}</li>
  *   <li>{@link arduinoML.impl.TransitionImpl#getConditions <em>Conditions</em>}</li>
  *   <li>{@link arduinoML.impl.TransitionImpl#getOperation <em>Operation</em>}</li>
- *   <li>{@link arduinoML.impl.TransitionImpl#getDelay <em>Delay</em>}</li>
  * </ul>
  *
  * @generated
@@ -76,26 +75,6 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	 * @ordered
 	 */
 	protected OPERATION operation = OPERATION_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDelay() <em>Delay</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDelay()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int DELAY_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getDelay() <em>Delay</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDelay()
-	 * @generated
-	 * @ordered
-	 */
-	protected int delay = DELAY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -195,27 +174,6 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getDelay() {
-		return delay;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDelay(int newDelay) {
-		int oldDelay = delay;
-		delay = newDelay;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoMLPackage.TRANSITION__DELAY, oldDelay, delay));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -241,8 +199,6 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 			return getConditions();
 		case ArduinoMLPackage.TRANSITION__OPERATION:
 			return getOperation();
-		case ArduinoMLPackage.TRANSITION__DELAY:
-			return getDelay();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -266,9 +222,6 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 		case ArduinoMLPackage.TRANSITION__OPERATION:
 			setOperation((OPERATION) newValue);
 			return;
-		case ArduinoMLPackage.TRANSITION__DELAY:
-			setDelay((Integer) newValue);
-			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -290,9 +243,6 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 		case ArduinoMLPackage.TRANSITION__OPERATION:
 			setOperation(OPERATION_EDEFAULT);
 			return;
-		case ArduinoMLPackage.TRANSITION__DELAY:
-			setDelay(DELAY_EDEFAULT);
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -311,8 +261,6 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 			return conditions != null && !conditions.isEmpty();
 		case ArduinoMLPackage.TRANSITION__OPERATION:
 			return operation != OPERATION_EDEFAULT;
-		case ArduinoMLPackage.TRANSITION__DELAY:
-			return delay != DELAY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -330,8 +278,6 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (operation: ");
 		result.append(operation);
-		result.append(", delay: ");
-		result.append(delay);
 		result.append(')');
 		return result.toString();
 	}

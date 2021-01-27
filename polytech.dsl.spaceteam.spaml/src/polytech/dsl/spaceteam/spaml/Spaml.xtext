@@ -22,9 +22,8 @@ EString returns ecore::EString:
 
 State returns State:
 	name=EString '{'
-		actions+=Action
-		(actions+=Action)* 
-		transition=Transition
+		(actions+=Action)+ 
+		(transitions+=Transition)+
 	'}';
 
 EInt returns ecore::EInt:
@@ -49,10 +48,17 @@ Action returns Action:
 	actuator=[Actuator|EString] ('=' | 'setTo') value=SIGNAL;
 
 Transition returns Transition:
-	(('when'?)  ((conditions+=Condition (',' conditions+=Condition)*) | (operation=OPERATION '(' (conditions+=Condition (',' conditions+=Condition)*) ')')) | (delay=EInt)) ('->' | 'then') next=[State|EString];
+	(('when'?)  (conditions+=Condition (',' conditions+=Condition)*) | (operation=OPERATION '(' (conditions+=Condition (',' conditions+=Condition)*) ')')) ('->' | 'then') next=[State|EString];
 	
 Condition returns Condition:
+	(TemporalCondition | LogicalCondition);
+	
+TemporalCondition returns TemporalCondition:
+	delay=EInt;
+
+LogicalCondition returns LogicalCondition:
 	sensor=[Sensor] ('=' | 'is') value=SIGNAL;
+
 
 enum SIGNAL returns SIGNAL:
 				LOW = 'LOW' | HIGH = 'HIGH';

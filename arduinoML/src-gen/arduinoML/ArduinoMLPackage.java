@@ -325,13 +325,13 @@ public interface ArduinoMLPackage extends EPackage {
 	int STATE__ACTIONS = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Transition</b></em>' containment reference.
+	 * The feature id for the '<em><b>Transitions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__TRANSITION = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int STATE__TRANSITIONS = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>State</em>' class.
@@ -435,22 +435,13 @@ public interface ArduinoMLPackage extends EPackage {
 	int TRANSITION__OPERATION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Delay</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRANSITION__DELAY = 3;
-
-	/**
 	 * The number of structural features of the '<em>Transition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_FEATURE_COUNT = 4;
+	int TRANSITION_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Transition</em>' class.
@@ -472,31 +463,13 @@ public interface ArduinoMLPackage extends EPackage {
 	int CONDITION = 8;
 
 	/**
-	 * The feature id for the '<em><b>Sensor</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION__SENSOR = 0;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION__VALUE = 1;
-
-	/**
 	 * The number of structural features of the '<em>Condition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITION_FEATURE_COUNT = 2;
+	int CONDITION_FEATURE_COUNT = 0;
 
 	/**
 	 * The number of operations of the '<em>Condition</em>' class.
@@ -600,6 +573,89 @@ public interface ArduinoMLPackage extends EPackage {
 	int SENSOR_DIGITAL_OPERATION_COUNT = SENSOR_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link arduinoML.impl.TemporalConditionImpl <em>Temporal Condition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see arduinoML.impl.TemporalConditionImpl
+	 * @see arduinoML.impl.ArduinoMLPackageImpl#getTemporalCondition()
+	 * @generated
+	 */
+	int TEMPORAL_CONDITION = 11;
+
+	/**
+	 * The feature id for the '<em><b>Delay</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEMPORAL_CONDITION__DELAY = CONDITION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Temporal Condition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEMPORAL_CONDITION_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Temporal Condition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEMPORAL_CONDITION_OPERATION_COUNT = CONDITION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link arduinoML.impl.LogicalConditionImpl <em>Logical Condition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see arduinoML.impl.LogicalConditionImpl
+	 * @see arduinoML.impl.ArduinoMLPackageImpl#getLogicalCondition()
+	 * @generated
+	 */
+	int LOGICAL_CONDITION = 12;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGICAL_CONDITION__VALUE = CONDITION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Sensor</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGICAL_CONDITION__SENSOR = CONDITION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Logical Condition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGICAL_CONDITION_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Logical Condition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGICAL_CONDITION_OPERATION_COUNT = CONDITION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link arduinoML.SIGNAL <em>SIGNAL</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -607,7 +663,7 @@ public interface ArduinoMLPackage extends EPackage {
 	 * @see arduinoML.impl.ArduinoMLPackageImpl#getSIGNAL()
 	 * @generated
 	 */
-	int SIGNAL = 11;
+	int SIGNAL = 13;
 
 	/**
 	 * The meta object id for the '{@link arduinoML.OPERATION <em>OPERATION</em>}' enum.
@@ -617,7 +673,7 @@ public interface ArduinoMLPackage extends EPackage {
 	 * @see arduinoML.impl.ArduinoMLPackageImpl#getOPERATION()
 	 * @generated
 	 */
-	int OPERATION = 12;
+	int OPERATION = 14;
 
 	/**
 	 * Returns the meta object for class '{@link arduinoML.NamedElement <em>Named Element</em>}'.
@@ -746,15 +802,15 @@ public interface ArduinoMLPackage extends EPackage {
 	EReference getState_Actions();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link arduinoML.State#getTransition <em>Transition</em>}'.
+	 * Returns the meta object for the containment reference list '{@link arduinoML.State#getTransitions <em>Transitions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Transition</em>'.
-	 * @see arduinoML.State#getTransition()
+	 * @return the meta object for the containment reference list '<em>Transitions</em>'.
+	 * @see arduinoML.State#getTransitions()
 	 * @see #getState()
 	 * @generated
 	 */
-	EReference getState_Transition();
+	EReference getState_Transitions();
 
 	/**
 	 * Returns the meta object for class '{@link arduinoML.Action <em>Action</em>}'.
@@ -832,17 +888,6 @@ public interface ArduinoMLPackage extends EPackage {
 	EAttribute getTransition_Operation();
 
 	/**
-	 * Returns the meta object for the attribute '{@link arduinoML.Transition#getDelay <em>Delay</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Delay</em>'.
-	 * @see arduinoML.Transition#getDelay()
-	 * @see #getTransition()
-	 * @generated
-	 */
-	EAttribute getTransition_Delay();
-
-	/**
 	 * Returns the meta object for class '{@link arduinoML.Condition <em>Condition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -851,28 +896,6 @@ public interface ArduinoMLPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getCondition();
-
-	/**
-	 * Returns the meta object for the reference '{@link arduinoML.Condition#getSensor <em>Sensor</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Sensor</em>'.
-	 * @see arduinoML.Condition#getSensor()
-	 * @see #getCondition()
-	 * @generated
-	 */
-	EReference getCondition_Sensor();
-
-	/**
-	 * Returns the meta object for the attribute '{@link arduinoML.Condition#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see arduinoML.Condition#getValue()
-	 * @see #getCondition()
-	 * @generated
-	 */
-	EAttribute getCondition_Value();
 
 	/**
 	 * Returns the meta object for class '{@link arduinoML.SensorAnalog <em>Sensor Analog</em>}'.
@@ -893,6 +916,59 @@ public interface ArduinoMLPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSensorDigital();
+
+	/**
+	 * Returns the meta object for class '{@link arduinoML.TemporalCondition <em>Temporal Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Temporal Condition</em>'.
+	 * @see arduinoML.TemporalCondition
+	 * @generated
+	 */
+	EClass getTemporalCondition();
+
+	/**
+	 * Returns the meta object for the attribute '{@link arduinoML.TemporalCondition#getDelay <em>Delay</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Delay</em>'.
+	 * @see arduinoML.TemporalCondition#getDelay()
+	 * @see #getTemporalCondition()
+	 * @generated
+	 */
+	EAttribute getTemporalCondition_Delay();
+
+	/**
+	 * Returns the meta object for class '{@link arduinoML.LogicalCondition <em>Logical Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Logical Condition</em>'.
+	 * @see arduinoML.LogicalCondition
+	 * @generated
+	 */
+	EClass getLogicalCondition();
+
+	/**
+	 * Returns the meta object for the attribute '{@link arduinoML.LogicalCondition#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see arduinoML.LogicalCondition#getValue()
+	 * @see #getLogicalCondition()
+	 * @generated
+	 */
+	EAttribute getLogicalCondition_Value();
+
+	/**
+	 * Returns the meta object for the reference '{@link arduinoML.LogicalCondition#getSensor <em>Sensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Sensor</em>'.
+	 * @see arduinoML.LogicalCondition#getSensor()
+	 * @see #getLogicalCondition()
+	 * @generated
+	 */
+	EReference getLogicalCondition_Sensor();
 
 	/**
 	 * Returns the meta object for enum '{@link arduinoML.SIGNAL <em>SIGNAL</em>}'.
@@ -1046,12 +1122,12 @@ public interface ArduinoMLPackage extends EPackage {
 		EReference STATE__ACTIONS = eINSTANCE.getState_Actions();
 
 		/**
-		 * The meta object literal for the '<em><b>Transition</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Transitions</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STATE__TRANSITION = eINSTANCE.getState_Transition();
+		EReference STATE__TRANSITIONS = eINSTANCE.getState_Transitions();
 
 		/**
 		 * The meta object literal for the '{@link arduinoML.impl.ActionImpl <em>Action</em>}' class.
@@ -1114,14 +1190,6 @@ public interface ArduinoMLPackage extends EPackage {
 		EAttribute TRANSITION__OPERATION = eINSTANCE.getTransition_Operation();
 
 		/**
-		 * The meta object literal for the '<em><b>Delay</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TRANSITION__DELAY = eINSTANCE.getTransition_Delay();
-
-		/**
 		 * The meta object literal for the '{@link arduinoML.impl.ConditionImpl <em>Condition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1130,22 +1198,6 @@ public interface ArduinoMLPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CONDITION = eINSTANCE.getCondition();
-
-		/**
-		 * The meta object literal for the '<em><b>Sensor</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONDITION__SENSOR = eINSTANCE.getCondition_Sensor();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONDITION__VALUE = eINSTANCE.getCondition_Value();
 
 		/**
 		 * The meta object literal for the '{@link arduinoML.impl.SensorAnalogImpl <em>Sensor Analog</em>}' class.
@@ -1166,6 +1218,50 @@ public interface ArduinoMLPackage extends EPackage {
 		 * @generated
 		 */
 		EClass SENSOR_DIGITAL = eINSTANCE.getSensorDigital();
+
+		/**
+		 * The meta object literal for the '{@link arduinoML.impl.TemporalConditionImpl <em>Temporal Condition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see arduinoML.impl.TemporalConditionImpl
+		 * @see arduinoML.impl.ArduinoMLPackageImpl#getTemporalCondition()
+		 * @generated
+		 */
+		EClass TEMPORAL_CONDITION = eINSTANCE.getTemporalCondition();
+
+		/**
+		 * The meta object literal for the '<em><b>Delay</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TEMPORAL_CONDITION__DELAY = eINSTANCE.getTemporalCondition_Delay();
+
+		/**
+		 * The meta object literal for the '{@link arduinoML.impl.LogicalConditionImpl <em>Logical Condition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see arduinoML.impl.LogicalConditionImpl
+		 * @see arduinoML.impl.ArduinoMLPackageImpl#getLogicalCondition()
+		 * @generated
+		 */
+		EClass LOGICAL_CONDITION = eINSTANCE.getLogicalCondition();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LOGICAL_CONDITION__VALUE = eINSTANCE.getLogicalCondition_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>Sensor</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LOGICAL_CONDITION__SENSOR = eINSTANCE.getLogicalCondition_Sensor();
 
 		/**
 		 * The meta object literal for the '{@link arduinoML.SIGNAL <em>SIGNAL</em>}' enum.

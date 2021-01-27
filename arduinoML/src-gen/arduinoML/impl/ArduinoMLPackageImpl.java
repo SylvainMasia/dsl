@@ -7,6 +7,7 @@ import arduinoML.Actuator;
 import arduinoML.ArduinoMLFactory;
 import arduinoML.ArduinoMLPackage;
 import arduinoML.Condition;
+import arduinoML.LogicalCondition;
 import arduinoML.NamedElement;
 import arduinoML.PluggedElement;
 import arduinoML.Program;
@@ -14,6 +15,7 @@ import arduinoML.Sensor;
 import arduinoML.SensorAnalog;
 import arduinoML.SensorDigital;
 import arduinoML.State;
+import arduinoML.TemporalCondition;
 import arduinoML.Transition;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -106,6 +108,20 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 * @generated
 	 */
 	private EClass sensorDigitalEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass temporalConditionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass logicalConditionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -298,7 +314,7 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getState_Transition() {
+	public EReference getState_Transitions() {
 		return (EReference) stateEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -370,35 +386,8 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTransition_Delay() {
-		return (EAttribute) transitionEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getCondition() {
 		return conditionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getCondition_Sensor() {
-		return (EReference) conditionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getCondition_Value() {
-		return (EAttribute) conditionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -417,6 +406,51 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 	 */
 	public EClass getSensorDigital() {
 		return sensorDigitalEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTemporalCondition() {
+		return temporalConditionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTemporalCondition_Delay() {
+		return (EAttribute) temporalConditionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLogicalCondition() {
+		return logicalConditionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLogicalCondition_Value() {
+		return (EAttribute) logicalConditionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLogicalCondition_Sensor() {
+		return (EReference) logicalConditionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -483,7 +517,7 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 
 		stateEClass = createEClass(STATE);
 		createEReference(stateEClass, STATE__ACTIONS);
-		createEReference(stateEClass, STATE__TRANSITION);
+		createEReference(stateEClass, STATE__TRANSITIONS);
 
 		actionEClass = createEClass(ACTION);
 		createEReference(actionEClass, ACTION__ACTUATOR);
@@ -493,15 +527,19 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 		createEReference(transitionEClass, TRANSITION__NEXT);
 		createEReference(transitionEClass, TRANSITION__CONDITIONS);
 		createEAttribute(transitionEClass, TRANSITION__OPERATION);
-		createEAttribute(transitionEClass, TRANSITION__DELAY);
 
 		conditionEClass = createEClass(CONDITION);
-		createEReference(conditionEClass, CONDITION__SENSOR);
-		createEAttribute(conditionEClass, CONDITION__VALUE);
 
 		sensorAnalogEClass = createEClass(SENSOR_ANALOG);
 
 		sensorDigitalEClass = createEClass(SENSOR_DIGITAL);
+
+		temporalConditionEClass = createEClass(TEMPORAL_CONDITION);
+		createEAttribute(temporalConditionEClass, TEMPORAL_CONDITION__DELAY);
+
+		logicalConditionEClass = createEClass(LOGICAL_CONDITION);
+		createEAttribute(logicalConditionEClass, LOGICAL_CONDITION__VALUE);
+		createEReference(logicalConditionEClass, LOGICAL_CONDITION__SENSOR);
 
 		// Create enums
 		signalEEnum = createEEnum(SIGNAL);
@@ -544,6 +582,8 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 		stateEClass.getESuperTypes().add(this.getNamedElement());
 		sensorAnalogEClass.getESuperTypes().add(this.getSensor());
 		sensorDigitalEClass.getESuperTypes().add(this.getSensor());
+		temporalConditionEClass.getESuperTypes().add(this.getCondition());
+		logicalConditionEClass.getESuperTypes().add(this.getCondition());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE,
@@ -576,7 +616,7 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 		initEReference(getState_Actions(), this.getAction(), null, "actions", null, 1, -1, State.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEReference(getState_Transition(), this.getTransition(), null, "transition", null, 1, 1, State.class,
+		initEReference(getState_Transitions(), this.getTransition(), null, "transitions", null, 1, -1, State.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -597,22 +637,29 @@ public class ArduinoMLPackageImpl extends EPackageImpl implements ArduinoMLPacka
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTransition_Operation(), this.getOPERATION(), "operation", null, 1, 1, Transition.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTransition_Delay(), ecorePackage.getEInt(), "delay", "0", 1, 1, Transition.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(conditionEClass, Condition.class, "Condition", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(conditionEClass, Condition.class, "Condition", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCondition_Sensor(), this.getSensor(), null, "sensor", null, 1, 1, Condition.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCondition_Value(), this.getSIGNAL(), "value", null, 1, 1, Condition.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sensorAnalogEClass, SensorAnalog.class, "SensorAnalog", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(sensorDigitalEClass, SensorDigital.class, "SensorDigital", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(temporalConditionEClass, TemporalCondition.class, "TemporalCondition", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTemporalCondition_Delay(), ecorePackage.getEInt(), "delay", "0", 1, 1,
+				TemporalCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+
+		initEClass(logicalConditionEClass, LogicalCondition.class, "LogicalCondition", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLogicalCondition_Value(), this.getSIGNAL(), "value", null, 1, 1, LogicalCondition.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLogicalCondition_Sensor(), this.getSensor(), null, "sensor", null, 1, 1,
+				LogicalCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(signalEEnum, arduinoML.SIGNAL.class, "SIGNAL");

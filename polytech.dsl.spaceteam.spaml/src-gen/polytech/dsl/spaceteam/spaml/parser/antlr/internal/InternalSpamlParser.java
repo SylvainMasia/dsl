@@ -824,30 +824,28 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleState"
-    // InternalSpaml.g:318:1: ruleState returns [EObject current=null] : ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' ( (lv_actions_2_0= ruleAction ) ) ( (lv_actions_3_0= ruleAction ) )* ( (lv_transition_4_0= ruleTransition ) ) otherlv_5= '}' ) ;
+    // InternalSpaml.g:318:1: ruleState returns [EObject current=null] : ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' ( (lv_actions_2_0= ruleAction ) )+ ( (lv_transitions_3_0= ruleTransition ) )+ otherlv_4= '}' ) ;
     public final EObject ruleState() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
-        Token otherlv_5=null;
+        Token otherlv_4=null;
         AntlrDatatypeRuleToken lv_name_0_0 = null;
 
         EObject lv_actions_2_0 = null;
 
-        EObject lv_actions_3_0 = null;
-
-        EObject lv_transition_4_0 = null;
+        EObject lv_transitions_3_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalSpaml.g:324:2: ( ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' ( (lv_actions_2_0= ruleAction ) ) ( (lv_actions_3_0= ruleAction ) )* ( (lv_transition_4_0= ruleTransition ) ) otherlv_5= '}' ) )
-            // InternalSpaml.g:325:2: ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' ( (lv_actions_2_0= ruleAction ) ) ( (lv_actions_3_0= ruleAction ) )* ( (lv_transition_4_0= ruleTransition ) ) otherlv_5= '}' )
+            // InternalSpaml.g:324:2: ( ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' ( (lv_actions_2_0= ruleAction ) )+ ( (lv_transitions_3_0= ruleTransition ) )+ otherlv_4= '}' ) )
+            // InternalSpaml.g:325:2: ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' ( (lv_actions_2_0= ruleAction ) )+ ( (lv_transitions_3_0= ruleTransition ) )+ otherlv_4= '}' )
             {
-            // InternalSpaml.g:325:2: ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' ( (lv_actions_2_0= ruleAction ) ) ( (lv_actions_3_0= ruleAction ) )* ( (lv_transition_4_0= ruleTransition ) ) otherlv_5= '}' )
-            // InternalSpaml.g:326:3: ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' ( (lv_actions_2_0= ruleAction ) ) ( (lv_actions_3_0= ruleAction ) )* ( (lv_transition_4_0= ruleTransition ) ) otherlv_5= '}'
+            // InternalSpaml.g:325:2: ( ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' ( (lv_actions_2_0= ruleAction ) )+ ( (lv_transitions_3_0= ruleTransition ) )+ otherlv_4= '}' )
+            // InternalSpaml.g:326:3: ( (lv_name_0_0= ruleEString ) ) otherlv_1= '{' ( (lv_actions_2_0= ruleAction ) )+ ( (lv_transitions_3_0= ruleTransition ) )+ otherlv_4= '}'
             {
             // InternalSpaml.g:326:3: ( (lv_name_0_0= ruleEString ) )
             // InternalSpaml.g:327:4: (lv_name_0_0= ruleEString )
@@ -884,38 +882,8 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getStateAccess().getLeftCurlyBracketKeyword_1());
             		
-            // InternalSpaml.g:349:3: ( (lv_actions_2_0= ruleAction ) )
-            // InternalSpaml.g:350:4: (lv_actions_2_0= ruleAction )
-            {
-            // InternalSpaml.g:350:4: (lv_actions_2_0= ruleAction )
-            // InternalSpaml.g:351:5: lv_actions_2_0= ruleAction
-            {
-
-            					newCompositeNode(grammarAccess.getStateAccess().getActionsActionParserRuleCall_2_0());
-            				
-            pushFollow(FOLLOW_11);
-            lv_actions_2_0=ruleAction();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getStateRule());
-            					}
-            					add(
-            						current,
-            						"actions",
-            						lv_actions_2_0,
-            						"polytech.dsl.spaceteam.spaml.Spaml.Action");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
-
-
-            }
-
-            // InternalSpaml.g:368:3: ( (lv_actions_3_0= ruleAction ) )*
+            // InternalSpaml.g:349:3: ( (lv_actions_2_0= ruleAction ) )+
+            int cnt8=0;
             loop8:
             do {
                 int alt8=2;
@@ -961,16 +929,16 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalSpaml.g:369:4: (lv_actions_3_0= ruleAction )
+            	    // InternalSpaml.g:350:4: (lv_actions_2_0= ruleAction )
             	    {
-            	    // InternalSpaml.g:369:4: (lv_actions_3_0= ruleAction )
-            	    // InternalSpaml.g:370:5: lv_actions_3_0= ruleAction
+            	    // InternalSpaml.g:350:4: (lv_actions_2_0= ruleAction )
+            	    // InternalSpaml.g:351:5: lv_actions_2_0= ruleAction
             	    {
 
-            	    					newCompositeNode(grammarAccess.getStateAccess().getActionsActionParserRuleCall_3_0());
+            	    					newCompositeNode(grammarAccess.getStateAccess().getActionsActionParserRuleCall_2_0());
             	    				
             	    pushFollow(FOLLOW_11);
-            	    lv_actions_3_0=ruleAction();
+            	    lv_actions_2_0=ruleAction();
 
             	    state._fsp--;
 
@@ -981,7 +949,7 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
             	    					add(
             	    						current,
             	    						"actions",
-            	    						lv_actions_3_0,
+            	    						lv_actions_2_0,
             	    						"polytech.dsl.spaceteam.spaml.Spaml.Action");
             	    					afterParserOrEnumRuleCall();
             	    				
@@ -993,44 +961,71 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop8;
+            	    if ( cnt8 >= 1 ) break loop8;
+                        EarlyExitException eee =
+                            new EarlyExitException(8, input);
+                        throw eee;
                 }
+                cnt8++;
             } while (true);
 
-            // InternalSpaml.g:387:3: ( (lv_transition_4_0= ruleTransition ) )
-            // InternalSpaml.g:388:4: (lv_transition_4_0= ruleTransition )
-            {
-            // InternalSpaml.g:388:4: (lv_transition_4_0= ruleTransition )
-            // InternalSpaml.g:389:5: lv_transition_4_0= ruleTransition
-            {
+            // InternalSpaml.g:368:3: ( (lv_transitions_3_0= ruleTransition ) )+
+            int cnt9=0;
+            loop9:
+            do {
+                int alt9=2;
+                int LA9_0 = input.LA(1);
 
-            					newCompositeNode(grammarAccess.getStateAccess().getTransitionTransitionParserRuleCall_4_0());
-            				
-            pushFollow(FOLLOW_12);
-            lv_transition_4_0=ruleTransition();
-
-            state._fsp--;
+                if ( ((LA9_0>=RULE_ID && LA9_0<=RULE_INT)||LA9_0==20||LA9_0==26||(LA9_0>=35 && LA9_0<=36)) ) {
+                    alt9=1;
+                }
 
 
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getStateRule());
-            					}
-            					set(
-            						current,
-            						"transition",
-            						lv_transition_4_0,
-            						"polytech.dsl.spaceteam.spaml.Spaml.Transition");
-            					afterParserOrEnumRuleCall();
-            				
+                switch (alt9) {
+            	case 1 :
+            	    // InternalSpaml.g:369:4: (lv_transitions_3_0= ruleTransition )
+            	    {
+            	    // InternalSpaml.g:369:4: (lv_transitions_3_0= ruleTransition )
+            	    // InternalSpaml.g:370:5: lv_transitions_3_0= ruleTransition
+            	    {
 
-            }
+            	    					newCompositeNode(grammarAccess.getStateAccess().getTransitionsTransitionParserRuleCall_3_0());
+            	    				
+            	    pushFollow(FOLLOW_12);
+            	    lv_transitions_3_0=ruleTransition();
+
+            	    state._fsp--;
 
 
-            }
+            	    					if (current==null) {
+            	    						current = createModelElementForParent(grammarAccess.getStateRule());
+            	    					}
+            	    					add(
+            	    						current,
+            	    						"transitions",
+            	    						lv_transitions_3_0,
+            	    						"polytech.dsl.spaceteam.spaml.Spaml.Transition");
+            	    					afterParserOrEnumRuleCall();
+            	    				
 
-            otherlv_5=(Token)match(input,18,FOLLOW_2); 
+            	    }
 
-            			newLeafNode(otherlv_5, grammarAccess.getStateAccess().getRightCurlyBracketKeyword_5());
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt9 >= 1 ) break loop9;
+                        EarlyExitException eee =
+                            new EarlyExitException(9, input);
+                        throw eee;
+                }
+                cnt9++;
+            } while (true);
+
+            otherlv_4=(Token)match(input,18,FOLLOW_2); 
+
+            			newLeafNode(otherlv_4, grammarAccess.getStateAccess().getRightCurlyBracketKeyword_4());
             		
 
             }
@@ -1055,7 +1050,7 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEInt"
-    // InternalSpaml.g:414:1: entryRuleEInt returns [String current=null] : iv_ruleEInt= ruleEInt EOF ;
+    // InternalSpaml.g:395:1: entryRuleEInt returns [String current=null] : iv_ruleEInt= ruleEInt EOF ;
     public final String entryRuleEInt() throws RecognitionException {
         String current = null;
 
@@ -1063,8 +1058,8 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSpaml.g:414:44: (iv_ruleEInt= ruleEInt EOF )
-            // InternalSpaml.g:415:2: iv_ruleEInt= ruleEInt EOF
+            // InternalSpaml.g:395:44: (iv_ruleEInt= ruleEInt EOF )
+            // InternalSpaml.g:396:2: iv_ruleEInt= ruleEInt EOF
             {
              newCompositeNode(grammarAccess.getEIntRule()); 
             pushFollow(FOLLOW_1);
@@ -1091,7 +1086,7 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEInt"
-    // InternalSpaml.g:421:1: ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT ) ;
+    // InternalSpaml.g:402:1: ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT ) ;
     public final AntlrDatatypeRuleToken ruleEInt() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1102,22 +1097,22 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSpaml.g:427:2: ( ( (kw= '-' )? this_INT_1= RULE_INT ) )
-            // InternalSpaml.g:428:2: ( (kw= '-' )? this_INT_1= RULE_INT )
+            // InternalSpaml.g:408:2: ( ( (kw= '-' )? this_INT_1= RULE_INT ) )
+            // InternalSpaml.g:409:2: ( (kw= '-' )? this_INT_1= RULE_INT )
             {
-            // InternalSpaml.g:428:2: ( (kw= '-' )? this_INT_1= RULE_INT )
-            // InternalSpaml.g:429:3: (kw= '-' )? this_INT_1= RULE_INT
+            // InternalSpaml.g:409:2: ( (kw= '-' )? this_INT_1= RULE_INT )
+            // InternalSpaml.g:410:3: (kw= '-' )? this_INT_1= RULE_INT
             {
-            // InternalSpaml.g:429:3: (kw= '-' )?
-            int alt9=2;
-            int LA9_0 = input.LA(1);
+            // InternalSpaml.g:410:3: (kw= '-' )?
+            int alt10=2;
+            int LA10_0 = input.LA(1);
 
-            if ( (LA9_0==20) ) {
-                alt9=1;
+            if ( (LA10_0==20) ) {
+                alt10=1;
             }
-            switch (alt9) {
+            switch (alt10) {
                 case 1 :
-                    // InternalSpaml.g:430:4: kw= '-'
+                    // InternalSpaml.g:411:4: kw= '-'
                     {
                     kw=(Token)match(input,20,FOLLOW_13); 
 
@@ -1160,7 +1155,7 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSensor"
-    // InternalSpaml.g:447:1: entryRuleSensor returns [EObject current=null] : iv_ruleSensor= ruleSensor EOF ;
+    // InternalSpaml.g:428:1: entryRuleSensor returns [EObject current=null] : iv_ruleSensor= ruleSensor EOF ;
     public final EObject entryRuleSensor() throws RecognitionException {
         EObject current = null;
 
@@ -1168,8 +1163,8 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSpaml.g:447:47: (iv_ruleSensor= ruleSensor EOF )
-            // InternalSpaml.g:448:2: iv_ruleSensor= ruleSensor EOF
+            // InternalSpaml.g:428:47: (iv_ruleSensor= ruleSensor EOF )
+            // InternalSpaml.g:429:2: iv_ruleSensor= ruleSensor EOF
             {
              newCompositeNode(grammarAccess.getSensorRule()); 
             pushFollow(FOLLOW_1);
@@ -1196,7 +1191,7 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSensor"
-    // InternalSpaml.g:454:1: ruleSensor returns [EObject current=null] : (this_SensorDigital_0= ruleSensorDigital | this_SensorAnalog_1= ruleSensorAnalog ) ;
+    // InternalSpaml.g:435:1: ruleSensor returns [EObject current=null] : (this_SensorDigital_0= ruleSensorDigital | this_SensorAnalog_1= ruleSensorAnalog ) ;
     public final EObject ruleSensor() throws RecognitionException {
         EObject current = null;
 
@@ -1209,28 +1204,28 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSpaml.g:460:2: ( (this_SensorDigital_0= ruleSensorDigital | this_SensorAnalog_1= ruleSensorAnalog ) )
-            // InternalSpaml.g:461:2: (this_SensorDigital_0= ruleSensorDigital | this_SensorAnalog_1= ruleSensorAnalog )
+            // InternalSpaml.g:441:2: ( (this_SensorDigital_0= ruleSensorDigital | this_SensorAnalog_1= ruleSensorAnalog ) )
+            // InternalSpaml.g:442:2: (this_SensorDigital_0= ruleSensorDigital | this_SensorAnalog_1= ruleSensorAnalog )
             {
-            // InternalSpaml.g:461:2: (this_SensorDigital_0= ruleSensorDigital | this_SensorAnalog_1= ruleSensorAnalog )
-            int alt10=2;
-            int LA10_0 = input.LA(1);
+            // InternalSpaml.g:442:2: (this_SensorDigital_0= ruleSensorDigital | this_SensorAnalog_1= ruleSensorAnalog )
+            int alt11=2;
+            int LA11_0 = input.LA(1);
 
-            if ( (LA10_0==21) ) {
-                alt10=1;
+            if ( (LA11_0==21) ) {
+                alt11=1;
             }
-            else if ( (LA10_0==22) ) {
-                alt10=2;
+            else if ( (LA11_0==22) ) {
+                alt11=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 10, 0, input);
+                    new NoViableAltException("", 11, 0, input);
 
                 throw nvae;
             }
-            switch (alt10) {
+            switch (alt11) {
                 case 1 :
-                    // InternalSpaml.g:462:3: this_SensorDigital_0= ruleSensorDigital
+                    // InternalSpaml.g:443:3: this_SensorDigital_0= ruleSensorDigital
                     {
 
                     			newCompositeNode(grammarAccess.getSensorAccess().getSensorDigitalParserRuleCall_0());
@@ -1248,7 +1243,7 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSpaml.g:471:3: this_SensorAnalog_1= ruleSensorAnalog
+                    // InternalSpaml.g:452:3: this_SensorAnalog_1= ruleSensorAnalog
                     {
 
                     			newCompositeNode(grammarAccess.getSensorAccess().getSensorAnalogParserRuleCall_1());
@@ -1288,7 +1283,7 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSensorDigital"
-    // InternalSpaml.g:483:1: entryRuleSensorDigital returns [EObject current=null] : iv_ruleSensorDigital= ruleSensorDigital EOF ;
+    // InternalSpaml.g:464:1: entryRuleSensorDigital returns [EObject current=null] : iv_ruleSensorDigital= ruleSensorDigital EOF ;
     public final EObject entryRuleSensorDigital() throws RecognitionException {
         EObject current = null;
 
@@ -1296,8 +1291,8 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSpaml.g:483:54: (iv_ruleSensorDigital= ruleSensorDigital EOF )
-            // InternalSpaml.g:484:2: iv_ruleSensorDigital= ruleSensorDigital EOF
+            // InternalSpaml.g:464:54: (iv_ruleSensorDigital= ruleSensorDigital EOF )
+            // InternalSpaml.g:465:2: iv_ruleSensorDigital= ruleSensorDigital EOF
             {
              newCompositeNode(grammarAccess.getSensorDigitalRule()); 
             pushFollow(FOLLOW_1);
@@ -1324,7 +1319,7 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSensorDigital"
-    // InternalSpaml.g:490:1: ruleSensorDigital returns [EObject current=null] : ( () otherlv_1= 'SensorDigital' ) ;
+    // InternalSpaml.g:471:1: ruleSensorDigital returns [EObject current=null] : ( () otherlv_1= 'SensorDigital' ) ;
     public final EObject ruleSensorDigital() throws RecognitionException {
         EObject current = null;
 
@@ -1334,14 +1329,14 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSpaml.g:496:2: ( ( () otherlv_1= 'SensorDigital' ) )
-            // InternalSpaml.g:497:2: ( () otherlv_1= 'SensorDigital' )
+            // InternalSpaml.g:477:2: ( ( () otherlv_1= 'SensorDigital' ) )
+            // InternalSpaml.g:478:2: ( () otherlv_1= 'SensorDigital' )
             {
-            // InternalSpaml.g:497:2: ( () otherlv_1= 'SensorDigital' )
-            // InternalSpaml.g:498:3: () otherlv_1= 'SensorDigital'
+            // InternalSpaml.g:478:2: ( () otherlv_1= 'SensorDigital' )
+            // InternalSpaml.g:479:3: () otherlv_1= 'SensorDigital'
             {
-            // InternalSpaml.g:498:3: ()
-            // InternalSpaml.g:499:4: 
+            // InternalSpaml.g:479:3: ()
+            // InternalSpaml.g:480:4: 
             {
 
             				current = forceCreateModelElement(
@@ -1378,7 +1373,7 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSensorAnalog"
-    // InternalSpaml.g:513:1: entryRuleSensorAnalog returns [EObject current=null] : iv_ruleSensorAnalog= ruleSensorAnalog EOF ;
+    // InternalSpaml.g:494:1: entryRuleSensorAnalog returns [EObject current=null] : iv_ruleSensorAnalog= ruleSensorAnalog EOF ;
     public final EObject entryRuleSensorAnalog() throws RecognitionException {
         EObject current = null;
 
@@ -1386,8 +1381,8 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSpaml.g:513:53: (iv_ruleSensorAnalog= ruleSensorAnalog EOF )
-            // InternalSpaml.g:514:2: iv_ruleSensorAnalog= ruleSensorAnalog EOF
+            // InternalSpaml.g:494:53: (iv_ruleSensorAnalog= ruleSensorAnalog EOF )
+            // InternalSpaml.g:495:2: iv_ruleSensorAnalog= ruleSensorAnalog EOF
             {
              newCompositeNode(grammarAccess.getSensorAnalogRule()); 
             pushFollow(FOLLOW_1);
@@ -1414,7 +1409,7 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSensorAnalog"
-    // InternalSpaml.g:520:1: ruleSensorAnalog returns [EObject current=null] : ( () otherlv_1= 'SensorAnalog' ) ;
+    // InternalSpaml.g:501:1: ruleSensorAnalog returns [EObject current=null] : ( () otherlv_1= 'SensorAnalog' ) ;
     public final EObject ruleSensorAnalog() throws RecognitionException {
         EObject current = null;
 
@@ -1424,14 +1419,14 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSpaml.g:526:2: ( ( () otherlv_1= 'SensorAnalog' ) )
-            // InternalSpaml.g:527:2: ( () otherlv_1= 'SensorAnalog' )
+            // InternalSpaml.g:507:2: ( ( () otherlv_1= 'SensorAnalog' ) )
+            // InternalSpaml.g:508:2: ( () otherlv_1= 'SensorAnalog' )
             {
-            // InternalSpaml.g:527:2: ( () otherlv_1= 'SensorAnalog' )
-            // InternalSpaml.g:528:3: () otherlv_1= 'SensorAnalog'
+            // InternalSpaml.g:508:2: ( () otherlv_1= 'SensorAnalog' )
+            // InternalSpaml.g:509:3: () otherlv_1= 'SensorAnalog'
             {
-            // InternalSpaml.g:528:3: ()
-            // InternalSpaml.g:529:4: 
+            // InternalSpaml.g:509:3: ()
+            // InternalSpaml.g:510:4: 
             {
 
             				current = forceCreateModelElement(
@@ -1468,7 +1463,7 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleActuator"
-    // InternalSpaml.g:543:1: entryRuleActuator returns [EObject current=null] : iv_ruleActuator= ruleActuator EOF ;
+    // InternalSpaml.g:524:1: entryRuleActuator returns [EObject current=null] : iv_ruleActuator= ruleActuator EOF ;
     public final EObject entryRuleActuator() throws RecognitionException {
         EObject current = null;
 
@@ -1476,8 +1471,8 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSpaml.g:543:49: (iv_ruleActuator= ruleActuator EOF )
-            // InternalSpaml.g:544:2: iv_ruleActuator= ruleActuator EOF
+            // InternalSpaml.g:524:49: (iv_ruleActuator= ruleActuator EOF )
+            // InternalSpaml.g:525:2: iv_ruleActuator= ruleActuator EOF
             {
              newCompositeNode(grammarAccess.getActuatorRule()); 
             pushFollow(FOLLOW_1);
@@ -1504,7 +1499,7 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleActuator"
-    // InternalSpaml.g:550:1: ruleActuator returns [EObject current=null] : ( () otherlv_1= 'Actuator' ) ;
+    // InternalSpaml.g:531:1: ruleActuator returns [EObject current=null] : ( () otherlv_1= 'Actuator' ) ;
     public final EObject ruleActuator() throws RecognitionException {
         EObject current = null;
 
@@ -1514,14 +1509,14 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSpaml.g:556:2: ( ( () otherlv_1= 'Actuator' ) )
-            // InternalSpaml.g:557:2: ( () otherlv_1= 'Actuator' )
+            // InternalSpaml.g:537:2: ( ( () otherlv_1= 'Actuator' ) )
+            // InternalSpaml.g:538:2: ( () otherlv_1= 'Actuator' )
             {
-            // InternalSpaml.g:557:2: ( () otherlv_1= 'Actuator' )
-            // InternalSpaml.g:558:3: () otherlv_1= 'Actuator'
+            // InternalSpaml.g:538:2: ( () otherlv_1= 'Actuator' )
+            // InternalSpaml.g:539:3: () otherlv_1= 'Actuator'
             {
-            // InternalSpaml.g:558:3: ()
-            // InternalSpaml.g:559:4: 
+            // InternalSpaml.g:539:3: ()
+            // InternalSpaml.g:540:4: 
             {
 
             				current = forceCreateModelElement(
@@ -1558,7 +1553,7 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAction"
-    // InternalSpaml.g:573:1: entryRuleAction returns [EObject current=null] : iv_ruleAction= ruleAction EOF ;
+    // InternalSpaml.g:554:1: entryRuleAction returns [EObject current=null] : iv_ruleAction= ruleAction EOF ;
     public final EObject entryRuleAction() throws RecognitionException {
         EObject current = null;
 
@@ -1566,8 +1561,8 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSpaml.g:573:47: (iv_ruleAction= ruleAction EOF )
-            // InternalSpaml.g:574:2: iv_ruleAction= ruleAction EOF
+            // InternalSpaml.g:554:47: (iv_ruleAction= ruleAction EOF )
+            // InternalSpaml.g:555:2: iv_ruleAction= ruleAction EOF
             {
              newCompositeNode(grammarAccess.getActionRule()); 
             pushFollow(FOLLOW_1);
@@ -1594,7 +1589,7 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAction"
-    // InternalSpaml.g:580:1: ruleAction returns [EObject current=null] : ( ( ( ruleEString ) ) (otherlv_1= '=' | otherlv_2= 'setTo' ) ( (lv_value_3_0= ruleSIGNAL ) ) ) ;
+    // InternalSpaml.g:561:1: ruleAction returns [EObject current=null] : ( ( ( ruleEString ) ) (otherlv_1= '=' | otherlv_2= 'setTo' ) ( (lv_value_3_0= ruleSIGNAL ) ) ) ;
     public final EObject ruleAction() throws RecognitionException {
         EObject current = null;
 
@@ -1607,17 +1602,17 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSpaml.g:586:2: ( ( ( ( ruleEString ) ) (otherlv_1= '=' | otherlv_2= 'setTo' ) ( (lv_value_3_0= ruleSIGNAL ) ) ) )
-            // InternalSpaml.g:587:2: ( ( ( ruleEString ) ) (otherlv_1= '=' | otherlv_2= 'setTo' ) ( (lv_value_3_0= ruleSIGNAL ) ) )
+            // InternalSpaml.g:567:2: ( ( ( ( ruleEString ) ) (otherlv_1= '=' | otherlv_2= 'setTo' ) ( (lv_value_3_0= ruleSIGNAL ) ) ) )
+            // InternalSpaml.g:568:2: ( ( ( ruleEString ) ) (otherlv_1= '=' | otherlv_2= 'setTo' ) ( (lv_value_3_0= ruleSIGNAL ) ) )
             {
-            // InternalSpaml.g:587:2: ( ( ( ruleEString ) ) (otherlv_1= '=' | otherlv_2= 'setTo' ) ( (lv_value_3_0= ruleSIGNAL ) ) )
-            // InternalSpaml.g:588:3: ( ( ruleEString ) ) (otherlv_1= '=' | otherlv_2= 'setTo' ) ( (lv_value_3_0= ruleSIGNAL ) )
+            // InternalSpaml.g:568:2: ( ( ( ruleEString ) ) (otherlv_1= '=' | otherlv_2= 'setTo' ) ( (lv_value_3_0= ruleSIGNAL ) ) )
+            // InternalSpaml.g:569:3: ( ( ruleEString ) ) (otherlv_1= '=' | otherlv_2= 'setTo' ) ( (lv_value_3_0= ruleSIGNAL ) )
             {
-            // InternalSpaml.g:588:3: ( ( ruleEString ) )
-            // InternalSpaml.g:589:4: ( ruleEString )
+            // InternalSpaml.g:569:3: ( ( ruleEString ) )
+            // InternalSpaml.g:570:4: ( ruleEString )
             {
-            // InternalSpaml.g:589:4: ( ruleEString )
-            // InternalSpaml.g:590:5: ruleEString
+            // InternalSpaml.g:570:4: ( ruleEString )
+            // InternalSpaml.g:571:5: ruleEString
             {
 
             					if (current==null) {
@@ -1641,25 +1636,25 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSpaml.g:604:3: (otherlv_1= '=' | otherlv_2= 'setTo' )
-            int alt11=2;
-            int LA11_0 = input.LA(1);
+            // InternalSpaml.g:585:3: (otherlv_1= '=' | otherlv_2= 'setTo' )
+            int alt12=2;
+            int LA12_0 = input.LA(1);
 
-            if ( (LA11_0==24) ) {
-                alt11=1;
+            if ( (LA12_0==24) ) {
+                alt12=1;
             }
-            else if ( (LA11_0==25) ) {
-                alt11=2;
+            else if ( (LA12_0==25) ) {
+                alt12=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 11, 0, input);
+                    new NoViableAltException("", 12, 0, input);
 
                 throw nvae;
             }
-            switch (alt11) {
+            switch (alt12) {
                 case 1 :
-                    // InternalSpaml.g:605:4: otherlv_1= '='
+                    // InternalSpaml.g:586:4: otherlv_1= '='
                     {
                     otherlv_1=(Token)match(input,24,FOLLOW_15); 
 
@@ -1669,7 +1664,7 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSpaml.g:610:4: otherlv_2= 'setTo'
+                    // InternalSpaml.g:591:4: otherlv_2= 'setTo'
                     {
                     otherlv_2=(Token)match(input,25,FOLLOW_15); 
 
@@ -1681,11 +1676,11 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSpaml.g:615:3: ( (lv_value_3_0= ruleSIGNAL ) )
-            // InternalSpaml.g:616:4: (lv_value_3_0= ruleSIGNAL )
+            // InternalSpaml.g:596:3: ( (lv_value_3_0= ruleSIGNAL ) )
+            // InternalSpaml.g:597:4: (lv_value_3_0= ruleSIGNAL )
             {
-            // InternalSpaml.g:616:4: (lv_value_3_0= ruleSIGNAL )
-            // InternalSpaml.g:617:5: lv_value_3_0= ruleSIGNAL
+            // InternalSpaml.g:597:4: (lv_value_3_0= ruleSIGNAL )
+            // InternalSpaml.g:598:5: lv_value_3_0= ruleSIGNAL
             {
 
             					newCompositeNode(grammarAccess.getActionAccess().getValueSIGNALEnumRuleCall_2_0());
@@ -1735,7 +1730,7 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTransition"
-    // InternalSpaml.g:638:1: entryRuleTransition returns [EObject current=null] : iv_ruleTransition= ruleTransition EOF ;
+    // InternalSpaml.g:619:1: entryRuleTransition returns [EObject current=null] : iv_ruleTransition= ruleTransition EOF ;
     public final EObject entryRuleTransition() throws RecognitionException {
         EObject current = null;
 
@@ -1743,8 +1738,8 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSpaml.g:638:51: (iv_ruleTransition= ruleTransition EOF )
-            // InternalSpaml.g:639:2: iv_ruleTransition= ruleTransition EOF
+            // InternalSpaml.g:619:51: (iv_ruleTransition= ruleTransition EOF )
+            // InternalSpaml.g:620:2: iv_ruleTransition= ruleTransition EOF
             {
              newCompositeNode(grammarAccess.getTransitionRule()); 
             pushFollow(FOLLOW_1);
@@ -1771,7 +1766,7 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTransition"
-    // InternalSpaml.g:645:1: ruleTransition returns [EObject current=null] : ( ( ( (otherlv_0= 'when' )? ( ( ( (lv_conditions_1_0= ruleCondition ) ) (otherlv_2= ',' ( (lv_conditions_3_0= ruleCondition ) ) )* ) | ( ( (lv_operation_4_0= ruleOPERATION ) ) otherlv_5= '(' ( ( (lv_conditions_6_0= ruleCondition ) ) (otherlv_7= ',' ( (lv_conditions_8_0= ruleCondition ) ) )* ) otherlv_9= ')' ) ) ) | ( (lv_delay_10_0= ruleEInt ) ) ) (otherlv_11= '->' | otherlv_12= 'then' ) ( ( ruleEString ) ) ) ;
+    // InternalSpaml.g:626:1: ruleTransition returns [EObject current=null] : ( ( ( (otherlv_0= 'when' )? ( ( (lv_conditions_1_0= ruleCondition ) ) (otherlv_2= ',' ( (lv_conditions_3_0= ruleCondition ) ) )* ) ) | ( ( (lv_operation_4_0= ruleOPERATION ) ) otherlv_5= '(' ( ( (lv_conditions_6_0= ruleCondition ) ) (otherlv_7= ',' ( (lv_conditions_8_0= ruleCondition ) ) )* ) otherlv_9= ')' ) ) (otherlv_10= '->' | otherlv_11= 'then' ) ( ( ruleEString ) ) ) ;
     public final EObject ruleTransition() throws RecognitionException {
         EObject current = null;
 
@@ -1780,8 +1775,8 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
         Token otherlv_5=null;
         Token otherlv_7=null;
         Token otherlv_9=null;
+        Token otherlv_10=null;
         Token otherlv_11=null;
-        Token otherlv_12=null;
         EObject lv_conditions_1_0 = null;
 
         EObject lv_conditions_3_0 = null;
@@ -1792,27 +1787,25 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
         EObject lv_conditions_8_0 = null;
 
-        AntlrDatatypeRuleToken lv_delay_10_0 = null;
-
 
 
         	enterRule();
 
         try {
-            // InternalSpaml.g:651:2: ( ( ( ( (otherlv_0= 'when' )? ( ( ( (lv_conditions_1_0= ruleCondition ) ) (otherlv_2= ',' ( (lv_conditions_3_0= ruleCondition ) ) )* ) | ( ( (lv_operation_4_0= ruleOPERATION ) ) otherlv_5= '(' ( ( (lv_conditions_6_0= ruleCondition ) ) (otherlv_7= ',' ( (lv_conditions_8_0= ruleCondition ) ) )* ) otherlv_9= ')' ) ) ) | ( (lv_delay_10_0= ruleEInt ) ) ) (otherlv_11= '->' | otherlv_12= 'then' ) ( ( ruleEString ) ) ) )
-            // InternalSpaml.g:652:2: ( ( ( (otherlv_0= 'when' )? ( ( ( (lv_conditions_1_0= ruleCondition ) ) (otherlv_2= ',' ( (lv_conditions_3_0= ruleCondition ) ) )* ) | ( ( (lv_operation_4_0= ruleOPERATION ) ) otherlv_5= '(' ( ( (lv_conditions_6_0= ruleCondition ) ) (otherlv_7= ',' ( (lv_conditions_8_0= ruleCondition ) ) )* ) otherlv_9= ')' ) ) ) | ( (lv_delay_10_0= ruleEInt ) ) ) (otherlv_11= '->' | otherlv_12= 'then' ) ( ( ruleEString ) ) )
+            // InternalSpaml.g:632:2: ( ( ( ( (otherlv_0= 'when' )? ( ( (lv_conditions_1_0= ruleCondition ) ) (otherlv_2= ',' ( (lv_conditions_3_0= ruleCondition ) ) )* ) ) | ( ( (lv_operation_4_0= ruleOPERATION ) ) otherlv_5= '(' ( ( (lv_conditions_6_0= ruleCondition ) ) (otherlv_7= ',' ( (lv_conditions_8_0= ruleCondition ) ) )* ) otherlv_9= ')' ) ) (otherlv_10= '->' | otherlv_11= 'then' ) ( ( ruleEString ) ) ) )
+            // InternalSpaml.g:633:2: ( ( ( (otherlv_0= 'when' )? ( ( (lv_conditions_1_0= ruleCondition ) ) (otherlv_2= ',' ( (lv_conditions_3_0= ruleCondition ) ) )* ) ) | ( ( (lv_operation_4_0= ruleOPERATION ) ) otherlv_5= '(' ( ( (lv_conditions_6_0= ruleCondition ) ) (otherlv_7= ',' ( (lv_conditions_8_0= ruleCondition ) ) )* ) otherlv_9= ')' ) ) (otherlv_10= '->' | otherlv_11= 'then' ) ( ( ruleEString ) ) )
             {
-            // InternalSpaml.g:652:2: ( ( ( (otherlv_0= 'when' )? ( ( ( (lv_conditions_1_0= ruleCondition ) ) (otherlv_2= ',' ( (lv_conditions_3_0= ruleCondition ) ) )* ) | ( ( (lv_operation_4_0= ruleOPERATION ) ) otherlv_5= '(' ( ( (lv_conditions_6_0= ruleCondition ) ) (otherlv_7= ',' ( (lv_conditions_8_0= ruleCondition ) ) )* ) otherlv_9= ')' ) ) ) | ( (lv_delay_10_0= ruleEInt ) ) ) (otherlv_11= '->' | otherlv_12= 'then' ) ( ( ruleEString ) ) )
-            // InternalSpaml.g:653:3: ( ( (otherlv_0= 'when' )? ( ( ( (lv_conditions_1_0= ruleCondition ) ) (otherlv_2= ',' ( (lv_conditions_3_0= ruleCondition ) ) )* ) | ( ( (lv_operation_4_0= ruleOPERATION ) ) otherlv_5= '(' ( ( (lv_conditions_6_0= ruleCondition ) ) (otherlv_7= ',' ( (lv_conditions_8_0= ruleCondition ) ) )* ) otherlv_9= ')' ) ) ) | ( (lv_delay_10_0= ruleEInt ) ) ) (otherlv_11= '->' | otherlv_12= 'then' ) ( ( ruleEString ) )
+            // InternalSpaml.g:633:2: ( ( ( (otherlv_0= 'when' )? ( ( (lv_conditions_1_0= ruleCondition ) ) (otherlv_2= ',' ( (lv_conditions_3_0= ruleCondition ) ) )* ) ) | ( ( (lv_operation_4_0= ruleOPERATION ) ) otherlv_5= '(' ( ( (lv_conditions_6_0= ruleCondition ) ) (otherlv_7= ',' ( (lv_conditions_8_0= ruleCondition ) ) )* ) otherlv_9= ')' ) ) (otherlv_10= '->' | otherlv_11= 'then' ) ( ( ruleEString ) ) )
+            // InternalSpaml.g:634:3: ( ( (otherlv_0= 'when' )? ( ( (lv_conditions_1_0= ruleCondition ) ) (otherlv_2= ',' ( (lv_conditions_3_0= ruleCondition ) ) )* ) ) | ( ( (lv_operation_4_0= ruleOPERATION ) ) otherlv_5= '(' ( ( (lv_conditions_6_0= ruleCondition ) ) (otherlv_7= ',' ( (lv_conditions_8_0= ruleCondition ) ) )* ) otherlv_9= ')' ) ) (otherlv_10= '->' | otherlv_11= 'then' ) ( ( ruleEString ) )
             {
-            // InternalSpaml.g:653:3: ( ( (otherlv_0= 'when' )? ( ( ( (lv_conditions_1_0= ruleCondition ) ) (otherlv_2= ',' ( (lv_conditions_3_0= ruleCondition ) ) )* ) | ( ( (lv_operation_4_0= ruleOPERATION ) ) otherlv_5= '(' ( ( (lv_conditions_6_0= ruleCondition ) ) (otherlv_7= ',' ( (lv_conditions_8_0= ruleCondition ) ) )* ) otherlv_9= ')' ) ) ) | ( (lv_delay_10_0= ruleEInt ) ) )
+            // InternalSpaml.g:634:3: ( ( (otherlv_0= 'when' )? ( ( (lv_conditions_1_0= ruleCondition ) ) (otherlv_2= ',' ( (lv_conditions_3_0= ruleCondition ) ) )* ) ) | ( ( (lv_operation_4_0= ruleOPERATION ) ) otherlv_5= '(' ( ( (lv_conditions_6_0= ruleCondition ) ) (otherlv_7= ',' ( (lv_conditions_8_0= ruleCondition ) ) )* ) otherlv_9= ')' ) )
             int alt16=2;
             int LA16_0 = input.LA(1);
 
-            if ( (LA16_0==RULE_ID||LA16_0==26||(LA16_0>=35 && LA16_0<=36)) ) {
+            if ( ((LA16_0>=RULE_ID && LA16_0<=RULE_INT)||LA16_0==20||LA16_0==26) ) {
                 alt16=1;
             }
-            else if ( (LA16_0==RULE_INT||LA16_0==20) ) {
+            else if ( ((LA16_0>=35 && LA16_0<=36)) ) {
                 alt16=2;
             }
             else {
@@ -1823,21 +1816,21 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
             }
             switch (alt16) {
                 case 1 :
-                    // InternalSpaml.g:654:4: ( (otherlv_0= 'when' )? ( ( ( (lv_conditions_1_0= ruleCondition ) ) (otherlv_2= ',' ( (lv_conditions_3_0= ruleCondition ) ) )* ) | ( ( (lv_operation_4_0= ruleOPERATION ) ) otherlv_5= '(' ( ( (lv_conditions_6_0= ruleCondition ) ) (otherlv_7= ',' ( (lv_conditions_8_0= ruleCondition ) ) )* ) otherlv_9= ')' ) ) )
+                    // InternalSpaml.g:635:4: ( (otherlv_0= 'when' )? ( ( (lv_conditions_1_0= ruleCondition ) ) (otherlv_2= ',' ( (lv_conditions_3_0= ruleCondition ) ) )* ) )
                     {
-                    // InternalSpaml.g:654:4: ( (otherlv_0= 'when' )? ( ( ( (lv_conditions_1_0= ruleCondition ) ) (otherlv_2= ',' ( (lv_conditions_3_0= ruleCondition ) ) )* ) | ( ( (lv_operation_4_0= ruleOPERATION ) ) otherlv_5= '(' ( ( (lv_conditions_6_0= ruleCondition ) ) (otherlv_7= ',' ( (lv_conditions_8_0= ruleCondition ) ) )* ) otherlv_9= ')' ) ) )
-                    // InternalSpaml.g:655:5: (otherlv_0= 'when' )? ( ( ( (lv_conditions_1_0= ruleCondition ) ) (otherlv_2= ',' ( (lv_conditions_3_0= ruleCondition ) ) )* ) | ( ( (lv_operation_4_0= ruleOPERATION ) ) otherlv_5= '(' ( ( (lv_conditions_6_0= ruleCondition ) ) (otherlv_7= ',' ( (lv_conditions_8_0= ruleCondition ) ) )* ) otherlv_9= ')' ) )
+                    // InternalSpaml.g:635:4: ( (otherlv_0= 'when' )? ( ( (lv_conditions_1_0= ruleCondition ) ) (otherlv_2= ',' ( (lv_conditions_3_0= ruleCondition ) ) )* ) )
+                    // InternalSpaml.g:636:5: (otherlv_0= 'when' )? ( ( (lv_conditions_1_0= ruleCondition ) ) (otherlv_2= ',' ( (lv_conditions_3_0= ruleCondition ) ) )* )
                     {
-                    // InternalSpaml.g:655:5: (otherlv_0= 'when' )?
-                    int alt12=2;
-                    int LA12_0 = input.LA(1);
+                    // InternalSpaml.g:636:5: (otherlv_0= 'when' )?
+                    int alt13=2;
+                    int LA13_0 = input.LA(1);
 
-                    if ( (LA12_0==26) ) {
-                        alt12=1;
+                    if ( (LA13_0==26) ) {
+                        alt13=1;
                     }
-                    switch (alt12) {
+                    switch (alt13) {
                         case 1 :
-                            // InternalSpaml.g:656:6: otherlv_0= 'when'
+                            // InternalSpaml.g:637:6: otherlv_0= 'when'
                             {
                             otherlv_0=(Token)match(input,26,FOLLOW_16); 
 
@@ -1849,272 +1842,99 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalSpaml.g:661:5: ( ( ( (lv_conditions_1_0= ruleCondition ) ) (otherlv_2= ',' ( (lv_conditions_3_0= ruleCondition ) ) )* ) | ( ( (lv_operation_4_0= ruleOPERATION ) ) otherlv_5= '(' ( ( (lv_conditions_6_0= ruleCondition ) ) (otherlv_7= ',' ( (lv_conditions_8_0= ruleCondition ) ) )* ) otherlv_9= ')' ) )
-                    int alt15=2;
-                    int LA15_0 = input.LA(1);
+                    // InternalSpaml.g:642:5: ( ( (lv_conditions_1_0= ruleCondition ) ) (otherlv_2= ',' ( (lv_conditions_3_0= ruleCondition ) ) )* )
+                    // InternalSpaml.g:643:6: ( (lv_conditions_1_0= ruleCondition ) ) (otherlv_2= ',' ( (lv_conditions_3_0= ruleCondition ) ) )*
+                    {
+                    // InternalSpaml.g:643:6: ( (lv_conditions_1_0= ruleCondition ) )
+                    // InternalSpaml.g:644:7: (lv_conditions_1_0= ruleCondition )
+                    {
+                    // InternalSpaml.g:644:7: (lv_conditions_1_0= ruleCondition )
+                    // InternalSpaml.g:645:8: lv_conditions_1_0= ruleCondition
+                    {
 
-                    if ( (LA15_0==RULE_ID) ) {
-                        alt15=1;
+                    								newCompositeNode(grammarAccess.getTransitionAccess().getConditionsConditionParserRuleCall_0_0_1_0_0());
+                    							
+                    pushFollow(FOLLOW_17);
+                    lv_conditions_1_0=ruleCondition();
+
+                    state._fsp--;
+
+
+                    								if (current==null) {
+                    									current = createModelElementForParent(grammarAccess.getTransitionRule());
+                    								}
+                    								add(
+                    									current,
+                    									"conditions",
+                    									lv_conditions_1_0,
+                    									"polytech.dsl.spaceteam.spaml.Spaml.Condition");
+                    								afterParserOrEnumRuleCall();
+                    							
+
                     }
-                    else if ( ((LA15_0>=35 && LA15_0<=36)) ) {
-                        alt15=2;
+
+
                     }
-                    else {
-                        NoViableAltException nvae =
-                            new NoViableAltException("", 15, 0, input);
-
-                        throw nvae;
-                    }
-                    switch (alt15) {
-                        case 1 :
-                            // InternalSpaml.g:662:6: ( ( (lv_conditions_1_0= ruleCondition ) ) (otherlv_2= ',' ( (lv_conditions_3_0= ruleCondition ) ) )* )
-                            {
-                            // InternalSpaml.g:662:6: ( ( (lv_conditions_1_0= ruleCondition ) ) (otherlv_2= ',' ( (lv_conditions_3_0= ruleCondition ) ) )* )
-                            // InternalSpaml.g:663:7: ( (lv_conditions_1_0= ruleCondition ) ) (otherlv_2= ',' ( (lv_conditions_3_0= ruleCondition ) ) )*
-                            {
-                            // InternalSpaml.g:663:7: ( (lv_conditions_1_0= ruleCondition ) )
-                            // InternalSpaml.g:664:8: (lv_conditions_1_0= ruleCondition )
-                            {
-                            // InternalSpaml.g:664:8: (lv_conditions_1_0= ruleCondition )
-                            // InternalSpaml.g:665:9: lv_conditions_1_0= ruleCondition
-                            {
-
-                            									newCompositeNode(grammarAccess.getTransitionAccess().getConditionsConditionParserRuleCall_0_0_1_0_0_0());
-                            								
-                            pushFollow(FOLLOW_17);
-                            lv_conditions_1_0=ruleCondition();
-
-                            state._fsp--;
-
-
-                            									if (current==null) {
-                            										current = createModelElementForParent(grammarAccess.getTransitionRule());
-                            									}
-                            									add(
-                            										current,
-                            										"conditions",
-                            										lv_conditions_1_0,
-                            										"polytech.dsl.spaceteam.spaml.Spaml.Condition");
-                            									afterParserOrEnumRuleCall();
-                            								
-
-                            }
-
-
-                            }
-
-                            // InternalSpaml.g:682:7: (otherlv_2= ',' ( (lv_conditions_3_0= ruleCondition ) ) )*
-                            loop13:
-                            do {
-                                int alt13=2;
-                                int LA13_0 = input.LA(1);
-
-                                if ( (LA13_0==27) ) {
-                                    alt13=1;
-                                }
-
-
-                                switch (alt13) {
-                            	case 1 :
-                            	    // InternalSpaml.g:683:8: otherlv_2= ',' ( (lv_conditions_3_0= ruleCondition ) )
-                            	    {
-                            	    otherlv_2=(Token)match(input,27,FOLLOW_18); 
-
-                            	    								newLeafNode(otherlv_2, grammarAccess.getTransitionAccess().getCommaKeyword_0_0_1_0_1_0());
-                            	    							
-                            	    // InternalSpaml.g:687:8: ( (lv_conditions_3_0= ruleCondition ) )
-                            	    // InternalSpaml.g:688:9: (lv_conditions_3_0= ruleCondition )
-                            	    {
-                            	    // InternalSpaml.g:688:9: (lv_conditions_3_0= ruleCondition )
-                            	    // InternalSpaml.g:689:10: lv_conditions_3_0= ruleCondition
-                            	    {
-
-                            	    										newCompositeNode(grammarAccess.getTransitionAccess().getConditionsConditionParserRuleCall_0_0_1_0_1_1_0());
-                            	    									
-                            	    pushFollow(FOLLOW_17);
-                            	    lv_conditions_3_0=ruleCondition();
-
-                            	    state._fsp--;
-
-
-                            	    										if (current==null) {
-                            	    											current = createModelElementForParent(grammarAccess.getTransitionRule());
-                            	    										}
-                            	    										add(
-                            	    											current,
-                            	    											"conditions",
-                            	    											lv_conditions_3_0,
-                            	    											"polytech.dsl.spaceteam.spaml.Spaml.Condition");
-                            	    										afterParserOrEnumRuleCall();
-                            	    									
-
-                            	    }
-
-
-                            	    }
-
-
-                            	    }
-                            	    break;
-
-                            	default :
-                            	    break loop13;
-                                }
-                            } while (true);
-
-
-                            }
-
-
-                            }
-                            break;
-                        case 2 :
-                            // InternalSpaml.g:709:6: ( ( (lv_operation_4_0= ruleOPERATION ) ) otherlv_5= '(' ( ( (lv_conditions_6_0= ruleCondition ) ) (otherlv_7= ',' ( (lv_conditions_8_0= ruleCondition ) ) )* ) otherlv_9= ')' )
-                            {
-                            // InternalSpaml.g:709:6: ( ( (lv_operation_4_0= ruleOPERATION ) ) otherlv_5= '(' ( ( (lv_conditions_6_0= ruleCondition ) ) (otherlv_7= ',' ( (lv_conditions_8_0= ruleCondition ) ) )* ) otherlv_9= ')' )
-                            // InternalSpaml.g:710:7: ( (lv_operation_4_0= ruleOPERATION ) ) otherlv_5= '(' ( ( (lv_conditions_6_0= ruleCondition ) ) (otherlv_7= ',' ( (lv_conditions_8_0= ruleCondition ) ) )* ) otherlv_9= ')'
-                            {
-                            // InternalSpaml.g:710:7: ( (lv_operation_4_0= ruleOPERATION ) )
-                            // InternalSpaml.g:711:8: (lv_operation_4_0= ruleOPERATION )
-                            {
-                            // InternalSpaml.g:711:8: (lv_operation_4_0= ruleOPERATION )
-                            // InternalSpaml.g:712:9: lv_operation_4_0= ruleOPERATION
-                            {
-
-                            									newCompositeNode(grammarAccess.getTransitionAccess().getOperationOPERATIONEnumRuleCall_0_0_1_1_0_0());
-                            								
-                            pushFollow(FOLLOW_19);
-                            lv_operation_4_0=ruleOPERATION();
-
-                            state._fsp--;
-
-
-                            									if (current==null) {
-                            										current = createModelElementForParent(grammarAccess.getTransitionRule());
-                            									}
-                            									set(
-                            										current,
-                            										"operation",
-                            										lv_operation_4_0,
-                            										"polytech.dsl.spaceteam.spaml.Spaml.OPERATION");
-                            									afterParserOrEnumRuleCall();
-                            								
 
-                            }
-
+                    // InternalSpaml.g:662:6: (otherlv_2= ',' ( (lv_conditions_3_0= ruleCondition ) ) )*
+                    loop14:
+                    do {
+                        int alt14=2;
+                        int LA14_0 = input.LA(1);
 
-                            }
+                        if ( (LA14_0==27) ) {
+                            alt14=1;
+                        }
 
-                            otherlv_5=(Token)match(input,28,FOLLOW_18); 
 
-                            							newLeafNode(otherlv_5, grammarAccess.getTransitionAccess().getLeftParenthesisKeyword_0_0_1_1_1());
-                            						
-                            // InternalSpaml.g:733:7: ( ( (lv_conditions_6_0= ruleCondition ) ) (otherlv_7= ',' ( (lv_conditions_8_0= ruleCondition ) ) )* )
-                            // InternalSpaml.g:734:8: ( (lv_conditions_6_0= ruleCondition ) ) (otherlv_7= ',' ( (lv_conditions_8_0= ruleCondition ) ) )*
-                            {
-                            // InternalSpaml.g:734:8: ( (lv_conditions_6_0= ruleCondition ) )
-                            // InternalSpaml.g:735:9: (lv_conditions_6_0= ruleCondition )
-                            {
-                            // InternalSpaml.g:735:9: (lv_conditions_6_0= ruleCondition )
-                            // InternalSpaml.g:736:10: lv_conditions_6_0= ruleCondition
-                            {
+                        switch (alt14) {
+                    	case 1 :
+                    	    // InternalSpaml.g:663:7: otherlv_2= ',' ( (lv_conditions_3_0= ruleCondition ) )
+                    	    {
+                    	    otherlv_2=(Token)match(input,27,FOLLOW_16); 
 
-                            										newCompositeNode(grammarAccess.getTransitionAccess().getConditionsConditionParserRuleCall_0_0_1_1_2_0_0());
-                            									
-                            pushFollow(FOLLOW_20);
-                            lv_conditions_6_0=ruleCondition();
+                    	    							newLeafNode(otherlv_2, grammarAccess.getTransitionAccess().getCommaKeyword_0_0_1_1_0());
+                    	    						
+                    	    // InternalSpaml.g:667:7: ( (lv_conditions_3_0= ruleCondition ) )
+                    	    // InternalSpaml.g:668:8: (lv_conditions_3_0= ruleCondition )
+                    	    {
+                    	    // InternalSpaml.g:668:8: (lv_conditions_3_0= ruleCondition )
+                    	    // InternalSpaml.g:669:9: lv_conditions_3_0= ruleCondition
+                    	    {
 
-                            state._fsp--;
+                    	    									newCompositeNode(grammarAccess.getTransitionAccess().getConditionsConditionParserRuleCall_0_0_1_1_1_0());
+                    	    								
+                    	    pushFollow(FOLLOW_17);
+                    	    lv_conditions_3_0=ruleCondition();
 
+                    	    state._fsp--;
 
-                            										if (current==null) {
-                            											current = createModelElementForParent(grammarAccess.getTransitionRule());
-                            										}
-                            										add(
-                            											current,
-                            											"conditions",
-                            											lv_conditions_6_0,
-                            											"polytech.dsl.spaceteam.spaml.Spaml.Condition");
-                            										afterParserOrEnumRuleCall();
-                            									
 
-                            }
+                    	    									if (current==null) {
+                    	    										current = createModelElementForParent(grammarAccess.getTransitionRule());
+                    	    									}
+                    	    									add(
+                    	    										current,
+                    	    										"conditions",
+                    	    										lv_conditions_3_0,
+                    	    										"polytech.dsl.spaceteam.spaml.Spaml.Condition");
+                    	    									afterParserOrEnumRuleCall();
+                    	    								
 
+                    	    }
 
-                            }
 
-                            // InternalSpaml.g:753:8: (otherlv_7= ',' ( (lv_conditions_8_0= ruleCondition ) ) )*
-                            loop14:
-                            do {
-                                int alt14=2;
-                                int LA14_0 = input.LA(1);
+                    	    }
 
-                                if ( (LA14_0==27) ) {
-                                    alt14=1;
-                                }
 
+                    	    }
+                    	    break;
 
-                                switch (alt14) {
-                            	case 1 :
-                            	    // InternalSpaml.g:754:9: otherlv_7= ',' ( (lv_conditions_8_0= ruleCondition ) )
-                            	    {
-                            	    otherlv_7=(Token)match(input,27,FOLLOW_18); 
+                    	default :
+                    	    break loop14;
+                        }
+                    } while (true);
 
-                            	    									newLeafNode(otherlv_7, grammarAccess.getTransitionAccess().getCommaKeyword_0_0_1_1_2_1_0());
-                            	    								
-                            	    // InternalSpaml.g:758:9: ( (lv_conditions_8_0= ruleCondition ) )
-                            	    // InternalSpaml.g:759:10: (lv_conditions_8_0= ruleCondition )
-                            	    {
-                            	    // InternalSpaml.g:759:10: (lv_conditions_8_0= ruleCondition )
-                            	    // InternalSpaml.g:760:11: lv_conditions_8_0= ruleCondition
-                            	    {
-
-                            	    											newCompositeNode(grammarAccess.getTransitionAccess().getConditionsConditionParserRuleCall_0_0_1_1_2_1_1_0());
-                            	    										
-                            	    pushFollow(FOLLOW_20);
-                            	    lv_conditions_8_0=ruleCondition();
-
-                            	    state._fsp--;
-
-
-                            	    											if (current==null) {
-                            	    												current = createModelElementForParent(grammarAccess.getTransitionRule());
-                            	    											}
-                            	    											add(
-                            	    												current,
-                            	    												"conditions",
-                            	    												lv_conditions_8_0,
-                            	    												"polytech.dsl.spaceteam.spaml.Spaml.Condition");
-                            	    											afterParserOrEnumRuleCall();
-                            	    										
-
-                            	    }
-
-
-                            	    }
-
-
-                            	    }
-                            	    break;
-
-                            	default :
-                            	    break loop14;
-                                }
-                            } while (true);
-
-
-                            }
-
-                            otherlv_9=(Token)match(input,29,FOLLOW_21); 
-
-                            							newLeafNode(otherlv_9, grammarAccess.getTransitionAccess().getRightParenthesisKeyword_0_0_1_1_3());
-                            						
-
-                            }
-
-
-                            }
-                            break;
 
                     }
 
@@ -2125,36 +1945,146 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSpaml.g:787:4: ( (lv_delay_10_0= ruleEInt ) )
+                    // InternalSpaml.g:690:4: ( ( (lv_operation_4_0= ruleOPERATION ) ) otherlv_5= '(' ( ( (lv_conditions_6_0= ruleCondition ) ) (otherlv_7= ',' ( (lv_conditions_8_0= ruleCondition ) ) )* ) otherlv_9= ')' )
                     {
-                    // InternalSpaml.g:787:4: ( (lv_delay_10_0= ruleEInt ) )
-                    // InternalSpaml.g:788:5: (lv_delay_10_0= ruleEInt )
+                    // InternalSpaml.g:690:4: ( ( (lv_operation_4_0= ruleOPERATION ) ) otherlv_5= '(' ( ( (lv_conditions_6_0= ruleCondition ) ) (otherlv_7= ',' ( (lv_conditions_8_0= ruleCondition ) ) )* ) otherlv_9= ')' )
+                    // InternalSpaml.g:691:5: ( (lv_operation_4_0= ruleOPERATION ) ) otherlv_5= '(' ( ( (lv_conditions_6_0= ruleCondition ) ) (otherlv_7= ',' ( (lv_conditions_8_0= ruleCondition ) ) )* ) otherlv_9= ')'
                     {
-                    // InternalSpaml.g:788:5: (lv_delay_10_0= ruleEInt )
-                    // InternalSpaml.g:789:6: lv_delay_10_0= ruleEInt
+                    // InternalSpaml.g:691:5: ( (lv_operation_4_0= ruleOPERATION ) )
+                    // InternalSpaml.g:692:6: (lv_operation_4_0= ruleOPERATION )
+                    {
+                    // InternalSpaml.g:692:6: (lv_operation_4_0= ruleOPERATION )
+                    // InternalSpaml.g:693:7: lv_operation_4_0= ruleOPERATION
                     {
 
-                    						newCompositeNode(grammarAccess.getTransitionAccess().getDelayEIntParserRuleCall_0_1_0());
-                    					
-                    pushFollow(FOLLOW_21);
-                    lv_delay_10_0=ruleEInt();
+                    							newCompositeNode(grammarAccess.getTransitionAccess().getOperationOPERATIONEnumRuleCall_0_1_0_0());
+                    						
+                    pushFollow(FOLLOW_18);
+                    lv_operation_4_0=ruleOPERATION();
 
                     state._fsp--;
 
 
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getTransitionRule());
-                    						}
-                    						set(
-                    							current,
-                    							"delay",
-                    							lv_delay_10_0,
-                    							"polytech.dsl.spaceteam.spaml.Spaml.EInt");
-                    						afterParserOrEnumRuleCall();
-                    					
+                    							if (current==null) {
+                    								current = createModelElementForParent(grammarAccess.getTransitionRule());
+                    							}
+                    							set(
+                    								current,
+                    								"operation",
+                    								lv_operation_4_0,
+                    								"polytech.dsl.spaceteam.spaml.Spaml.OPERATION");
+                    							afterParserOrEnumRuleCall();
+                    						
 
                     }
 
+
+                    }
+
+                    otherlv_5=(Token)match(input,28,FOLLOW_16); 
+
+                    					newLeafNode(otherlv_5, grammarAccess.getTransitionAccess().getLeftParenthesisKeyword_0_1_1());
+                    				
+                    // InternalSpaml.g:714:5: ( ( (lv_conditions_6_0= ruleCondition ) ) (otherlv_7= ',' ( (lv_conditions_8_0= ruleCondition ) ) )* )
+                    // InternalSpaml.g:715:6: ( (lv_conditions_6_0= ruleCondition ) ) (otherlv_7= ',' ( (lv_conditions_8_0= ruleCondition ) ) )*
+                    {
+                    // InternalSpaml.g:715:6: ( (lv_conditions_6_0= ruleCondition ) )
+                    // InternalSpaml.g:716:7: (lv_conditions_6_0= ruleCondition )
+                    {
+                    // InternalSpaml.g:716:7: (lv_conditions_6_0= ruleCondition )
+                    // InternalSpaml.g:717:8: lv_conditions_6_0= ruleCondition
+                    {
+
+                    								newCompositeNode(grammarAccess.getTransitionAccess().getConditionsConditionParserRuleCall_0_1_2_0_0());
+                    							
+                    pushFollow(FOLLOW_19);
+                    lv_conditions_6_0=ruleCondition();
+
+                    state._fsp--;
+
+
+                    								if (current==null) {
+                    									current = createModelElementForParent(grammarAccess.getTransitionRule());
+                    								}
+                    								add(
+                    									current,
+                    									"conditions",
+                    									lv_conditions_6_0,
+                    									"polytech.dsl.spaceteam.spaml.Spaml.Condition");
+                    								afterParserOrEnumRuleCall();
+                    							
+
+                    }
+
+
+                    }
+
+                    // InternalSpaml.g:734:6: (otherlv_7= ',' ( (lv_conditions_8_0= ruleCondition ) ) )*
+                    loop15:
+                    do {
+                        int alt15=2;
+                        int LA15_0 = input.LA(1);
+
+                        if ( (LA15_0==27) ) {
+                            alt15=1;
+                        }
+
+
+                        switch (alt15) {
+                    	case 1 :
+                    	    // InternalSpaml.g:735:7: otherlv_7= ',' ( (lv_conditions_8_0= ruleCondition ) )
+                    	    {
+                    	    otherlv_7=(Token)match(input,27,FOLLOW_16); 
+
+                    	    							newLeafNode(otherlv_7, grammarAccess.getTransitionAccess().getCommaKeyword_0_1_2_1_0());
+                    	    						
+                    	    // InternalSpaml.g:739:7: ( (lv_conditions_8_0= ruleCondition ) )
+                    	    // InternalSpaml.g:740:8: (lv_conditions_8_0= ruleCondition )
+                    	    {
+                    	    // InternalSpaml.g:740:8: (lv_conditions_8_0= ruleCondition )
+                    	    // InternalSpaml.g:741:9: lv_conditions_8_0= ruleCondition
+                    	    {
+
+                    	    									newCompositeNode(grammarAccess.getTransitionAccess().getConditionsConditionParserRuleCall_0_1_2_1_1_0());
+                    	    								
+                    	    pushFollow(FOLLOW_19);
+                    	    lv_conditions_8_0=ruleCondition();
+
+                    	    state._fsp--;
+
+
+                    	    									if (current==null) {
+                    	    										current = createModelElementForParent(grammarAccess.getTransitionRule());
+                    	    									}
+                    	    									add(
+                    	    										current,
+                    	    										"conditions",
+                    	    										lv_conditions_8_0,
+                    	    										"polytech.dsl.spaceteam.spaml.Spaml.Condition");
+                    	    									afterParserOrEnumRuleCall();
+                    	    								
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop15;
+                        }
+                    } while (true);
+
+
+                    }
+
+                    otherlv_9=(Token)match(input,29,FOLLOW_20); 
+
+                    					newLeafNode(otherlv_9, grammarAccess.getTransitionAccess().getRightParenthesisKeyword_0_1_3());
+                    				
 
                     }
 
@@ -2164,7 +2094,7 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSpaml.g:807:3: (otherlv_11= '->' | otherlv_12= 'then' )
+            // InternalSpaml.g:766:3: (otherlv_10= '->' | otherlv_11= 'then' )
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -2182,21 +2112,21 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
             }
             switch (alt17) {
                 case 1 :
-                    // InternalSpaml.g:808:4: otherlv_11= '->'
+                    // InternalSpaml.g:767:4: otherlv_10= '->'
                     {
-                    otherlv_11=(Token)match(input,30,FOLLOW_3); 
+                    otherlv_10=(Token)match(input,30,FOLLOW_3); 
 
-                    				newLeafNode(otherlv_11, grammarAccess.getTransitionAccess().getHyphenMinusGreaterThanSignKeyword_1_0());
+                    				newLeafNode(otherlv_10, grammarAccess.getTransitionAccess().getHyphenMinusGreaterThanSignKeyword_1_0());
                     			
 
                     }
                     break;
                 case 2 :
-                    // InternalSpaml.g:813:4: otherlv_12= 'then'
+                    // InternalSpaml.g:772:4: otherlv_11= 'then'
                     {
-                    otherlv_12=(Token)match(input,31,FOLLOW_3); 
+                    otherlv_11=(Token)match(input,31,FOLLOW_3); 
 
-                    				newLeafNode(otherlv_12, grammarAccess.getTransitionAccess().getThenKeyword_1_1());
+                    				newLeafNode(otherlv_11, grammarAccess.getTransitionAccess().getThenKeyword_1_1());
                     			
 
                     }
@@ -2204,11 +2134,11 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSpaml.g:818:3: ( ( ruleEString ) )
-            // InternalSpaml.g:819:4: ( ruleEString )
+            // InternalSpaml.g:777:3: ( ( ruleEString ) )
+            // InternalSpaml.g:778:4: ( ruleEString )
             {
-            // InternalSpaml.g:819:4: ( ruleEString )
-            // InternalSpaml.g:820:5: ruleEString
+            // InternalSpaml.g:778:4: ( ruleEString )
+            // InternalSpaml.g:779:5: ruleEString
             {
 
             					if (current==null) {
@@ -2255,7 +2185,7 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCondition"
-    // InternalSpaml.g:838:1: entryRuleCondition returns [EObject current=null] : iv_ruleCondition= ruleCondition EOF ;
+    // InternalSpaml.g:797:1: entryRuleCondition returns [EObject current=null] : iv_ruleCondition= ruleCondition EOF ;
     public final EObject entryRuleCondition() throws RecognitionException {
         EObject current = null;
 
@@ -2263,8 +2193,8 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSpaml.g:838:50: (iv_ruleCondition= ruleCondition EOF )
-            // InternalSpaml.g:839:2: iv_ruleCondition= ruleCondition EOF
+            // InternalSpaml.g:797:50: (iv_ruleCondition= ruleCondition EOF )
+            // InternalSpaml.g:798:2: iv_ruleCondition= ruleCondition EOF
             {
              newCompositeNode(grammarAccess.getConditionRule()); 
             pushFollow(FOLLOW_1);
@@ -2291,8 +2221,237 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCondition"
-    // InternalSpaml.g:845:1: ruleCondition returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '=' | otherlv_2= 'is' ) ( (lv_value_3_0= ruleSIGNAL ) ) ) ;
+    // InternalSpaml.g:804:1: ruleCondition returns [EObject current=null] : (this_TemporalCondition_0= ruleTemporalCondition | this_LogicalCondition_1= ruleLogicalCondition ) ;
     public final EObject ruleCondition() throws RecognitionException {
+        EObject current = null;
+
+        EObject this_TemporalCondition_0 = null;
+
+        EObject this_LogicalCondition_1 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalSpaml.g:810:2: ( (this_TemporalCondition_0= ruleTemporalCondition | this_LogicalCondition_1= ruleLogicalCondition ) )
+            // InternalSpaml.g:811:2: (this_TemporalCondition_0= ruleTemporalCondition | this_LogicalCondition_1= ruleLogicalCondition )
+            {
+            // InternalSpaml.g:811:2: (this_TemporalCondition_0= ruleTemporalCondition | this_LogicalCondition_1= ruleLogicalCondition )
+            int alt18=2;
+            int LA18_0 = input.LA(1);
+
+            if ( (LA18_0==RULE_INT||LA18_0==20) ) {
+                alt18=1;
+            }
+            else if ( (LA18_0==RULE_ID) ) {
+                alt18=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 18, 0, input);
+
+                throw nvae;
+            }
+            switch (alt18) {
+                case 1 :
+                    // InternalSpaml.g:812:3: this_TemporalCondition_0= ruleTemporalCondition
+                    {
+
+                    			newCompositeNode(grammarAccess.getConditionAccess().getTemporalConditionParserRuleCall_0());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_TemporalCondition_0=ruleTemporalCondition();
+
+                    state._fsp--;
+
+
+                    			current = this_TemporalCondition_0;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 2 :
+                    // InternalSpaml.g:821:3: this_LogicalCondition_1= ruleLogicalCondition
+                    {
+
+                    			newCompositeNode(grammarAccess.getConditionAccess().getLogicalConditionParserRuleCall_1());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_LogicalCondition_1=ruleLogicalCondition();
+
+                    state._fsp--;
+
+
+                    			current = this_LogicalCondition_1;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleCondition"
+
+
+    // $ANTLR start "entryRuleTemporalCondition"
+    // InternalSpaml.g:833:1: entryRuleTemporalCondition returns [EObject current=null] : iv_ruleTemporalCondition= ruleTemporalCondition EOF ;
+    public final EObject entryRuleTemporalCondition() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleTemporalCondition = null;
+
+
+        try {
+            // InternalSpaml.g:833:58: (iv_ruleTemporalCondition= ruleTemporalCondition EOF )
+            // InternalSpaml.g:834:2: iv_ruleTemporalCondition= ruleTemporalCondition EOF
+            {
+             newCompositeNode(grammarAccess.getTemporalConditionRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleTemporalCondition=ruleTemporalCondition();
+
+            state._fsp--;
+
+             current =iv_ruleTemporalCondition; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleTemporalCondition"
+
+
+    // $ANTLR start "ruleTemporalCondition"
+    // InternalSpaml.g:840:1: ruleTemporalCondition returns [EObject current=null] : ( (lv_delay_0_0= ruleEInt ) ) ;
+    public final EObject ruleTemporalCondition() throws RecognitionException {
+        EObject current = null;
+
+        AntlrDatatypeRuleToken lv_delay_0_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalSpaml.g:846:2: ( ( (lv_delay_0_0= ruleEInt ) ) )
+            // InternalSpaml.g:847:2: ( (lv_delay_0_0= ruleEInt ) )
+            {
+            // InternalSpaml.g:847:2: ( (lv_delay_0_0= ruleEInt ) )
+            // InternalSpaml.g:848:3: (lv_delay_0_0= ruleEInt )
+            {
+            // InternalSpaml.g:848:3: (lv_delay_0_0= ruleEInt )
+            // InternalSpaml.g:849:4: lv_delay_0_0= ruleEInt
+            {
+
+            				newCompositeNode(grammarAccess.getTemporalConditionAccess().getDelayEIntParserRuleCall_0());
+            			
+            pushFollow(FOLLOW_2);
+            lv_delay_0_0=ruleEInt();
+
+            state._fsp--;
+
+
+            				if (current==null) {
+            					current = createModelElementForParent(grammarAccess.getTemporalConditionRule());
+            				}
+            				set(
+            					current,
+            					"delay",
+            					lv_delay_0_0,
+            					"polytech.dsl.spaceteam.spaml.Spaml.EInt");
+            				afterParserOrEnumRuleCall();
+            			
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleTemporalCondition"
+
+
+    // $ANTLR start "entryRuleLogicalCondition"
+    // InternalSpaml.g:869:1: entryRuleLogicalCondition returns [EObject current=null] : iv_ruleLogicalCondition= ruleLogicalCondition EOF ;
+    public final EObject entryRuleLogicalCondition() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleLogicalCondition = null;
+
+
+        try {
+            // InternalSpaml.g:869:57: (iv_ruleLogicalCondition= ruleLogicalCondition EOF )
+            // InternalSpaml.g:870:2: iv_ruleLogicalCondition= ruleLogicalCondition EOF
+            {
+             newCompositeNode(grammarAccess.getLogicalConditionRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleLogicalCondition=ruleLogicalCondition();
+
+            state._fsp--;
+
+             current =iv_ruleLogicalCondition; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleLogicalCondition"
+
+
+    // $ANTLR start "ruleLogicalCondition"
+    // InternalSpaml.g:876:1: ruleLogicalCondition returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '=' | otherlv_2= 'is' ) ( (lv_value_3_0= ruleSIGNAL ) ) ) ;
+    public final EObject ruleLogicalCondition() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
@@ -2305,26 +2464,26 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSpaml.g:851:2: ( ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '=' | otherlv_2= 'is' ) ( (lv_value_3_0= ruleSIGNAL ) ) ) )
-            // InternalSpaml.g:852:2: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '=' | otherlv_2= 'is' ) ( (lv_value_3_0= ruleSIGNAL ) ) )
+            // InternalSpaml.g:882:2: ( ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '=' | otherlv_2= 'is' ) ( (lv_value_3_0= ruleSIGNAL ) ) ) )
+            // InternalSpaml.g:883:2: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '=' | otherlv_2= 'is' ) ( (lv_value_3_0= ruleSIGNAL ) ) )
             {
-            // InternalSpaml.g:852:2: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '=' | otherlv_2= 'is' ) ( (lv_value_3_0= ruleSIGNAL ) ) )
-            // InternalSpaml.g:853:3: ( (otherlv_0= RULE_ID ) ) (otherlv_1= '=' | otherlv_2= 'is' ) ( (lv_value_3_0= ruleSIGNAL ) )
+            // InternalSpaml.g:883:2: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '=' | otherlv_2= 'is' ) ( (lv_value_3_0= ruleSIGNAL ) ) )
+            // InternalSpaml.g:884:3: ( (otherlv_0= RULE_ID ) ) (otherlv_1= '=' | otherlv_2= 'is' ) ( (lv_value_3_0= ruleSIGNAL ) )
             {
-            // InternalSpaml.g:853:3: ( (otherlv_0= RULE_ID ) )
-            // InternalSpaml.g:854:4: (otherlv_0= RULE_ID )
+            // InternalSpaml.g:884:3: ( (otherlv_0= RULE_ID ) )
+            // InternalSpaml.g:885:4: (otherlv_0= RULE_ID )
             {
-            // InternalSpaml.g:854:4: (otherlv_0= RULE_ID )
-            // InternalSpaml.g:855:5: otherlv_0= RULE_ID
+            // InternalSpaml.g:885:4: (otherlv_0= RULE_ID )
+            // InternalSpaml.g:886:5: otherlv_0= RULE_ID
             {
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getConditionRule());
+            						current = createModelElement(grammarAccess.getLogicalConditionRule());
             					}
             				
-            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_22); 
+            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_21); 
 
-            					newLeafNode(otherlv_0, grammarAccess.getConditionAccess().getSensorSensorCrossReference_0_0());
+            					newLeafNode(otherlv_0, grammarAccess.getLogicalConditionAccess().getSensorSensorCrossReference_0_0());
             				
 
             }
@@ -2332,39 +2491,39 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSpaml.g:866:3: (otherlv_1= '=' | otherlv_2= 'is' )
-            int alt18=2;
-            int LA18_0 = input.LA(1);
+            // InternalSpaml.g:897:3: (otherlv_1= '=' | otherlv_2= 'is' )
+            int alt19=2;
+            int LA19_0 = input.LA(1);
 
-            if ( (LA18_0==24) ) {
-                alt18=1;
+            if ( (LA19_0==24) ) {
+                alt19=1;
             }
-            else if ( (LA18_0==32) ) {
-                alt18=2;
+            else if ( (LA19_0==32) ) {
+                alt19=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 18, 0, input);
+                    new NoViableAltException("", 19, 0, input);
 
                 throw nvae;
             }
-            switch (alt18) {
+            switch (alt19) {
                 case 1 :
-                    // InternalSpaml.g:867:4: otherlv_1= '='
+                    // InternalSpaml.g:898:4: otherlv_1= '='
                     {
                     otherlv_1=(Token)match(input,24,FOLLOW_15); 
 
-                    				newLeafNode(otherlv_1, grammarAccess.getConditionAccess().getEqualsSignKeyword_1_0());
+                    				newLeafNode(otherlv_1, grammarAccess.getLogicalConditionAccess().getEqualsSignKeyword_1_0());
                     			
 
                     }
                     break;
                 case 2 :
-                    // InternalSpaml.g:872:4: otherlv_2= 'is'
+                    // InternalSpaml.g:903:4: otherlv_2= 'is'
                     {
                     otherlv_2=(Token)match(input,32,FOLLOW_15); 
 
-                    				newLeafNode(otherlv_2, grammarAccess.getConditionAccess().getIsKeyword_1_1());
+                    				newLeafNode(otherlv_2, grammarAccess.getLogicalConditionAccess().getIsKeyword_1_1());
                     			
 
                     }
@@ -2372,14 +2531,14 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSpaml.g:877:3: ( (lv_value_3_0= ruleSIGNAL ) )
-            // InternalSpaml.g:878:4: (lv_value_3_0= ruleSIGNAL )
+            // InternalSpaml.g:908:3: ( (lv_value_3_0= ruleSIGNAL ) )
+            // InternalSpaml.g:909:4: (lv_value_3_0= ruleSIGNAL )
             {
-            // InternalSpaml.g:878:4: (lv_value_3_0= ruleSIGNAL )
-            // InternalSpaml.g:879:5: lv_value_3_0= ruleSIGNAL
+            // InternalSpaml.g:909:4: (lv_value_3_0= ruleSIGNAL )
+            // InternalSpaml.g:910:5: lv_value_3_0= ruleSIGNAL
             {
 
-            					newCompositeNode(grammarAccess.getConditionAccess().getValueSIGNALEnumRuleCall_2_0());
+            					newCompositeNode(grammarAccess.getLogicalConditionAccess().getValueSIGNALEnumRuleCall_2_0());
             				
             pushFollow(FOLLOW_2);
             lv_value_3_0=ruleSIGNAL();
@@ -2388,7 +2547,7 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
 
             					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getConditionRule());
+            						current = createModelElementForParent(grammarAccess.getLogicalConditionRule());
             					}
             					set(
             						current,
@@ -2422,11 +2581,11 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleCondition"
+    // $ANTLR end "ruleLogicalCondition"
 
 
     // $ANTLR start "ruleSIGNAL"
-    // InternalSpaml.g:900:1: ruleSIGNAL returns [Enumerator current=null] : ( (enumLiteral_0= 'LOW' ) | (enumLiteral_1= 'HIGH' ) ) ;
+    // InternalSpaml.g:931:1: ruleSIGNAL returns [Enumerator current=null] : ( (enumLiteral_0= 'LOW' ) | (enumLiteral_1= 'HIGH' ) ) ;
     public final Enumerator ruleSIGNAL() throws RecognitionException {
         Enumerator current = null;
 
@@ -2437,31 +2596,31 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSpaml.g:906:2: ( ( (enumLiteral_0= 'LOW' ) | (enumLiteral_1= 'HIGH' ) ) )
-            // InternalSpaml.g:907:2: ( (enumLiteral_0= 'LOW' ) | (enumLiteral_1= 'HIGH' ) )
+            // InternalSpaml.g:937:2: ( ( (enumLiteral_0= 'LOW' ) | (enumLiteral_1= 'HIGH' ) ) )
+            // InternalSpaml.g:938:2: ( (enumLiteral_0= 'LOW' ) | (enumLiteral_1= 'HIGH' ) )
             {
-            // InternalSpaml.g:907:2: ( (enumLiteral_0= 'LOW' ) | (enumLiteral_1= 'HIGH' ) )
-            int alt19=2;
-            int LA19_0 = input.LA(1);
+            // InternalSpaml.g:938:2: ( (enumLiteral_0= 'LOW' ) | (enumLiteral_1= 'HIGH' ) )
+            int alt20=2;
+            int LA20_0 = input.LA(1);
 
-            if ( (LA19_0==33) ) {
-                alt19=1;
+            if ( (LA20_0==33) ) {
+                alt20=1;
             }
-            else if ( (LA19_0==34) ) {
-                alt19=2;
+            else if ( (LA20_0==34) ) {
+                alt20=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 19, 0, input);
+                    new NoViableAltException("", 20, 0, input);
 
                 throw nvae;
             }
-            switch (alt19) {
+            switch (alt20) {
                 case 1 :
-                    // InternalSpaml.g:908:3: (enumLiteral_0= 'LOW' )
+                    // InternalSpaml.g:939:3: (enumLiteral_0= 'LOW' )
                     {
-                    // InternalSpaml.g:908:3: (enumLiteral_0= 'LOW' )
-                    // InternalSpaml.g:909:4: enumLiteral_0= 'LOW'
+                    // InternalSpaml.g:939:3: (enumLiteral_0= 'LOW' )
+                    // InternalSpaml.g:940:4: enumLiteral_0= 'LOW'
                     {
                     enumLiteral_0=(Token)match(input,33,FOLLOW_2); 
 
@@ -2475,10 +2634,10 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSpaml.g:916:3: (enumLiteral_1= 'HIGH' )
+                    // InternalSpaml.g:947:3: (enumLiteral_1= 'HIGH' )
                     {
-                    // InternalSpaml.g:916:3: (enumLiteral_1= 'HIGH' )
-                    // InternalSpaml.g:917:4: enumLiteral_1= 'HIGH'
+                    // InternalSpaml.g:947:3: (enumLiteral_1= 'HIGH' )
+                    // InternalSpaml.g:948:4: enumLiteral_1= 'HIGH'
                     {
                     enumLiteral_1=(Token)match(input,34,FOLLOW_2); 
 
@@ -2514,7 +2673,7 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOPERATION"
-    // InternalSpaml.g:927:1: ruleOPERATION returns [Enumerator current=null] : ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) ) ;
+    // InternalSpaml.g:958:1: ruleOPERATION returns [Enumerator current=null] : ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) ) ;
     public final Enumerator ruleOPERATION() throws RecognitionException {
         Enumerator current = null;
 
@@ -2525,31 +2684,31 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSpaml.g:933:2: ( ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) ) )
-            // InternalSpaml.g:934:2: ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) )
+            // InternalSpaml.g:964:2: ( ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) ) )
+            // InternalSpaml.g:965:2: ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) )
             {
-            // InternalSpaml.g:934:2: ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) )
-            int alt20=2;
-            int LA20_0 = input.LA(1);
+            // InternalSpaml.g:965:2: ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) )
+            int alt21=2;
+            int LA21_0 = input.LA(1);
 
-            if ( (LA20_0==35) ) {
-                alt20=1;
+            if ( (LA21_0==35) ) {
+                alt21=1;
             }
-            else if ( (LA20_0==36) ) {
-                alt20=2;
+            else if ( (LA21_0==36) ) {
+                alt21=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 20, 0, input);
+                    new NoViableAltException("", 21, 0, input);
 
                 throw nvae;
             }
-            switch (alt20) {
+            switch (alt21) {
                 case 1 :
-                    // InternalSpaml.g:935:3: (enumLiteral_0= 'AND' )
+                    // InternalSpaml.g:966:3: (enumLiteral_0= 'AND' )
                     {
-                    // InternalSpaml.g:935:3: (enumLiteral_0= 'AND' )
-                    // InternalSpaml.g:936:4: enumLiteral_0= 'AND'
+                    // InternalSpaml.g:966:3: (enumLiteral_0= 'AND' )
+                    // InternalSpaml.g:967:4: enumLiteral_0= 'AND'
                     {
                     enumLiteral_0=(Token)match(input,35,FOLLOW_2); 
 
@@ -2563,10 +2722,10 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSpaml.g:943:3: (enumLiteral_1= 'OR' )
+                    // InternalSpaml.g:974:3: (enumLiteral_1= 'OR' )
                     {
-                    // InternalSpaml.g:943:3: (enumLiteral_1= 'OR' )
-                    // InternalSpaml.g:944:4: enumLiteral_1= 'OR'
+                    // InternalSpaml.g:974:3: (enumLiteral_1= 'OR' )
+                    // InternalSpaml.g:975:4: enumLiteral_1= 'OR'
                     {
                     enumLiteral_1=(Token)match(input,36,FOLLOW_2); 
 
@@ -2616,16 +2775,15 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000040030L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000180040L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000001804180070L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x00000018041C0060L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000003000000L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000600000000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000001804000020L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000004180060L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x00000000C8000000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000028000000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x00000000C0000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000101000000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000028000000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x00000000C0000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000101000000L});
 
 }

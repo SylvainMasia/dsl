@@ -5,11 +5,12 @@ package polytech.dsl.spaceteam.spaml.serializer;
 
 import arduinoML.Actuator;
 import arduinoML.ArduinoMLPackage;
-import arduinoML.Condition;
+import arduinoML.LogicalCondition;
 import arduinoML.Program;
 import arduinoML.SensorAnalog;
 import arduinoML.SensorDigital;
 import arduinoML.State;
+import arduinoML.TemporalCondition;
 import arduinoML.Transition;
 import com.google.inject.Inject;
 import java.util.Set;
@@ -51,8 +52,8 @@ public class SpamlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
-			case ArduinoMLPackage.CONDITION:
-				sequence_Condition(context, (Condition) semanticObject); 
+			case ArduinoMLPackage.LOGICAL_CONDITION:
+				sequence_LogicalCondition(context, (LogicalCondition) semanticObject); 
 				return; 
 			case ArduinoMLPackage.PROGRAM:
 				sequence_Program(context, (Program) semanticObject); 
@@ -81,6 +82,9 @@ public class SpamlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				else break;
 			case ArduinoMLPackage.STATE:
 				sequence_State(context, (State) semanticObject); 
+				return; 
+			case ArduinoMLPackage.TEMPORAL_CONDITION:
+				sequence_TemporalCondition(context, (TemporalCondition) semanticObject); 
 				return; 
 			case ArduinoMLPackage.TRANSITION:
 				sequence_Transition(context, (Transition) semanticObject); 
@@ -146,21 +150,22 @@ public class SpamlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
-	 *     Condition returns Condition
+	 *     Condition returns LogicalCondition
+	 *     LogicalCondition returns LogicalCondition
 	 *
 	 * Constraint:
 	 *     (sensor=[Sensor|ID] value=SIGNAL)
 	 */
-	protected void sequence_Condition(ISerializationContext context, Condition semanticObject) {
+	protected void sequence_LogicalCondition(ISerializationContext context, LogicalCondition semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ArduinoMLPackage.Literals.CONDITION__SENSOR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArduinoMLPackage.Literals.CONDITION__SENSOR));
-			if (transientValues.isValueTransient(semanticObject, ArduinoMLPackage.Literals.CONDITION__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArduinoMLPackage.Literals.CONDITION__VALUE));
+			if (transientValues.isValueTransient(semanticObject, ArduinoMLPackage.Literals.LOGICAL_CONDITION__SENSOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArduinoMLPackage.Literals.LOGICAL_CONDITION__SENSOR));
+			if (transientValues.isValueTransient(semanticObject, ArduinoMLPackage.Literals.LOGICAL_CONDITION__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArduinoMLPackage.Literals.LOGICAL_CONDITION__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getConditionAccess().getSensorSensorIDTerminalRuleCall_0_0_1(), semanticObject.eGet(ArduinoMLPackage.Literals.CONDITION__SENSOR, false));
-		feeder.accept(grammarAccess.getConditionAccess().getValueSIGNALEnumRuleCall_2_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getLogicalConditionAccess().getSensorSensorIDTerminalRuleCall_0_0_1(), semanticObject.eGet(ArduinoMLPackage.Literals.LOGICAL_CONDITION__SENSOR, false));
+		feeder.accept(grammarAccess.getLogicalConditionAccess().getValueSIGNALEnumRuleCall_2_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -250,7 +255,7 @@ public class SpamlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     State returns State
 	 *
 	 * Constraint:
-	 *     (name=EString actions+=Action actions+=Action* transition=Transition)
+	 *     (name=EString actions+=Action+ transitions+=Transition+)
 	 */
 	protected void sequence_State(ISerializationContext context, State semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -259,13 +264,29 @@ public class SpamlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
+	 *     Condition returns TemporalCondition
+	 *     TemporalCondition returns TemporalCondition
+	 *
+	 * Constraint:
+	 *     delay=EInt
+	 */
+	protected void sequence_TemporalCondition(ISerializationContext context, TemporalCondition semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ArduinoMLPackage.Literals.TEMPORAL_CONDITION__DELAY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArduinoMLPackage.Literals.TEMPORAL_CONDITION__DELAY));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getTemporalConditionAccess().getDelayEIntParserRuleCall_0(), semanticObject.getDelay());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Transition returns Transition
 	 *
 	 * Constraint:
-	 *     (
-	 *         ((conditions+=Condition conditions+=Condition*) | (operation=OPERATION conditions+=Condition conditions+=Condition*) | delay=EInt) 
-	 *         next=[State|EString]
-	 *     )
+	 *     (((conditions+=Condition conditions+=Condition*) | (operation=OPERATION conditions+=Condition conditions+=Condition*)) next=[State|EString])
 	 */
 	protected void sequence_Transition(ISerializationContext context, Transition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

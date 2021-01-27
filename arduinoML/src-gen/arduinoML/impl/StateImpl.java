@@ -8,17 +8,12 @@ import arduinoML.State;
 import arduinoML.Transition;
 
 import java.util.Collection;
-
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -31,7 +26,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link arduinoML.impl.StateImpl#getActions <em>Actions</em>}</li>
- *   <li>{@link arduinoML.impl.StateImpl#getTransition <em>Transition</em>}</li>
+ *   <li>{@link arduinoML.impl.StateImpl#getTransitions <em>Transitions</em>}</li>
  * </ul>
  *
  * @generated
@@ -48,14 +43,14 @@ public class StateImpl extends NamedElementImpl implements State {
 	protected EList<Action> actions;
 
 	/**
-	 * The cached value of the '{@link #getTransition() <em>Transition</em>}' containment reference.
+	 * The cached value of the '{@link #getTransitions() <em>Transitions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTransition()
+	 * @see #getTransitions()
 	 * @generated
 	 * @ordered
 	 */
-	protected Transition transition;
+	protected EList<Transition> transitions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -93,49 +88,12 @@ public class StateImpl extends NamedElementImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Transition getTransition() {
-		return transition;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetTransition(Transition newTransition, NotificationChain msgs) {
-		Transition oldTransition = transition;
-		transition = newTransition;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					ArduinoMLPackage.STATE__TRANSITION, oldTransition, newTransition);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+	public EList<Transition> getTransitions() {
+		if (transitions == null) {
+			transitions = new EObjectContainmentEList<Transition>(Transition.class, this,
+					ArduinoMLPackage.STATE__TRANSITIONS);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTransition(Transition newTransition) {
-		if (newTransition != transition) {
-			NotificationChain msgs = null;
-			if (transition != null)
-				msgs = ((InternalEObject) transition).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - ArduinoMLPackage.STATE__TRANSITION, null, msgs);
-			if (newTransition != null)
-				msgs = ((InternalEObject) newTransition).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - ArduinoMLPackage.STATE__TRANSITION, null, msgs);
-			msgs = basicSetTransition(newTransition, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoMLPackage.STATE__TRANSITION, newTransition,
-					newTransition));
+		return transitions;
 	}
 
 	/**
@@ -148,8 +106,8 @@ public class StateImpl extends NamedElementImpl implements State {
 		switch (featureID) {
 		case ArduinoMLPackage.STATE__ACTIONS:
 			return ((InternalEList<?>) getActions()).basicRemove(otherEnd, msgs);
-		case ArduinoMLPackage.STATE__TRANSITION:
-			return basicSetTransition(null, msgs);
+		case ArduinoMLPackage.STATE__TRANSITIONS:
+			return ((InternalEList<?>) getTransitions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -164,8 +122,8 @@ public class StateImpl extends NamedElementImpl implements State {
 		switch (featureID) {
 		case ArduinoMLPackage.STATE__ACTIONS:
 			return getActions();
-		case ArduinoMLPackage.STATE__TRANSITION:
-			return getTransition();
+		case ArduinoMLPackage.STATE__TRANSITIONS:
+			return getTransitions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -183,8 +141,9 @@ public class StateImpl extends NamedElementImpl implements State {
 			getActions().clear();
 			getActions().addAll((Collection<? extends Action>) newValue);
 			return;
-		case ArduinoMLPackage.STATE__TRANSITION:
-			setTransition((Transition) newValue);
+		case ArduinoMLPackage.STATE__TRANSITIONS:
+			getTransitions().clear();
+			getTransitions().addAll((Collection<? extends Transition>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -201,8 +160,8 @@ public class StateImpl extends NamedElementImpl implements State {
 		case ArduinoMLPackage.STATE__ACTIONS:
 			getActions().clear();
 			return;
-		case ArduinoMLPackage.STATE__TRANSITION:
-			setTransition((Transition) null);
+		case ArduinoMLPackage.STATE__TRANSITIONS:
+			getTransitions().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -218,8 +177,8 @@ public class StateImpl extends NamedElementImpl implements State {
 		switch (featureID) {
 		case ArduinoMLPackage.STATE__ACTIONS:
 			return actions != null && !actions.isEmpty();
-		case ArduinoMLPackage.STATE__TRANSITION:
-			return transition != null;
+		case ArduinoMLPackage.STATE__TRANSITIONS:
+			return transitions != null && !transitions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

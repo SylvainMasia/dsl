@@ -188,29 +188,6 @@ public class ArduinoMLItemProviderAdapterFactory extends ArduinoMLAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link arduinoML.Condition} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ConditionItemProvider conditionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link arduinoML.Condition}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createConditionAdapter() {
-		if (conditionItemProvider == null) {
-			conditionItemProvider = new ConditionItemProvider(this);
-		}
-
-		return conditionItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link arduinoML.SensorAnalog} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -254,6 +231,52 @@ public class ArduinoMLItemProviderAdapterFactory extends ArduinoMLAdapterFactory
 		}
 
 		return sensorDigitalItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link arduinoML.TemporalCondition} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TemporalConditionItemProvider temporalConditionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link arduinoML.TemporalCondition}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTemporalConditionAdapter() {
+		if (temporalConditionItemProvider == null) {
+			temporalConditionItemProvider = new TemporalConditionItemProvider(this);
+		}
+
+		return temporalConditionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link arduinoML.LogicalCondition} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LogicalConditionItemProvider logicalConditionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link arduinoML.LogicalCondition}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLogicalConditionAdapter() {
+		if (logicalConditionItemProvider == null) {
+			logicalConditionItemProvider = new LogicalConditionItemProvider(this);
+		}
+
+		return logicalConditionItemProvider;
 	}
 
 	/**
@@ -365,12 +388,14 @@ public class ArduinoMLItemProviderAdapterFactory extends ArduinoMLAdapterFactory
 			actionItemProvider.dispose();
 		if (transitionItemProvider != null)
 			transitionItemProvider.dispose();
-		if (conditionItemProvider != null)
-			conditionItemProvider.dispose();
 		if (sensorAnalogItemProvider != null)
 			sensorAnalogItemProvider.dispose();
 		if (sensorDigitalItemProvider != null)
 			sensorDigitalItemProvider.dispose();
+		if (temporalConditionItemProvider != null)
+			temporalConditionItemProvider.dispose();
+		if (logicalConditionItemProvider != null)
+			logicalConditionItemProvider.dispose();
 	}
 
 }

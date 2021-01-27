@@ -29,7 +29,9 @@ class SpamlFormatter extends AbstractFormatter2 {
 		for (action : state.actions) {
 			action.format
 		}
-		state.transition.format
+		for (transition : state.transitions) {
+			transition.format
+		}
 	}
 	
 	// TODO: implement for 
