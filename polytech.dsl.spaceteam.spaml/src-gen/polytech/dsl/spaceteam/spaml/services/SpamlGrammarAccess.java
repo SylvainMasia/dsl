@@ -381,20 +381,26 @@ public class SpamlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
 		private final Group cGroup_0_0 = (Group)cAlternatives_0.eContents().get(0);
 		private final Keyword cWhenKeyword_0_0_0 = (Keyword)cGroup_0_0.eContents().get(0);
-		private final Assignment cHandlersAssignment_0_0_1 = (Assignment)cGroup_0_0.eContents().get(1);
-		private final RuleCall cHandlersTransitionHandlerParserRuleCall_0_0_1_0 = (RuleCall)cHandlersAssignment_0_0_1.eContents().get(0);
-		private final Group cGroup_0_0_2 = (Group)cGroup_0_0.eContents().get(2);
-		private final Alternatives cAlternatives_0_0_2_0 = (Alternatives)cGroup_0_0_2.eContents().get(0);
-		private final Keyword cAmpersandAmpersandKeyword_0_0_2_0_0 = (Keyword)cAlternatives_0_0_2_0.eContents().get(0);
-		private final Keyword cAndKeyword_0_0_2_0_1 = (Keyword)cAlternatives_0_0_2_0.eContents().get(1);
-		private final Assignment cHandlersAssignment_0_0_2_1 = (Assignment)cGroup_0_0_2.eContents().get(1);
-		private final RuleCall cHandlersTransitionHandlerParserRuleCall_0_0_2_1_0 = (RuleCall)cHandlersAssignment_0_0_2_1.eContents().get(0);
-		private final Group cGroup_0_0_3 = (Group)cGroup_0_0.eContents().get(3);
-		private final Alternatives cAlternatives_0_0_3_0 = (Alternatives)cGroup_0_0_3.eContents().get(0);
-		private final Keyword cLessThanSignHyphenMinusKeyword_0_0_3_0_0 = (Keyword)cAlternatives_0_0_3_0.eContents().get(0);
-		private final Keyword cAssociateKeyword_0_0_3_0_1 = (Keyword)cAlternatives_0_0_3_0.eContents().get(1);
-		private final Assignment cOperationAssignment_0_0_3_1 = (Assignment)cGroup_0_0_3.eContents().get(1);
-		private final RuleCall cOperationOPERATIONEnumRuleCall_0_0_3_1_0 = (RuleCall)cOperationAssignment_0_0_3_1.eContents().get(0);
+		private final Alternatives cAlternatives_0_0_1 = (Alternatives)cGroup_0_0.eContents().get(1);
+		private final Group cGroup_0_0_1_0 = (Group)cAlternatives_0_0_1.eContents().get(0);
+		private final Assignment cHandlersAssignment_0_0_1_0_0 = (Assignment)cGroup_0_0_1_0.eContents().get(0);
+		private final RuleCall cHandlersTransitionHandlerParserRuleCall_0_0_1_0_0_0 = (RuleCall)cHandlersAssignment_0_0_1_0_0.eContents().get(0);
+		private final Group cGroup_0_0_1_0_1 = (Group)cGroup_0_0_1_0.eContents().get(1);
+		private final Keyword cCommaKeyword_0_0_1_0_1_0 = (Keyword)cGroup_0_0_1_0_1.eContents().get(0);
+		private final Assignment cHandlersAssignment_0_0_1_0_1_1 = (Assignment)cGroup_0_0_1_0_1.eContents().get(1);
+		private final RuleCall cHandlersTransitionHandlerParserRuleCall_0_0_1_0_1_1_0 = (RuleCall)cHandlersAssignment_0_0_1_0_1_1.eContents().get(0);
+		private final Group cGroup_0_0_1_1 = (Group)cAlternatives_0_0_1.eContents().get(1);
+		private final Assignment cOperationAssignment_0_0_1_1_0 = (Assignment)cGroup_0_0_1_1.eContents().get(0);
+		private final RuleCall cOperationOPERATIONEnumRuleCall_0_0_1_1_0_0 = (RuleCall)cOperationAssignment_0_0_1_1_0.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_0_0_1_1_1 = (Keyword)cGroup_0_0_1_1.eContents().get(1);
+		private final Group cGroup_0_0_1_1_2 = (Group)cGroup_0_0_1_1.eContents().get(2);
+		private final Assignment cHandlersAssignment_0_0_1_1_2_0 = (Assignment)cGroup_0_0_1_1_2.eContents().get(0);
+		private final RuleCall cHandlersTransitionHandlerParserRuleCall_0_0_1_1_2_0_0 = (RuleCall)cHandlersAssignment_0_0_1_1_2_0.eContents().get(0);
+		private final Group cGroup_0_0_1_1_2_1 = (Group)cGroup_0_0_1_1_2.eContents().get(1);
+		private final Keyword cCommaKeyword_0_0_1_1_2_1_0 = (Keyword)cGroup_0_0_1_1_2_1.eContents().get(0);
+		private final Assignment cHandlersAssignment_0_0_1_1_2_1_1 = (Assignment)cGroup_0_0_1_1_2_1.eContents().get(1);
+		private final RuleCall cHandlersTransitionHandlerParserRuleCall_0_0_1_1_2_1_1_0 = (RuleCall)cHandlersAssignment_0_0_1_1_2_1_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_0_0_1_1_3 = (Keyword)cGroup_0_0_1_1.eContents().get(3);
 		private final Assignment cDelayAssignment_0_1 = (Assignment)cAlternatives_0.eContents().get(1);
 		private final RuleCall cDelayEIntParserRuleCall_0_1_0 = (RuleCall)cDelayAssignment_0_1.eContents().get(0);
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
@@ -405,66 +411,87 @@ public class SpamlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNextStateEStringParserRuleCall_2_0_1 = (RuleCall)cNextStateCrossReference_2_0.eContents().get(1);
 		
 		//Transition:
-		//	('when'? handlers+=TransitionHandler (('&&' | 'and') handlers+=TransitionHandler)* (('<-' | 'associate')
-		//	operation=OPERATION)? | delay=EInt) ('->' | 'then') next=[State|EString];
+		//	('when'? (handlers+=TransitionHandler (',' handlers+=TransitionHandler)* | operation=OPERATION '('
+		//	(handlers+=TransitionHandler (',' handlers+=TransitionHandler)*) ')') | delay=EInt) ('->' | 'then')
+		//	next=[State|EString];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('when'? handlers+=TransitionHandler (('&&' | 'and') handlers+=TransitionHandler)* (('<-' | 'associate')
-		//operation=OPERATION)? | delay=EInt) ('->' | 'then') next=[State|EString]
+		//('when'? (handlers+=TransitionHandler (',' handlers+=TransitionHandler)* | operation=OPERATION '('
+		//(handlers+=TransitionHandler (',' handlers+=TransitionHandler)*) ')') | delay=EInt) ('->' | 'then')
+		//next=[State|EString]
 		public Group getGroup() { return cGroup; }
 		
-		//'when'? handlers+=TransitionHandler (('&&' | 'and') handlers+=TransitionHandler)* (('<-' | 'associate')
-		//operation=OPERATION)? | delay=EInt
+		//'when'? (handlers+=TransitionHandler (',' handlers+=TransitionHandler)* | operation=OPERATION '('
+		//(handlers+=TransitionHandler (',' handlers+=TransitionHandler)*) ')') | delay=EInt
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 		
-		//'when'? handlers+=TransitionHandler (('&&' | 'and') handlers+=TransitionHandler)* (('<-' | 'associate')
-		//operation=OPERATION)?
+		//'when'? (handlers+=TransitionHandler (',' handlers+=TransitionHandler)* | operation=OPERATION '('
+		//(handlers+=TransitionHandler (',' handlers+=TransitionHandler)*) ')')
 		public Group getGroup_0_0() { return cGroup_0_0; }
 		
 		//'when'?
 		public Keyword getWhenKeyword_0_0_0() { return cWhenKeyword_0_0_0; }
 		
-		//handlers+=TransitionHandler
-		public Assignment getHandlersAssignment_0_0_1() { return cHandlersAssignment_0_0_1; }
+		//handlers+=TransitionHandler (',' handlers+=TransitionHandler)* | operation=OPERATION '(' (handlers+=TransitionHandler
+		//(',' handlers+=TransitionHandler)*) ')'
+		public Alternatives getAlternatives_0_0_1() { return cAlternatives_0_0_1; }
 		
-		//TransitionHandler
-		public RuleCall getHandlersTransitionHandlerParserRuleCall_0_0_1_0() { return cHandlersTransitionHandlerParserRuleCall_0_0_1_0; }
-		
-		//(('&&' | 'and') handlers+=TransitionHandler)*
-		public Group getGroup_0_0_2() { return cGroup_0_0_2; }
-		
-		//'&&' | 'and'
-		public Alternatives getAlternatives_0_0_2_0() { return cAlternatives_0_0_2_0; }
-		
-		//'&&'
-		public Keyword getAmpersandAmpersandKeyword_0_0_2_0_0() { return cAmpersandAmpersandKeyword_0_0_2_0_0; }
-		
-		//'and'
-		public Keyword getAndKeyword_0_0_2_0_1() { return cAndKeyword_0_0_2_0_1; }
+		//handlers+=TransitionHandler (',' handlers+=TransitionHandler)*
+		public Group getGroup_0_0_1_0() { return cGroup_0_0_1_0; }
 		
 		//handlers+=TransitionHandler
-		public Assignment getHandlersAssignment_0_0_2_1() { return cHandlersAssignment_0_0_2_1; }
+		public Assignment getHandlersAssignment_0_0_1_0_0() { return cHandlersAssignment_0_0_1_0_0; }
 		
 		//TransitionHandler
-		public RuleCall getHandlersTransitionHandlerParserRuleCall_0_0_2_1_0() { return cHandlersTransitionHandlerParserRuleCall_0_0_2_1_0; }
+		public RuleCall getHandlersTransitionHandlerParserRuleCall_0_0_1_0_0_0() { return cHandlersTransitionHandlerParserRuleCall_0_0_1_0_0_0; }
 		
-		//(('<-' | 'associate') operation=OPERATION)?
-		public Group getGroup_0_0_3() { return cGroup_0_0_3; }
+		//(',' handlers+=TransitionHandler)*
+		public Group getGroup_0_0_1_0_1() { return cGroup_0_0_1_0_1; }
 		
-		//'<-' | 'associate'
-		public Alternatives getAlternatives_0_0_3_0() { return cAlternatives_0_0_3_0; }
+		//','
+		public Keyword getCommaKeyword_0_0_1_0_1_0() { return cCommaKeyword_0_0_1_0_1_0; }
 		
-		//'<-'
-		public Keyword getLessThanSignHyphenMinusKeyword_0_0_3_0_0() { return cLessThanSignHyphenMinusKeyword_0_0_3_0_0; }
+		//handlers+=TransitionHandler
+		public Assignment getHandlersAssignment_0_0_1_0_1_1() { return cHandlersAssignment_0_0_1_0_1_1; }
 		
-		//'associate'
-		public Keyword getAssociateKeyword_0_0_3_0_1() { return cAssociateKeyword_0_0_3_0_1; }
+		//TransitionHandler
+		public RuleCall getHandlersTransitionHandlerParserRuleCall_0_0_1_0_1_1_0() { return cHandlersTransitionHandlerParserRuleCall_0_0_1_0_1_1_0; }
+		
+		//operation=OPERATION '(' (handlers+=TransitionHandler (',' handlers+=TransitionHandler)*) ')'
+		public Group getGroup_0_0_1_1() { return cGroup_0_0_1_1; }
 		
 		//operation=OPERATION
-		public Assignment getOperationAssignment_0_0_3_1() { return cOperationAssignment_0_0_3_1; }
+		public Assignment getOperationAssignment_0_0_1_1_0() { return cOperationAssignment_0_0_1_1_0; }
 		
 		//OPERATION
-		public RuleCall getOperationOPERATIONEnumRuleCall_0_0_3_1_0() { return cOperationOPERATIONEnumRuleCall_0_0_3_1_0; }
+		public RuleCall getOperationOPERATIONEnumRuleCall_0_0_1_1_0_0() { return cOperationOPERATIONEnumRuleCall_0_0_1_1_0_0; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_0_0_1_1_1() { return cLeftParenthesisKeyword_0_0_1_1_1; }
+		
+		//handlers+=TransitionHandler (',' handlers+=TransitionHandler)*
+		public Group getGroup_0_0_1_1_2() { return cGroup_0_0_1_1_2; }
+		
+		//handlers+=TransitionHandler
+		public Assignment getHandlersAssignment_0_0_1_1_2_0() { return cHandlersAssignment_0_0_1_1_2_0; }
+		
+		//TransitionHandler
+		public RuleCall getHandlersTransitionHandlerParserRuleCall_0_0_1_1_2_0_0() { return cHandlersTransitionHandlerParserRuleCall_0_0_1_1_2_0_0; }
+		
+		//(',' handlers+=TransitionHandler)*
+		public Group getGroup_0_0_1_1_2_1() { return cGroup_0_0_1_1_2_1; }
+		
+		//','
+		public Keyword getCommaKeyword_0_0_1_1_2_1_0() { return cCommaKeyword_0_0_1_1_2_1_0; }
+		
+		//handlers+=TransitionHandler
+		public Assignment getHandlersAssignment_0_0_1_1_2_1_1() { return cHandlersAssignment_0_0_1_1_2_1_1; }
+		
+		//TransitionHandler
+		public RuleCall getHandlersTransitionHandlerParserRuleCall_0_0_1_1_2_1_1_0() { return cHandlersTransitionHandlerParserRuleCall_0_0_1_1_2_1_1_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_0_0_1_1_3() { return cRightParenthesisKeyword_0_0_1_1_3; }
 		
 		//delay=EInt
 		public Assignment getDelayAssignment_0_1() { return cDelayAssignment_0_1; }
@@ -766,8 +793,9 @@ public class SpamlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Transition:
-	//	('when'? handlers+=TransitionHandler (('&&' | 'and') handlers+=TransitionHandler)* (('<-' | 'associate')
-	//	operation=OPERATION)? | delay=EInt) ('->' | 'then') next=[State|EString];
+	//	('when'? (handlers+=TransitionHandler (',' handlers+=TransitionHandler)* | operation=OPERATION '('
+	//	(handlers+=TransitionHandler (',' handlers+=TransitionHandler)*) ')') | delay=EInt) ('->' | 'then')
+	//	next=[State|EString];
 	public TransitionElements getTransitionAccess() {
 		return pTransition;
 	}

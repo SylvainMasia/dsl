@@ -18,6 +18,10 @@ public class ToWiring extends Visitor<StringBuffer> {
 	private void w(String s) {
 		result.append(String.format("%s\n",s));
 	}
+	
+	private void wNoNewLine(String s) {
+		result.append(String.format("%s",s));
+	}
 
 	@Override
 	public void visit(App app) {
@@ -73,31 +77,31 @@ public class ToWiring extends Visitor<StringBuffer> {
 	@Override
 	public void visit(TransitionHandler handler) {
 		if (handler.getSensor() instanceof SensorDigital) {
-			w(String.format("	digitalRead(%d) == %s ", handler.getSensor().getPin(), handler.getValue()));
+			wNoNewLine(String.format("digitalRead(%d) == %s", handler.getSensor().getPin(), handler.getValue()));
 		} else {
-			w(String.format("	analogRead(%d) == %s ", handler.getSensor().getPin(), handler.getValue()));
+			wNoNewLine(String.format("analogRead(%d) == %s", handler.getSensor().getPin(), handler.getValue()));
 		}
 	}
 
 	@Override
 	public void visit(Transition transition) {
 		if (transition.getDelay() > 0) {
-			w(String.format("	delay(%d)", transition.getDelay()));
+			w(String.format("	delay(%d);", transition.getDelay()));
 			w("	time = millis();");
 			w(String.format("	state_%s();",transition.getNext().getName()));
 		} else {
-			w(String.format("	if(("));
+			wNoNewLine(String.format("	if(("));
 			for (int i = 0; i < transition.getHandlers().size(); i++) {
 				this.visit(transition.getHandlers().get(i));
 				if (i < transition.getHandlers().size() -1) {
 					if (transition.getOperation().equals(OPERATION.AND)) {
-						w(String.format(" && "));
+						wNoNewLine(String.format(" && "));
 					} else {
-						w(String.format(" || "));
+						wNoNewLine(String.format(" || "));
 					}
 				}
 			}
-			w(String.format("    ) && guard ) {"));
+			w(String.format(") && guard ) {"));
 			
 			
 			w("	time = millis();");

@@ -22,13 +22,12 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSpamlParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'pluggedElements'", "'pluggedElements:'", "'states'", "'states:'", "'='", "'setTo'", "'&&'", "'and'", "'<-'", "'associate'", "'->'", "'then'", "'is'", "'LOW'", "'HIGH'", "'AND'", "'OR'", "'Program'", "'initialState'", "'{'", "'}'", "'onPin'", "'-'", "'SensorDigital'", "'SensorAnalog'", "'Actuator'", "'when'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'pluggedElements'", "'pluggedElements:'", "'states'", "'states:'", "'='", "'setTo'", "'->'", "'then'", "'is'", "'LOW'", "'HIGH'", "'AND'", "'OR'", "'Program'", "'initialState'", "'{'", "'}'", "'onPin'", "'-'", "'SensorDigital'", "'SensorAnalog'", "'Actuator'", "'when'", "','", "'('", "')'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
     public static final int T__19=19;
     public static final int T__15=15;
-    public static final int T__37=37;
     public static final int T__16=16;
     public static final int T__17=17;
     public static final int T__18=18;
@@ -1266,10 +1265,10 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
             int alt3=2;
             int LA3_0 = input.LA(1);
 
-            if ( (LA3_0==36) ) {
+            if ( (LA3_0==32) ) {
                 alt3=1;
             }
-            else if ( ((LA3_0>=34 && LA3_0<=35)) ) {
+            else if ( ((LA3_0>=30 && LA3_0<=31)) ) {
                 alt3=2;
             }
             else {
@@ -1416,10 +1415,10 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
             int alt5=2;
             int LA5_0 = input.LA(1);
 
-            if ( (LA5_0==34) ) {
+            if ( (LA5_0==30) ) {
                 alt5=1;
             }
-            else if ( (LA5_0==35) ) {
+            else if ( (LA5_0==31) ) {
                 alt5=2;
             }
             else {
@@ -1566,10 +1565,10 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
             int alt7=2;
             int LA7_0 = input.LA(1);
 
-            if ( (LA7_0==RULE_ID||LA7_0==37) ) {
+            if ( (LA7_0==RULE_ID||(LA7_0>=22 && LA7_0<=23)||LA7_0==33) ) {
                 alt7=1;
             }
-            else if ( (LA7_0==RULE_INT||LA7_0==33) ) {
+            else if ( (LA7_0==RULE_INT||LA7_0==29) ) {
                 alt7=2;
             }
             else {
@@ -1646,21 +1645,21 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Transition__Alternatives_0"
 
 
-    // $ANTLR start "rule__Transition__Alternatives_0_0_2_0"
-    // InternalSpaml.g:531:1: rule__Transition__Alternatives_0_0_2_0 : ( ( '&&' ) | ( 'and' ) );
-    public final void rule__Transition__Alternatives_0_0_2_0() throws RecognitionException {
+    // $ANTLR start "rule__Transition__Alternatives_0_0_1"
+    // InternalSpaml.g:531:1: rule__Transition__Alternatives_0_0_1 : ( ( ( rule__Transition__Group_0_0_1_0__0 ) ) | ( ( rule__Transition__Group_0_0_1_1__0 ) ) );
+    public final void rule__Transition__Alternatives_0_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:535:1: ( ( '&&' ) | ( 'and' ) )
+            // InternalSpaml.g:535:1: ( ( ( rule__Transition__Group_0_0_1_0__0 ) ) | ( ( rule__Transition__Group_0_0_1_1__0 ) ) )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
-            if ( (LA8_0==17) ) {
+            if ( (LA8_0==RULE_ID) ) {
                 alt8=1;
             }
-            else if ( (LA8_0==18) ) {
+            else if ( ((LA8_0>=22 && LA8_0<=23)) ) {
                 alt8=2;
             }
             else {
@@ -1671,14 +1670,24 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
             }
             switch (alt8) {
                 case 1 :
-                    // InternalSpaml.g:536:2: ( '&&' )
+                    // InternalSpaml.g:536:2: ( ( rule__Transition__Group_0_0_1_0__0 ) )
                     {
-                    // InternalSpaml.g:536:2: ( '&&' )
-                    // InternalSpaml.g:537:3: '&&'
+                    // InternalSpaml.g:536:2: ( ( rule__Transition__Group_0_0_1_0__0 ) )
+                    // InternalSpaml.g:537:3: ( rule__Transition__Group_0_0_1_0__0 )
                     {
-                     before(grammarAccess.getTransitionAccess().getAmpersandAmpersandKeyword_0_0_2_0_0()); 
-                    match(input,17,FOLLOW_2); 
-                     after(grammarAccess.getTransitionAccess().getAmpersandAmpersandKeyword_0_0_2_0_0()); 
+                     before(grammarAccess.getTransitionAccess().getGroup_0_0_1_0()); 
+                    // InternalSpaml.g:538:3: ( rule__Transition__Group_0_0_1_0__0 )
+                    // InternalSpaml.g:538:4: rule__Transition__Group_0_0_1_0__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Transition__Group_0_0_1_0__0();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getTransitionAccess().getGroup_0_0_1_0()); 
 
                     }
 
@@ -1686,14 +1695,24 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSpaml.g:542:2: ( 'and' )
+                    // InternalSpaml.g:542:2: ( ( rule__Transition__Group_0_0_1_1__0 ) )
                     {
-                    // InternalSpaml.g:542:2: ( 'and' )
-                    // InternalSpaml.g:543:3: 'and'
+                    // InternalSpaml.g:542:2: ( ( rule__Transition__Group_0_0_1_1__0 ) )
+                    // InternalSpaml.g:543:3: ( rule__Transition__Group_0_0_1_1__0 )
                     {
-                     before(grammarAccess.getTransitionAccess().getAndKeyword_0_0_2_0_1()); 
-                    match(input,18,FOLLOW_2); 
-                     after(grammarAccess.getTransitionAccess().getAndKeyword_0_0_2_0_1()); 
+                     before(grammarAccess.getTransitionAccess().getGroup_0_0_1_1()); 
+                    // InternalSpaml.g:544:3: ( rule__Transition__Group_0_0_1_1__0 )
+                    // InternalSpaml.g:544:4: rule__Transition__Group_0_0_1_1__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Transition__Group_0_0_1_1__0();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getTransitionAccess().getGroup_0_0_1_1()); 
 
                     }
 
@@ -1714,24 +1733,24 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Transition__Alternatives_0_0_2_0"
+    // $ANTLR end "rule__Transition__Alternatives_0_0_1"
 
 
-    // $ANTLR start "rule__Transition__Alternatives_0_0_3_0"
-    // InternalSpaml.g:552:1: rule__Transition__Alternatives_0_0_3_0 : ( ( '<-' ) | ( 'associate' ) );
-    public final void rule__Transition__Alternatives_0_0_3_0() throws RecognitionException {
+    // $ANTLR start "rule__Transition__Alternatives_1"
+    // InternalSpaml.g:552:1: rule__Transition__Alternatives_1 : ( ( '->' ) | ( 'then' ) );
+    public final void rule__Transition__Alternatives_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:556:1: ( ( '<-' ) | ( 'associate' ) )
+            // InternalSpaml.g:556:1: ( ( '->' ) | ( 'then' ) )
             int alt9=2;
             int LA9_0 = input.LA(1);
 
-            if ( (LA9_0==19) ) {
+            if ( (LA9_0==17) ) {
                 alt9=1;
             }
-            else if ( (LA9_0==20) ) {
+            else if ( (LA9_0==18) ) {
                 alt9=2;
             }
             else {
@@ -1742,84 +1761,13 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
             }
             switch (alt9) {
                 case 1 :
-                    // InternalSpaml.g:557:2: ( '<-' )
+                    // InternalSpaml.g:557:2: ( '->' )
                     {
-                    // InternalSpaml.g:557:2: ( '<-' )
-                    // InternalSpaml.g:558:3: '<-'
-                    {
-                     before(grammarAccess.getTransitionAccess().getLessThanSignHyphenMinusKeyword_0_0_3_0_0()); 
-                    match(input,19,FOLLOW_2); 
-                     after(grammarAccess.getTransitionAccess().getLessThanSignHyphenMinusKeyword_0_0_3_0_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalSpaml.g:563:2: ( 'associate' )
-                    {
-                    // InternalSpaml.g:563:2: ( 'associate' )
-                    // InternalSpaml.g:564:3: 'associate'
-                    {
-                     before(grammarAccess.getTransitionAccess().getAssociateKeyword_0_0_3_0_1()); 
-                    match(input,20,FOLLOW_2); 
-                     after(grammarAccess.getTransitionAccess().getAssociateKeyword_0_0_3_0_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Transition__Alternatives_0_0_3_0"
-
-
-    // $ANTLR start "rule__Transition__Alternatives_1"
-    // InternalSpaml.g:573:1: rule__Transition__Alternatives_1 : ( ( '->' ) | ( 'then' ) );
-    public final void rule__Transition__Alternatives_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSpaml.g:577:1: ( ( '->' ) | ( 'then' ) )
-            int alt10=2;
-            int LA10_0 = input.LA(1);
-
-            if ( (LA10_0==21) ) {
-                alt10=1;
-            }
-            else if ( (LA10_0==22) ) {
-                alt10=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 10, 0, input);
-
-                throw nvae;
-            }
-            switch (alt10) {
-                case 1 :
-                    // InternalSpaml.g:578:2: ( '->' )
-                    {
-                    // InternalSpaml.g:578:2: ( '->' )
-                    // InternalSpaml.g:579:3: '->'
+                    // InternalSpaml.g:557:2: ( '->' )
+                    // InternalSpaml.g:558:3: '->'
                     {
                      before(grammarAccess.getTransitionAccess().getHyphenMinusGreaterThanSignKeyword_1_0()); 
-                    match(input,21,FOLLOW_2); 
+                    match(input,17,FOLLOW_2); 
                      after(grammarAccess.getTransitionAccess().getHyphenMinusGreaterThanSignKeyword_1_0()); 
 
                     }
@@ -1828,13 +1776,13 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSpaml.g:584:2: ( 'then' )
+                    // InternalSpaml.g:563:2: ( 'then' )
                     {
-                    // InternalSpaml.g:584:2: ( 'then' )
-                    // InternalSpaml.g:585:3: 'then'
+                    // InternalSpaml.g:563:2: ( 'then' )
+                    // InternalSpaml.g:564:3: 'then'
                     {
                      before(grammarAccess.getTransitionAccess().getThenKeyword_1_1()); 
-                    match(input,22,FOLLOW_2); 
+                    match(input,18,FOLLOW_2); 
                      after(grammarAccess.getTransitionAccess().getThenKeyword_1_1()); 
 
                     }
@@ -1860,34 +1808,34 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TransitionHandler__Alternatives_1"
-    // InternalSpaml.g:594:1: rule__TransitionHandler__Alternatives_1 : ( ( '=' ) | ( 'is' ) );
+    // InternalSpaml.g:573:1: rule__TransitionHandler__Alternatives_1 : ( ( '=' ) | ( 'is' ) );
     public final void rule__TransitionHandler__Alternatives_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:598:1: ( ( '=' ) | ( 'is' ) )
-            int alt11=2;
-            int LA11_0 = input.LA(1);
+            // InternalSpaml.g:577:1: ( ( '=' ) | ( 'is' ) )
+            int alt10=2;
+            int LA10_0 = input.LA(1);
 
-            if ( (LA11_0==15) ) {
-                alt11=1;
+            if ( (LA10_0==15) ) {
+                alt10=1;
             }
-            else if ( (LA11_0==23) ) {
-                alt11=2;
+            else if ( (LA10_0==19) ) {
+                alt10=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 11, 0, input);
+                    new NoViableAltException("", 10, 0, input);
 
                 throw nvae;
             }
-            switch (alt11) {
+            switch (alt10) {
                 case 1 :
-                    // InternalSpaml.g:599:2: ( '=' )
+                    // InternalSpaml.g:578:2: ( '=' )
                     {
-                    // InternalSpaml.g:599:2: ( '=' )
-                    // InternalSpaml.g:600:3: '='
+                    // InternalSpaml.g:578:2: ( '=' )
+                    // InternalSpaml.g:579:3: '='
                     {
                      before(grammarAccess.getTransitionHandlerAccess().getEqualsSignKeyword_1_0()); 
                     match(input,15,FOLLOW_2); 
@@ -1899,13 +1847,13 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSpaml.g:605:2: ( 'is' )
+                    // InternalSpaml.g:584:2: ( 'is' )
                     {
-                    // InternalSpaml.g:605:2: ( 'is' )
-                    // InternalSpaml.g:606:3: 'is'
+                    // InternalSpaml.g:584:2: ( 'is' )
+                    // InternalSpaml.g:585:3: 'is'
                     {
                      before(grammarAccess.getTransitionHandlerAccess().getIsKeyword_1_1()); 
-                    match(input,23,FOLLOW_2); 
+                    match(input,19,FOLLOW_2); 
                      after(grammarAccess.getTransitionHandlerAccess().getIsKeyword_1_1()); 
 
                     }
@@ -1931,40 +1879,40 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SIGNAL__Alternatives"
-    // InternalSpaml.g:615:1: rule__SIGNAL__Alternatives : ( ( ( 'LOW' ) ) | ( ( 'HIGH' ) ) );
+    // InternalSpaml.g:594:1: rule__SIGNAL__Alternatives : ( ( ( 'LOW' ) ) | ( ( 'HIGH' ) ) );
     public final void rule__SIGNAL__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:619:1: ( ( ( 'LOW' ) ) | ( ( 'HIGH' ) ) )
-            int alt12=2;
-            int LA12_0 = input.LA(1);
+            // InternalSpaml.g:598:1: ( ( ( 'LOW' ) ) | ( ( 'HIGH' ) ) )
+            int alt11=2;
+            int LA11_0 = input.LA(1);
 
-            if ( (LA12_0==24) ) {
-                alt12=1;
+            if ( (LA11_0==20) ) {
+                alt11=1;
             }
-            else if ( (LA12_0==25) ) {
-                alt12=2;
+            else if ( (LA11_0==21) ) {
+                alt11=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 12, 0, input);
+                    new NoViableAltException("", 11, 0, input);
 
                 throw nvae;
             }
-            switch (alt12) {
+            switch (alt11) {
                 case 1 :
-                    // InternalSpaml.g:620:2: ( ( 'LOW' ) )
+                    // InternalSpaml.g:599:2: ( ( 'LOW' ) )
                     {
-                    // InternalSpaml.g:620:2: ( ( 'LOW' ) )
-                    // InternalSpaml.g:621:3: ( 'LOW' )
+                    // InternalSpaml.g:599:2: ( ( 'LOW' ) )
+                    // InternalSpaml.g:600:3: ( 'LOW' )
                     {
                      before(grammarAccess.getSIGNALAccess().getLOWEnumLiteralDeclaration_0()); 
-                    // InternalSpaml.g:622:3: ( 'LOW' )
-                    // InternalSpaml.g:622:4: 'LOW'
+                    // InternalSpaml.g:601:3: ( 'LOW' )
+                    // InternalSpaml.g:601:4: 'LOW'
                     {
-                    match(input,24,FOLLOW_2); 
+                    match(input,20,FOLLOW_2); 
 
                     }
 
@@ -1976,16 +1924,16 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSpaml.g:626:2: ( ( 'HIGH' ) )
+                    // InternalSpaml.g:605:2: ( ( 'HIGH' ) )
                     {
-                    // InternalSpaml.g:626:2: ( ( 'HIGH' ) )
-                    // InternalSpaml.g:627:3: ( 'HIGH' )
+                    // InternalSpaml.g:605:2: ( ( 'HIGH' ) )
+                    // InternalSpaml.g:606:3: ( 'HIGH' )
                     {
                      before(grammarAccess.getSIGNALAccess().getHIGHEnumLiteralDeclaration_1()); 
-                    // InternalSpaml.g:628:3: ( 'HIGH' )
-                    // InternalSpaml.g:628:4: 'HIGH'
+                    // InternalSpaml.g:607:3: ( 'HIGH' )
+                    // InternalSpaml.g:607:4: 'HIGH'
                     {
-                    match(input,25,FOLLOW_2); 
+                    match(input,21,FOLLOW_2); 
 
                     }
 
@@ -2014,40 +1962,40 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OPERATION__Alternatives"
-    // InternalSpaml.g:636:1: rule__OPERATION__Alternatives : ( ( ( 'AND' ) ) | ( ( 'OR' ) ) );
+    // InternalSpaml.g:615:1: rule__OPERATION__Alternatives : ( ( ( 'AND' ) ) | ( ( 'OR' ) ) );
     public final void rule__OPERATION__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:640:1: ( ( ( 'AND' ) ) | ( ( 'OR' ) ) )
-            int alt13=2;
-            int LA13_0 = input.LA(1);
+            // InternalSpaml.g:619:1: ( ( ( 'AND' ) ) | ( ( 'OR' ) ) )
+            int alt12=2;
+            int LA12_0 = input.LA(1);
 
-            if ( (LA13_0==26) ) {
-                alt13=1;
+            if ( (LA12_0==22) ) {
+                alt12=1;
             }
-            else if ( (LA13_0==27) ) {
-                alt13=2;
+            else if ( (LA12_0==23) ) {
+                alt12=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 13, 0, input);
+                    new NoViableAltException("", 12, 0, input);
 
                 throw nvae;
             }
-            switch (alt13) {
+            switch (alt12) {
                 case 1 :
-                    // InternalSpaml.g:641:2: ( ( 'AND' ) )
+                    // InternalSpaml.g:620:2: ( ( 'AND' ) )
                     {
-                    // InternalSpaml.g:641:2: ( ( 'AND' ) )
-                    // InternalSpaml.g:642:3: ( 'AND' )
+                    // InternalSpaml.g:620:2: ( ( 'AND' ) )
+                    // InternalSpaml.g:621:3: ( 'AND' )
                     {
                      before(grammarAccess.getOPERATIONAccess().getANDEnumLiteralDeclaration_0()); 
-                    // InternalSpaml.g:643:3: ( 'AND' )
-                    // InternalSpaml.g:643:4: 'AND'
+                    // InternalSpaml.g:622:3: ( 'AND' )
+                    // InternalSpaml.g:622:4: 'AND'
                     {
-                    match(input,26,FOLLOW_2); 
+                    match(input,22,FOLLOW_2); 
 
                     }
 
@@ -2059,16 +2007,16 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSpaml.g:647:2: ( ( 'OR' ) )
+                    // InternalSpaml.g:626:2: ( ( 'OR' ) )
                     {
-                    // InternalSpaml.g:647:2: ( ( 'OR' ) )
-                    // InternalSpaml.g:648:3: ( 'OR' )
+                    // InternalSpaml.g:626:2: ( ( 'OR' ) )
+                    // InternalSpaml.g:627:3: ( 'OR' )
                     {
                      before(grammarAccess.getOPERATIONAccess().getOREnumLiteralDeclaration_1()); 
-                    // InternalSpaml.g:649:3: ( 'OR' )
-                    // InternalSpaml.g:649:4: 'OR'
+                    // InternalSpaml.g:628:3: ( 'OR' )
+                    // InternalSpaml.g:628:4: 'OR'
                     {
-                    match(input,27,FOLLOW_2); 
+                    match(input,23,FOLLOW_2); 
 
                     }
 
@@ -2097,14 +2045,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Program__Group__0"
-    // InternalSpaml.g:657:1: rule__Program__Group__0 : rule__Program__Group__0__Impl rule__Program__Group__1 ;
+    // InternalSpaml.g:636:1: rule__Program__Group__0 : rule__Program__Group__0__Impl rule__Program__Group__1 ;
     public final void rule__Program__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:661:1: ( rule__Program__Group__0__Impl rule__Program__Group__1 )
-            // InternalSpaml.g:662:2: rule__Program__Group__0__Impl rule__Program__Group__1
+            // InternalSpaml.g:640:1: ( rule__Program__Group__0__Impl rule__Program__Group__1 )
+            // InternalSpaml.g:641:2: rule__Program__Group__0__Impl rule__Program__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Program__Group__0__Impl();
@@ -2135,20 +2083,20 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Program__Group__0__Impl"
-    // InternalSpaml.g:669:1: rule__Program__Group__0__Impl : ( 'Program' ) ;
+    // InternalSpaml.g:648:1: rule__Program__Group__0__Impl : ( 'Program' ) ;
     public final void rule__Program__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:673:1: ( ( 'Program' ) )
-            // InternalSpaml.g:674:1: ( 'Program' )
+            // InternalSpaml.g:652:1: ( ( 'Program' ) )
+            // InternalSpaml.g:653:1: ( 'Program' )
             {
-            // InternalSpaml.g:674:1: ( 'Program' )
-            // InternalSpaml.g:675:2: 'Program'
+            // InternalSpaml.g:653:1: ( 'Program' )
+            // InternalSpaml.g:654:2: 'Program'
             {
              before(grammarAccess.getProgramAccess().getProgramKeyword_0()); 
-            match(input,28,FOLLOW_2); 
+            match(input,24,FOLLOW_2); 
              after(grammarAccess.getProgramAccess().getProgramKeyword_0()); 
 
             }
@@ -2172,14 +2120,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Program__Group__1"
-    // InternalSpaml.g:684:1: rule__Program__Group__1 : rule__Program__Group__1__Impl rule__Program__Group__2 ;
+    // InternalSpaml.g:663:1: rule__Program__Group__1 : rule__Program__Group__1__Impl rule__Program__Group__2 ;
     public final void rule__Program__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:688:1: ( rule__Program__Group__1__Impl rule__Program__Group__2 )
-            // InternalSpaml.g:689:2: rule__Program__Group__1__Impl rule__Program__Group__2
+            // InternalSpaml.g:667:1: ( rule__Program__Group__1__Impl rule__Program__Group__2 )
+            // InternalSpaml.g:668:2: rule__Program__Group__1__Impl rule__Program__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__Program__Group__1__Impl();
@@ -2210,21 +2158,21 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Program__Group__1__Impl"
-    // InternalSpaml.g:696:1: rule__Program__Group__1__Impl : ( ( rule__Program__NameAssignment_1 ) ) ;
+    // InternalSpaml.g:675:1: rule__Program__Group__1__Impl : ( ( rule__Program__NameAssignment_1 ) ) ;
     public final void rule__Program__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:700:1: ( ( ( rule__Program__NameAssignment_1 ) ) )
-            // InternalSpaml.g:701:1: ( ( rule__Program__NameAssignment_1 ) )
+            // InternalSpaml.g:679:1: ( ( ( rule__Program__NameAssignment_1 ) ) )
+            // InternalSpaml.g:680:1: ( ( rule__Program__NameAssignment_1 ) )
             {
-            // InternalSpaml.g:701:1: ( ( rule__Program__NameAssignment_1 ) )
-            // InternalSpaml.g:702:2: ( rule__Program__NameAssignment_1 )
+            // InternalSpaml.g:680:1: ( ( rule__Program__NameAssignment_1 ) )
+            // InternalSpaml.g:681:2: ( rule__Program__NameAssignment_1 )
             {
              before(grammarAccess.getProgramAccess().getNameAssignment_1()); 
-            // InternalSpaml.g:703:2: ( rule__Program__NameAssignment_1 )
-            // InternalSpaml.g:703:3: rule__Program__NameAssignment_1
+            // InternalSpaml.g:682:2: ( rule__Program__NameAssignment_1 )
+            // InternalSpaml.g:682:3: rule__Program__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Program__NameAssignment_1();
@@ -2257,14 +2205,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Program__Group__2"
-    // InternalSpaml.g:711:1: rule__Program__Group__2 : rule__Program__Group__2__Impl rule__Program__Group__3 ;
+    // InternalSpaml.g:690:1: rule__Program__Group__2 : rule__Program__Group__2__Impl rule__Program__Group__3 ;
     public final void rule__Program__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:715:1: ( rule__Program__Group__2__Impl rule__Program__Group__3 )
-            // InternalSpaml.g:716:2: rule__Program__Group__2__Impl rule__Program__Group__3
+            // InternalSpaml.g:694:1: ( rule__Program__Group__2__Impl rule__Program__Group__3 )
+            // InternalSpaml.g:695:2: rule__Program__Group__2__Impl rule__Program__Group__3
             {
             pushFollow(FOLLOW_3);
             rule__Program__Group__2__Impl();
@@ -2295,20 +2243,20 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Program__Group__2__Impl"
-    // InternalSpaml.g:723:1: rule__Program__Group__2__Impl : ( 'initialState' ) ;
+    // InternalSpaml.g:702:1: rule__Program__Group__2__Impl : ( 'initialState' ) ;
     public final void rule__Program__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:727:1: ( ( 'initialState' ) )
-            // InternalSpaml.g:728:1: ( 'initialState' )
+            // InternalSpaml.g:706:1: ( ( 'initialState' ) )
+            // InternalSpaml.g:707:1: ( 'initialState' )
             {
-            // InternalSpaml.g:728:1: ( 'initialState' )
-            // InternalSpaml.g:729:2: 'initialState'
+            // InternalSpaml.g:707:1: ( 'initialState' )
+            // InternalSpaml.g:708:2: 'initialState'
             {
              before(grammarAccess.getProgramAccess().getInitialStateKeyword_2()); 
-            match(input,29,FOLLOW_2); 
+            match(input,25,FOLLOW_2); 
              after(grammarAccess.getProgramAccess().getInitialStateKeyword_2()); 
 
             }
@@ -2332,14 +2280,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Program__Group__3"
-    // InternalSpaml.g:738:1: rule__Program__Group__3 : rule__Program__Group__3__Impl rule__Program__Group__4 ;
+    // InternalSpaml.g:717:1: rule__Program__Group__3 : rule__Program__Group__3__Impl rule__Program__Group__4 ;
     public final void rule__Program__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:742:1: ( rule__Program__Group__3__Impl rule__Program__Group__4 )
-            // InternalSpaml.g:743:2: rule__Program__Group__3__Impl rule__Program__Group__4
+            // InternalSpaml.g:721:1: ( rule__Program__Group__3__Impl rule__Program__Group__4 )
+            // InternalSpaml.g:722:2: rule__Program__Group__3__Impl rule__Program__Group__4
             {
             pushFollow(FOLLOW_5);
             rule__Program__Group__3__Impl();
@@ -2370,21 +2318,21 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Program__Group__3__Impl"
-    // InternalSpaml.g:750:1: rule__Program__Group__3__Impl : ( ( rule__Program__InitialStateAssignment_3 ) ) ;
+    // InternalSpaml.g:729:1: rule__Program__Group__3__Impl : ( ( rule__Program__InitialStateAssignment_3 ) ) ;
     public final void rule__Program__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:754:1: ( ( ( rule__Program__InitialStateAssignment_3 ) ) )
-            // InternalSpaml.g:755:1: ( ( rule__Program__InitialStateAssignment_3 ) )
+            // InternalSpaml.g:733:1: ( ( ( rule__Program__InitialStateAssignment_3 ) ) )
+            // InternalSpaml.g:734:1: ( ( rule__Program__InitialStateAssignment_3 ) )
             {
-            // InternalSpaml.g:755:1: ( ( rule__Program__InitialStateAssignment_3 ) )
-            // InternalSpaml.g:756:2: ( rule__Program__InitialStateAssignment_3 )
+            // InternalSpaml.g:734:1: ( ( rule__Program__InitialStateAssignment_3 ) )
+            // InternalSpaml.g:735:2: ( rule__Program__InitialStateAssignment_3 )
             {
              before(grammarAccess.getProgramAccess().getInitialStateAssignment_3()); 
-            // InternalSpaml.g:757:2: ( rule__Program__InitialStateAssignment_3 )
-            // InternalSpaml.g:757:3: rule__Program__InitialStateAssignment_3
+            // InternalSpaml.g:736:2: ( rule__Program__InitialStateAssignment_3 )
+            // InternalSpaml.g:736:3: rule__Program__InitialStateAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__Program__InitialStateAssignment_3();
@@ -2417,14 +2365,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Program__Group__4"
-    // InternalSpaml.g:765:1: rule__Program__Group__4 : rule__Program__Group__4__Impl rule__Program__Group__5 ;
+    // InternalSpaml.g:744:1: rule__Program__Group__4 : rule__Program__Group__4__Impl rule__Program__Group__5 ;
     public final void rule__Program__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:769:1: ( rule__Program__Group__4__Impl rule__Program__Group__5 )
-            // InternalSpaml.g:770:2: rule__Program__Group__4__Impl rule__Program__Group__5
+            // InternalSpaml.g:748:1: ( rule__Program__Group__4__Impl rule__Program__Group__5 )
+            // InternalSpaml.g:749:2: rule__Program__Group__4__Impl rule__Program__Group__5
             {
             pushFollow(FOLLOW_6);
             rule__Program__Group__4__Impl();
@@ -2455,20 +2403,20 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Program__Group__4__Impl"
-    // InternalSpaml.g:777:1: rule__Program__Group__4__Impl : ( '{' ) ;
+    // InternalSpaml.g:756:1: rule__Program__Group__4__Impl : ( '{' ) ;
     public final void rule__Program__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:781:1: ( ( '{' ) )
-            // InternalSpaml.g:782:1: ( '{' )
+            // InternalSpaml.g:760:1: ( ( '{' ) )
+            // InternalSpaml.g:761:1: ( '{' )
             {
-            // InternalSpaml.g:782:1: ( '{' )
-            // InternalSpaml.g:783:2: '{'
+            // InternalSpaml.g:761:1: ( '{' )
+            // InternalSpaml.g:762:2: '{'
             {
              before(grammarAccess.getProgramAccess().getLeftCurlyBracketKeyword_4()); 
-            match(input,30,FOLLOW_2); 
+            match(input,26,FOLLOW_2); 
              after(grammarAccess.getProgramAccess().getLeftCurlyBracketKeyword_4()); 
 
             }
@@ -2492,14 +2440,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Program__Group__5"
-    // InternalSpaml.g:792:1: rule__Program__Group__5 : rule__Program__Group__5__Impl rule__Program__Group__6 ;
+    // InternalSpaml.g:771:1: rule__Program__Group__5 : rule__Program__Group__5__Impl rule__Program__Group__6 ;
     public final void rule__Program__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:796:1: ( rule__Program__Group__5__Impl rule__Program__Group__6 )
-            // InternalSpaml.g:797:2: rule__Program__Group__5__Impl rule__Program__Group__6
+            // InternalSpaml.g:775:1: ( rule__Program__Group__5__Impl rule__Program__Group__6 )
+            // InternalSpaml.g:776:2: rule__Program__Group__5__Impl rule__Program__Group__6
             {
             pushFollow(FOLLOW_7);
             rule__Program__Group__5__Impl();
@@ -2530,21 +2478,21 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Program__Group__5__Impl"
-    // InternalSpaml.g:804:1: rule__Program__Group__5__Impl : ( ( rule__Program__Alternatives_5 ) ) ;
+    // InternalSpaml.g:783:1: rule__Program__Group__5__Impl : ( ( rule__Program__Alternatives_5 ) ) ;
     public final void rule__Program__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:808:1: ( ( ( rule__Program__Alternatives_5 ) ) )
-            // InternalSpaml.g:809:1: ( ( rule__Program__Alternatives_5 ) )
+            // InternalSpaml.g:787:1: ( ( ( rule__Program__Alternatives_5 ) ) )
+            // InternalSpaml.g:788:1: ( ( rule__Program__Alternatives_5 ) )
             {
-            // InternalSpaml.g:809:1: ( ( rule__Program__Alternatives_5 ) )
-            // InternalSpaml.g:810:2: ( rule__Program__Alternatives_5 )
+            // InternalSpaml.g:788:1: ( ( rule__Program__Alternatives_5 ) )
+            // InternalSpaml.g:789:2: ( rule__Program__Alternatives_5 )
             {
              before(grammarAccess.getProgramAccess().getAlternatives_5()); 
-            // InternalSpaml.g:811:2: ( rule__Program__Alternatives_5 )
-            // InternalSpaml.g:811:3: rule__Program__Alternatives_5
+            // InternalSpaml.g:790:2: ( rule__Program__Alternatives_5 )
+            // InternalSpaml.g:790:3: rule__Program__Alternatives_5
             {
             pushFollow(FOLLOW_2);
             rule__Program__Alternatives_5();
@@ -2577,14 +2525,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Program__Group__6"
-    // InternalSpaml.g:819:1: rule__Program__Group__6 : rule__Program__Group__6__Impl rule__Program__Group__7 ;
+    // InternalSpaml.g:798:1: rule__Program__Group__6 : rule__Program__Group__6__Impl rule__Program__Group__7 ;
     public final void rule__Program__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:823:1: ( rule__Program__Group__6__Impl rule__Program__Group__7 )
-            // InternalSpaml.g:824:2: rule__Program__Group__6__Impl rule__Program__Group__7
+            // InternalSpaml.g:802:1: ( rule__Program__Group__6__Impl rule__Program__Group__7 )
+            // InternalSpaml.g:803:2: rule__Program__Group__6__Impl rule__Program__Group__7
             {
             pushFollow(FOLLOW_8);
             rule__Program__Group__6__Impl();
@@ -2615,24 +2563,24 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Program__Group__6__Impl"
-    // InternalSpaml.g:831:1: rule__Program__Group__6__Impl : ( ( ( rule__Program__PluggedElementsAssignment_6 ) ) ( ( rule__Program__PluggedElementsAssignment_6 )* ) ) ;
+    // InternalSpaml.g:810:1: rule__Program__Group__6__Impl : ( ( ( rule__Program__PluggedElementsAssignment_6 ) ) ( ( rule__Program__PluggedElementsAssignment_6 )* ) ) ;
     public final void rule__Program__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:835:1: ( ( ( ( rule__Program__PluggedElementsAssignment_6 ) ) ( ( rule__Program__PluggedElementsAssignment_6 )* ) ) )
-            // InternalSpaml.g:836:1: ( ( ( rule__Program__PluggedElementsAssignment_6 ) ) ( ( rule__Program__PluggedElementsAssignment_6 )* ) )
+            // InternalSpaml.g:814:1: ( ( ( ( rule__Program__PluggedElementsAssignment_6 ) ) ( ( rule__Program__PluggedElementsAssignment_6 )* ) ) )
+            // InternalSpaml.g:815:1: ( ( ( rule__Program__PluggedElementsAssignment_6 ) ) ( ( rule__Program__PluggedElementsAssignment_6 )* ) )
             {
-            // InternalSpaml.g:836:1: ( ( ( rule__Program__PluggedElementsAssignment_6 ) ) ( ( rule__Program__PluggedElementsAssignment_6 )* ) )
-            // InternalSpaml.g:837:2: ( ( rule__Program__PluggedElementsAssignment_6 ) ) ( ( rule__Program__PluggedElementsAssignment_6 )* )
+            // InternalSpaml.g:815:1: ( ( ( rule__Program__PluggedElementsAssignment_6 ) ) ( ( rule__Program__PluggedElementsAssignment_6 )* ) )
+            // InternalSpaml.g:816:2: ( ( rule__Program__PluggedElementsAssignment_6 ) ) ( ( rule__Program__PluggedElementsAssignment_6 )* )
             {
-            // InternalSpaml.g:837:2: ( ( rule__Program__PluggedElementsAssignment_6 ) )
-            // InternalSpaml.g:838:3: ( rule__Program__PluggedElementsAssignment_6 )
+            // InternalSpaml.g:816:2: ( ( rule__Program__PluggedElementsAssignment_6 ) )
+            // InternalSpaml.g:817:3: ( rule__Program__PluggedElementsAssignment_6 )
             {
              before(grammarAccess.getProgramAccess().getPluggedElementsAssignment_6()); 
-            // InternalSpaml.g:839:3: ( rule__Program__PluggedElementsAssignment_6 )
-            // InternalSpaml.g:839:4: rule__Program__PluggedElementsAssignment_6
+            // InternalSpaml.g:818:3: ( rule__Program__PluggedElementsAssignment_6 )
+            // InternalSpaml.g:818:4: rule__Program__PluggedElementsAssignment_6
             {
             pushFollow(FOLLOW_9);
             rule__Program__PluggedElementsAssignment_6();
@@ -2646,24 +2594,24 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
             }
 
-            // InternalSpaml.g:842:2: ( ( rule__Program__PluggedElementsAssignment_6 )* )
-            // InternalSpaml.g:843:3: ( rule__Program__PluggedElementsAssignment_6 )*
+            // InternalSpaml.g:821:2: ( ( rule__Program__PluggedElementsAssignment_6 )* )
+            // InternalSpaml.g:822:3: ( rule__Program__PluggedElementsAssignment_6 )*
             {
              before(grammarAccess.getProgramAccess().getPluggedElementsAssignment_6()); 
-            // InternalSpaml.g:844:3: ( rule__Program__PluggedElementsAssignment_6 )*
-            loop14:
+            // InternalSpaml.g:823:3: ( rule__Program__PluggedElementsAssignment_6 )*
+            loop13:
             do {
-                int alt14=2;
-                int LA14_0 = input.LA(1);
+                int alt13=2;
+                int LA13_0 = input.LA(1);
 
-                if ( ((LA14_0>=34 && LA14_0<=36)) ) {
-                    alt14=1;
+                if ( ((LA13_0>=30 && LA13_0<=32)) ) {
+                    alt13=1;
                 }
 
 
-                switch (alt14) {
+                switch (alt13) {
             	case 1 :
-            	    // InternalSpaml.g:844:4: rule__Program__PluggedElementsAssignment_6
+            	    // InternalSpaml.g:823:4: rule__Program__PluggedElementsAssignment_6
             	    {
             	    pushFollow(FOLLOW_9);
             	    rule__Program__PluggedElementsAssignment_6();
@@ -2675,7 +2623,7 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop14;
+            	    break loop13;
                 }
             } while (true);
 
@@ -2705,14 +2653,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Program__Group__7"
-    // InternalSpaml.g:853:1: rule__Program__Group__7 : rule__Program__Group__7__Impl rule__Program__Group__8 ;
+    // InternalSpaml.g:832:1: rule__Program__Group__7 : rule__Program__Group__7__Impl rule__Program__Group__8 ;
     public final void rule__Program__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:857:1: ( rule__Program__Group__7__Impl rule__Program__Group__8 )
-            // InternalSpaml.g:858:2: rule__Program__Group__7__Impl rule__Program__Group__8
+            // InternalSpaml.g:836:1: ( rule__Program__Group__7__Impl rule__Program__Group__8 )
+            // InternalSpaml.g:837:2: rule__Program__Group__7__Impl rule__Program__Group__8
             {
             pushFollow(FOLLOW_3);
             rule__Program__Group__7__Impl();
@@ -2743,21 +2691,21 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Program__Group__7__Impl"
-    // InternalSpaml.g:865:1: rule__Program__Group__7__Impl : ( ( rule__Program__Alternatives_7 ) ) ;
+    // InternalSpaml.g:844:1: rule__Program__Group__7__Impl : ( ( rule__Program__Alternatives_7 ) ) ;
     public final void rule__Program__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:869:1: ( ( ( rule__Program__Alternatives_7 ) ) )
-            // InternalSpaml.g:870:1: ( ( rule__Program__Alternatives_7 ) )
+            // InternalSpaml.g:848:1: ( ( ( rule__Program__Alternatives_7 ) ) )
+            // InternalSpaml.g:849:1: ( ( rule__Program__Alternatives_7 ) )
             {
-            // InternalSpaml.g:870:1: ( ( rule__Program__Alternatives_7 ) )
-            // InternalSpaml.g:871:2: ( rule__Program__Alternatives_7 )
+            // InternalSpaml.g:849:1: ( ( rule__Program__Alternatives_7 ) )
+            // InternalSpaml.g:850:2: ( rule__Program__Alternatives_7 )
             {
              before(grammarAccess.getProgramAccess().getAlternatives_7()); 
-            // InternalSpaml.g:872:2: ( rule__Program__Alternatives_7 )
-            // InternalSpaml.g:872:3: rule__Program__Alternatives_7
+            // InternalSpaml.g:851:2: ( rule__Program__Alternatives_7 )
+            // InternalSpaml.g:851:3: rule__Program__Alternatives_7
             {
             pushFollow(FOLLOW_2);
             rule__Program__Alternatives_7();
@@ -2790,14 +2738,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Program__Group__8"
-    // InternalSpaml.g:880:1: rule__Program__Group__8 : rule__Program__Group__8__Impl rule__Program__Group__9 ;
+    // InternalSpaml.g:859:1: rule__Program__Group__8 : rule__Program__Group__8__Impl rule__Program__Group__9 ;
     public final void rule__Program__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:884:1: ( rule__Program__Group__8__Impl rule__Program__Group__9 )
-            // InternalSpaml.g:885:2: rule__Program__Group__8__Impl rule__Program__Group__9
+            // InternalSpaml.g:863:1: ( rule__Program__Group__8__Impl rule__Program__Group__9 )
+            // InternalSpaml.g:864:2: rule__Program__Group__8__Impl rule__Program__Group__9
             {
             pushFollow(FOLLOW_10);
             rule__Program__Group__8__Impl();
@@ -2828,24 +2776,24 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Program__Group__8__Impl"
-    // InternalSpaml.g:892:1: rule__Program__Group__8__Impl : ( ( ( rule__Program__StatesAssignment_8 ) ) ( ( rule__Program__StatesAssignment_8 )* ) ) ;
+    // InternalSpaml.g:871:1: rule__Program__Group__8__Impl : ( ( ( rule__Program__StatesAssignment_8 ) ) ( ( rule__Program__StatesAssignment_8 )* ) ) ;
     public final void rule__Program__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:896:1: ( ( ( ( rule__Program__StatesAssignment_8 ) ) ( ( rule__Program__StatesAssignment_8 )* ) ) )
-            // InternalSpaml.g:897:1: ( ( ( rule__Program__StatesAssignment_8 ) ) ( ( rule__Program__StatesAssignment_8 )* ) )
+            // InternalSpaml.g:875:1: ( ( ( ( rule__Program__StatesAssignment_8 ) ) ( ( rule__Program__StatesAssignment_8 )* ) ) )
+            // InternalSpaml.g:876:1: ( ( ( rule__Program__StatesAssignment_8 ) ) ( ( rule__Program__StatesAssignment_8 )* ) )
             {
-            // InternalSpaml.g:897:1: ( ( ( rule__Program__StatesAssignment_8 ) ) ( ( rule__Program__StatesAssignment_8 )* ) )
-            // InternalSpaml.g:898:2: ( ( rule__Program__StatesAssignment_8 ) ) ( ( rule__Program__StatesAssignment_8 )* )
+            // InternalSpaml.g:876:1: ( ( ( rule__Program__StatesAssignment_8 ) ) ( ( rule__Program__StatesAssignment_8 )* ) )
+            // InternalSpaml.g:877:2: ( ( rule__Program__StatesAssignment_8 ) ) ( ( rule__Program__StatesAssignment_8 )* )
             {
-            // InternalSpaml.g:898:2: ( ( rule__Program__StatesAssignment_8 ) )
-            // InternalSpaml.g:899:3: ( rule__Program__StatesAssignment_8 )
+            // InternalSpaml.g:877:2: ( ( rule__Program__StatesAssignment_8 ) )
+            // InternalSpaml.g:878:3: ( rule__Program__StatesAssignment_8 )
             {
              before(grammarAccess.getProgramAccess().getStatesAssignment_8()); 
-            // InternalSpaml.g:900:3: ( rule__Program__StatesAssignment_8 )
-            // InternalSpaml.g:900:4: rule__Program__StatesAssignment_8
+            // InternalSpaml.g:879:3: ( rule__Program__StatesAssignment_8 )
+            // InternalSpaml.g:879:4: rule__Program__StatesAssignment_8
             {
             pushFollow(FOLLOW_11);
             rule__Program__StatesAssignment_8();
@@ -2859,24 +2807,24 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
             }
 
-            // InternalSpaml.g:903:2: ( ( rule__Program__StatesAssignment_8 )* )
-            // InternalSpaml.g:904:3: ( rule__Program__StatesAssignment_8 )*
+            // InternalSpaml.g:882:2: ( ( rule__Program__StatesAssignment_8 )* )
+            // InternalSpaml.g:883:3: ( rule__Program__StatesAssignment_8 )*
             {
              before(grammarAccess.getProgramAccess().getStatesAssignment_8()); 
-            // InternalSpaml.g:905:3: ( rule__Program__StatesAssignment_8 )*
-            loop15:
+            // InternalSpaml.g:884:3: ( rule__Program__StatesAssignment_8 )*
+            loop14:
             do {
-                int alt15=2;
-                int LA15_0 = input.LA(1);
+                int alt14=2;
+                int LA14_0 = input.LA(1);
 
-                if ( ((LA15_0>=RULE_STRING && LA15_0<=RULE_ID)) ) {
-                    alt15=1;
+                if ( ((LA14_0>=RULE_STRING && LA14_0<=RULE_ID)) ) {
+                    alt14=1;
                 }
 
 
-                switch (alt15) {
+                switch (alt14) {
             	case 1 :
-            	    // InternalSpaml.g:905:4: rule__Program__StatesAssignment_8
+            	    // InternalSpaml.g:884:4: rule__Program__StatesAssignment_8
             	    {
             	    pushFollow(FOLLOW_11);
             	    rule__Program__StatesAssignment_8();
@@ -2888,7 +2836,7 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop15;
+            	    break loop14;
                 }
             } while (true);
 
@@ -2918,14 +2866,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Program__Group__9"
-    // InternalSpaml.g:914:1: rule__Program__Group__9 : rule__Program__Group__9__Impl ;
+    // InternalSpaml.g:893:1: rule__Program__Group__9 : rule__Program__Group__9__Impl ;
     public final void rule__Program__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:918:1: ( rule__Program__Group__9__Impl )
-            // InternalSpaml.g:919:2: rule__Program__Group__9__Impl
+            // InternalSpaml.g:897:1: ( rule__Program__Group__9__Impl )
+            // InternalSpaml.g:898:2: rule__Program__Group__9__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Program__Group__9__Impl();
@@ -2951,20 +2899,20 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Program__Group__9__Impl"
-    // InternalSpaml.g:925:1: rule__Program__Group__9__Impl : ( '}' ) ;
+    // InternalSpaml.g:904:1: rule__Program__Group__9__Impl : ( '}' ) ;
     public final void rule__Program__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:929:1: ( ( '}' ) )
-            // InternalSpaml.g:930:1: ( '}' )
+            // InternalSpaml.g:908:1: ( ( '}' ) )
+            // InternalSpaml.g:909:1: ( '}' )
             {
-            // InternalSpaml.g:930:1: ( '}' )
-            // InternalSpaml.g:931:2: '}'
+            // InternalSpaml.g:909:1: ( '}' )
+            // InternalSpaml.g:910:2: '}'
             {
              before(grammarAccess.getProgramAccess().getRightCurlyBracketKeyword_9()); 
-            match(input,31,FOLLOW_2); 
+            match(input,27,FOLLOW_2); 
              after(grammarAccess.getProgramAccess().getRightCurlyBracketKeyword_9()); 
 
             }
@@ -2988,14 +2936,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PluggedElement__Group__0"
-    // InternalSpaml.g:941:1: rule__PluggedElement__Group__0 : rule__PluggedElement__Group__0__Impl rule__PluggedElement__Group__1 ;
+    // InternalSpaml.g:920:1: rule__PluggedElement__Group__0 : rule__PluggedElement__Group__0__Impl rule__PluggedElement__Group__1 ;
     public final void rule__PluggedElement__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:945:1: ( rule__PluggedElement__Group__0__Impl rule__PluggedElement__Group__1 )
-            // InternalSpaml.g:946:2: rule__PluggedElement__Group__0__Impl rule__PluggedElement__Group__1
+            // InternalSpaml.g:924:1: ( rule__PluggedElement__Group__0__Impl rule__PluggedElement__Group__1 )
+            // InternalSpaml.g:925:2: rule__PluggedElement__Group__0__Impl rule__PluggedElement__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__PluggedElement__Group__0__Impl();
@@ -3026,21 +2974,21 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PluggedElement__Group__0__Impl"
-    // InternalSpaml.g:953:1: rule__PluggedElement__Group__0__Impl : ( ( rule__PluggedElement__Alternatives_0 ) ) ;
+    // InternalSpaml.g:932:1: rule__PluggedElement__Group__0__Impl : ( ( rule__PluggedElement__Alternatives_0 ) ) ;
     public final void rule__PluggedElement__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:957:1: ( ( ( rule__PluggedElement__Alternatives_0 ) ) )
-            // InternalSpaml.g:958:1: ( ( rule__PluggedElement__Alternatives_0 ) )
+            // InternalSpaml.g:936:1: ( ( ( rule__PluggedElement__Alternatives_0 ) ) )
+            // InternalSpaml.g:937:1: ( ( rule__PluggedElement__Alternatives_0 ) )
             {
-            // InternalSpaml.g:958:1: ( ( rule__PluggedElement__Alternatives_0 ) )
-            // InternalSpaml.g:959:2: ( rule__PluggedElement__Alternatives_0 )
+            // InternalSpaml.g:937:1: ( ( rule__PluggedElement__Alternatives_0 ) )
+            // InternalSpaml.g:938:2: ( rule__PluggedElement__Alternatives_0 )
             {
              before(grammarAccess.getPluggedElementAccess().getAlternatives_0()); 
-            // InternalSpaml.g:960:2: ( rule__PluggedElement__Alternatives_0 )
-            // InternalSpaml.g:960:3: rule__PluggedElement__Alternatives_0
+            // InternalSpaml.g:939:2: ( rule__PluggedElement__Alternatives_0 )
+            // InternalSpaml.g:939:3: rule__PluggedElement__Alternatives_0
             {
             pushFollow(FOLLOW_2);
             rule__PluggedElement__Alternatives_0();
@@ -3073,14 +3021,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PluggedElement__Group__1"
-    // InternalSpaml.g:968:1: rule__PluggedElement__Group__1 : rule__PluggedElement__Group__1__Impl rule__PluggedElement__Group__2 ;
+    // InternalSpaml.g:947:1: rule__PluggedElement__Group__1 : rule__PluggedElement__Group__1__Impl rule__PluggedElement__Group__2 ;
     public final void rule__PluggedElement__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:972:1: ( rule__PluggedElement__Group__1__Impl rule__PluggedElement__Group__2 )
-            // InternalSpaml.g:973:2: rule__PluggedElement__Group__1__Impl rule__PluggedElement__Group__2
+            // InternalSpaml.g:951:1: ( rule__PluggedElement__Group__1__Impl rule__PluggedElement__Group__2 )
+            // InternalSpaml.g:952:2: rule__PluggedElement__Group__1__Impl rule__PluggedElement__Group__2
             {
             pushFollow(FOLLOW_12);
             rule__PluggedElement__Group__1__Impl();
@@ -3111,21 +3059,21 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PluggedElement__Group__1__Impl"
-    // InternalSpaml.g:980:1: rule__PluggedElement__Group__1__Impl : ( ( rule__PluggedElement__NameAssignment_1 ) ) ;
+    // InternalSpaml.g:959:1: rule__PluggedElement__Group__1__Impl : ( ( rule__PluggedElement__NameAssignment_1 ) ) ;
     public final void rule__PluggedElement__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:984:1: ( ( ( rule__PluggedElement__NameAssignment_1 ) ) )
-            // InternalSpaml.g:985:1: ( ( rule__PluggedElement__NameAssignment_1 ) )
+            // InternalSpaml.g:963:1: ( ( ( rule__PluggedElement__NameAssignment_1 ) ) )
+            // InternalSpaml.g:964:1: ( ( rule__PluggedElement__NameAssignment_1 ) )
             {
-            // InternalSpaml.g:985:1: ( ( rule__PluggedElement__NameAssignment_1 ) )
-            // InternalSpaml.g:986:2: ( rule__PluggedElement__NameAssignment_1 )
+            // InternalSpaml.g:964:1: ( ( rule__PluggedElement__NameAssignment_1 ) )
+            // InternalSpaml.g:965:2: ( rule__PluggedElement__NameAssignment_1 )
             {
              before(grammarAccess.getPluggedElementAccess().getNameAssignment_1()); 
-            // InternalSpaml.g:987:2: ( rule__PluggedElement__NameAssignment_1 )
-            // InternalSpaml.g:987:3: rule__PluggedElement__NameAssignment_1
+            // InternalSpaml.g:966:2: ( rule__PluggedElement__NameAssignment_1 )
+            // InternalSpaml.g:966:3: rule__PluggedElement__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__PluggedElement__NameAssignment_1();
@@ -3158,14 +3106,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PluggedElement__Group__2"
-    // InternalSpaml.g:995:1: rule__PluggedElement__Group__2 : rule__PluggedElement__Group__2__Impl rule__PluggedElement__Group__3 ;
+    // InternalSpaml.g:974:1: rule__PluggedElement__Group__2 : rule__PluggedElement__Group__2__Impl rule__PluggedElement__Group__3 ;
     public final void rule__PluggedElement__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:999:1: ( rule__PluggedElement__Group__2__Impl rule__PluggedElement__Group__3 )
-            // InternalSpaml.g:1000:2: rule__PluggedElement__Group__2__Impl rule__PluggedElement__Group__3
+            // InternalSpaml.g:978:1: ( rule__PluggedElement__Group__2__Impl rule__PluggedElement__Group__3 )
+            // InternalSpaml.g:979:2: rule__PluggedElement__Group__2__Impl rule__PluggedElement__Group__3
             {
             pushFollow(FOLLOW_12);
             rule__PluggedElement__Group__2__Impl();
@@ -3196,31 +3144,31 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PluggedElement__Group__2__Impl"
-    // InternalSpaml.g:1007:1: rule__PluggedElement__Group__2__Impl : ( ( 'onPin' )? ) ;
+    // InternalSpaml.g:986:1: rule__PluggedElement__Group__2__Impl : ( ( 'onPin' )? ) ;
     public final void rule__PluggedElement__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1011:1: ( ( ( 'onPin' )? ) )
-            // InternalSpaml.g:1012:1: ( ( 'onPin' )? )
+            // InternalSpaml.g:990:1: ( ( ( 'onPin' )? ) )
+            // InternalSpaml.g:991:1: ( ( 'onPin' )? )
             {
-            // InternalSpaml.g:1012:1: ( ( 'onPin' )? )
-            // InternalSpaml.g:1013:2: ( 'onPin' )?
+            // InternalSpaml.g:991:1: ( ( 'onPin' )? )
+            // InternalSpaml.g:992:2: ( 'onPin' )?
             {
              before(grammarAccess.getPluggedElementAccess().getOnPinKeyword_2()); 
-            // InternalSpaml.g:1014:2: ( 'onPin' )?
-            int alt16=2;
-            int LA16_0 = input.LA(1);
+            // InternalSpaml.g:993:2: ( 'onPin' )?
+            int alt15=2;
+            int LA15_0 = input.LA(1);
 
-            if ( (LA16_0==32) ) {
-                alt16=1;
+            if ( (LA15_0==28) ) {
+                alt15=1;
             }
-            switch (alt16) {
+            switch (alt15) {
                 case 1 :
-                    // InternalSpaml.g:1014:3: 'onPin'
+                    // InternalSpaml.g:993:3: 'onPin'
                     {
-                    match(input,32,FOLLOW_2); 
+                    match(input,28,FOLLOW_2); 
 
                     }
                     break;
@@ -3250,14 +3198,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PluggedElement__Group__3"
-    // InternalSpaml.g:1022:1: rule__PluggedElement__Group__3 : rule__PluggedElement__Group__3__Impl ;
+    // InternalSpaml.g:1001:1: rule__PluggedElement__Group__3 : rule__PluggedElement__Group__3__Impl ;
     public final void rule__PluggedElement__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1026:1: ( rule__PluggedElement__Group__3__Impl )
-            // InternalSpaml.g:1027:2: rule__PluggedElement__Group__3__Impl
+            // InternalSpaml.g:1005:1: ( rule__PluggedElement__Group__3__Impl )
+            // InternalSpaml.g:1006:2: rule__PluggedElement__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__PluggedElement__Group__3__Impl();
@@ -3283,21 +3231,21 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PluggedElement__Group__3__Impl"
-    // InternalSpaml.g:1033:1: rule__PluggedElement__Group__3__Impl : ( ( rule__PluggedElement__PinAssignment_3 ) ) ;
+    // InternalSpaml.g:1012:1: rule__PluggedElement__Group__3__Impl : ( ( rule__PluggedElement__PinAssignment_3 ) ) ;
     public final void rule__PluggedElement__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1037:1: ( ( ( rule__PluggedElement__PinAssignment_3 ) ) )
-            // InternalSpaml.g:1038:1: ( ( rule__PluggedElement__PinAssignment_3 ) )
+            // InternalSpaml.g:1016:1: ( ( ( rule__PluggedElement__PinAssignment_3 ) ) )
+            // InternalSpaml.g:1017:1: ( ( rule__PluggedElement__PinAssignment_3 ) )
             {
-            // InternalSpaml.g:1038:1: ( ( rule__PluggedElement__PinAssignment_3 ) )
-            // InternalSpaml.g:1039:2: ( rule__PluggedElement__PinAssignment_3 )
+            // InternalSpaml.g:1017:1: ( ( rule__PluggedElement__PinAssignment_3 ) )
+            // InternalSpaml.g:1018:2: ( rule__PluggedElement__PinAssignment_3 )
             {
              before(grammarAccess.getPluggedElementAccess().getPinAssignment_3()); 
-            // InternalSpaml.g:1040:2: ( rule__PluggedElement__PinAssignment_3 )
-            // InternalSpaml.g:1040:3: rule__PluggedElement__PinAssignment_3
+            // InternalSpaml.g:1019:2: ( rule__PluggedElement__PinAssignment_3 )
+            // InternalSpaml.g:1019:3: rule__PluggedElement__PinAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__PluggedElement__PinAssignment_3();
@@ -3330,14 +3278,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__State__Group__0"
-    // InternalSpaml.g:1049:1: rule__State__Group__0 : rule__State__Group__0__Impl rule__State__Group__1 ;
+    // InternalSpaml.g:1028:1: rule__State__Group__0 : rule__State__Group__0__Impl rule__State__Group__1 ;
     public final void rule__State__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1053:1: ( rule__State__Group__0__Impl rule__State__Group__1 )
-            // InternalSpaml.g:1054:2: rule__State__Group__0__Impl rule__State__Group__1
+            // InternalSpaml.g:1032:1: ( rule__State__Group__0__Impl rule__State__Group__1 )
+            // InternalSpaml.g:1033:2: rule__State__Group__0__Impl rule__State__Group__1
             {
             pushFollow(FOLLOW_5);
             rule__State__Group__0__Impl();
@@ -3368,21 +3316,21 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__State__Group__0__Impl"
-    // InternalSpaml.g:1061:1: rule__State__Group__0__Impl : ( ( rule__State__NameAssignment_0 ) ) ;
+    // InternalSpaml.g:1040:1: rule__State__Group__0__Impl : ( ( rule__State__NameAssignment_0 ) ) ;
     public final void rule__State__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1065:1: ( ( ( rule__State__NameAssignment_0 ) ) )
-            // InternalSpaml.g:1066:1: ( ( rule__State__NameAssignment_0 ) )
+            // InternalSpaml.g:1044:1: ( ( ( rule__State__NameAssignment_0 ) ) )
+            // InternalSpaml.g:1045:1: ( ( rule__State__NameAssignment_0 ) )
             {
-            // InternalSpaml.g:1066:1: ( ( rule__State__NameAssignment_0 ) )
-            // InternalSpaml.g:1067:2: ( rule__State__NameAssignment_0 )
+            // InternalSpaml.g:1045:1: ( ( rule__State__NameAssignment_0 ) )
+            // InternalSpaml.g:1046:2: ( rule__State__NameAssignment_0 )
             {
              before(grammarAccess.getStateAccess().getNameAssignment_0()); 
-            // InternalSpaml.g:1068:2: ( rule__State__NameAssignment_0 )
-            // InternalSpaml.g:1068:3: rule__State__NameAssignment_0
+            // InternalSpaml.g:1047:2: ( rule__State__NameAssignment_0 )
+            // InternalSpaml.g:1047:3: rule__State__NameAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__State__NameAssignment_0();
@@ -3415,14 +3363,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__State__Group__1"
-    // InternalSpaml.g:1076:1: rule__State__Group__1 : rule__State__Group__1__Impl rule__State__Group__2 ;
+    // InternalSpaml.g:1055:1: rule__State__Group__1 : rule__State__Group__1__Impl rule__State__Group__2 ;
     public final void rule__State__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1080:1: ( rule__State__Group__1__Impl rule__State__Group__2 )
-            // InternalSpaml.g:1081:2: rule__State__Group__1__Impl rule__State__Group__2
+            // InternalSpaml.g:1059:1: ( rule__State__Group__1__Impl rule__State__Group__2 )
+            // InternalSpaml.g:1060:2: rule__State__Group__1__Impl rule__State__Group__2
             {
             pushFollow(FOLLOW_3);
             rule__State__Group__1__Impl();
@@ -3453,20 +3401,20 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__State__Group__1__Impl"
-    // InternalSpaml.g:1088:1: rule__State__Group__1__Impl : ( '{' ) ;
+    // InternalSpaml.g:1067:1: rule__State__Group__1__Impl : ( '{' ) ;
     public final void rule__State__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1092:1: ( ( '{' ) )
-            // InternalSpaml.g:1093:1: ( '{' )
+            // InternalSpaml.g:1071:1: ( ( '{' ) )
+            // InternalSpaml.g:1072:1: ( '{' )
             {
-            // InternalSpaml.g:1093:1: ( '{' )
-            // InternalSpaml.g:1094:2: '{'
+            // InternalSpaml.g:1072:1: ( '{' )
+            // InternalSpaml.g:1073:2: '{'
             {
              before(grammarAccess.getStateAccess().getLeftCurlyBracketKeyword_1()); 
-            match(input,30,FOLLOW_2); 
+            match(input,26,FOLLOW_2); 
              after(grammarAccess.getStateAccess().getLeftCurlyBracketKeyword_1()); 
 
             }
@@ -3490,14 +3438,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__State__Group__2"
-    // InternalSpaml.g:1103:1: rule__State__Group__2 : rule__State__Group__2__Impl rule__State__Group__3 ;
+    // InternalSpaml.g:1082:1: rule__State__Group__2 : rule__State__Group__2__Impl rule__State__Group__3 ;
     public final void rule__State__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1107:1: ( rule__State__Group__2__Impl rule__State__Group__3 )
-            // InternalSpaml.g:1108:2: rule__State__Group__2__Impl rule__State__Group__3
+            // InternalSpaml.g:1086:1: ( rule__State__Group__2__Impl rule__State__Group__3 )
+            // InternalSpaml.g:1087:2: rule__State__Group__2__Impl rule__State__Group__3
             {
             pushFollow(FOLLOW_13);
             rule__State__Group__2__Impl();
@@ -3528,21 +3476,21 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__State__Group__2__Impl"
-    // InternalSpaml.g:1115:1: rule__State__Group__2__Impl : ( ( rule__State__ActionsAssignment_2 ) ) ;
+    // InternalSpaml.g:1094:1: rule__State__Group__2__Impl : ( ( rule__State__ActionsAssignment_2 ) ) ;
     public final void rule__State__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1119:1: ( ( ( rule__State__ActionsAssignment_2 ) ) )
-            // InternalSpaml.g:1120:1: ( ( rule__State__ActionsAssignment_2 ) )
+            // InternalSpaml.g:1098:1: ( ( ( rule__State__ActionsAssignment_2 ) ) )
+            // InternalSpaml.g:1099:1: ( ( rule__State__ActionsAssignment_2 ) )
             {
-            // InternalSpaml.g:1120:1: ( ( rule__State__ActionsAssignment_2 ) )
-            // InternalSpaml.g:1121:2: ( rule__State__ActionsAssignment_2 )
+            // InternalSpaml.g:1099:1: ( ( rule__State__ActionsAssignment_2 ) )
+            // InternalSpaml.g:1100:2: ( rule__State__ActionsAssignment_2 )
             {
              before(grammarAccess.getStateAccess().getActionsAssignment_2()); 
-            // InternalSpaml.g:1122:2: ( rule__State__ActionsAssignment_2 )
-            // InternalSpaml.g:1122:3: rule__State__ActionsAssignment_2
+            // InternalSpaml.g:1101:2: ( rule__State__ActionsAssignment_2 )
+            // InternalSpaml.g:1101:3: rule__State__ActionsAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__State__ActionsAssignment_2();
@@ -3575,14 +3523,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__State__Group__3"
-    // InternalSpaml.g:1130:1: rule__State__Group__3 : rule__State__Group__3__Impl rule__State__Group__4 ;
+    // InternalSpaml.g:1109:1: rule__State__Group__3 : rule__State__Group__3__Impl rule__State__Group__4 ;
     public final void rule__State__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1134:1: ( rule__State__Group__3__Impl rule__State__Group__4 )
-            // InternalSpaml.g:1135:2: rule__State__Group__3__Impl rule__State__Group__4
+            // InternalSpaml.g:1113:1: ( rule__State__Group__3__Impl rule__State__Group__4 )
+            // InternalSpaml.g:1114:2: rule__State__Group__3__Impl rule__State__Group__4
             {
             pushFollow(FOLLOW_13);
             rule__State__Group__3__Impl();
@@ -3613,45 +3561,45 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__State__Group__3__Impl"
-    // InternalSpaml.g:1142:1: rule__State__Group__3__Impl : ( ( rule__State__ActionsAssignment_3 )* ) ;
+    // InternalSpaml.g:1121:1: rule__State__Group__3__Impl : ( ( rule__State__ActionsAssignment_3 )* ) ;
     public final void rule__State__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1146:1: ( ( ( rule__State__ActionsAssignment_3 )* ) )
-            // InternalSpaml.g:1147:1: ( ( rule__State__ActionsAssignment_3 )* )
+            // InternalSpaml.g:1125:1: ( ( ( rule__State__ActionsAssignment_3 )* ) )
+            // InternalSpaml.g:1126:1: ( ( rule__State__ActionsAssignment_3 )* )
             {
-            // InternalSpaml.g:1147:1: ( ( rule__State__ActionsAssignment_3 )* )
-            // InternalSpaml.g:1148:2: ( rule__State__ActionsAssignment_3 )*
+            // InternalSpaml.g:1126:1: ( ( rule__State__ActionsAssignment_3 )* )
+            // InternalSpaml.g:1127:2: ( rule__State__ActionsAssignment_3 )*
             {
              before(grammarAccess.getStateAccess().getActionsAssignment_3()); 
-            // InternalSpaml.g:1149:2: ( rule__State__ActionsAssignment_3 )*
-            loop17:
+            // InternalSpaml.g:1128:2: ( rule__State__ActionsAssignment_3 )*
+            loop16:
             do {
-                int alt17=2;
-                int LA17_0 = input.LA(1);
+                int alt16=2;
+                int LA16_0 = input.LA(1);
 
-                if ( (LA17_0==RULE_ID) ) {
-                    int LA17_2 = input.LA(2);
+                if ( (LA16_0==RULE_ID) ) {
+                    int LA16_2 = input.LA(2);
 
-                    if ( (LA17_2==15) ) {
-                        int LA17_4 = input.LA(3);
+                    if ( (LA16_2==15) ) {
+                        int LA16_4 = input.LA(3);
 
-                        if ( (LA17_4==24) ) {
-                            int LA17_5 = input.LA(4);
+                        if ( (LA16_4==20) ) {
+                            int LA16_5 = input.LA(4);
 
-                            if ( ((LA17_5>=RULE_STRING && LA17_5<=RULE_INT)||LA17_5==33||LA17_5==37) ) {
-                                alt17=1;
+                            if ( ((LA16_5>=RULE_STRING && LA16_5<=RULE_INT)||(LA16_5>=22 && LA16_5<=23)||LA16_5==29||LA16_5==33) ) {
+                                alt16=1;
                             }
 
 
                         }
-                        else if ( (LA17_4==25) ) {
-                            int LA17_6 = input.LA(4);
+                        else if ( (LA16_4==21) ) {
+                            int LA16_6 = input.LA(4);
 
-                            if ( ((LA17_6>=RULE_STRING && LA17_6<=RULE_INT)||LA17_6==33||LA17_6==37) ) {
-                                alt17=1;
+                            if ( ((LA16_6>=RULE_STRING && LA16_6<=RULE_INT)||(LA16_6>=22 && LA16_6<=23)||LA16_6==29||LA16_6==33) ) {
+                                alt16=1;
                             }
 
 
@@ -3659,20 +3607,20 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
                     }
-                    else if ( (LA17_2==16) ) {
-                        alt17=1;
+                    else if ( (LA16_2==16) ) {
+                        alt16=1;
                     }
 
 
                 }
-                else if ( (LA17_0==RULE_STRING) ) {
-                    alt17=1;
+                else if ( (LA16_0==RULE_STRING) ) {
+                    alt16=1;
                 }
 
 
-                switch (alt17) {
+                switch (alt16) {
             	case 1 :
-            	    // InternalSpaml.g:1149:3: rule__State__ActionsAssignment_3
+            	    // InternalSpaml.g:1128:3: rule__State__ActionsAssignment_3
             	    {
             	    pushFollow(FOLLOW_11);
             	    rule__State__ActionsAssignment_3();
@@ -3684,7 +3632,7 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop17;
+            	    break loop16;
                 }
             } while (true);
 
@@ -3711,14 +3659,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__State__Group__4"
-    // InternalSpaml.g:1157:1: rule__State__Group__4 : rule__State__Group__4__Impl rule__State__Group__5 ;
+    // InternalSpaml.g:1136:1: rule__State__Group__4 : rule__State__Group__4__Impl rule__State__Group__5 ;
     public final void rule__State__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1161:1: ( rule__State__Group__4__Impl rule__State__Group__5 )
-            // InternalSpaml.g:1162:2: rule__State__Group__4__Impl rule__State__Group__5
+            // InternalSpaml.g:1140:1: ( rule__State__Group__4__Impl rule__State__Group__5 )
+            // InternalSpaml.g:1141:2: rule__State__Group__4__Impl rule__State__Group__5
             {
             pushFollow(FOLLOW_10);
             rule__State__Group__4__Impl();
@@ -3749,21 +3697,21 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__State__Group__4__Impl"
-    // InternalSpaml.g:1169:1: rule__State__Group__4__Impl : ( ( rule__State__TransitionAssignment_4 ) ) ;
+    // InternalSpaml.g:1148:1: rule__State__Group__4__Impl : ( ( rule__State__TransitionAssignment_4 ) ) ;
     public final void rule__State__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1173:1: ( ( ( rule__State__TransitionAssignment_4 ) ) )
-            // InternalSpaml.g:1174:1: ( ( rule__State__TransitionAssignment_4 ) )
+            // InternalSpaml.g:1152:1: ( ( ( rule__State__TransitionAssignment_4 ) ) )
+            // InternalSpaml.g:1153:1: ( ( rule__State__TransitionAssignment_4 ) )
             {
-            // InternalSpaml.g:1174:1: ( ( rule__State__TransitionAssignment_4 ) )
-            // InternalSpaml.g:1175:2: ( rule__State__TransitionAssignment_4 )
+            // InternalSpaml.g:1153:1: ( ( rule__State__TransitionAssignment_4 ) )
+            // InternalSpaml.g:1154:2: ( rule__State__TransitionAssignment_4 )
             {
              before(grammarAccess.getStateAccess().getTransitionAssignment_4()); 
-            // InternalSpaml.g:1176:2: ( rule__State__TransitionAssignment_4 )
-            // InternalSpaml.g:1176:3: rule__State__TransitionAssignment_4
+            // InternalSpaml.g:1155:2: ( rule__State__TransitionAssignment_4 )
+            // InternalSpaml.g:1155:3: rule__State__TransitionAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__State__TransitionAssignment_4();
@@ -3796,14 +3744,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__State__Group__5"
-    // InternalSpaml.g:1184:1: rule__State__Group__5 : rule__State__Group__5__Impl ;
+    // InternalSpaml.g:1163:1: rule__State__Group__5 : rule__State__Group__5__Impl ;
     public final void rule__State__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1188:1: ( rule__State__Group__5__Impl )
-            // InternalSpaml.g:1189:2: rule__State__Group__5__Impl
+            // InternalSpaml.g:1167:1: ( rule__State__Group__5__Impl )
+            // InternalSpaml.g:1168:2: rule__State__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__State__Group__5__Impl();
@@ -3829,20 +3777,20 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__State__Group__5__Impl"
-    // InternalSpaml.g:1195:1: rule__State__Group__5__Impl : ( '}' ) ;
+    // InternalSpaml.g:1174:1: rule__State__Group__5__Impl : ( '}' ) ;
     public final void rule__State__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1199:1: ( ( '}' ) )
-            // InternalSpaml.g:1200:1: ( '}' )
+            // InternalSpaml.g:1178:1: ( ( '}' ) )
+            // InternalSpaml.g:1179:1: ( '}' )
             {
-            // InternalSpaml.g:1200:1: ( '}' )
-            // InternalSpaml.g:1201:2: '}'
+            // InternalSpaml.g:1179:1: ( '}' )
+            // InternalSpaml.g:1180:2: '}'
             {
              before(grammarAccess.getStateAccess().getRightCurlyBracketKeyword_5()); 
-            match(input,31,FOLLOW_2); 
+            match(input,27,FOLLOW_2); 
              after(grammarAccess.getStateAccess().getRightCurlyBracketKeyword_5()); 
 
             }
@@ -3866,14 +3814,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EInt__Group__0"
-    // InternalSpaml.g:1211:1: rule__EInt__Group__0 : rule__EInt__Group__0__Impl rule__EInt__Group__1 ;
+    // InternalSpaml.g:1190:1: rule__EInt__Group__0 : rule__EInt__Group__0__Impl rule__EInt__Group__1 ;
     public final void rule__EInt__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1215:1: ( rule__EInt__Group__0__Impl rule__EInt__Group__1 )
-            // InternalSpaml.g:1216:2: rule__EInt__Group__0__Impl rule__EInt__Group__1
+            // InternalSpaml.g:1194:1: ( rule__EInt__Group__0__Impl rule__EInt__Group__1 )
+            // InternalSpaml.g:1195:2: rule__EInt__Group__0__Impl rule__EInt__Group__1
             {
             pushFollow(FOLLOW_12);
             rule__EInt__Group__0__Impl();
@@ -3904,31 +3852,31 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EInt__Group__0__Impl"
-    // InternalSpaml.g:1223:1: rule__EInt__Group__0__Impl : ( ( '-' )? ) ;
+    // InternalSpaml.g:1202:1: rule__EInt__Group__0__Impl : ( ( '-' )? ) ;
     public final void rule__EInt__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1227:1: ( ( ( '-' )? ) )
-            // InternalSpaml.g:1228:1: ( ( '-' )? )
+            // InternalSpaml.g:1206:1: ( ( ( '-' )? ) )
+            // InternalSpaml.g:1207:1: ( ( '-' )? )
             {
-            // InternalSpaml.g:1228:1: ( ( '-' )? )
-            // InternalSpaml.g:1229:2: ( '-' )?
+            // InternalSpaml.g:1207:1: ( ( '-' )? )
+            // InternalSpaml.g:1208:2: ( '-' )?
             {
              before(grammarAccess.getEIntAccess().getHyphenMinusKeyword_0()); 
-            // InternalSpaml.g:1230:2: ( '-' )?
-            int alt18=2;
-            int LA18_0 = input.LA(1);
+            // InternalSpaml.g:1209:2: ( '-' )?
+            int alt17=2;
+            int LA17_0 = input.LA(1);
 
-            if ( (LA18_0==33) ) {
-                alt18=1;
+            if ( (LA17_0==29) ) {
+                alt17=1;
             }
-            switch (alt18) {
+            switch (alt17) {
                 case 1 :
-                    // InternalSpaml.g:1230:3: '-'
+                    // InternalSpaml.g:1209:3: '-'
                     {
-                    match(input,33,FOLLOW_2); 
+                    match(input,29,FOLLOW_2); 
 
                     }
                     break;
@@ -3958,14 +3906,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EInt__Group__1"
-    // InternalSpaml.g:1238:1: rule__EInt__Group__1 : rule__EInt__Group__1__Impl ;
+    // InternalSpaml.g:1217:1: rule__EInt__Group__1 : rule__EInt__Group__1__Impl ;
     public final void rule__EInt__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1242:1: ( rule__EInt__Group__1__Impl )
-            // InternalSpaml.g:1243:2: rule__EInt__Group__1__Impl
+            // InternalSpaml.g:1221:1: ( rule__EInt__Group__1__Impl )
+            // InternalSpaml.g:1222:2: rule__EInt__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EInt__Group__1__Impl();
@@ -3991,17 +3939,17 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EInt__Group__1__Impl"
-    // InternalSpaml.g:1249:1: rule__EInt__Group__1__Impl : ( RULE_INT ) ;
+    // InternalSpaml.g:1228:1: rule__EInt__Group__1__Impl : ( RULE_INT ) ;
     public final void rule__EInt__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1253:1: ( ( RULE_INT ) )
-            // InternalSpaml.g:1254:1: ( RULE_INT )
+            // InternalSpaml.g:1232:1: ( ( RULE_INT ) )
+            // InternalSpaml.g:1233:1: ( RULE_INT )
             {
-            // InternalSpaml.g:1254:1: ( RULE_INT )
-            // InternalSpaml.g:1255:2: RULE_INT
+            // InternalSpaml.g:1233:1: ( RULE_INT )
+            // InternalSpaml.g:1234:2: RULE_INT
             {
              before(grammarAccess.getEIntAccess().getINTTerminalRuleCall_1()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -4028,14 +3976,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SensorDigital__Group__0"
-    // InternalSpaml.g:1265:1: rule__SensorDigital__Group__0 : rule__SensorDigital__Group__0__Impl rule__SensorDigital__Group__1 ;
+    // InternalSpaml.g:1244:1: rule__SensorDigital__Group__0 : rule__SensorDigital__Group__0__Impl rule__SensorDigital__Group__1 ;
     public final void rule__SensorDigital__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1269:1: ( rule__SensorDigital__Group__0__Impl rule__SensorDigital__Group__1 )
-            // InternalSpaml.g:1270:2: rule__SensorDigital__Group__0__Impl rule__SensorDigital__Group__1
+            // InternalSpaml.g:1248:1: ( rule__SensorDigital__Group__0__Impl rule__SensorDigital__Group__1 )
+            // InternalSpaml.g:1249:2: rule__SensorDigital__Group__0__Impl rule__SensorDigital__Group__1
             {
             pushFollow(FOLLOW_14);
             rule__SensorDigital__Group__0__Impl();
@@ -4066,21 +4014,21 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SensorDigital__Group__0__Impl"
-    // InternalSpaml.g:1277:1: rule__SensorDigital__Group__0__Impl : ( () ) ;
+    // InternalSpaml.g:1256:1: rule__SensorDigital__Group__0__Impl : ( () ) ;
     public final void rule__SensorDigital__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1281:1: ( ( () ) )
-            // InternalSpaml.g:1282:1: ( () )
+            // InternalSpaml.g:1260:1: ( ( () ) )
+            // InternalSpaml.g:1261:1: ( () )
             {
-            // InternalSpaml.g:1282:1: ( () )
-            // InternalSpaml.g:1283:2: ()
+            // InternalSpaml.g:1261:1: ( () )
+            // InternalSpaml.g:1262:2: ()
             {
              before(grammarAccess.getSensorDigitalAccess().getSensorDigitalAction_0()); 
-            // InternalSpaml.g:1284:2: ()
-            // InternalSpaml.g:1284:3: 
+            // InternalSpaml.g:1263:2: ()
+            // InternalSpaml.g:1263:3: 
             {
             }
 
@@ -4103,14 +4051,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SensorDigital__Group__1"
-    // InternalSpaml.g:1292:1: rule__SensorDigital__Group__1 : rule__SensorDigital__Group__1__Impl ;
+    // InternalSpaml.g:1271:1: rule__SensorDigital__Group__1 : rule__SensorDigital__Group__1__Impl ;
     public final void rule__SensorDigital__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1296:1: ( rule__SensorDigital__Group__1__Impl )
-            // InternalSpaml.g:1297:2: rule__SensorDigital__Group__1__Impl
+            // InternalSpaml.g:1275:1: ( rule__SensorDigital__Group__1__Impl )
+            // InternalSpaml.g:1276:2: rule__SensorDigital__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SensorDigital__Group__1__Impl();
@@ -4136,20 +4084,20 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SensorDigital__Group__1__Impl"
-    // InternalSpaml.g:1303:1: rule__SensorDigital__Group__1__Impl : ( 'SensorDigital' ) ;
+    // InternalSpaml.g:1282:1: rule__SensorDigital__Group__1__Impl : ( 'SensorDigital' ) ;
     public final void rule__SensorDigital__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1307:1: ( ( 'SensorDigital' ) )
-            // InternalSpaml.g:1308:1: ( 'SensorDigital' )
+            // InternalSpaml.g:1286:1: ( ( 'SensorDigital' ) )
+            // InternalSpaml.g:1287:1: ( 'SensorDigital' )
             {
-            // InternalSpaml.g:1308:1: ( 'SensorDigital' )
-            // InternalSpaml.g:1309:2: 'SensorDigital'
+            // InternalSpaml.g:1287:1: ( 'SensorDigital' )
+            // InternalSpaml.g:1288:2: 'SensorDigital'
             {
              before(grammarAccess.getSensorDigitalAccess().getSensorDigitalKeyword_1()); 
-            match(input,34,FOLLOW_2); 
+            match(input,30,FOLLOW_2); 
              after(grammarAccess.getSensorDigitalAccess().getSensorDigitalKeyword_1()); 
 
             }
@@ -4173,14 +4121,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SensorAnalog__Group__0"
-    // InternalSpaml.g:1319:1: rule__SensorAnalog__Group__0 : rule__SensorAnalog__Group__0__Impl rule__SensorAnalog__Group__1 ;
+    // InternalSpaml.g:1298:1: rule__SensorAnalog__Group__0 : rule__SensorAnalog__Group__0__Impl rule__SensorAnalog__Group__1 ;
     public final void rule__SensorAnalog__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1323:1: ( rule__SensorAnalog__Group__0__Impl rule__SensorAnalog__Group__1 )
-            // InternalSpaml.g:1324:2: rule__SensorAnalog__Group__0__Impl rule__SensorAnalog__Group__1
+            // InternalSpaml.g:1302:1: ( rule__SensorAnalog__Group__0__Impl rule__SensorAnalog__Group__1 )
+            // InternalSpaml.g:1303:2: rule__SensorAnalog__Group__0__Impl rule__SensorAnalog__Group__1
             {
             pushFollow(FOLLOW_7);
             rule__SensorAnalog__Group__0__Impl();
@@ -4211,21 +4159,21 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SensorAnalog__Group__0__Impl"
-    // InternalSpaml.g:1331:1: rule__SensorAnalog__Group__0__Impl : ( () ) ;
+    // InternalSpaml.g:1310:1: rule__SensorAnalog__Group__0__Impl : ( () ) ;
     public final void rule__SensorAnalog__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1335:1: ( ( () ) )
-            // InternalSpaml.g:1336:1: ( () )
+            // InternalSpaml.g:1314:1: ( ( () ) )
+            // InternalSpaml.g:1315:1: ( () )
             {
-            // InternalSpaml.g:1336:1: ( () )
-            // InternalSpaml.g:1337:2: ()
+            // InternalSpaml.g:1315:1: ( () )
+            // InternalSpaml.g:1316:2: ()
             {
              before(grammarAccess.getSensorAnalogAccess().getSensorAnalogAction_0()); 
-            // InternalSpaml.g:1338:2: ()
-            // InternalSpaml.g:1338:3: 
+            // InternalSpaml.g:1317:2: ()
+            // InternalSpaml.g:1317:3: 
             {
             }
 
@@ -4248,14 +4196,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SensorAnalog__Group__1"
-    // InternalSpaml.g:1346:1: rule__SensorAnalog__Group__1 : rule__SensorAnalog__Group__1__Impl ;
+    // InternalSpaml.g:1325:1: rule__SensorAnalog__Group__1 : rule__SensorAnalog__Group__1__Impl ;
     public final void rule__SensorAnalog__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1350:1: ( rule__SensorAnalog__Group__1__Impl )
-            // InternalSpaml.g:1351:2: rule__SensorAnalog__Group__1__Impl
+            // InternalSpaml.g:1329:1: ( rule__SensorAnalog__Group__1__Impl )
+            // InternalSpaml.g:1330:2: rule__SensorAnalog__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SensorAnalog__Group__1__Impl();
@@ -4281,20 +4229,20 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SensorAnalog__Group__1__Impl"
-    // InternalSpaml.g:1357:1: rule__SensorAnalog__Group__1__Impl : ( 'SensorAnalog' ) ;
+    // InternalSpaml.g:1336:1: rule__SensorAnalog__Group__1__Impl : ( 'SensorAnalog' ) ;
     public final void rule__SensorAnalog__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1361:1: ( ( 'SensorAnalog' ) )
-            // InternalSpaml.g:1362:1: ( 'SensorAnalog' )
+            // InternalSpaml.g:1340:1: ( ( 'SensorAnalog' ) )
+            // InternalSpaml.g:1341:1: ( 'SensorAnalog' )
             {
-            // InternalSpaml.g:1362:1: ( 'SensorAnalog' )
-            // InternalSpaml.g:1363:2: 'SensorAnalog'
+            // InternalSpaml.g:1341:1: ( 'SensorAnalog' )
+            // InternalSpaml.g:1342:2: 'SensorAnalog'
             {
              before(grammarAccess.getSensorAnalogAccess().getSensorAnalogKeyword_1()); 
-            match(input,35,FOLLOW_2); 
+            match(input,31,FOLLOW_2); 
              after(grammarAccess.getSensorAnalogAccess().getSensorAnalogKeyword_1()); 
 
             }
@@ -4318,14 +4266,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Actuator__Group__0"
-    // InternalSpaml.g:1373:1: rule__Actuator__Group__0 : rule__Actuator__Group__0__Impl rule__Actuator__Group__1 ;
+    // InternalSpaml.g:1352:1: rule__Actuator__Group__0 : rule__Actuator__Group__0__Impl rule__Actuator__Group__1 ;
     public final void rule__Actuator__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1377:1: ( rule__Actuator__Group__0__Impl rule__Actuator__Group__1 )
-            // InternalSpaml.g:1378:2: rule__Actuator__Group__0__Impl rule__Actuator__Group__1
+            // InternalSpaml.g:1356:1: ( rule__Actuator__Group__0__Impl rule__Actuator__Group__1 )
+            // InternalSpaml.g:1357:2: rule__Actuator__Group__0__Impl rule__Actuator__Group__1
             {
             pushFollow(FOLLOW_15);
             rule__Actuator__Group__0__Impl();
@@ -4356,21 +4304,21 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Actuator__Group__0__Impl"
-    // InternalSpaml.g:1385:1: rule__Actuator__Group__0__Impl : ( () ) ;
+    // InternalSpaml.g:1364:1: rule__Actuator__Group__0__Impl : ( () ) ;
     public final void rule__Actuator__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1389:1: ( ( () ) )
-            // InternalSpaml.g:1390:1: ( () )
+            // InternalSpaml.g:1368:1: ( ( () ) )
+            // InternalSpaml.g:1369:1: ( () )
             {
-            // InternalSpaml.g:1390:1: ( () )
-            // InternalSpaml.g:1391:2: ()
+            // InternalSpaml.g:1369:1: ( () )
+            // InternalSpaml.g:1370:2: ()
             {
              before(grammarAccess.getActuatorAccess().getActuatorAction_0()); 
-            // InternalSpaml.g:1392:2: ()
-            // InternalSpaml.g:1392:3: 
+            // InternalSpaml.g:1371:2: ()
+            // InternalSpaml.g:1371:3: 
             {
             }
 
@@ -4393,14 +4341,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Actuator__Group__1"
-    // InternalSpaml.g:1400:1: rule__Actuator__Group__1 : rule__Actuator__Group__1__Impl ;
+    // InternalSpaml.g:1379:1: rule__Actuator__Group__1 : rule__Actuator__Group__1__Impl ;
     public final void rule__Actuator__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1404:1: ( rule__Actuator__Group__1__Impl )
-            // InternalSpaml.g:1405:2: rule__Actuator__Group__1__Impl
+            // InternalSpaml.g:1383:1: ( rule__Actuator__Group__1__Impl )
+            // InternalSpaml.g:1384:2: rule__Actuator__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Actuator__Group__1__Impl();
@@ -4426,20 +4374,20 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Actuator__Group__1__Impl"
-    // InternalSpaml.g:1411:1: rule__Actuator__Group__1__Impl : ( 'Actuator' ) ;
+    // InternalSpaml.g:1390:1: rule__Actuator__Group__1__Impl : ( 'Actuator' ) ;
     public final void rule__Actuator__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1415:1: ( ( 'Actuator' ) )
-            // InternalSpaml.g:1416:1: ( 'Actuator' )
+            // InternalSpaml.g:1394:1: ( ( 'Actuator' ) )
+            // InternalSpaml.g:1395:1: ( 'Actuator' )
             {
-            // InternalSpaml.g:1416:1: ( 'Actuator' )
-            // InternalSpaml.g:1417:2: 'Actuator'
+            // InternalSpaml.g:1395:1: ( 'Actuator' )
+            // InternalSpaml.g:1396:2: 'Actuator'
             {
              before(grammarAccess.getActuatorAccess().getActuatorKeyword_1()); 
-            match(input,36,FOLLOW_2); 
+            match(input,32,FOLLOW_2); 
              after(grammarAccess.getActuatorAccess().getActuatorKeyword_1()); 
 
             }
@@ -4463,14 +4411,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Action__Group__0"
-    // InternalSpaml.g:1427:1: rule__Action__Group__0 : rule__Action__Group__0__Impl rule__Action__Group__1 ;
+    // InternalSpaml.g:1406:1: rule__Action__Group__0 : rule__Action__Group__0__Impl rule__Action__Group__1 ;
     public final void rule__Action__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1431:1: ( rule__Action__Group__0__Impl rule__Action__Group__1 )
-            // InternalSpaml.g:1432:2: rule__Action__Group__0__Impl rule__Action__Group__1
+            // InternalSpaml.g:1410:1: ( rule__Action__Group__0__Impl rule__Action__Group__1 )
+            // InternalSpaml.g:1411:2: rule__Action__Group__0__Impl rule__Action__Group__1
             {
             pushFollow(FOLLOW_16);
             rule__Action__Group__0__Impl();
@@ -4501,21 +4449,21 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Action__Group__0__Impl"
-    // InternalSpaml.g:1439:1: rule__Action__Group__0__Impl : ( ( rule__Action__ActuatorAssignment_0 ) ) ;
+    // InternalSpaml.g:1418:1: rule__Action__Group__0__Impl : ( ( rule__Action__ActuatorAssignment_0 ) ) ;
     public final void rule__Action__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1443:1: ( ( ( rule__Action__ActuatorAssignment_0 ) ) )
-            // InternalSpaml.g:1444:1: ( ( rule__Action__ActuatorAssignment_0 ) )
+            // InternalSpaml.g:1422:1: ( ( ( rule__Action__ActuatorAssignment_0 ) ) )
+            // InternalSpaml.g:1423:1: ( ( rule__Action__ActuatorAssignment_0 ) )
             {
-            // InternalSpaml.g:1444:1: ( ( rule__Action__ActuatorAssignment_0 ) )
-            // InternalSpaml.g:1445:2: ( rule__Action__ActuatorAssignment_0 )
+            // InternalSpaml.g:1423:1: ( ( rule__Action__ActuatorAssignment_0 ) )
+            // InternalSpaml.g:1424:2: ( rule__Action__ActuatorAssignment_0 )
             {
              before(grammarAccess.getActionAccess().getActuatorAssignment_0()); 
-            // InternalSpaml.g:1446:2: ( rule__Action__ActuatorAssignment_0 )
-            // InternalSpaml.g:1446:3: rule__Action__ActuatorAssignment_0
+            // InternalSpaml.g:1425:2: ( rule__Action__ActuatorAssignment_0 )
+            // InternalSpaml.g:1425:3: rule__Action__ActuatorAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__Action__ActuatorAssignment_0();
@@ -4548,14 +4496,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Action__Group__1"
-    // InternalSpaml.g:1454:1: rule__Action__Group__1 : rule__Action__Group__1__Impl rule__Action__Group__2 ;
+    // InternalSpaml.g:1433:1: rule__Action__Group__1 : rule__Action__Group__1__Impl rule__Action__Group__2 ;
     public final void rule__Action__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1458:1: ( rule__Action__Group__1__Impl rule__Action__Group__2 )
-            // InternalSpaml.g:1459:2: rule__Action__Group__1__Impl rule__Action__Group__2
+            // InternalSpaml.g:1437:1: ( rule__Action__Group__1__Impl rule__Action__Group__2 )
+            // InternalSpaml.g:1438:2: rule__Action__Group__1__Impl rule__Action__Group__2
             {
             pushFollow(FOLLOW_17);
             rule__Action__Group__1__Impl();
@@ -4586,21 +4534,21 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Action__Group__1__Impl"
-    // InternalSpaml.g:1466:1: rule__Action__Group__1__Impl : ( ( rule__Action__Alternatives_1 ) ) ;
+    // InternalSpaml.g:1445:1: rule__Action__Group__1__Impl : ( ( rule__Action__Alternatives_1 ) ) ;
     public final void rule__Action__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1470:1: ( ( ( rule__Action__Alternatives_1 ) ) )
-            // InternalSpaml.g:1471:1: ( ( rule__Action__Alternatives_1 ) )
+            // InternalSpaml.g:1449:1: ( ( ( rule__Action__Alternatives_1 ) ) )
+            // InternalSpaml.g:1450:1: ( ( rule__Action__Alternatives_1 ) )
             {
-            // InternalSpaml.g:1471:1: ( ( rule__Action__Alternatives_1 ) )
-            // InternalSpaml.g:1472:2: ( rule__Action__Alternatives_1 )
+            // InternalSpaml.g:1450:1: ( ( rule__Action__Alternatives_1 ) )
+            // InternalSpaml.g:1451:2: ( rule__Action__Alternatives_1 )
             {
              before(grammarAccess.getActionAccess().getAlternatives_1()); 
-            // InternalSpaml.g:1473:2: ( rule__Action__Alternatives_1 )
-            // InternalSpaml.g:1473:3: rule__Action__Alternatives_1
+            // InternalSpaml.g:1452:2: ( rule__Action__Alternatives_1 )
+            // InternalSpaml.g:1452:3: rule__Action__Alternatives_1
             {
             pushFollow(FOLLOW_2);
             rule__Action__Alternatives_1();
@@ -4633,14 +4581,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Action__Group__2"
-    // InternalSpaml.g:1481:1: rule__Action__Group__2 : rule__Action__Group__2__Impl ;
+    // InternalSpaml.g:1460:1: rule__Action__Group__2 : rule__Action__Group__2__Impl ;
     public final void rule__Action__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1485:1: ( rule__Action__Group__2__Impl )
-            // InternalSpaml.g:1486:2: rule__Action__Group__2__Impl
+            // InternalSpaml.g:1464:1: ( rule__Action__Group__2__Impl )
+            // InternalSpaml.g:1465:2: rule__Action__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Action__Group__2__Impl();
@@ -4666,21 +4614,21 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Action__Group__2__Impl"
-    // InternalSpaml.g:1492:1: rule__Action__Group__2__Impl : ( ( rule__Action__ValueAssignment_2 ) ) ;
+    // InternalSpaml.g:1471:1: rule__Action__Group__2__Impl : ( ( rule__Action__ValueAssignment_2 ) ) ;
     public final void rule__Action__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1496:1: ( ( ( rule__Action__ValueAssignment_2 ) ) )
-            // InternalSpaml.g:1497:1: ( ( rule__Action__ValueAssignment_2 ) )
+            // InternalSpaml.g:1475:1: ( ( ( rule__Action__ValueAssignment_2 ) ) )
+            // InternalSpaml.g:1476:1: ( ( rule__Action__ValueAssignment_2 ) )
             {
-            // InternalSpaml.g:1497:1: ( ( rule__Action__ValueAssignment_2 ) )
-            // InternalSpaml.g:1498:2: ( rule__Action__ValueAssignment_2 )
+            // InternalSpaml.g:1476:1: ( ( rule__Action__ValueAssignment_2 ) )
+            // InternalSpaml.g:1477:2: ( rule__Action__ValueAssignment_2 )
             {
              before(grammarAccess.getActionAccess().getValueAssignment_2()); 
-            // InternalSpaml.g:1499:2: ( rule__Action__ValueAssignment_2 )
-            // InternalSpaml.g:1499:3: rule__Action__ValueAssignment_2
+            // InternalSpaml.g:1478:2: ( rule__Action__ValueAssignment_2 )
+            // InternalSpaml.g:1478:3: rule__Action__ValueAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Action__ValueAssignment_2();
@@ -4713,14 +4661,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__Group__0"
-    // InternalSpaml.g:1508:1: rule__Transition__Group__0 : rule__Transition__Group__0__Impl rule__Transition__Group__1 ;
+    // InternalSpaml.g:1487:1: rule__Transition__Group__0 : rule__Transition__Group__0__Impl rule__Transition__Group__1 ;
     public final void rule__Transition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1512:1: ( rule__Transition__Group__0__Impl rule__Transition__Group__1 )
-            // InternalSpaml.g:1513:2: rule__Transition__Group__0__Impl rule__Transition__Group__1
+            // InternalSpaml.g:1491:1: ( rule__Transition__Group__0__Impl rule__Transition__Group__1 )
+            // InternalSpaml.g:1492:2: rule__Transition__Group__0__Impl rule__Transition__Group__1
             {
             pushFollow(FOLLOW_18);
             rule__Transition__Group__0__Impl();
@@ -4751,21 +4699,21 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__Group__0__Impl"
-    // InternalSpaml.g:1520:1: rule__Transition__Group__0__Impl : ( ( rule__Transition__Alternatives_0 ) ) ;
+    // InternalSpaml.g:1499:1: rule__Transition__Group__0__Impl : ( ( rule__Transition__Alternatives_0 ) ) ;
     public final void rule__Transition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1524:1: ( ( ( rule__Transition__Alternatives_0 ) ) )
-            // InternalSpaml.g:1525:1: ( ( rule__Transition__Alternatives_0 ) )
+            // InternalSpaml.g:1503:1: ( ( ( rule__Transition__Alternatives_0 ) ) )
+            // InternalSpaml.g:1504:1: ( ( rule__Transition__Alternatives_0 ) )
             {
-            // InternalSpaml.g:1525:1: ( ( rule__Transition__Alternatives_0 ) )
-            // InternalSpaml.g:1526:2: ( rule__Transition__Alternatives_0 )
+            // InternalSpaml.g:1504:1: ( ( rule__Transition__Alternatives_0 ) )
+            // InternalSpaml.g:1505:2: ( rule__Transition__Alternatives_0 )
             {
              before(grammarAccess.getTransitionAccess().getAlternatives_0()); 
-            // InternalSpaml.g:1527:2: ( rule__Transition__Alternatives_0 )
-            // InternalSpaml.g:1527:3: rule__Transition__Alternatives_0
+            // InternalSpaml.g:1506:2: ( rule__Transition__Alternatives_0 )
+            // InternalSpaml.g:1506:3: rule__Transition__Alternatives_0
             {
             pushFollow(FOLLOW_2);
             rule__Transition__Alternatives_0();
@@ -4798,14 +4746,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__Group__1"
-    // InternalSpaml.g:1535:1: rule__Transition__Group__1 : rule__Transition__Group__1__Impl rule__Transition__Group__2 ;
+    // InternalSpaml.g:1514:1: rule__Transition__Group__1 : rule__Transition__Group__1__Impl rule__Transition__Group__2 ;
     public final void rule__Transition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1539:1: ( rule__Transition__Group__1__Impl rule__Transition__Group__2 )
-            // InternalSpaml.g:1540:2: rule__Transition__Group__1__Impl rule__Transition__Group__2
+            // InternalSpaml.g:1518:1: ( rule__Transition__Group__1__Impl rule__Transition__Group__2 )
+            // InternalSpaml.g:1519:2: rule__Transition__Group__1__Impl rule__Transition__Group__2
             {
             pushFollow(FOLLOW_3);
             rule__Transition__Group__1__Impl();
@@ -4836,21 +4784,21 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__Group__1__Impl"
-    // InternalSpaml.g:1547:1: rule__Transition__Group__1__Impl : ( ( rule__Transition__Alternatives_1 ) ) ;
+    // InternalSpaml.g:1526:1: rule__Transition__Group__1__Impl : ( ( rule__Transition__Alternatives_1 ) ) ;
     public final void rule__Transition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1551:1: ( ( ( rule__Transition__Alternatives_1 ) ) )
-            // InternalSpaml.g:1552:1: ( ( rule__Transition__Alternatives_1 ) )
+            // InternalSpaml.g:1530:1: ( ( ( rule__Transition__Alternatives_1 ) ) )
+            // InternalSpaml.g:1531:1: ( ( rule__Transition__Alternatives_1 ) )
             {
-            // InternalSpaml.g:1552:1: ( ( rule__Transition__Alternatives_1 ) )
-            // InternalSpaml.g:1553:2: ( rule__Transition__Alternatives_1 )
+            // InternalSpaml.g:1531:1: ( ( rule__Transition__Alternatives_1 ) )
+            // InternalSpaml.g:1532:2: ( rule__Transition__Alternatives_1 )
             {
              before(grammarAccess.getTransitionAccess().getAlternatives_1()); 
-            // InternalSpaml.g:1554:2: ( rule__Transition__Alternatives_1 )
-            // InternalSpaml.g:1554:3: rule__Transition__Alternatives_1
+            // InternalSpaml.g:1533:2: ( rule__Transition__Alternatives_1 )
+            // InternalSpaml.g:1533:3: rule__Transition__Alternatives_1
             {
             pushFollow(FOLLOW_2);
             rule__Transition__Alternatives_1();
@@ -4883,14 +4831,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__Group__2"
-    // InternalSpaml.g:1562:1: rule__Transition__Group__2 : rule__Transition__Group__2__Impl ;
+    // InternalSpaml.g:1541:1: rule__Transition__Group__2 : rule__Transition__Group__2__Impl ;
     public final void rule__Transition__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1566:1: ( rule__Transition__Group__2__Impl )
-            // InternalSpaml.g:1567:2: rule__Transition__Group__2__Impl
+            // InternalSpaml.g:1545:1: ( rule__Transition__Group__2__Impl )
+            // InternalSpaml.g:1546:2: rule__Transition__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Transition__Group__2__Impl();
@@ -4916,21 +4864,21 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__Group__2__Impl"
-    // InternalSpaml.g:1573:1: rule__Transition__Group__2__Impl : ( ( rule__Transition__NextAssignment_2 ) ) ;
+    // InternalSpaml.g:1552:1: rule__Transition__Group__2__Impl : ( ( rule__Transition__NextAssignment_2 ) ) ;
     public final void rule__Transition__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1577:1: ( ( ( rule__Transition__NextAssignment_2 ) ) )
-            // InternalSpaml.g:1578:1: ( ( rule__Transition__NextAssignment_2 ) )
+            // InternalSpaml.g:1556:1: ( ( ( rule__Transition__NextAssignment_2 ) ) )
+            // InternalSpaml.g:1557:1: ( ( rule__Transition__NextAssignment_2 ) )
             {
-            // InternalSpaml.g:1578:1: ( ( rule__Transition__NextAssignment_2 ) )
-            // InternalSpaml.g:1579:2: ( rule__Transition__NextAssignment_2 )
+            // InternalSpaml.g:1557:1: ( ( rule__Transition__NextAssignment_2 ) )
+            // InternalSpaml.g:1558:2: ( rule__Transition__NextAssignment_2 )
             {
              before(grammarAccess.getTransitionAccess().getNextAssignment_2()); 
-            // InternalSpaml.g:1580:2: ( rule__Transition__NextAssignment_2 )
-            // InternalSpaml.g:1580:3: rule__Transition__NextAssignment_2
+            // InternalSpaml.g:1559:2: ( rule__Transition__NextAssignment_2 )
+            // InternalSpaml.g:1559:3: rule__Transition__NextAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Transition__NextAssignment_2();
@@ -4963,14 +4911,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__Group_0_0__0"
-    // InternalSpaml.g:1589:1: rule__Transition__Group_0_0__0 : rule__Transition__Group_0_0__0__Impl rule__Transition__Group_0_0__1 ;
+    // InternalSpaml.g:1568:1: rule__Transition__Group_0_0__0 : rule__Transition__Group_0_0__0__Impl rule__Transition__Group_0_0__1 ;
     public final void rule__Transition__Group_0_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1593:1: ( rule__Transition__Group_0_0__0__Impl rule__Transition__Group_0_0__1 )
-            // InternalSpaml.g:1594:2: rule__Transition__Group_0_0__0__Impl rule__Transition__Group_0_0__1
+            // InternalSpaml.g:1572:1: ( rule__Transition__Group_0_0__0__Impl rule__Transition__Group_0_0__1 )
+            // InternalSpaml.g:1573:2: rule__Transition__Group_0_0__0__Impl rule__Transition__Group_0_0__1
             {
             pushFollow(FOLLOW_19);
             rule__Transition__Group_0_0__0__Impl();
@@ -5001,31 +4949,31 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__Group_0_0__0__Impl"
-    // InternalSpaml.g:1601:1: rule__Transition__Group_0_0__0__Impl : ( ( 'when' )? ) ;
+    // InternalSpaml.g:1580:1: rule__Transition__Group_0_0__0__Impl : ( ( 'when' )? ) ;
     public final void rule__Transition__Group_0_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1605:1: ( ( ( 'when' )? ) )
-            // InternalSpaml.g:1606:1: ( ( 'when' )? )
+            // InternalSpaml.g:1584:1: ( ( ( 'when' )? ) )
+            // InternalSpaml.g:1585:1: ( ( 'when' )? )
             {
-            // InternalSpaml.g:1606:1: ( ( 'when' )? )
-            // InternalSpaml.g:1607:2: ( 'when' )?
+            // InternalSpaml.g:1585:1: ( ( 'when' )? )
+            // InternalSpaml.g:1586:2: ( 'when' )?
             {
              before(grammarAccess.getTransitionAccess().getWhenKeyword_0_0_0()); 
-            // InternalSpaml.g:1608:2: ( 'when' )?
-            int alt19=2;
-            int LA19_0 = input.LA(1);
+            // InternalSpaml.g:1587:2: ( 'when' )?
+            int alt18=2;
+            int LA18_0 = input.LA(1);
 
-            if ( (LA19_0==37) ) {
-                alt19=1;
+            if ( (LA18_0==33) ) {
+                alt18=1;
             }
-            switch (alt19) {
+            switch (alt18) {
                 case 1 :
-                    // InternalSpaml.g:1608:3: 'when'
+                    // InternalSpaml.g:1587:3: 'when'
                     {
-                    match(input,37,FOLLOW_2); 
+                    match(input,33,FOLLOW_2); 
 
                     }
                     break;
@@ -5055,22 +5003,17 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__Group_0_0__1"
-    // InternalSpaml.g:1616:1: rule__Transition__Group_0_0__1 : rule__Transition__Group_0_0__1__Impl rule__Transition__Group_0_0__2 ;
+    // InternalSpaml.g:1595:1: rule__Transition__Group_0_0__1 : rule__Transition__Group_0_0__1__Impl ;
     public final void rule__Transition__Group_0_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1620:1: ( rule__Transition__Group_0_0__1__Impl rule__Transition__Group_0_0__2 )
-            // InternalSpaml.g:1621:2: rule__Transition__Group_0_0__1__Impl rule__Transition__Group_0_0__2
+            // InternalSpaml.g:1599:1: ( rule__Transition__Group_0_0__1__Impl )
+            // InternalSpaml.g:1600:2: rule__Transition__Group_0_0__1__Impl
             {
-            pushFollow(FOLLOW_20);
-            rule__Transition__Group_0_0__1__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__Transition__Group_0_0__2();
+            rule__Transition__Group_0_0__1__Impl();
 
             state._fsp--;
 
@@ -5093,31 +5036,31 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__Group_0_0__1__Impl"
-    // InternalSpaml.g:1628:1: rule__Transition__Group_0_0__1__Impl : ( ( rule__Transition__HandlersAssignment_0_0_1 ) ) ;
+    // InternalSpaml.g:1606:1: rule__Transition__Group_0_0__1__Impl : ( ( rule__Transition__Alternatives_0_0_1 ) ) ;
     public final void rule__Transition__Group_0_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1632:1: ( ( ( rule__Transition__HandlersAssignment_0_0_1 ) ) )
-            // InternalSpaml.g:1633:1: ( ( rule__Transition__HandlersAssignment_0_0_1 ) )
+            // InternalSpaml.g:1610:1: ( ( ( rule__Transition__Alternatives_0_0_1 ) ) )
+            // InternalSpaml.g:1611:1: ( ( rule__Transition__Alternatives_0_0_1 ) )
             {
-            // InternalSpaml.g:1633:1: ( ( rule__Transition__HandlersAssignment_0_0_1 ) )
-            // InternalSpaml.g:1634:2: ( rule__Transition__HandlersAssignment_0_0_1 )
+            // InternalSpaml.g:1611:1: ( ( rule__Transition__Alternatives_0_0_1 ) )
+            // InternalSpaml.g:1612:2: ( rule__Transition__Alternatives_0_0_1 )
             {
-             before(grammarAccess.getTransitionAccess().getHandlersAssignment_0_0_1()); 
-            // InternalSpaml.g:1635:2: ( rule__Transition__HandlersAssignment_0_0_1 )
-            // InternalSpaml.g:1635:3: rule__Transition__HandlersAssignment_0_0_1
+             before(grammarAccess.getTransitionAccess().getAlternatives_0_0_1()); 
+            // InternalSpaml.g:1613:2: ( rule__Transition__Alternatives_0_0_1 )
+            // InternalSpaml.g:1613:3: rule__Transition__Alternatives_0_0_1
             {
             pushFollow(FOLLOW_2);
-            rule__Transition__HandlersAssignment_0_0_1();
+            rule__Transition__Alternatives_0_0_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getTransitionAccess().getHandlersAssignment_0_0_1()); 
+             after(grammarAccess.getTransitionAccess().getAlternatives_0_0_1()); 
 
             }
 
@@ -5139,23 +5082,23 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Transition__Group_0_0__1__Impl"
 
 
-    // $ANTLR start "rule__Transition__Group_0_0__2"
-    // InternalSpaml.g:1643:1: rule__Transition__Group_0_0__2 : rule__Transition__Group_0_0__2__Impl rule__Transition__Group_0_0__3 ;
-    public final void rule__Transition__Group_0_0__2() throws RecognitionException {
+    // $ANTLR start "rule__Transition__Group_0_0_1_0__0"
+    // InternalSpaml.g:1622:1: rule__Transition__Group_0_0_1_0__0 : rule__Transition__Group_0_0_1_0__0__Impl rule__Transition__Group_0_0_1_0__1 ;
+    public final void rule__Transition__Group_0_0_1_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1647:1: ( rule__Transition__Group_0_0__2__Impl rule__Transition__Group_0_0__3 )
-            // InternalSpaml.g:1648:2: rule__Transition__Group_0_0__2__Impl rule__Transition__Group_0_0__3
+            // InternalSpaml.g:1626:1: ( rule__Transition__Group_0_0_1_0__0__Impl rule__Transition__Group_0_0_1_0__1 )
+            // InternalSpaml.g:1627:2: rule__Transition__Group_0_0_1_0__0__Impl rule__Transition__Group_0_0_1_0__1
             {
             pushFollow(FOLLOW_20);
-            rule__Transition__Group_0_0__2__Impl();
+            rule__Transition__Group_0_0_1_0__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Transition__Group_0_0__3();
+            rule__Transition__Group_0_0_1_0__1();
 
             state._fsp--;
 
@@ -5174,40 +5117,773 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Transition__Group_0_0__2"
+    // $ANTLR end "rule__Transition__Group_0_0_1_0__0"
 
 
-    // $ANTLR start "rule__Transition__Group_0_0__2__Impl"
-    // InternalSpaml.g:1655:1: rule__Transition__Group_0_0__2__Impl : ( ( rule__Transition__Group_0_0_2__0 )* ) ;
-    public final void rule__Transition__Group_0_0__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Transition__Group_0_0_1_0__0__Impl"
+    // InternalSpaml.g:1634:1: rule__Transition__Group_0_0_1_0__0__Impl : ( ( rule__Transition__HandlersAssignment_0_0_1_0_0 ) ) ;
+    public final void rule__Transition__Group_0_0_1_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1659:1: ( ( ( rule__Transition__Group_0_0_2__0 )* ) )
-            // InternalSpaml.g:1660:1: ( ( rule__Transition__Group_0_0_2__0 )* )
+            // InternalSpaml.g:1638:1: ( ( ( rule__Transition__HandlersAssignment_0_0_1_0_0 ) ) )
+            // InternalSpaml.g:1639:1: ( ( rule__Transition__HandlersAssignment_0_0_1_0_0 ) )
             {
-            // InternalSpaml.g:1660:1: ( ( rule__Transition__Group_0_0_2__0 )* )
-            // InternalSpaml.g:1661:2: ( rule__Transition__Group_0_0_2__0 )*
+            // InternalSpaml.g:1639:1: ( ( rule__Transition__HandlersAssignment_0_0_1_0_0 ) )
+            // InternalSpaml.g:1640:2: ( rule__Transition__HandlersAssignment_0_0_1_0_0 )
             {
-             before(grammarAccess.getTransitionAccess().getGroup_0_0_2()); 
-            // InternalSpaml.g:1662:2: ( rule__Transition__Group_0_0_2__0 )*
+             before(grammarAccess.getTransitionAccess().getHandlersAssignment_0_0_1_0_0()); 
+            // InternalSpaml.g:1641:2: ( rule__Transition__HandlersAssignment_0_0_1_0_0 )
+            // InternalSpaml.g:1641:3: rule__Transition__HandlersAssignment_0_0_1_0_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Transition__HandlersAssignment_0_0_1_0_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getTransitionAccess().getHandlersAssignment_0_0_1_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Transition__Group_0_0_1_0__0__Impl"
+
+
+    // $ANTLR start "rule__Transition__Group_0_0_1_0__1"
+    // InternalSpaml.g:1649:1: rule__Transition__Group_0_0_1_0__1 : rule__Transition__Group_0_0_1_0__1__Impl ;
+    public final void rule__Transition__Group_0_0_1_0__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSpaml.g:1653:1: ( rule__Transition__Group_0_0_1_0__1__Impl )
+            // InternalSpaml.g:1654:2: rule__Transition__Group_0_0_1_0__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Transition__Group_0_0_1_0__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Transition__Group_0_0_1_0__1"
+
+
+    // $ANTLR start "rule__Transition__Group_0_0_1_0__1__Impl"
+    // InternalSpaml.g:1660:1: rule__Transition__Group_0_0_1_0__1__Impl : ( ( rule__Transition__Group_0_0_1_0_1__0 )* ) ;
+    public final void rule__Transition__Group_0_0_1_0__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSpaml.g:1664:1: ( ( ( rule__Transition__Group_0_0_1_0_1__0 )* ) )
+            // InternalSpaml.g:1665:1: ( ( rule__Transition__Group_0_0_1_0_1__0 )* )
+            {
+            // InternalSpaml.g:1665:1: ( ( rule__Transition__Group_0_0_1_0_1__0 )* )
+            // InternalSpaml.g:1666:2: ( rule__Transition__Group_0_0_1_0_1__0 )*
+            {
+             before(grammarAccess.getTransitionAccess().getGroup_0_0_1_0_1()); 
+            // InternalSpaml.g:1667:2: ( rule__Transition__Group_0_0_1_0_1__0 )*
+            loop19:
+            do {
+                int alt19=2;
+                int LA19_0 = input.LA(1);
+
+                if ( (LA19_0==34) ) {
+                    alt19=1;
+                }
+
+
+                switch (alt19) {
+            	case 1 :
+            	    // InternalSpaml.g:1667:3: rule__Transition__Group_0_0_1_0_1__0
+            	    {
+            	    pushFollow(FOLLOW_21);
+            	    rule__Transition__Group_0_0_1_0_1__0();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop19;
+                }
+            } while (true);
+
+             after(grammarAccess.getTransitionAccess().getGroup_0_0_1_0_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Transition__Group_0_0_1_0__1__Impl"
+
+
+    // $ANTLR start "rule__Transition__Group_0_0_1_0_1__0"
+    // InternalSpaml.g:1676:1: rule__Transition__Group_0_0_1_0_1__0 : rule__Transition__Group_0_0_1_0_1__0__Impl rule__Transition__Group_0_0_1_0_1__1 ;
+    public final void rule__Transition__Group_0_0_1_0_1__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSpaml.g:1680:1: ( rule__Transition__Group_0_0_1_0_1__0__Impl rule__Transition__Group_0_0_1_0_1__1 )
+            // InternalSpaml.g:1681:2: rule__Transition__Group_0_0_1_0_1__0__Impl rule__Transition__Group_0_0_1_0_1__1
+            {
+            pushFollow(FOLLOW_22);
+            rule__Transition__Group_0_0_1_0_1__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Transition__Group_0_0_1_0_1__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Transition__Group_0_0_1_0_1__0"
+
+
+    // $ANTLR start "rule__Transition__Group_0_0_1_0_1__0__Impl"
+    // InternalSpaml.g:1688:1: rule__Transition__Group_0_0_1_0_1__0__Impl : ( ',' ) ;
+    public final void rule__Transition__Group_0_0_1_0_1__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSpaml.g:1692:1: ( ( ',' ) )
+            // InternalSpaml.g:1693:1: ( ',' )
+            {
+            // InternalSpaml.g:1693:1: ( ',' )
+            // InternalSpaml.g:1694:2: ','
+            {
+             before(grammarAccess.getTransitionAccess().getCommaKeyword_0_0_1_0_1_0()); 
+            match(input,34,FOLLOW_2); 
+             after(grammarAccess.getTransitionAccess().getCommaKeyword_0_0_1_0_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Transition__Group_0_0_1_0_1__0__Impl"
+
+
+    // $ANTLR start "rule__Transition__Group_0_0_1_0_1__1"
+    // InternalSpaml.g:1703:1: rule__Transition__Group_0_0_1_0_1__1 : rule__Transition__Group_0_0_1_0_1__1__Impl ;
+    public final void rule__Transition__Group_0_0_1_0_1__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSpaml.g:1707:1: ( rule__Transition__Group_0_0_1_0_1__1__Impl )
+            // InternalSpaml.g:1708:2: rule__Transition__Group_0_0_1_0_1__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Transition__Group_0_0_1_0_1__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Transition__Group_0_0_1_0_1__1"
+
+
+    // $ANTLR start "rule__Transition__Group_0_0_1_0_1__1__Impl"
+    // InternalSpaml.g:1714:1: rule__Transition__Group_0_0_1_0_1__1__Impl : ( ( rule__Transition__HandlersAssignment_0_0_1_0_1_1 ) ) ;
+    public final void rule__Transition__Group_0_0_1_0_1__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSpaml.g:1718:1: ( ( ( rule__Transition__HandlersAssignment_0_0_1_0_1_1 ) ) )
+            // InternalSpaml.g:1719:1: ( ( rule__Transition__HandlersAssignment_0_0_1_0_1_1 ) )
+            {
+            // InternalSpaml.g:1719:1: ( ( rule__Transition__HandlersAssignment_0_0_1_0_1_1 ) )
+            // InternalSpaml.g:1720:2: ( rule__Transition__HandlersAssignment_0_0_1_0_1_1 )
+            {
+             before(grammarAccess.getTransitionAccess().getHandlersAssignment_0_0_1_0_1_1()); 
+            // InternalSpaml.g:1721:2: ( rule__Transition__HandlersAssignment_0_0_1_0_1_1 )
+            // InternalSpaml.g:1721:3: rule__Transition__HandlersAssignment_0_0_1_0_1_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__Transition__HandlersAssignment_0_0_1_0_1_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getTransitionAccess().getHandlersAssignment_0_0_1_0_1_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Transition__Group_0_0_1_0_1__1__Impl"
+
+
+    // $ANTLR start "rule__Transition__Group_0_0_1_1__0"
+    // InternalSpaml.g:1730:1: rule__Transition__Group_0_0_1_1__0 : rule__Transition__Group_0_0_1_1__0__Impl rule__Transition__Group_0_0_1_1__1 ;
+    public final void rule__Transition__Group_0_0_1_1__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSpaml.g:1734:1: ( rule__Transition__Group_0_0_1_1__0__Impl rule__Transition__Group_0_0_1_1__1 )
+            // InternalSpaml.g:1735:2: rule__Transition__Group_0_0_1_1__0__Impl rule__Transition__Group_0_0_1_1__1
+            {
+            pushFollow(FOLLOW_23);
+            rule__Transition__Group_0_0_1_1__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Transition__Group_0_0_1_1__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Transition__Group_0_0_1_1__0"
+
+
+    // $ANTLR start "rule__Transition__Group_0_0_1_1__0__Impl"
+    // InternalSpaml.g:1742:1: rule__Transition__Group_0_0_1_1__0__Impl : ( ( rule__Transition__OperationAssignment_0_0_1_1_0 ) ) ;
+    public final void rule__Transition__Group_0_0_1_1__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSpaml.g:1746:1: ( ( ( rule__Transition__OperationAssignment_0_0_1_1_0 ) ) )
+            // InternalSpaml.g:1747:1: ( ( rule__Transition__OperationAssignment_0_0_1_1_0 ) )
+            {
+            // InternalSpaml.g:1747:1: ( ( rule__Transition__OperationAssignment_0_0_1_1_0 ) )
+            // InternalSpaml.g:1748:2: ( rule__Transition__OperationAssignment_0_0_1_1_0 )
+            {
+             before(grammarAccess.getTransitionAccess().getOperationAssignment_0_0_1_1_0()); 
+            // InternalSpaml.g:1749:2: ( rule__Transition__OperationAssignment_0_0_1_1_0 )
+            // InternalSpaml.g:1749:3: rule__Transition__OperationAssignment_0_0_1_1_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Transition__OperationAssignment_0_0_1_1_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getTransitionAccess().getOperationAssignment_0_0_1_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Transition__Group_0_0_1_1__0__Impl"
+
+
+    // $ANTLR start "rule__Transition__Group_0_0_1_1__1"
+    // InternalSpaml.g:1757:1: rule__Transition__Group_0_0_1_1__1 : rule__Transition__Group_0_0_1_1__1__Impl rule__Transition__Group_0_0_1_1__2 ;
+    public final void rule__Transition__Group_0_0_1_1__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSpaml.g:1761:1: ( rule__Transition__Group_0_0_1_1__1__Impl rule__Transition__Group_0_0_1_1__2 )
+            // InternalSpaml.g:1762:2: rule__Transition__Group_0_0_1_1__1__Impl rule__Transition__Group_0_0_1_1__2
+            {
+            pushFollow(FOLLOW_22);
+            rule__Transition__Group_0_0_1_1__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Transition__Group_0_0_1_1__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Transition__Group_0_0_1_1__1"
+
+
+    // $ANTLR start "rule__Transition__Group_0_0_1_1__1__Impl"
+    // InternalSpaml.g:1769:1: rule__Transition__Group_0_0_1_1__1__Impl : ( '(' ) ;
+    public final void rule__Transition__Group_0_0_1_1__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSpaml.g:1773:1: ( ( '(' ) )
+            // InternalSpaml.g:1774:1: ( '(' )
+            {
+            // InternalSpaml.g:1774:1: ( '(' )
+            // InternalSpaml.g:1775:2: '('
+            {
+             before(grammarAccess.getTransitionAccess().getLeftParenthesisKeyword_0_0_1_1_1()); 
+            match(input,35,FOLLOW_2); 
+             after(grammarAccess.getTransitionAccess().getLeftParenthesisKeyword_0_0_1_1_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Transition__Group_0_0_1_1__1__Impl"
+
+
+    // $ANTLR start "rule__Transition__Group_0_0_1_1__2"
+    // InternalSpaml.g:1784:1: rule__Transition__Group_0_0_1_1__2 : rule__Transition__Group_0_0_1_1__2__Impl rule__Transition__Group_0_0_1_1__3 ;
+    public final void rule__Transition__Group_0_0_1_1__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSpaml.g:1788:1: ( rule__Transition__Group_0_0_1_1__2__Impl rule__Transition__Group_0_0_1_1__3 )
+            // InternalSpaml.g:1789:2: rule__Transition__Group_0_0_1_1__2__Impl rule__Transition__Group_0_0_1_1__3
+            {
+            pushFollow(FOLLOW_24);
+            rule__Transition__Group_0_0_1_1__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Transition__Group_0_0_1_1__3();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Transition__Group_0_0_1_1__2"
+
+
+    // $ANTLR start "rule__Transition__Group_0_0_1_1__2__Impl"
+    // InternalSpaml.g:1796:1: rule__Transition__Group_0_0_1_1__2__Impl : ( ( rule__Transition__Group_0_0_1_1_2__0 ) ) ;
+    public final void rule__Transition__Group_0_0_1_1__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSpaml.g:1800:1: ( ( ( rule__Transition__Group_0_0_1_1_2__0 ) ) )
+            // InternalSpaml.g:1801:1: ( ( rule__Transition__Group_0_0_1_1_2__0 ) )
+            {
+            // InternalSpaml.g:1801:1: ( ( rule__Transition__Group_0_0_1_1_2__0 ) )
+            // InternalSpaml.g:1802:2: ( rule__Transition__Group_0_0_1_1_2__0 )
+            {
+             before(grammarAccess.getTransitionAccess().getGroup_0_0_1_1_2()); 
+            // InternalSpaml.g:1803:2: ( rule__Transition__Group_0_0_1_1_2__0 )
+            // InternalSpaml.g:1803:3: rule__Transition__Group_0_0_1_1_2__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Transition__Group_0_0_1_1_2__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getTransitionAccess().getGroup_0_0_1_1_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Transition__Group_0_0_1_1__2__Impl"
+
+
+    // $ANTLR start "rule__Transition__Group_0_0_1_1__3"
+    // InternalSpaml.g:1811:1: rule__Transition__Group_0_0_1_1__3 : rule__Transition__Group_0_0_1_1__3__Impl ;
+    public final void rule__Transition__Group_0_0_1_1__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSpaml.g:1815:1: ( rule__Transition__Group_0_0_1_1__3__Impl )
+            // InternalSpaml.g:1816:2: rule__Transition__Group_0_0_1_1__3__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Transition__Group_0_0_1_1__3__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Transition__Group_0_0_1_1__3"
+
+
+    // $ANTLR start "rule__Transition__Group_0_0_1_1__3__Impl"
+    // InternalSpaml.g:1822:1: rule__Transition__Group_0_0_1_1__3__Impl : ( ')' ) ;
+    public final void rule__Transition__Group_0_0_1_1__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSpaml.g:1826:1: ( ( ')' ) )
+            // InternalSpaml.g:1827:1: ( ')' )
+            {
+            // InternalSpaml.g:1827:1: ( ')' )
+            // InternalSpaml.g:1828:2: ')'
+            {
+             before(grammarAccess.getTransitionAccess().getRightParenthesisKeyword_0_0_1_1_3()); 
+            match(input,36,FOLLOW_2); 
+             after(grammarAccess.getTransitionAccess().getRightParenthesisKeyword_0_0_1_1_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Transition__Group_0_0_1_1__3__Impl"
+
+
+    // $ANTLR start "rule__Transition__Group_0_0_1_1_2__0"
+    // InternalSpaml.g:1838:1: rule__Transition__Group_0_0_1_1_2__0 : rule__Transition__Group_0_0_1_1_2__0__Impl rule__Transition__Group_0_0_1_1_2__1 ;
+    public final void rule__Transition__Group_0_0_1_1_2__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSpaml.g:1842:1: ( rule__Transition__Group_0_0_1_1_2__0__Impl rule__Transition__Group_0_0_1_1_2__1 )
+            // InternalSpaml.g:1843:2: rule__Transition__Group_0_0_1_1_2__0__Impl rule__Transition__Group_0_0_1_1_2__1
+            {
+            pushFollow(FOLLOW_20);
+            rule__Transition__Group_0_0_1_1_2__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Transition__Group_0_0_1_1_2__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Transition__Group_0_0_1_1_2__0"
+
+
+    // $ANTLR start "rule__Transition__Group_0_0_1_1_2__0__Impl"
+    // InternalSpaml.g:1850:1: rule__Transition__Group_0_0_1_1_2__0__Impl : ( ( rule__Transition__HandlersAssignment_0_0_1_1_2_0 ) ) ;
+    public final void rule__Transition__Group_0_0_1_1_2__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSpaml.g:1854:1: ( ( ( rule__Transition__HandlersAssignment_0_0_1_1_2_0 ) ) )
+            // InternalSpaml.g:1855:1: ( ( rule__Transition__HandlersAssignment_0_0_1_1_2_0 ) )
+            {
+            // InternalSpaml.g:1855:1: ( ( rule__Transition__HandlersAssignment_0_0_1_1_2_0 ) )
+            // InternalSpaml.g:1856:2: ( rule__Transition__HandlersAssignment_0_0_1_1_2_0 )
+            {
+             before(grammarAccess.getTransitionAccess().getHandlersAssignment_0_0_1_1_2_0()); 
+            // InternalSpaml.g:1857:2: ( rule__Transition__HandlersAssignment_0_0_1_1_2_0 )
+            // InternalSpaml.g:1857:3: rule__Transition__HandlersAssignment_0_0_1_1_2_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Transition__HandlersAssignment_0_0_1_1_2_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getTransitionAccess().getHandlersAssignment_0_0_1_1_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Transition__Group_0_0_1_1_2__0__Impl"
+
+
+    // $ANTLR start "rule__Transition__Group_0_0_1_1_2__1"
+    // InternalSpaml.g:1865:1: rule__Transition__Group_0_0_1_1_2__1 : rule__Transition__Group_0_0_1_1_2__1__Impl ;
+    public final void rule__Transition__Group_0_0_1_1_2__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSpaml.g:1869:1: ( rule__Transition__Group_0_0_1_1_2__1__Impl )
+            // InternalSpaml.g:1870:2: rule__Transition__Group_0_0_1_1_2__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Transition__Group_0_0_1_1_2__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Transition__Group_0_0_1_1_2__1"
+
+
+    // $ANTLR start "rule__Transition__Group_0_0_1_1_2__1__Impl"
+    // InternalSpaml.g:1876:1: rule__Transition__Group_0_0_1_1_2__1__Impl : ( ( rule__Transition__Group_0_0_1_1_2_1__0 )* ) ;
+    public final void rule__Transition__Group_0_0_1_1_2__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSpaml.g:1880:1: ( ( ( rule__Transition__Group_0_0_1_1_2_1__0 )* ) )
+            // InternalSpaml.g:1881:1: ( ( rule__Transition__Group_0_0_1_1_2_1__0 )* )
+            {
+            // InternalSpaml.g:1881:1: ( ( rule__Transition__Group_0_0_1_1_2_1__0 )* )
+            // InternalSpaml.g:1882:2: ( rule__Transition__Group_0_0_1_1_2_1__0 )*
+            {
+             before(grammarAccess.getTransitionAccess().getGroup_0_0_1_1_2_1()); 
+            // InternalSpaml.g:1883:2: ( rule__Transition__Group_0_0_1_1_2_1__0 )*
             loop20:
             do {
                 int alt20=2;
                 int LA20_0 = input.LA(1);
 
-                if ( ((LA20_0>=17 && LA20_0<=18)) ) {
+                if ( (LA20_0==34) ) {
                     alt20=1;
                 }
 
 
                 switch (alt20) {
             	case 1 :
-            	    // InternalSpaml.g:1662:3: rule__Transition__Group_0_0_2__0
+            	    // InternalSpaml.g:1883:3: rule__Transition__Group_0_0_1_1_2_1__0
             	    {
             	    pushFollow(FOLLOW_21);
-            	    rule__Transition__Group_0_0_2__0();
+            	    rule__Transition__Group_0_0_1_1_2_1__0();
 
             	    state._fsp--;
 
@@ -5220,7 +5896,7 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
                 }
             } while (true);
 
-             after(grammarAccess.getTransitionAccess().getGroup_0_0_2()); 
+             after(grammarAccess.getTransitionAccess().getGroup_0_0_1_1_2_1()); 
 
             }
 
@@ -5239,282 +5915,26 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Transition__Group_0_0__2__Impl"
+    // $ANTLR end "rule__Transition__Group_0_0_1_1_2__1__Impl"
 
 
-    // $ANTLR start "rule__Transition__Group_0_0__3"
-    // InternalSpaml.g:1670:1: rule__Transition__Group_0_0__3 : rule__Transition__Group_0_0__3__Impl ;
-    public final void rule__Transition__Group_0_0__3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSpaml.g:1674:1: ( rule__Transition__Group_0_0__3__Impl )
-            // InternalSpaml.g:1675:2: rule__Transition__Group_0_0__3__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Transition__Group_0_0__3__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Transition__Group_0_0__3"
-
-
-    // $ANTLR start "rule__Transition__Group_0_0__3__Impl"
-    // InternalSpaml.g:1681:1: rule__Transition__Group_0_0__3__Impl : ( ( rule__Transition__Group_0_0_3__0 )? ) ;
-    public final void rule__Transition__Group_0_0__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Transition__Group_0_0_1_1_2_1__0"
+    // InternalSpaml.g:1892:1: rule__Transition__Group_0_0_1_1_2_1__0 : rule__Transition__Group_0_0_1_1_2_1__0__Impl rule__Transition__Group_0_0_1_1_2_1__1 ;
+    public final void rule__Transition__Group_0_0_1_1_2_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1685:1: ( ( ( rule__Transition__Group_0_0_3__0 )? ) )
-            // InternalSpaml.g:1686:1: ( ( rule__Transition__Group_0_0_3__0 )? )
-            {
-            // InternalSpaml.g:1686:1: ( ( rule__Transition__Group_0_0_3__0 )? )
-            // InternalSpaml.g:1687:2: ( rule__Transition__Group_0_0_3__0 )?
-            {
-             before(grammarAccess.getTransitionAccess().getGroup_0_0_3()); 
-            // InternalSpaml.g:1688:2: ( rule__Transition__Group_0_0_3__0 )?
-            int alt21=2;
-            int LA21_0 = input.LA(1);
-
-            if ( ((LA21_0>=19 && LA21_0<=20)) ) {
-                alt21=1;
-            }
-            switch (alt21) {
-                case 1 :
-                    // InternalSpaml.g:1688:3: rule__Transition__Group_0_0_3__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Transition__Group_0_0_3__0();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getTransitionAccess().getGroup_0_0_3()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Transition__Group_0_0__3__Impl"
-
-
-    // $ANTLR start "rule__Transition__Group_0_0_2__0"
-    // InternalSpaml.g:1697:1: rule__Transition__Group_0_0_2__0 : rule__Transition__Group_0_0_2__0__Impl rule__Transition__Group_0_0_2__1 ;
-    public final void rule__Transition__Group_0_0_2__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSpaml.g:1701:1: ( rule__Transition__Group_0_0_2__0__Impl rule__Transition__Group_0_0_2__1 )
-            // InternalSpaml.g:1702:2: rule__Transition__Group_0_0_2__0__Impl rule__Transition__Group_0_0_2__1
-            {
-            pushFollow(FOLLOW_19);
-            rule__Transition__Group_0_0_2__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Transition__Group_0_0_2__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Transition__Group_0_0_2__0"
-
-
-    // $ANTLR start "rule__Transition__Group_0_0_2__0__Impl"
-    // InternalSpaml.g:1709:1: rule__Transition__Group_0_0_2__0__Impl : ( ( rule__Transition__Alternatives_0_0_2_0 ) ) ;
-    public final void rule__Transition__Group_0_0_2__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSpaml.g:1713:1: ( ( ( rule__Transition__Alternatives_0_0_2_0 ) ) )
-            // InternalSpaml.g:1714:1: ( ( rule__Transition__Alternatives_0_0_2_0 ) )
-            {
-            // InternalSpaml.g:1714:1: ( ( rule__Transition__Alternatives_0_0_2_0 ) )
-            // InternalSpaml.g:1715:2: ( rule__Transition__Alternatives_0_0_2_0 )
-            {
-             before(grammarAccess.getTransitionAccess().getAlternatives_0_0_2_0()); 
-            // InternalSpaml.g:1716:2: ( rule__Transition__Alternatives_0_0_2_0 )
-            // InternalSpaml.g:1716:3: rule__Transition__Alternatives_0_0_2_0
-            {
-            pushFollow(FOLLOW_2);
-            rule__Transition__Alternatives_0_0_2_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getTransitionAccess().getAlternatives_0_0_2_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Transition__Group_0_0_2__0__Impl"
-
-
-    // $ANTLR start "rule__Transition__Group_0_0_2__1"
-    // InternalSpaml.g:1724:1: rule__Transition__Group_0_0_2__1 : rule__Transition__Group_0_0_2__1__Impl ;
-    public final void rule__Transition__Group_0_0_2__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSpaml.g:1728:1: ( rule__Transition__Group_0_0_2__1__Impl )
-            // InternalSpaml.g:1729:2: rule__Transition__Group_0_0_2__1__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Transition__Group_0_0_2__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Transition__Group_0_0_2__1"
-
-
-    // $ANTLR start "rule__Transition__Group_0_0_2__1__Impl"
-    // InternalSpaml.g:1735:1: rule__Transition__Group_0_0_2__1__Impl : ( ( rule__Transition__HandlersAssignment_0_0_2_1 ) ) ;
-    public final void rule__Transition__Group_0_0_2__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSpaml.g:1739:1: ( ( ( rule__Transition__HandlersAssignment_0_0_2_1 ) ) )
-            // InternalSpaml.g:1740:1: ( ( rule__Transition__HandlersAssignment_0_0_2_1 ) )
-            {
-            // InternalSpaml.g:1740:1: ( ( rule__Transition__HandlersAssignment_0_0_2_1 ) )
-            // InternalSpaml.g:1741:2: ( rule__Transition__HandlersAssignment_0_0_2_1 )
-            {
-             before(grammarAccess.getTransitionAccess().getHandlersAssignment_0_0_2_1()); 
-            // InternalSpaml.g:1742:2: ( rule__Transition__HandlersAssignment_0_0_2_1 )
-            // InternalSpaml.g:1742:3: rule__Transition__HandlersAssignment_0_0_2_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__Transition__HandlersAssignment_0_0_2_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getTransitionAccess().getHandlersAssignment_0_0_2_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Transition__Group_0_0_2__1__Impl"
-
-
-    // $ANTLR start "rule__Transition__Group_0_0_3__0"
-    // InternalSpaml.g:1751:1: rule__Transition__Group_0_0_3__0 : rule__Transition__Group_0_0_3__0__Impl rule__Transition__Group_0_0_3__1 ;
-    public final void rule__Transition__Group_0_0_3__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSpaml.g:1755:1: ( rule__Transition__Group_0_0_3__0__Impl rule__Transition__Group_0_0_3__1 )
-            // InternalSpaml.g:1756:2: rule__Transition__Group_0_0_3__0__Impl rule__Transition__Group_0_0_3__1
+            // InternalSpaml.g:1896:1: ( rule__Transition__Group_0_0_1_1_2_1__0__Impl rule__Transition__Group_0_0_1_1_2_1__1 )
+            // InternalSpaml.g:1897:2: rule__Transition__Group_0_0_1_1_2_1__0__Impl rule__Transition__Group_0_0_1_1_2_1__1
             {
             pushFollow(FOLLOW_22);
-            rule__Transition__Group_0_0_3__0__Impl();
+            rule__Transition__Group_0_0_1_1_2_1__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Transition__Group_0_0_3__1();
+            rule__Transition__Group_0_0_1_1_2_1__1();
 
             state._fsp--;
 
@@ -5533,35 +5953,25 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Transition__Group_0_0_3__0"
+    // $ANTLR end "rule__Transition__Group_0_0_1_1_2_1__0"
 
 
-    // $ANTLR start "rule__Transition__Group_0_0_3__0__Impl"
-    // InternalSpaml.g:1763:1: rule__Transition__Group_0_0_3__0__Impl : ( ( rule__Transition__Alternatives_0_0_3_0 ) ) ;
-    public final void rule__Transition__Group_0_0_3__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Transition__Group_0_0_1_1_2_1__0__Impl"
+    // InternalSpaml.g:1904:1: rule__Transition__Group_0_0_1_1_2_1__0__Impl : ( ',' ) ;
+    public final void rule__Transition__Group_0_0_1_1_2_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1767:1: ( ( ( rule__Transition__Alternatives_0_0_3_0 ) ) )
-            // InternalSpaml.g:1768:1: ( ( rule__Transition__Alternatives_0_0_3_0 ) )
+            // InternalSpaml.g:1908:1: ( ( ',' ) )
+            // InternalSpaml.g:1909:1: ( ',' )
             {
-            // InternalSpaml.g:1768:1: ( ( rule__Transition__Alternatives_0_0_3_0 ) )
-            // InternalSpaml.g:1769:2: ( rule__Transition__Alternatives_0_0_3_0 )
+            // InternalSpaml.g:1909:1: ( ',' )
+            // InternalSpaml.g:1910:2: ','
             {
-             before(grammarAccess.getTransitionAccess().getAlternatives_0_0_3_0()); 
-            // InternalSpaml.g:1770:2: ( rule__Transition__Alternatives_0_0_3_0 )
-            // InternalSpaml.g:1770:3: rule__Transition__Alternatives_0_0_3_0
-            {
-            pushFollow(FOLLOW_2);
-            rule__Transition__Alternatives_0_0_3_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getTransitionAccess().getAlternatives_0_0_3_0()); 
+             before(grammarAccess.getTransitionAccess().getCommaKeyword_0_0_1_1_2_1_0()); 
+            match(input,34,FOLLOW_2); 
+             after(grammarAccess.getTransitionAccess().getCommaKeyword_0_0_1_1_2_1_0()); 
 
             }
 
@@ -5580,21 +5990,21 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Transition__Group_0_0_3__0__Impl"
+    // $ANTLR end "rule__Transition__Group_0_0_1_1_2_1__0__Impl"
 
 
-    // $ANTLR start "rule__Transition__Group_0_0_3__1"
-    // InternalSpaml.g:1778:1: rule__Transition__Group_0_0_3__1 : rule__Transition__Group_0_0_3__1__Impl ;
-    public final void rule__Transition__Group_0_0_3__1() throws RecognitionException {
+    // $ANTLR start "rule__Transition__Group_0_0_1_1_2_1__1"
+    // InternalSpaml.g:1919:1: rule__Transition__Group_0_0_1_1_2_1__1 : rule__Transition__Group_0_0_1_1_2_1__1__Impl ;
+    public final void rule__Transition__Group_0_0_1_1_2_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1782:1: ( rule__Transition__Group_0_0_3__1__Impl )
-            // InternalSpaml.g:1783:2: rule__Transition__Group_0_0_3__1__Impl
+            // InternalSpaml.g:1923:1: ( rule__Transition__Group_0_0_1_1_2_1__1__Impl )
+            // InternalSpaml.g:1924:2: rule__Transition__Group_0_0_1_1_2_1__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Transition__Group_0_0_3__1__Impl();
+            rule__Transition__Group_0_0_1_1_2_1__1__Impl();
 
             state._fsp--;
 
@@ -5613,35 +6023,35 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Transition__Group_0_0_3__1"
+    // $ANTLR end "rule__Transition__Group_0_0_1_1_2_1__1"
 
 
-    // $ANTLR start "rule__Transition__Group_0_0_3__1__Impl"
-    // InternalSpaml.g:1789:1: rule__Transition__Group_0_0_3__1__Impl : ( ( rule__Transition__OperationAssignment_0_0_3_1 ) ) ;
-    public final void rule__Transition__Group_0_0_3__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Transition__Group_0_0_1_1_2_1__1__Impl"
+    // InternalSpaml.g:1930:1: rule__Transition__Group_0_0_1_1_2_1__1__Impl : ( ( rule__Transition__HandlersAssignment_0_0_1_1_2_1_1 ) ) ;
+    public final void rule__Transition__Group_0_0_1_1_2_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1793:1: ( ( ( rule__Transition__OperationAssignment_0_0_3_1 ) ) )
-            // InternalSpaml.g:1794:1: ( ( rule__Transition__OperationAssignment_0_0_3_1 ) )
+            // InternalSpaml.g:1934:1: ( ( ( rule__Transition__HandlersAssignment_0_0_1_1_2_1_1 ) ) )
+            // InternalSpaml.g:1935:1: ( ( rule__Transition__HandlersAssignment_0_0_1_1_2_1_1 ) )
             {
-            // InternalSpaml.g:1794:1: ( ( rule__Transition__OperationAssignment_0_0_3_1 ) )
-            // InternalSpaml.g:1795:2: ( rule__Transition__OperationAssignment_0_0_3_1 )
+            // InternalSpaml.g:1935:1: ( ( rule__Transition__HandlersAssignment_0_0_1_1_2_1_1 ) )
+            // InternalSpaml.g:1936:2: ( rule__Transition__HandlersAssignment_0_0_1_1_2_1_1 )
             {
-             before(grammarAccess.getTransitionAccess().getOperationAssignment_0_0_3_1()); 
-            // InternalSpaml.g:1796:2: ( rule__Transition__OperationAssignment_0_0_3_1 )
-            // InternalSpaml.g:1796:3: rule__Transition__OperationAssignment_0_0_3_1
+             before(grammarAccess.getTransitionAccess().getHandlersAssignment_0_0_1_1_2_1_1()); 
+            // InternalSpaml.g:1937:2: ( rule__Transition__HandlersAssignment_0_0_1_1_2_1_1 )
+            // InternalSpaml.g:1937:3: rule__Transition__HandlersAssignment_0_0_1_1_2_1_1
             {
             pushFollow(FOLLOW_2);
-            rule__Transition__OperationAssignment_0_0_3_1();
+            rule__Transition__HandlersAssignment_0_0_1_1_2_1_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getTransitionAccess().getOperationAssignment_0_0_3_1()); 
+             after(grammarAccess.getTransitionAccess().getHandlersAssignment_0_0_1_1_2_1_1()); 
 
             }
 
@@ -5660,20 +6070,20 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Transition__Group_0_0_3__1__Impl"
+    // $ANTLR end "rule__Transition__Group_0_0_1_1_2_1__1__Impl"
 
 
     // $ANTLR start "rule__TransitionHandler__Group__0"
-    // InternalSpaml.g:1805:1: rule__TransitionHandler__Group__0 : rule__TransitionHandler__Group__0__Impl rule__TransitionHandler__Group__1 ;
+    // InternalSpaml.g:1946:1: rule__TransitionHandler__Group__0 : rule__TransitionHandler__Group__0__Impl rule__TransitionHandler__Group__1 ;
     public final void rule__TransitionHandler__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1809:1: ( rule__TransitionHandler__Group__0__Impl rule__TransitionHandler__Group__1 )
-            // InternalSpaml.g:1810:2: rule__TransitionHandler__Group__0__Impl rule__TransitionHandler__Group__1
+            // InternalSpaml.g:1950:1: ( rule__TransitionHandler__Group__0__Impl rule__TransitionHandler__Group__1 )
+            // InternalSpaml.g:1951:2: rule__TransitionHandler__Group__0__Impl rule__TransitionHandler__Group__1
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_25);
             rule__TransitionHandler__Group__0__Impl();
 
             state._fsp--;
@@ -5702,21 +6112,21 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TransitionHandler__Group__0__Impl"
-    // InternalSpaml.g:1817:1: rule__TransitionHandler__Group__0__Impl : ( ( rule__TransitionHandler__SensorAssignment_0 ) ) ;
+    // InternalSpaml.g:1958:1: rule__TransitionHandler__Group__0__Impl : ( ( rule__TransitionHandler__SensorAssignment_0 ) ) ;
     public final void rule__TransitionHandler__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1821:1: ( ( ( rule__TransitionHandler__SensorAssignment_0 ) ) )
-            // InternalSpaml.g:1822:1: ( ( rule__TransitionHandler__SensorAssignment_0 ) )
+            // InternalSpaml.g:1962:1: ( ( ( rule__TransitionHandler__SensorAssignment_0 ) ) )
+            // InternalSpaml.g:1963:1: ( ( rule__TransitionHandler__SensorAssignment_0 ) )
             {
-            // InternalSpaml.g:1822:1: ( ( rule__TransitionHandler__SensorAssignment_0 ) )
-            // InternalSpaml.g:1823:2: ( rule__TransitionHandler__SensorAssignment_0 )
+            // InternalSpaml.g:1963:1: ( ( rule__TransitionHandler__SensorAssignment_0 ) )
+            // InternalSpaml.g:1964:2: ( rule__TransitionHandler__SensorAssignment_0 )
             {
              before(grammarAccess.getTransitionHandlerAccess().getSensorAssignment_0()); 
-            // InternalSpaml.g:1824:2: ( rule__TransitionHandler__SensorAssignment_0 )
-            // InternalSpaml.g:1824:3: rule__TransitionHandler__SensorAssignment_0
+            // InternalSpaml.g:1965:2: ( rule__TransitionHandler__SensorAssignment_0 )
+            // InternalSpaml.g:1965:3: rule__TransitionHandler__SensorAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__TransitionHandler__SensorAssignment_0();
@@ -5749,14 +6159,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TransitionHandler__Group__1"
-    // InternalSpaml.g:1832:1: rule__TransitionHandler__Group__1 : rule__TransitionHandler__Group__1__Impl rule__TransitionHandler__Group__2 ;
+    // InternalSpaml.g:1973:1: rule__TransitionHandler__Group__1 : rule__TransitionHandler__Group__1__Impl rule__TransitionHandler__Group__2 ;
     public final void rule__TransitionHandler__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1836:1: ( rule__TransitionHandler__Group__1__Impl rule__TransitionHandler__Group__2 )
-            // InternalSpaml.g:1837:2: rule__TransitionHandler__Group__1__Impl rule__TransitionHandler__Group__2
+            // InternalSpaml.g:1977:1: ( rule__TransitionHandler__Group__1__Impl rule__TransitionHandler__Group__2 )
+            // InternalSpaml.g:1978:2: rule__TransitionHandler__Group__1__Impl rule__TransitionHandler__Group__2
             {
             pushFollow(FOLLOW_17);
             rule__TransitionHandler__Group__1__Impl();
@@ -5787,21 +6197,21 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TransitionHandler__Group__1__Impl"
-    // InternalSpaml.g:1844:1: rule__TransitionHandler__Group__1__Impl : ( ( rule__TransitionHandler__Alternatives_1 ) ) ;
+    // InternalSpaml.g:1985:1: rule__TransitionHandler__Group__1__Impl : ( ( rule__TransitionHandler__Alternatives_1 ) ) ;
     public final void rule__TransitionHandler__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1848:1: ( ( ( rule__TransitionHandler__Alternatives_1 ) ) )
-            // InternalSpaml.g:1849:1: ( ( rule__TransitionHandler__Alternatives_1 ) )
+            // InternalSpaml.g:1989:1: ( ( ( rule__TransitionHandler__Alternatives_1 ) ) )
+            // InternalSpaml.g:1990:1: ( ( rule__TransitionHandler__Alternatives_1 ) )
             {
-            // InternalSpaml.g:1849:1: ( ( rule__TransitionHandler__Alternatives_1 ) )
-            // InternalSpaml.g:1850:2: ( rule__TransitionHandler__Alternatives_1 )
+            // InternalSpaml.g:1990:1: ( ( rule__TransitionHandler__Alternatives_1 ) )
+            // InternalSpaml.g:1991:2: ( rule__TransitionHandler__Alternatives_1 )
             {
              before(grammarAccess.getTransitionHandlerAccess().getAlternatives_1()); 
-            // InternalSpaml.g:1851:2: ( rule__TransitionHandler__Alternatives_1 )
-            // InternalSpaml.g:1851:3: rule__TransitionHandler__Alternatives_1
+            // InternalSpaml.g:1992:2: ( rule__TransitionHandler__Alternatives_1 )
+            // InternalSpaml.g:1992:3: rule__TransitionHandler__Alternatives_1
             {
             pushFollow(FOLLOW_2);
             rule__TransitionHandler__Alternatives_1();
@@ -5834,14 +6244,14 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TransitionHandler__Group__2"
-    // InternalSpaml.g:1859:1: rule__TransitionHandler__Group__2 : rule__TransitionHandler__Group__2__Impl ;
+    // InternalSpaml.g:2000:1: rule__TransitionHandler__Group__2 : rule__TransitionHandler__Group__2__Impl ;
     public final void rule__TransitionHandler__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1863:1: ( rule__TransitionHandler__Group__2__Impl )
-            // InternalSpaml.g:1864:2: rule__TransitionHandler__Group__2__Impl
+            // InternalSpaml.g:2004:1: ( rule__TransitionHandler__Group__2__Impl )
+            // InternalSpaml.g:2005:2: rule__TransitionHandler__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__TransitionHandler__Group__2__Impl();
@@ -5867,21 +6277,21 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TransitionHandler__Group__2__Impl"
-    // InternalSpaml.g:1870:1: rule__TransitionHandler__Group__2__Impl : ( ( rule__TransitionHandler__ValueAssignment_2 ) ) ;
+    // InternalSpaml.g:2011:1: rule__TransitionHandler__Group__2__Impl : ( ( rule__TransitionHandler__ValueAssignment_2 ) ) ;
     public final void rule__TransitionHandler__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1874:1: ( ( ( rule__TransitionHandler__ValueAssignment_2 ) ) )
-            // InternalSpaml.g:1875:1: ( ( rule__TransitionHandler__ValueAssignment_2 ) )
+            // InternalSpaml.g:2015:1: ( ( ( rule__TransitionHandler__ValueAssignment_2 ) ) )
+            // InternalSpaml.g:2016:1: ( ( rule__TransitionHandler__ValueAssignment_2 ) )
             {
-            // InternalSpaml.g:1875:1: ( ( rule__TransitionHandler__ValueAssignment_2 ) )
-            // InternalSpaml.g:1876:2: ( rule__TransitionHandler__ValueAssignment_2 )
+            // InternalSpaml.g:2016:1: ( ( rule__TransitionHandler__ValueAssignment_2 ) )
+            // InternalSpaml.g:2017:2: ( rule__TransitionHandler__ValueAssignment_2 )
             {
              before(grammarAccess.getTransitionHandlerAccess().getValueAssignment_2()); 
-            // InternalSpaml.g:1877:2: ( rule__TransitionHandler__ValueAssignment_2 )
-            // InternalSpaml.g:1877:3: rule__TransitionHandler__ValueAssignment_2
+            // InternalSpaml.g:2018:2: ( rule__TransitionHandler__ValueAssignment_2 )
+            // InternalSpaml.g:2018:3: rule__TransitionHandler__ValueAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__TransitionHandler__ValueAssignment_2();
@@ -5914,17 +6324,17 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Program__NameAssignment_1"
-    // InternalSpaml.g:1886:1: rule__Program__NameAssignment_1 : ( ruleEString ) ;
+    // InternalSpaml.g:2027:1: rule__Program__NameAssignment_1 : ( ruleEString ) ;
     public final void rule__Program__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1890:1: ( ( ruleEString ) )
-            // InternalSpaml.g:1891:2: ( ruleEString )
+            // InternalSpaml.g:2031:1: ( ( ruleEString ) )
+            // InternalSpaml.g:2032:2: ( ruleEString )
             {
-            // InternalSpaml.g:1891:2: ( ruleEString )
-            // InternalSpaml.g:1892:3: ruleEString
+            // InternalSpaml.g:2032:2: ( ruleEString )
+            // InternalSpaml.g:2033:3: ruleEString
             {
              before(grammarAccess.getProgramAccess().getNameEStringParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -5955,21 +6365,21 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Program__InitialStateAssignment_3"
-    // InternalSpaml.g:1901:1: rule__Program__InitialStateAssignment_3 : ( ( ruleEString ) ) ;
+    // InternalSpaml.g:2042:1: rule__Program__InitialStateAssignment_3 : ( ( ruleEString ) ) ;
     public final void rule__Program__InitialStateAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1905:1: ( ( ( ruleEString ) ) )
-            // InternalSpaml.g:1906:2: ( ( ruleEString ) )
+            // InternalSpaml.g:2046:1: ( ( ( ruleEString ) ) )
+            // InternalSpaml.g:2047:2: ( ( ruleEString ) )
             {
-            // InternalSpaml.g:1906:2: ( ( ruleEString ) )
-            // InternalSpaml.g:1907:3: ( ruleEString )
+            // InternalSpaml.g:2047:2: ( ( ruleEString ) )
+            // InternalSpaml.g:2048:3: ( ruleEString )
             {
              before(grammarAccess.getProgramAccess().getInitialStateStateCrossReference_3_0()); 
-            // InternalSpaml.g:1908:3: ( ruleEString )
-            // InternalSpaml.g:1909:4: ruleEString
+            // InternalSpaml.g:2049:3: ( ruleEString )
+            // InternalSpaml.g:2050:4: ruleEString
             {
              before(grammarAccess.getProgramAccess().getInitialStateStateEStringParserRuleCall_3_0_1()); 
             pushFollow(FOLLOW_2);
@@ -6004,17 +6414,17 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Program__PluggedElementsAssignment_6"
-    // InternalSpaml.g:1920:1: rule__Program__PluggedElementsAssignment_6 : ( rulePluggedElement ) ;
+    // InternalSpaml.g:2061:1: rule__Program__PluggedElementsAssignment_6 : ( rulePluggedElement ) ;
     public final void rule__Program__PluggedElementsAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1924:1: ( ( rulePluggedElement ) )
-            // InternalSpaml.g:1925:2: ( rulePluggedElement )
+            // InternalSpaml.g:2065:1: ( ( rulePluggedElement ) )
+            // InternalSpaml.g:2066:2: ( rulePluggedElement )
             {
-            // InternalSpaml.g:1925:2: ( rulePluggedElement )
-            // InternalSpaml.g:1926:3: rulePluggedElement
+            // InternalSpaml.g:2066:2: ( rulePluggedElement )
+            // InternalSpaml.g:2067:3: rulePluggedElement
             {
              before(grammarAccess.getProgramAccess().getPluggedElementsPluggedElementParserRuleCall_6_0()); 
             pushFollow(FOLLOW_2);
@@ -6045,17 +6455,17 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Program__StatesAssignment_8"
-    // InternalSpaml.g:1935:1: rule__Program__StatesAssignment_8 : ( ruleState ) ;
+    // InternalSpaml.g:2076:1: rule__Program__StatesAssignment_8 : ( ruleState ) ;
     public final void rule__Program__StatesAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1939:1: ( ( ruleState ) )
-            // InternalSpaml.g:1940:2: ( ruleState )
+            // InternalSpaml.g:2080:1: ( ( ruleState ) )
+            // InternalSpaml.g:2081:2: ( ruleState )
             {
-            // InternalSpaml.g:1940:2: ( ruleState )
-            // InternalSpaml.g:1941:3: ruleState
+            // InternalSpaml.g:2081:2: ( ruleState )
+            // InternalSpaml.g:2082:3: ruleState
             {
              before(grammarAccess.getProgramAccess().getStatesStateParserRuleCall_8_0()); 
             pushFollow(FOLLOW_2);
@@ -6086,17 +6496,17 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PluggedElement__NameAssignment_1"
-    // InternalSpaml.g:1950:1: rule__PluggedElement__NameAssignment_1 : ( ruleEString ) ;
+    // InternalSpaml.g:2091:1: rule__PluggedElement__NameAssignment_1 : ( ruleEString ) ;
     public final void rule__PluggedElement__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1954:1: ( ( ruleEString ) )
-            // InternalSpaml.g:1955:2: ( ruleEString )
+            // InternalSpaml.g:2095:1: ( ( ruleEString ) )
+            // InternalSpaml.g:2096:2: ( ruleEString )
             {
-            // InternalSpaml.g:1955:2: ( ruleEString )
-            // InternalSpaml.g:1956:3: ruleEString
+            // InternalSpaml.g:2096:2: ( ruleEString )
+            // InternalSpaml.g:2097:3: ruleEString
             {
              before(grammarAccess.getPluggedElementAccess().getNameEStringParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -6127,17 +6537,17 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PluggedElement__PinAssignment_3"
-    // InternalSpaml.g:1965:1: rule__PluggedElement__PinAssignment_3 : ( ruleEInt ) ;
+    // InternalSpaml.g:2106:1: rule__PluggedElement__PinAssignment_3 : ( ruleEInt ) ;
     public final void rule__PluggedElement__PinAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1969:1: ( ( ruleEInt ) )
-            // InternalSpaml.g:1970:2: ( ruleEInt )
+            // InternalSpaml.g:2110:1: ( ( ruleEInt ) )
+            // InternalSpaml.g:2111:2: ( ruleEInt )
             {
-            // InternalSpaml.g:1970:2: ( ruleEInt )
-            // InternalSpaml.g:1971:3: ruleEInt
+            // InternalSpaml.g:2111:2: ( ruleEInt )
+            // InternalSpaml.g:2112:3: ruleEInt
             {
              before(grammarAccess.getPluggedElementAccess().getPinEIntParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -6168,17 +6578,17 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__State__NameAssignment_0"
-    // InternalSpaml.g:1980:1: rule__State__NameAssignment_0 : ( ruleEString ) ;
+    // InternalSpaml.g:2121:1: rule__State__NameAssignment_0 : ( ruleEString ) ;
     public final void rule__State__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1984:1: ( ( ruleEString ) )
-            // InternalSpaml.g:1985:2: ( ruleEString )
+            // InternalSpaml.g:2125:1: ( ( ruleEString ) )
+            // InternalSpaml.g:2126:2: ( ruleEString )
             {
-            // InternalSpaml.g:1985:2: ( ruleEString )
-            // InternalSpaml.g:1986:3: ruleEString
+            // InternalSpaml.g:2126:2: ( ruleEString )
+            // InternalSpaml.g:2127:3: ruleEString
             {
              before(grammarAccess.getStateAccess().getNameEStringParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -6209,17 +6619,17 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__State__ActionsAssignment_2"
-    // InternalSpaml.g:1995:1: rule__State__ActionsAssignment_2 : ( ruleAction ) ;
+    // InternalSpaml.g:2136:1: rule__State__ActionsAssignment_2 : ( ruleAction ) ;
     public final void rule__State__ActionsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:1999:1: ( ( ruleAction ) )
-            // InternalSpaml.g:2000:2: ( ruleAction )
+            // InternalSpaml.g:2140:1: ( ( ruleAction ) )
+            // InternalSpaml.g:2141:2: ( ruleAction )
             {
-            // InternalSpaml.g:2000:2: ( ruleAction )
-            // InternalSpaml.g:2001:3: ruleAction
+            // InternalSpaml.g:2141:2: ( ruleAction )
+            // InternalSpaml.g:2142:3: ruleAction
             {
              before(grammarAccess.getStateAccess().getActionsActionParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -6250,17 +6660,17 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__State__ActionsAssignment_3"
-    // InternalSpaml.g:2010:1: rule__State__ActionsAssignment_3 : ( ruleAction ) ;
+    // InternalSpaml.g:2151:1: rule__State__ActionsAssignment_3 : ( ruleAction ) ;
     public final void rule__State__ActionsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:2014:1: ( ( ruleAction ) )
-            // InternalSpaml.g:2015:2: ( ruleAction )
+            // InternalSpaml.g:2155:1: ( ( ruleAction ) )
+            // InternalSpaml.g:2156:2: ( ruleAction )
             {
-            // InternalSpaml.g:2015:2: ( ruleAction )
-            // InternalSpaml.g:2016:3: ruleAction
+            // InternalSpaml.g:2156:2: ( ruleAction )
+            // InternalSpaml.g:2157:3: ruleAction
             {
              before(grammarAccess.getStateAccess().getActionsActionParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -6291,17 +6701,17 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__State__TransitionAssignment_4"
-    // InternalSpaml.g:2025:1: rule__State__TransitionAssignment_4 : ( ruleTransition ) ;
+    // InternalSpaml.g:2166:1: rule__State__TransitionAssignment_4 : ( ruleTransition ) ;
     public final void rule__State__TransitionAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:2029:1: ( ( ruleTransition ) )
-            // InternalSpaml.g:2030:2: ( ruleTransition )
+            // InternalSpaml.g:2170:1: ( ( ruleTransition ) )
+            // InternalSpaml.g:2171:2: ( ruleTransition )
             {
-            // InternalSpaml.g:2030:2: ( ruleTransition )
-            // InternalSpaml.g:2031:3: ruleTransition
+            // InternalSpaml.g:2171:2: ( ruleTransition )
+            // InternalSpaml.g:2172:3: ruleTransition
             {
              before(grammarAccess.getStateAccess().getTransitionTransitionParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -6332,21 +6742,21 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Action__ActuatorAssignment_0"
-    // InternalSpaml.g:2040:1: rule__Action__ActuatorAssignment_0 : ( ( ruleEString ) ) ;
+    // InternalSpaml.g:2181:1: rule__Action__ActuatorAssignment_0 : ( ( ruleEString ) ) ;
     public final void rule__Action__ActuatorAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:2044:1: ( ( ( ruleEString ) ) )
-            // InternalSpaml.g:2045:2: ( ( ruleEString ) )
+            // InternalSpaml.g:2185:1: ( ( ( ruleEString ) ) )
+            // InternalSpaml.g:2186:2: ( ( ruleEString ) )
             {
-            // InternalSpaml.g:2045:2: ( ( ruleEString ) )
-            // InternalSpaml.g:2046:3: ( ruleEString )
+            // InternalSpaml.g:2186:2: ( ( ruleEString ) )
+            // InternalSpaml.g:2187:3: ( ruleEString )
             {
              before(grammarAccess.getActionAccess().getActuatorActuatorCrossReference_0_0()); 
-            // InternalSpaml.g:2047:3: ( ruleEString )
-            // InternalSpaml.g:2048:4: ruleEString
+            // InternalSpaml.g:2188:3: ( ruleEString )
+            // InternalSpaml.g:2189:4: ruleEString
             {
              before(grammarAccess.getActionAccess().getActuatorActuatorEStringParserRuleCall_0_0_1()); 
             pushFollow(FOLLOW_2);
@@ -6381,17 +6791,17 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Action__ValueAssignment_2"
-    // InternalSpaml.g:2059:1: rule__Action__ValueAssignment_2 : ( ruleSIGNAL ) ;
+    // InternalSpaml.g:2200:1: rule__Action__ValueAssignment_2 : ( ruleSIGNAL ) ;
     public final void rule__Action__ValueAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:2063:1: ( ( ruleSIGNAL ) )
-            // InternalSpaml.g:2064:2: ( ruleSIGNAL )
+            // InternalSpaml.g:2204:1: ( ( ruleSIGNAL ) )
+            // InternalSpaml.g:2205:2: ( ruleSIGNAL )
             {
-            // InternalSpaml.g:2064:2: ( ruleSIGNAL )
-            // InternalSpaml.g:2065:3: ruleSIGNAL
+            // InternalSpaml.g:2205:2: ( ruleSIGNAL )
+            // InternalSpaml.g:2206:3: ruleSIGNAL
             {
              before(grammarAccess.getActionAccess().getValueSIGNALEnumRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -6421,26 +6831,26 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Action__ValueAssignment_2"
 
 
-    // $ANTLR start "rule__Transition__HandlersAssignment_0_0_1"
-    // InternalSpaml.g:2074:1: rule__Transition__HandlersAssignment_0_0_1 : ( ruleTransitionHandler ) ;
-    public final void rule__Transition__HandlersAssignment_0_0_1() throws RecognitionException {
+    // $ANTLR start "rule__Transition__HandlersAssignment_0_0_1_0_0"
+    // InternalSpaml.g:2215:1: rule__Transition__HandlersAssignment_0_0_1_0_0 : ( ruleTransitionHandler ) ;
+    public final void rule__Transition__HandlersAssignment_0_0_1_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:2078:1: ( ( ruleTransitionHandler ) )
-            // InternalSpaml.g:2079:2: ( ruleTransitionHandler )
+            // InternalSpaml.g:2219:1: ( ( ruleTransitionHandler ) )
+            // InternalSpaml.g:2220:2: ( ruleTransitionHandler )
             {
-            // InternalSpaml.g:2079:2: ( ruleTransitionHandler )
-            // InternalSpaml.g:2080:3: ruleTransitionHandler
+            // InternalSpaml.g:2220:2: ( ruleTransitionHandler )
+            // InternalSpaml.g:2221:3: ruleTransitionHandler
             {
-             before(grammarAccess.getTransitionAccess().getHandlersTransitionHandlerParserRuleCall_0_0_1_0()); 
+             before(grammarAccess.getTransitionAccess().getHandlersTransitionHandlerParserRuleCall_0_0_1_0_0_0()); 
             pushFollow(FOLLOW_2);
             ruleTransitionHandler();
 
             state._fsp--;
 
-             after(grammarAccess.getTransitionAccess().getHandlersTransitionHandlerParserRuleCall_0_0_1_0()); 
+             after(grammarAccess.getTransitionAccess().getHandlersTransitionHandlerParserRuleCall_0_0_1_0_0_0()); 
 
             }
 
@@ -6459,29 +6869,29 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Transition__HandlersAssignment_0_0_1"
+    // $ANTLR end "rule__Transition__HandlersAssignment_0_0_1_0_0"
 
 
-    // $ANTLR start "rule__Transition__HandlersAssignment_0_0_2_1"
-    // InternalSpaml.g:2089:1: rule__Transition__HandlersAssignment_0_0_2_1 : ( ruleTransitionHandler ) ;
-    public final void rule__Transition__HandlersAssignment_0_0_2_1() throws RecognitionException {
+    // $ANTLR start "rule__Transition__HandlersAssignment_0_0_1_0_1_1"
+    // InternalSpaml.g:2230:1: rule__Transition__HandlersAssignment_0_0_1_0_1_1 : ( ruleTransitionHandler ) ;
+    public final void rule__Transition__HandlersAssignment_0_0_1_0_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:2093:1: ( ( ruleTransitionHandler ) )
-            // InternalSpaml.g:2094:2: ( ruleTransitionHandler )
+            // InternalSpaml.g:2234:1: ( ( ruleTransitionHandler ) )
+            // InternalSpaml.g:2235:2: ( ruleTransitionHandler )
             {
-            // InternalSpaml.g:2094:2: ( ruleTransitionHandler )
-            // InternalSpaml.g:2095:3: ruleTransitionHandler
+            // InternalSpaml.g:2235:2: ( ruleTransitionHandler )
+            // InternalSpaml.g:2236:3: ruleTransitionHandler
             {
-             before(grammarAccess.getTransitionAccess().getHandlersTransitionHandlerParserRuleCall_0_0_2_1_0()); 
+             before(grammarAccess.getTransitionAccess().getHandlersTransitionHandlerParserRuleCall_0_0_1_0_1_1_0()); 
             pushFollow(FOLLOW_2);
             ruleTransitionHandler();
 
             state._fsp--;
 
-             after(grammarAccess.getTransitionAccess().getHandlersTransitionHandlerParserRuleCall_0_0_2_1_0()); 
+             after(grammarAccess.getTransitionAccess().getHandlersTransitionHandlerParserRuleCall_0_0_1_0_1_1_0()); 
 
             }
 
@@ -6500,29 +6910,29 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Transition__HandlersAssignment_0_0_2_1"
+    // $ANTLR end "rule__Transition__HandlersAssignment_0_0_1_0_1_1"
 
 
-    // $ANTLR start "rule__Transition__OperationAssignment_0_0_3_1"
-    // InternalSpaml.g:2104:1: rule__Transition__OperationAssignment_0_0_3_1 : ( ruleOPERATION ) ;
-    public final void rule__Transition__OperationAssignment_0_0_3_1() throws RecognitionException {
+    // $ANTLR start "rule__Transition__OperationAssignment_0_0_1_1_0"
+    // InternalSpaml.g:2245:1: rule__Transition__OperationAssignment_0_0_1_1_0 : ( ruleOPERATION ) ;
+    public final void rule__Transition__OperationAssignment_0_0_1_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:2108:1: ( ( ruleOPERATION ) )
-            // InternalSpaml.g:2109:2: ( ruleOPERATION )
+            // InternalSpaml.g:2249:1: ( ( ruleOPERATION ) )
+            // InternalSpaml.g:2250:2: ( ruleOPERATION )
             {
-            // InternalSpaml.g:2109:2: ( ruleOPERATION )
-            // InternalSpaml.g:2110:3: ruleOPERATION
+            // InternalSpaml.g:2250:2: ( ruleOPERATION )
+            // InternalSpaml.g:2251:3: ruleOPERATION
             {
-             before(grammarAccess.getTransitionAccess().getOperationOPERATIONEnumRuleCall_0_0_3_1_0()); 
+             before(grammarAccess.getTransitionAccess().getOperationOPERATIONEnumRuleCall_0_0_1_1_0_0()); 
             pushFollow(FOLLOW_2);
             ruleOPERATION();
 
             state._fsp--;
 
-             after(grammarAccess.getTransitionAccess().getOperationOPERATIONEnumRuleCall_0_0_3_1_0()); 
+             after(grammarAccess.getTransitionAccess().getOperationOPERATIONEnumRuleCall_0_0_1_1_0_0()); 
 
             }
 
@@ -6541,21 +6951,103 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Transition__OperationAssignment_0_0_3_1"
+    // $ANTLR end "rule__Transition__OperationAssignment_0_0_1_1_0"
+
+
+    // $ANTLR start "rule__Transition__HandlersAssignment_0_0_1_1_2_0"
+    // InternalSpaml.g:2260:1: rule__Transition__HandlersAssignment_0_0_1_1_2_0 : ( ruleTransitionHandler ) ;
+    public final void rule__Transition__HandlersAssignment_0_0_1_1_2_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSpaml.g:2264:1: ( ( ruleTransitionHandler ) )
+            // InternalSpaml.g:2265:2: ( ruleTransitionHandler )
+            {
+            // InternalSpaml.g:2265:2: ( ruleTransitionHandler )
+            // InternalSpaml.g:2266:3: ruleTransitionHandler
+            {
+             before(grammarAccess.getTransitionAccess().getHandlersTransitionHandlerParserRuleCall_0_0_1_1_2_0_0()); 
+            pushFollow(FOLLOW_2);
+            ruleTransitionHandler();
+
+            state._fsp--;
+
+             after(grammarAccess.getTransitionAccess().getHandlersTransitionHandlerParserRuleCall_0_0_1_1_2_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Transition__HandlersAssignment_0_0_1_1_2_0"
+
+
+    // $ANTLR start "rule__Transition__HandlersAssignment_0_0_1_1_2_1_1"
+    // InternalSpaml.g:2275:1: rule__Transition__HandlersAssignment_0_0_1_1_2_1_1 : ( ruleTransitionHandler ) ;
+    public final void rule__Transition__HandlersAssignment_0_0_1_1_2_1_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSpaml.g:2279:1: ( ( ruleTransitionHandler ) )
+            // InternalSpaml.g:2280:2: ( ruleTransitionHandler )
+            {
+            // InternalSpaml.g:2280:2: ( ruleTransitionHandler )
+            // InternalSpaml.g:2281:3: ruleTransitionHandler
+            {
+             before(grammarAccess.getTransitionAccess().getHandlersTransitionHandlerParserRuleCall_0_0_1_1_2_1_1_0()); 
+            pushFollow(FOLLOW_2);
+            ruleTransitionHandler();
+
+            state._fsp--;
+
+             after(grammarAccess.getTransitionAccess().getHandlersTransitionHandlerParserRuleCall_0_0_1_1_2_1_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Transition__HandlersAssignment_0_0_1_1_2_1_1"
 
 
     // $ANTLR start "rule__Transition__DelayAssignment_0_1"
-    // InternalSpaml.g:2119:1: rule__Transition__DelayAssignment_0_1 : ( ruleEInt ) ;
+    // InternalSpaml.g:2290:1: rule__Transition__DelayAssignment_0_1 : ( ruleEInt ) ;
     public final void rule__Transition__DelayAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:2123:1: ( ( ruleEInt ) )
-            // InternalSpaml.g:2124:2: ( ruleEInt )
+            // InternalSpaml.g:2294:1: ( ( ruleEInt ) )
+            // InternalSpaml.g:2295:2: ( ruleEInt )
             {
-            // InternalSpaml.g:2124:2: ( ruleEInt )
-            // InternalSpaml.g:2125:3: ruleEInt
+            // InternalSpaml.g:2295:2: ( ruleEInt )
+            // InternalSpaml.g:2296:3: ruleEInt
             {
              before(grammarAccess.getTransitionAccess().getDelayEIntParserRuleCall_0_1_0()); 
             pushFollow(FOLLOW_2);
@@ -6586,21 +7078,21 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__NextAssignment_2"
-    // InternalSpaml.g:2134:1: rule__Transition__NextAssignment_2 : ( ( ruleEString ) ) ;
+    // InternalSpaml.g:2305:1: rule__Transition__NextAssignment_2 : ( ( ruleEString ) ) ;
     public final void rule__Transition__NextAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:2138:1: ( ( ( ruleEString ) ) )
-            // InternalSpaml.g:2139:2: ( ( ruleEString ) )
+            // InternalSpaml.g:2309:1: ( ( ( ruleEString ) ) )
+            // InternalSpaml.g:2310:2: ( ( ruleEString ) )
             {
-            // InternalSpaml.g:2139:2: ( ( ruleEString ) )
-            // InternalSpaml.g:2140:3: ( ruleEString )
+            // InternalSpaml.g:2310:2: ( ( ruleEString ) )
+            // InternalSpaml.g:2311:3: ( ruleEString )
             {
              before(grammarAccess.getTransitionAccess().getNextStateCrossReference_2_0()); 
-            // InternalSpaml.g:2141:3: ( ruleEString )
-            // InternalSpaml.g:2142:4: ruleEString
+            // InternalSpaml.g:2312:3: ( ruleEString )
+            // InternalSpaml.g:2313:4: ruleEString
             {
              before(grammarAccess.getTransitionAccess().getNextStateEStringParserRuleCall_2_0_1()); 
             pushFollow(FOLLOW_2);
@@ -6635,21 +7127,21 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TransitionHandler__SensorAssignment_0"
-    // InternalSpaml.g:2153:1: rule__TransitionHandler__SensorAssignment_0 : ( ( RULE_ID ) ) ;
+    // InternalSpaml.g:2324:1: rule__TransitionHandler__SensorAssignment_0 : ( ( RULE_ID ) ) ;
     public final void rule__TransitionHandler__SensorAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:2157:1: ( ( ( RULE_ID ) ) )
-            // InternalSpaml.g:2158:2: ( ( RULE_ID ) )
+            // InternalSpaml.g:2328:1: ( ( ( RULE_ID ) ) )
+            // InternalSpaml.g:2329:2: ( ( RULE_ID ) )
             {
-            // InternalSpaml.g:2158:2: ( ( RULE_ID ) )
-            // InternalSpaml.g:2159:3: ( RULE_ID )
+            // InternalSpaml.g:2329:2: ( ( RULE_ID ) )
+            // InternalSpaml.g:2330:3: ( RULE_ID )
             {
              before(grammarAccess.getTransitionHandlerAccess().getSensorSensorCrossReference_0_0()); 
-            // InternalSpaml.g:2160:3: ( RULE_ID )
-            // InternalSpaml.g:2161:4: RULE_ID
+            // InternalSpaml.g:2331:3: ( RULE_ID )
+            // InternalSpaml.g:2332:4: RULE_ID
             {
              before(grammarAccess.getTransitionHandlerAccess().getSensorSensorIDTerminalRuleCall_0_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -6680,17 +7172,17 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TransitionHandler__ValueAssignment_2"
-    // InternalSpaml.g:2172:1: rule__TransitionHandler__ValueAssignment_2 : ( ruleSIGNAL ) ;
+    // InternalSpaml.g:2343:1: rule__TransitionHandler__ValueAssignment_2 : ( ruleSIGNAL ) ;
     public final void rule__TransitionHandler__ValueAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpaml.g:2176:1: ( ( ruleSIGNAL ) )
-            // InternalSpaml.g:2177:2: ( ruleSIGNAL )
+            // InternalSpaml.g:2347:1: ( ( ruleSIGNAL ) )
+            // InternalSpaml.g:2348:2: ( ruleSIGNAL )
             {
-            // InternalSpaml.g:2177:2: ( ruleSIGNAL )
-            // InternalSpaml.g:2178:3: ruleSIGNAL
+            // InternalSpaml.g:2348:2: ( ruleSIGNAL )
+            // InternalSpaml.g:2349:3: ruleSIGNAL
             {
              before(grammarAccess.getTransitionHandlerAccess().getValueSIGNALEnumRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -6727,25 +7219,27 @@ public class InternalSpamlParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000004000000L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000001800L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000001C00000000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x00000001C0000000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000006000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000001C00000002L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x00000001C0000002L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000008000000L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000000032L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000300000040L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000002300000070L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000030000040L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000230C00070L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000100000000L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000018000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000003000000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000600000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000002000000020L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x00000000001E0000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000060002L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x000000000C000000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000808000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000300000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000060000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000200C00020L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000400000002L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000088000L});
 
 }

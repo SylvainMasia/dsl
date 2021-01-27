@@ -22,13 +22,12 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSpamlParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Program'", "'initialState'", "'{'", "'pluggedElements'", "'pluggedElements:'", "'states'", "'states:'", "'}'", "'onPin'", "'-'", "'SensorDigital'", "'SensorAnalog'", "'Actuator'", "'='", "'setTo'", "'when'", "'&&'", "'and'", "'<-'", "'associate'", "'->'", "'then'", "'is'", "'LOW'", "'HIGH'", "'AND'", "'OR'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Program'", "'initialState'", "'{'", "'pluggedElements'", "'pluggedElements:'", "'states'", "'states:'", "'}'", "'onPin'", "'-'", "'SensorDigital'", "'SensorAnalog'", "'Actuator'", "'='", "'setTo'", "'when'", "','", "'('", "')'", "'->'", "'then'", "'is'", "'LOW'", "'HIGH'", "'AND'", "'OR'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
     public static final int T__19=19;
     public static final int T__15=15;
-    public static final int T__37=37;
     public static final int T__16=16;
     public static final int T__17=17;
     public static final int T__18=18;
@@ -928,19 +927,19 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
                     if ( (LA8_2==24) ) {
                         int LA8_4 = input.LA(3);
 
-                        if ( (LA8_4==34) ) {
+                        if ( (LA8_4==33) ) {
                             int LA8_5 = input.LA(4);
 
-                            if ( ((LA8_5>=RULE_STRING && LA8_5<=RULE_INT)||LA8_5==20||LA8_5==26) ) {
+                            if ( ((LA8_5>=RULE_STRING && LA8_5<=RULE_INT)||LA8_5==20||LA8_5==26||(LA8_5>=35 && LA8_5<=36)) ) {
                                 alt8=1;
                             }
 
 
                         }
-                        else if ( (LA8_4==35) ) {
+                        else if ( (LA8_4==34) ) {
                             int LA8_6 = input.LA(4);
 
-                            if ( ((LA8_6>=RULE_STRING && LA8_6<=RULE_INT)||LA8_6==20||LA8_6==26) ) {
+                            if ( ((LA8_6>=RULE_STRING && LA8_6<=RULE_INT)||LA8_6==20||LA8_6==26||(LA8_6>=35 && LA8_6<=36)) ) {
                                 alt8=1;
                             }
 
@@ -1772,58 +1771,62 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTransition"
-    // InternalSpaml.g:645:1: ruleTransition returns [EObject current=null] : ( ( ( (otherlv_0= 'when' )? ( (lv_handlers_1_0= ruleTransitionHandler ) ) ( (otherlv_2= '&&' | otherlv_3= 'and' ) ( (lv_handlers_4_0= ruleTransitionHandler ) ) )* ( (otherlv_5= '<-' | otherlv_6= 'associate' ) ( (lv_operation_7_0= ruleOPERATION ) ) )? ) | ( (lv_delay_8_0= ruleEInt ) ) ) (otherlv_9= '->' | otherlv_10= 'then' ) ( ( ruleEString ) ) ) ;
+    // InternalSpaml.g:645:1: ruleTransition returns [EObject current=null] : ( ( ( (otherlv_0= 'when' )? ( ( ( (lv_handlers_1_0= ruleTransitionHandler ) ) (otherlv_2= ',' ( (lv_handlers_3_0= ruleTransitionHandler ) ) )* ) | ( ( (lv_operation_4_0= ruleOPERATION ) ) otherlv_5= '(' ( ( (lv_handlers_6_0= ruleTransitionHandler ) ) (otherlv_7= ',' ( (lv_handlers_8_0= ruleTransitionHandler ) ) )* ) otherlv_9= ')' ) ) ) | ( (lv_delay_10_0= ruleEInt ) ) ) (otherlv_11= '->' | otherlv_12= 'then' ) ( ( ruleEString ) ) ) ;
     public final EObject ruleTransition() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_2=null;
-        Token otherlv_3=null;
         Token otherlv_5=null;
-        Token otherlv_6=null;
+        Token otherlv_7=null;
         Token otherlv_9=null;
-        Token otherlv_10=null;
+        Token otherlv_11=null;
+        Token otherlv_12=null;
         EObject lv_handlers_1_0 = null;
 
-        EObject lv_handlers_4_0 = null;
+        EObject lv_handlers_3_0 = null;
 
-        Enumerator lv_operation_7_0 = null;
+        Enumerator lv_operation_4_0 = null;
 
-        AntlrDatatypeRuleToken lv_delay_8_0 = null;
+        EObject lv_handlers_6_0 = null;
+
+        EObject lv_handlers_8_0 = null;
+
+        AntlrDatatypeRuleToken lv_delay_10_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalSpaml.g:651:2: ( ( ( ( (otherlv_0= 'when' )? ( (lv_handlers_1_0= ruleTransitionHandler ) ) ( (otherlv_2= '&&' | otherlv_3= 'and' ) ( (lv_handlers_4_0= ruleTransitionHandler ) ) )* ( (otherlv_5= '<-' | otherlv_6= 'associate' ) ( (lv_operation_7_0= ruleOPERATION ) ) )? ) | ( (lv_delay_8_0= ruleEInt ) ) ) (otherlv_9= '->' | otherlv_10= 'then' ) ( ( ruleEString ) ) ) )
-            // InternalSpaml.g:652:2: ( ( ( (otherlv_0= 'when' )? ( (lv_handlers_1_0= ruleTransitionHandler ) ) ( (otherlv_2= '&&' | otherlv_3= 'and' ) ( (lv_handlers_4_0= ruleTransitionHandler ) ) )* ( (otherlv_5= '<-' | otherlv_6= 'associate' ) ( (lv_operation_7_0= ruleOPERATION ) ) )? ) | ( (lv_delay_8_0= ruleEInt ) ) ) (otherlv_9= '->' | otherlv_10= 'then' ) ( ( ruleEString ) ) )
+            // InternalSpaml.g:651:2: ( ( ( ( (otherlv_0= 'when' )? ( ( ( (lv_handlers_1_0= ruleTransitionHandler ) ) (otherlv_2= ',' ( (lv_handlers_3_0= ruleTransitionHandler ) ) )* ) | ( ( (lv_operation_4_0= ruleOPERATION ) ) otherlv_5= '(' ( ( (lv_handlers_6_0= ruleTransitionHandler ) ) (otherlv_7= ',' ( (lv_handlers_8_0= ruleTransitionHandler ) ) )* ) otherlv_9= ')' ) ) ) | ( (lv_delay_10_0= ruleEInt ) ) ) (otherlv_11= '->' | otherlv_12= 'then' ) ( ( ruleEString ) ) ) )
+            // InternalSpaml.g:652:2: ( ( ( (otherlv_0= 'when' )? ( ( ( (lv_handlers_1_0= ruleTransitionHandler ) ) (otherlv_2= ',' ( (lv_handlers_3_0= ruleTransitionHandler ) ) )* ) | ( ( (lv_operation_4_0= ruleOPERATION ) ) otherlv_5= '(' ( ( (lv_handlers_6_0= ruleTransitionHandler ) ) (otherlv_7= ',' ( (lv_handlers_8_0= ruleTransitionHandler ) ) )* ) otherlv_9= ')' ) ) ) | ( (lv_delay_10_0= ruleEInt ) ) ) (otherlv_11= '->' | otherlv_12= 'then' ) ( ( ruleEString ) ) )
             {
-            // InternalSpaml.g:652:2: ( ( ( (otherlv_0= 'when' )? ( (lv_handlers_1_0= ruleTransitionHandler ) ) ( (otherlv_2= '&&' | otherlv_3= 'and' ) ( (lv_handlers_4_0= ruleTransitionHandler ) ) )* ( (otherlv_5= '<-' | otherlv_6= 'associate' ) ( (lv_operation_7_0= ruleOPERATION ) ) )? ) | ( (lv_delay_8_0= ruleEInt ) ) ) (otherlv_9= '->' | otherlv_10= 'then' ) ( ( ruleEString ) ) )
-            // InternalSpaml.g:653:3: ( ( (otherlv_0= 'when' )? ( (lv_handlers_1_0= ruleTransitionHandler ) ) ( (otherlv_2= '&&' | otherlv_3= 'and' ) ( (lv_handlers_4_0= ruleTransitionHandler ) ) )* ( (otherlv_5= '<-' | otherlv_6= 'associate' ) ( (lv_operation_7_0= ruleOPERATION ) ) )? ) | ( (lv_delay_8_0= ruleEInt ) ) ) (otherlv_9= '->' | otherlv_10= 'then' ) ( ( ruleEString ) )
+            // InternalSpaml.g:652:2: ( ( ( (otherlv_0= 'when' )? ( ( ( (lv_handlers_1_0= ruleTransitionHandler ) ) (otherlv_2= ',' ( (lv_handlers_3_0= ruleTransitionHandler ) ) )* ) | ( ( (lv_operation_4_0= ruleOPERATION ) ) otherlv_5= '(' ( ( (lv_handlers_6_0= ruleTransitionHandler ) ) (otherlv_7= ',' ( (lv_handlers_8_0= ruleTransitionHandler ) ) )* ) otherlv_9= ')' ) ) ) | ( (lv_delay_10_0= ruleEInt ) ) ) (otherlv_11= '->' | otherlv_12= 'then' ) ( ( ruleEString ) ) )
+            // InternalSpaml.g:653:3: ( ( (otherlv_0= 'when' )? ( ( ( (lv_handlers_1_0= ruleTransitionHandler ) ) (otherlv_2= ',' ( (lv_handlers_3_0= ruleTransitionHandler ) ) )* ) | ( ( (lv_operation_4_0= ruleOPERATION ) ) otherlv_5= '(' ( ( (lv_handlers_6_0= ruleTransitionHandler ) ) (otherlv_7= ',' ( (lv_handlers_8_0= ruleTransitionHandler ) ) )* ) otherlv_9= ')' ) ) ) | ( (lv_delay_10_0= ruleEInt ) ) ) (otherlv_11= '->' | otherlv_12= 'then' ) ( ( ruleEString ) )
             {
-            // InternalSpaml.g:653:3: ( ( (otherlv_0= 'when' )? ( (lv_handlers_1_0= ruleTransitionHandler ) ) ( (otherlv_2= '&&' | otherlv_3= 'and' ) ( (lv_handlers_4_0= ruleTransitionHandler ) ) )* ( (otherlv_5= '<-' | otherlv_6= 'associate' ) ( (lv_operation_7_0= ruleOPERATION ) ) )? ) | ( (lv_delay_8_0= ruleEInt ) ) )
-            int alt17=2;
-            int LA17_0 = input.LA(1);
+            // InternalSpaml.g:653:3: ( ( (otherlv_0= 'when' )? ( ( ( (lv_handlers_1_0= ruleTransitionHandler ) ) (otherlv_2= ',' ( (lv_handlers_3_0= ruleTransitionHandler ) ) )* ) | ( ( (lv_operation_4_0= ruleOPERATION ) ) otherlv_5= '(' ( ( (lv_handlers_6_0= ruleTransitionHandler ) ) (otherlv_7= ',' ( (lv_handlers_8_0= ruleTransitionHandler ) ) )* ) otherlv_9= ')' ) ) ) | ( (lv_delay_10_0= ruleEInt ) ) )
+            int alt16=2;
+            int LA16_0 = input.LA(1);
 
-            if ( (LA17_0==RULE_ID||LA17_0==26) ) {
-                alt17=1;
+            if ( (LA16_0==RULE_ID||LA16_0==26||(LA16_0>=35 && LA16_0<=36)) ) {
+                alt16=1;
             }
-            else if ( (LA17_0==RULE_INT||LA17_0==20) ) {
-                alt17=2;
+            else if ( (LA16_0==RULE_INT||LA16_0==20) ) {
+                alt16=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 17, 0, input);
+                    new NoViableAltException("", 16, 0, input);
 
                 throw nvae;
             }
-            switch (alt17) {
+            switch (alt16) {
                 case 1 :
-                    // InternalSpaml.g:654:4: ( (otherlv_0= 'when' )? ( (lv_handlers_1_0= ruleTransitionHandler ) ) ( (otherlv_2= '&&' | otherlv_3= 'and' ) ( (lv_handlers_4_0= ruleTransitionHandler ) ) )* ( (otherlv_5= '<-' | otherlv_6= 'associate' ) ( (lv_operation_7_0= ruleOPERATION ) ) )? )
+                    // InternalSpaml.g:654:4: ( (otherlv_0= 'when' )? ( ( ( (lv_handlers_1_0= ruleTransitionHandler ) ) (otherlv_2= ',' ( (lv_handlers_3_0= ruleTransitionHandler ) ) )* ) | ( ( (lv_operation_4_0= ruleOPERATION ) ) otherlv_5= '(' ( ( (lv_handlers_6_0= ruleTransitionHandler ) ) (otherlv_7= ',' ( (lv_handlers_8_0= ruleTransitionHandler ) ) )* ) otherlv_9= ')' ) ) )
                     {
-                    // InternalSpaml.g:654:4: ( (otherlv_0= 'when' )? ( (lv_handlers_1_0= ruleTransitionHandler ) ) ( (otherlv_2= '&&' | otherlv_3= 'and' ) ( (lv_handlers_4_0= ruleTransitionHandler ) ) )* ( (otherlv_5= '<-' | otherlv_6= 'associate' ) ( (lv_operation_7_0= ruleOPERATION ) ) )? )
-                    // InternalSpaml.g:655:5: (otherlv_0= 'when' )? ( (lv_handlers_1_0= ruleTransitionHandler ) ) ( (otherlv_2= '&&' | otherlv_3= 'and' ) ( (lv_handlers_4_0= ruleTransitionHandler ) ) )* ( (otherlv_5= '<-' | otherlv_6= 'associate' ) ( (lv_operation_7_0= ruleOPERATION ) ) )?
+                    // InternalSpaml.g:654:4: ( (otherlv_0= 'when' )? ( ( ( (lv_handlers_1_0= ruleTransitionHandler ) ) (otherlv_2= ',' ( (lv_handlers_3_0= ruleTransitionHandler ) ) )* ) | ( ( (lv_operation_4_0= ruleOPERATION ) ) otherlv_5= '(' ( ( (lv_handlers_6_0= ruleTransitionHandler ) ) (otherlv_7= ',' ( (lv_handlers_8_0= ruleTransitionHandler ) ) )* ) otherlv_9= ')' ) ) )
+                    // InternalSpaml.g:655:5: (otherlv_0= 'when' )? ( ( ( (lv_handlers_1_0= ruleTransitionHandler ) ) (otherlv_2= ',' ( (lv_handlers_3_0= ruleTransitionHandler ) ) )* ) | ( ( (lv_operation_4_0= ruleOPERATION ) ) otherlv_5= '(' ( ( (lv_handlers_6_0= ruleTransitionHandler ) ) (otherlv_7= ',' ( (lv_handlers_8_0= ruleTransitionHandler ) ) )* ) otherlv_9= ')' ) )
                     {
                     // InternalSpaml.g:655:5: (otherlv_0= 'when' )?
                     int alt12=2;
@@ -1846,211 +1849,266 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalSpaml.g:661:5: ( (lv_handlers_1_0= ruleTransitionHandler ) )
-                    // InternalSpaml.g:662:6: (lv_handlers_1_0= ruleTransitionHandler )
-                    {
-                    // InternalSpaml.g:662:6: (lv_handlers_1_0= ruleTransitionHandler )
-                    // InternalSpaml.g:663:7: lv_handlers_1_0= ruleTransitionHandler
-                    {
+                    // InternalSpaml.g:661:5: ( ( ( (lv_handlers_1_0= ruleTransitionHandler ) ) (otherlv_2= ',' ( (lv_handlers_3_0= ruleTransitionHandler ) ) )* ) | ( ( (lv_operation_4_0= ruleOPERATION ) ) otherlv_5= '(' ( ( (lv_handlers_6_0= ruleTransitionHandler ) ) (otherlv_7= ',' ( (lv_handlers_8_0= ruleTransitionHandler ) ) )* ) otherlv_9= ')' ) )
+                    int alt15=2;
+                    int LA15_0 = input.LA(1);
 
-                    							newCompositeNode(grammarAccess.getTransitionAccess().getHandlersTransitionHandlerParserRuleCall_0_0_1_0());
-                    						
-                    pushFollow(FOLLOW_17);
-                    lv_handlers_1_0=ruleTransitionHandler();
-
-                    state._fsp--;
-
-
-                    							if (current==null) {
-                    								current = createModelElementForParent(grammarAccess.getTransitionRule());
-                    							}
-                    							add(
-                    								current,
-                    								"handlers",
-                    								lv_handlers_1_0,
-                    								"polytech.dsl.spaceteam.spaml.Spaml.TransitionHandler");
-                    							afterParserOrEnumRuleCall();
-                    						
-
+                    if ( (LA15_0==RULE_ID) ) {
+                        alt15=1;
                     }
-
-
+                    else if ( ((LA15_0>=35 && LA15_0<=36)) ) {
+                        alt15=2;
                     }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 15, 0, input);
 
-                    // InternalSpaml.g:680:5: ( (otherlv_2= '&&' | otherlv_3= 'and' ) ( (lv_handlers_4_0= ruleTransitionHandler ) ) )*
-                    loop14:
-                    do {
-                        int alt14=2;
-                        int LA14_0 = input.LA(1);
-
-                        if ( ((LA14_0>=27 && LA14_0<=28)) ) {
-                            alt14=1;
-                        }
-
-
-                        switch (alt14) {
-                    	case 1 :
-                    	    // InternalSpaml.g:681:6: (otherlv_2= '&&' | otherlv_3= 'and' ) ( (lv_handlers_4_0= ruleTransitionHandler ) )
-                    	    {
-                    	    // InternalSpaml.g:681:6: (otherlv_2= '&&' | otherlv_3= 'and' )
-                    	    int alt13=2;
-                    	    int LA13_0 = input.LA(1);
-
-                    	    if ( (LA13_0==27) ) {
-                    	        alt13=1;
-                    	    }
-                    	    else if ( (LA13_0==28) ) {
-                    	        alt13=2;
-                    	    }
-                    	    else {
-                    	        NoViableAltException nvae =
-                    	            new NoViableAltException("", 13, 0, input);
-
-                    	        throw nvae;
-                    	    }
-                    	    switch (alt13) {
-                    	        case 1 :
-                    	            // InternalSpaml.g:682:7: otherlv_2= '&&'
-                    	            {
-                    	            otherlv_2=(Token)match(input,27,FOLLOW_16); 
-
-                    	            							newLeafNode(otherlv_2, grammarAccess.getTransitionAccess().getAmpersandAmpersandKeyword_0_0_2_0_0());
-                    	            						
-
-                    	            }
-                    	            break;
-                    	        case 2 :
-                    	            // InternalSpaml.g:687:7: otherlv_3= 'and'
-                    	            {
-                    	            otherlv_3=(Token)match(input,28,FOLLOW_16); 
-
-                    	            							newLeafNode(otherlv_3, grammarAccess.getTransitionAccess().getAndKeyword_0_0_2_0_1());
-                    	            						
-
-                    	            }
-                    	            break;
-
-                    	    }
-
-                    	    // InternalSpaml.g:692:6: ( (lv_handlers_4_0= ruleTransitionHandler ) )
-                    	    // InternalSpaml.g:693:7: (lv_handlers_4_0= ruleTransitionHandler )
-                    	    {
-                    	    // InternalSpaml.g:693:7: (lv_handlers_4_0= ruleTransitionHandler )
-                    	    // InternalSpaml.g:694:8: lv_handlers_4_0= ruleTransitionHandler
-                    	    {
-
-                    	    								newCompositeNode(grammarAccess.getTransitionAccess().getHandlersTransitionHandlerParserRuleCall_0_0_2_1_0());
-                    	    							
-                    	    pushFollow(FOLLOW_17);
-                    	    lv_handlers_4_0=ruleTransitionHandler();
-
-                    	    state._fsp--;
-
-
-                    	    								if (current==null) {
-                    	    									current = createModelElementForParent(grammarAccess.getTransitionRule());
-                    	    								}
-                    	    								add(
-                    	    									current,
-                    	    									"handlers",
-                    	    									lv_handlers_4_0,
-                    	    									"polytech.dsl.spaceteam.spaml.Spaml.TransitionHandler");
-                    	    								afterParserOrEnumRuleCall();
-                    	    							
-
-                    	    }
-
-
-                    	    }
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop14;
-                        }
-                    } while (true);
-
-                    // InternalSpaml.g:712:5: ( (otherlv_5= '<-' | otherlv_6= 'associate' ) ( (lv_operation_7_0= ruleOPERATION ) ) )?
-                    int alt16=2;
-                    int LA16_0 = input.LA(1);
-
-                    if ( ((LA16_0>=29 && LA16_0<=30)) ) {
-                        alt16=1;
+                        throw nvae;
                     }
-                    switch (alt16) {
+                    switch (alt15) {
                         case 1 :
-                            // InternalSpaml.g:713:6: (otherlv_5= '<-' | otherlv_6= 'associate' ) ( (lv_operation_7_0= ruleOPERATION ) )
+                            // InternalSpaml.g:662:6: ( ( (lv_handlers_1_0= ruleTransitionHandler ) ) (otherlv_2= ',' ( (lv_handlers_3_0= ruleTransitionHandler ) ) )* )
                             {
-                            // InternalSpaml.g:713:6: (otherlv_5= '<-' | otherlv_6= 'associate' )
-                            int alt15=2;
-                            int LA15_0 = input.LA(1);
-
-                            if ( (LA15_0==29) ) {
-                                alt15=1;
-                            }
-                            else if ( (LA15_0==30) ) {
-                                alt15=2;
-                            }
-                            else {
-                                NoViableAltException nvae =
-                                    new NoViableAltException("", 15, 0, input);
-
-                                throw nvae;
-                            }
-                            switch (alt15) {
-                                case 1 :
-                                    // InternalSpaml.g:714:7: otherlv_5= '<-'
-                                    {
-                                    otherlv_5=(Token)match(input,29,FOLLOW_18); 
-
-                                    							newLeafNode(otherlv_5, grammarAccess.getTransitionAccess().getLessThanSignHyphenMinusKeyword_0_0_3_0_0());
-                                    						
-
-                                    }
-                                    break;
-                                case 2 :
-                                    // InternalSpaml.g:719:7: otherlv_6= 'associate'
-                                    {
-                                    otherlv_6=(Token)match(input,30,FOLLOW_18); 
-
-                                    							newLeafNode(otherlv_6, grammarAccess.getTransitionAccess().getAssociateKeyword_0_0_3_0_1());
-                                    						
-
-                                    }
-                                    break;
-
-                            }
-
-                            // InternalSpaml.g:724:6: ( (lv_operation_7_0= ruleOPERATION ) )
-                            // InternalSpaml.g:725:7: (lv_operation_7_0= ruleOPERATION )
+                            // InternalSpaml.g:662:6: ( ( (lv_handlers_1_0= ruleTransitionHandler ) ) (otherlv_2= ',' ( (lv_handlers_3_0= ruleTransitionHandler ) ) )* )
+                            // InternalSpaml.g:663:7: ( (lv_handlers_1_0= ruleTransitionHandler ) ) (otherlv_2= ',' ( (lv_handlers_3_0= ruleTransitionHandler ) ) )*
                             {
-                            // InternalSpaml.g:725:7: (lv_operation_7_0= ruleOPERATION )
-                            // InternalSpaml.g:726:8: lv_operation_7_0= ruleOPERATION
+                            // InternalSpaml.g:663:7: ( (lv_handlers_1_0= ruleTransitionHandler ) )
+                            // InternalSpaml.g:664:8: (lv_handlers_1_0= ruleTransitionHandler )
+                            {
+                            // InternalSpaml.g:664:8: (lv_handlers_1_0= ruleTransitionHandler )
+                            // InternalSpaml.g:665:9: lv_handlers_1_0= ruleTransitionHandler
                             {
 
-                            								newCompositeNode(grammarAccess.getTransitionAccess().getOperationOPERATIONEnumRuleCall_0_0_3_1_0());
-                            							
-                            pushFollow(FOLLOW_19);
-                            lv_operation_7_0=ruleOPERATION();
+                            									newCompositeNode(grammarAccess.getTransitionAccess().getHandlersTransitionHandlerParserRuleCall_0_0_1_0_0_0());
+                            								
+                            pushFollow(FOLLOW_17);
+                            lv_handlers_1_0=ruleTransitionHandler();
 
                             state._fsp--;
 
 
-                            								if (current==null) {
-                            									current = createModelElementForParent(grammarAccess.getTransitionRule());
-                            								}
-                            								set(
-                            									current,
-                            									"operation",
-                            									lv_operation_7_0,
-                            									"polytech.dsl.spaceteam.spaml.Spaml.OPERATION");
-                            								afterParserOrEnumRuleCall();
-                            							
+                            									if (current==null) {
+                            										current = createModelElementForParent(grammarAccess.getTransitionRule());
+                            									}
+                            									add(
+                            										current,
+                            										"handlers",
+                            										lv_handlers_1_0,
+                            										"polytech.dsl.spaceteam.spaml.Spaml.TransitionHandler");
+                            									afterParserOrEnumRuleCall();
+                            								
 
                             }
 
+
+                            }
+
+                            // InternalSpaml.g:682:7: (otherlv_2= ',' ( (lv_handlers_3_0= ruleTransitionHandler ) ) )*
+                            loop13:
+                            do {
+                                int alt13=2;
+                                int LA13_0 = input.LA(1);
+
+                                if ( (LA13_0==27) ) {
+                                    alt13=1;
+                                }
+
+
+                                switch (alt13) {
+                            	case 1 :
+                            	    // InternalSpaml.g:683:8: otherlv_2= ',' ( (lv_handlers_3_0= ruleTransitionHandler ) )
+                            	    {
+                            	    otherlv_2=(Token)match(input,27,FOLLOW_18); 
+
+                            	    								newLeafNode(otherlv_2, grammarAccess.getTransitionAccess().getCommaKeyword_0_0_1_0_1_0());
+                            	    							
+                            	    // InternalSpaml.g:687:8: ( (lv_handlers_3_0= ruleTransitionHandler ) )
+                            	    // InternalSpaml.g:688:9: (lv_handlers_3_0= ruleTransitionHandler )
+                            	    {
+                            	    // InternalSpaml.g:688:9: (lv_handlers_3_0= ruleTransitionHandler )
+                            	    // InternalSpaml.g:689:10: lv_handlers_3_0= ruleTransitionHandler
+                            	    {
+
+                            	    										newCompositeNode(grammarAccess.getTransitionAccess().getHandlersTransitionHandlerParserRuleCall_0_0_1_0_1_1_0());
+                            	    									
+                            	    pushFollow(FOLLOW_17);
+                            	    lv_handlers_3_0=ruleTransitionHandler();
+
+                            	    state._fsp--;
+
+
+                            	    										if (current==null) {
+                            	    											current = createModelElementForParent(grammarAccess.getTransitionRule());
+                            	    										}
+                            	    										add(
+                            	    											current,
+                            	    											"handlers",
+                            	    											lv_handlers_3_0,
+                            	    											"polytech.dsl.spaceteam.spaml.Spaml.TransitionHandler");
+                            	    										afterParserOrEnumRuleCall();
+                            	    									
+
+                            	    }
+
+
+                            	    }
+
+
+                            	    }
+                            	    break;
+
+                            	default :
+                            	    break loop13;
+                                }
+                            } while (true);
+
+
+                            }
+
+
+                            }
+                            break;
+                        case 2 :
+                            // InternalSpaml.g:709:6: ( ( (lv_operation_4_0= ruleOPERATION ) ) otherlv_5= '(' ( ( (lv_handlers_6_0= ruleTransitionHandler ) ) (otherlv_7= ',' ( (lv_handlers_8_0= ruleTransitionHandler ) ) )* ) otherlv_9= ')' )
+                            {
+                            // InternalSpaml.g:709:6: ( ( (lv_operation_4_0= ruleOPERATION ) ) otherlv_5= '(' ( ( (lv_handlers_6_0= ruleTransitionHandler ) ) (otherlv_7= ',' ( (lv_handlers_8_0= ruleTransitionHandler ) ) )* ) otherlv_9= ')' )
+                            // InternalSpaml.g:710:7: ( (lv_operation_4_0= ruleOPERATION ) ) otherlv_5= '(' ( ( (lv_handlers_6_0= ruleTransitionHandler ) ) (otherlv_7= ',' ( (lv_handlers_8_0= ruleTransitionHandler ) ) )* ) otherlv_9= ')'
+                            {
+                            // InternalSpaml.g:710:7: ( (lv_operation_4_0= ruleOPERATION ) )
+                            // InternalSpaml.g:711:8: (lv_operation_4_0= ruleOPERATION )
+                            {
+                            // InternalSpaml.g:711:8: (lv_operation_4_0= ruleOPERATION )
+                            // InternalSpaml.g:712:9: lv_operation_4_0= ruleOPERATION
+                            {
+
+                            									newCompositeNode(grammarAccess.getTransitionAccess().getOperationOPERATIONEnumRuleCall_0_0_1_1_0_0());
+                            								
+                            pushFollow(FOLLOW_19);
+                            lv_operation_4_0=ruleOPERATION();
+
+                            state._fsp--;
+
+
+                            									if (current==null) {
+                            										current = createModelElementForParent(grammarAccess.getTransitionRule());
+                            									}
+                            									set(
+                            										current,
+                            										"operation",
+                            										lv_operation_4_0,
+                            										"polytech.dsl.spaceteam.spaml.Spaml.OPERATION");
+                            									afterParserOrEnumRuleCall();
+                            								
+
+                            }
+
+
+                            }
+
+                            otherlv_5=(Token)match(input,28,FOLLOW_18); 
+
+                            							newLeafNode(otherlv_5, grammarAccess.getTransitionAccess().getLeftParenthesisKeyword_0_0_1_1_1());
+                            						
+                            // InternalSpaml.g:733:7: ( ( (lv_handlers_6_0= ruleTransitionHandler ) ) (otherlv_7= ',' ( (lv_handlers_8_0= ruleTransitionHandler ) ) )* )
+                            // InternalSpaml.g:734:8: ( (lv_handlers_6_0= ruleTransitionHandler ) ) (otherlv_7= ',' ( (lv_handlers_8_0= ruleTransitionHandler ) ) )*
+                            {
+                            // InternalSpaml.g:734:8: ( (lv_handlers_6_0= ruleTransitionHandler ) )
+                            // InternalSpaml.g:735:9: (lv_handlers_6_0= ruleTransitionHandler )
+                            {
+                            // InternalSpaml.g:735:9: (lv_handlers_6_0= ruleTransitionHandler )
+                            // InternalSpaml.g:736:10: lv_handlers_6_0= ruleTransitionHandler
+                            {
+
+                            										newCompositeNode(grammarAccess.getTransitionAccess().getHandlersTransitionHandlerParserRuleCall_0_0_1_1_2_0_0());
+                            									
+                            pushFollow(FOLLOW_20);
+                            lv_handlers_6_0=ruleTransitionHandler();
+
+                            state._fsp--;
+
+
+                            										if (current==null) {
+                            											current = createModelElementForParent(grammarAccess.getTransitionRule());
+                            										}
+                            										add(
+                            											current,
+                            											"handlers",
+                            											lv_handlers_6_0,
+                            											"polytech.dsl.spaceteam.spaml.Spaml.TransitionHandler");
+                            										afterParserOrEnumRuleCall();
+                            									
+
+                            }
+
+
+                            }
+
+                            // InternalSpaml.g:753:8: (otherlv_7= ',' ( (lv_handlers_8_0= ruleTransitionHandler ) ) )*
+                            loop14:
+                            do {
+                                int alt14=2;
+                                int LA14_0 = input.LA(1);
+
+                                if ( (LA14_0==27) ) {
+                                    alt14=1;
+                                }
+
+
+                                switch (alt14) {
+                            	case 1 :
+                            	    // InternalSpaml.g:754:9: otherlv_7= ',' ( (lv_handlers_8_0= ruleTransitionHandler ) )
+                            	    {
+                            	    otherlv_7=(Token)match(input,27,FOLLOW_18); 
+
+                            	    									newLeafNode(otherlv_7, grammarAccess.getTransitionAccess().getCommaKeyword_0_0_1_1_2_1_0());
+                            	    								
+                            	    // InternalSpaml.g:758:9: ( (lv_handlers_8_0= ruleTransitionHandler ) )
+                            	    // InternalSpaml.g:759:10: (lv_handlers_8_0= ruleTransitionHandler )
+                            	    {
+                            	    // InternalSpaml.g:759:10: (lv_handlers_8_0= ruleTransitionHandler )
+                            	    // InternalSpaml.g:760:11: lv_handlers_8_0= ruleTransitionHandler
+                            	    {
+
+                            	    											newCompositeNode(grammarAccess.getTransitionAccess().getHandlersTransitionHandlerParserRuleCall_0_0_1_1_2_1_1_0());
+                            	    										
+                            	    pushFollow(FOLLOW_20);
+                            	    lv_handlers_8_0=ruleTransitionHandler();
+
+                            	    state._fsp--;
+
+
+                            	    											if (current==null) {
+                            	    												current = createModelElementForParent(grammarAccess.getTransitionRule());
+                            	    											}
+                            	    											add(
+                            	    												current,
+                            	    												"handlers",
+                            	    												lv_handlers_8_0,
+                            	    												"polytech.dsl.spaceteam.spaml.Spaml.TransitionHandler");
+                            	    											afterParserOrEnumRuleCall();
+                            	    										
+
+                            	    }
+
+
+                            	    }
+
+
+                            	    }
+                            	    break;
+
+                            	default :
+                            	    break loop14;
+                                }
+                            } while (true);
+
+
+                            }
+
+                            otherlv_9=(Token)match(input,29,FOLLOW_21); 
+
+                            							newLeafNode(otherlv_9, grammarAccess.getTransitionAccess().getRightParenthesisKeyword_0_0_1_1_3());
+                            						
 
                             }
 
@@ -2067,19 +2125,19 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSpaml.g:746:4: ( (lv_delay_8_0= ruleEInt ) )
+                    // InternalSpaml.g:787:4: ( (lv_delay_10_0= ruleEInt ) )
                     {
-                    // InternalSpaml.g:746:4: ( (lv_delay_8_0= ruleEInt ) )
-                    // InternalSpaml.g:747:5: (lv_delay_8_0= ruleEInt )
+                    // InternalSpaml.g:787:4: ( (lv_delay_10_0= ruleEInt ) )
+                    // InternalSpaml.g:788:5: (lv_delay_10_0= ruleEInt )
                     {
-                    // InternalSpaml.g:747:5: (lv_delay_8_0= ruleEInt )
-                    // InternalSpaml.g:748:6: lv_delay_8_0= ruleEInt
+                    // InternalSpaml.g:788:5: (lv_delay_10_0= ruleEInt )
+                    // InternalSpaml.g:789:6: lv_delay_10_0= ruleEInt
                     {
 
                     						newCompositeNode(grammarAccess.getTransitionAccess().getDelayEIntParserRuleCall_0_1_0());
                     					
-                    pushFollow(FOLLOW_19);
-                    lv_delay_8_0=ruleEInt();
+                    pushFollow(FOLLOW_21);
+                    lv_delay_10_0=ruleEInt();
 
                     state._fsp--;
 
@@ -2090,7 +2148,7 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
                     						set(
                     							current,
                     							"delay",
-                    							lv_delay_8_0,
+                    							lv_delay_10_0,
                     							"polytech.dsl.spaceteam.spaml.Spaml.EInt");
                     						afterParserOrEnumRuleCall();
                     					
@@ -2106,39 +2164,39 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSpaml.g:766:3: (otherlv_9= '->' | otherlv_10= 'then' )
-            int alt18=2;
-            int LA18_0 = input.LA(1);
+            // InternalSpaml.g:807:3: (otherlv_11= '->' | otherlv_12= 'then' )
+            int alt17=2;
+            int LA17_0 = input.LA(1);
 
-            if ( (LA18_0==31) ) {
-                alt18=1;
+            if ( (LA17_0==30) ) {
+                alt17=1;
             }
-            else if ( (LA18_0==32) ) {
-                alt18=2;
+            else if ( (LA17_0==31) ) {
+                alt17=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 18, 0, input);
+                    new NoViableAltException("", 17, 0, input);
 
                 throw nvae;
             }
-            switch (alt18) {
+            switch (alt17) {
                 case 1 :
-                    // InternalSpaml.g:767:4: otherlv_9= '->'
+                    // InternalSpaml.g:808:4: otherlv_11= '->'
                     {
-                    otherlv_9=(Token)match(input,31,FOLLOW_3); 
+                    otherlv_11=(Token)match(input,30,FOLLOW_3); 
 
-                    				newLeafNode(otherlv_9, grammarAccess.getTransitionAccess().getHyphenMinusGreaterThanSignKeyword_1_0());
+                    				newLeafNode(otherlv_11, grammarAccess.getTransitionAccess().getHyphenMinusGreaterThanSignKeyword_1_0());
                     			
 
                     }
                     break;
                 case 2 :
-                    // InternalSpaml.g:772:4: otherlv_10= 'then'
+                    // InternalSpaml.g:813:4: otherlv_12= 'then'
                     {
-                    otherlv_10=(Token)match(input,32,FOLLOW_3); 
+                    otherlv_12=(Token)match(input,31,FOLLOW_3); 
 
-                    				newLeafNode(otherlv_10, grammarAccess.getTransitionAccess().getThenKeyword_1_1());
+                    				newLeafNode(otherlv_12, grammarAccess.getTransitionAccess().getThenKeyword_1_1());
                     			
 
                     }
@@ -2146,11 +2204,11 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSpaml.g:777:3: ( ( ruleEString ) )
-            // InternalSpaml.g:778:4: ( ruleEString )
+            // InternalSpaml.g:818:3: ( ( ruleEString ) )
+            // InternalSpaml.g:819:4: ( ruleEString )
             {
-            // InternalSpaml.g:778:4: ( ruleEString )
-            // InternalSpaml.g:779:5: ruleEString
+            // InternalSpaml.g:819:4: ( ruleEString )
+            // InternalSpaml.g:820:5: ruleEString
             {
 
             					if (current==null) {
@@ -2197,7 +2255,7 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTransitionHandler"
-    // InternalSpaml.g:797:1: entryRuleTransitionHandler returns [EObject current=null] : iv_ruleTransitionHandler= ruleTransitionHandler EOF ;
+    // InternalSpaml.g:838:1: entryRuleTransitionHandler returns [EObject current=null] : iv_ruleTransitionHandler= ruleTransitionHandler EOF ;
     public final EObject entryRuleTransitionHandler() throws RecognitionException {
         EObject current = null;
 
@@ -2205,8 +2263,8 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSpaml.g:797:58: (iv_ruleTransitionHandler= ruleTransitionHandler EOF )
-            // InternalSpaml.g:798:2: iv_ruleTransitionHandler= ruleTransitionHandler EOF
+            // InternalSpaml.g:838:58: (iv_ruleTransitionHandler= ruleTransitionHandler EOF )
+            // InternalSpaml.g:839:2: iv_ruleTransitionHandler= ruleTransitionHandler EOF
             {
              newCompositeNode(grammarAccess.getTransitionHandlerRule()); 
             pushFollow(FOLLOW_1);
@@ -2233,7 +2291,7 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTransitionHandler"
-    // InternalSpaml.g:804:1: ruleTransitionHandler returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '=' | otherlv_2= 'is' ) ( (lv_value_3_0= ruleSIGNAL ) ) ) ;
+    // InternalSpaml.g:845:1: ruleTransitionHandler returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '=' | otherlv_2= 'is' ) ( (lv_value_3_0= ruleSIGNAL ) ) ) ;
     public final EObject ruleTransitionHandler() throws RecognitionException {
         EObject current = null;
 
@@ -2247,24 +2305,24 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSpaml.g:810:2: ( ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '=' | otherlv_2= 'is' ) ( (lv_value_3_0= ruleSIGNAL ) ) ) )
-            // InternalSpaml.g:811:2: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '=' | otherlv_2= 'is' ) ( (lv_value_3_0= ruleSIGNAL ) ) )
+            // InternalSpaml.g:851:2: ( ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '=' | otherlv_2= 'is' ) ( (lv_value_3_0= ruleSIGNAL ) ) ) )
+            // InternalSpaml.g:852:2: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '=' | otherlv_2= 'is' ) ( (lv_value_3_0= ruleSIGNAL ) ) )
             {
-            // InternalSpaml.g:811:2: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '=' | otherlv_2= 'is' ) ( (lv_value_3_0= ruleSIGNAL ) ) )
-            // InternalSpaml.g:812:3: ( (otherlv_0= RULE_ID ) ) (otherlv_1= '=' | otherlv_2= 'is' ) ( (lv_value_3_0= ruleSIGNAL ) )
+            // InternalSpaml.g:852:2: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '=' | otherlv_2= 'is' ) ( (lv_value_3_0= ruleSIGNAL ) ) )
+            // InternalSpaml.g:853:3: ( (otherlv_0= RULE_ID ) ) (otherlv_1= '=' | otherlv_2= 'is' ) ( (lv_value_3_0= ruleSIGNAL ) )
             {
-            // InternalSpaml.g:812:3: ( (otherlv_0= RULE_ID ) )
-            // InternalSpaml.g:813:4: (otherlv_0= RULE_ID )
+            // InternalSpaml.g:853:3: ( (otherlv_0= RULE_ID ) )
+            // InternalSpaml.g:854:4: (otherlv_0= RULE_ID )
             {
-            // InternalSpaml.g:813:4: (otherlv_0= RULE_ID )
-            // InternalSpaml.g:814:5: otherlv_0= RULE_ID
+            // InternalSpaml.g:854:4: (otherlv_0= RULE_ID )
+            // InternalSpaml.g:855:5: otherlv_0= RULE_ID
             {
 
             					if (current==null) {
             						current = createModelElement(grammarAccess.getTransitionHandlerRule());
             					}
             				
-            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_20); 
+            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_22); 
 
             					newLeafNode(otherlv_0, grammarAccess.getTransitionHandlerAccess().getSensorSensorCrossReference_0_0());
             				
@@ -2274,25 +2332,25 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSpaml.g:825:3: (otherlv_1= '=' | otherlv_2= 'is' )
-            int alt19=2;
-            int LA19_0 = input.LA(1);
+            // InternalSpaml.g:866:3: (otherlv_1= '=' | otherlv_2= 'is' )
+            int alt18=2;
+            int LA18_0 = input.LA(1);
 
-            if ( (LA19_0==24) ) {
-                alt19=1;
+            if ( (LA18_0==24) ) {
+                alt18=1;
             }
-            else if ( (LA19_0==33) ) {
-                alt19=2;
+            else if ( (LA18_0==32) ) {
+                alt18=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 19, 0, input);
+                    new NoViableAltException("", 18, 0, input);
 
                 throw nvae;
             }
-            switch (alt19) {
+            switch (alt18) {
                 case 1 :
-                    // InternalSpaml.g:826:4: otherlv_1= '='
+                    // InternalSpaml.g:867:4: otherlv_1= '='
                     {
                     otherlv_1=(Token)match(input,24,FOLLOW_15); 
 
@@ -2302,9 +2360,9 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSpaml.g:831:4: otherlv_2= 'is'
+                    // InternalSpaml.g:872:4: otherlv_2= 'is'
                     {
-                    otherlv_2=(Token)match(input,33,FOLLOW_15); 
+                    otherlv_2=(Token)match(input,32,FOLLOW_15); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getTransitionHandlerAccess().getIsKeyword_1_1());
                     			
@@ -2314,11 +2372,11 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSpaml.g:836:3: ( (lv_value_3_0= ruleSIGNAL ) )
-            // InternalSpaml.g:837:4: (lv_value_3_0= ruleSIGNAL )
+            // InternalSpaml.g:877:3: ( (lv_value_3_0= ruleSIGNAL ) )
+            // InternalSpaml.g:878:4: (lv_value_3_0= ruleSIGNAL )
             {
-            // InternalSpaml.g:837:4: (lv_value_3_0= ruleSIGNAL )
-            // InternalSpaml.g:838:5: lv_value_3_0= ruleSIGNAL
+            // InternalSpaml.g:878:4: (lv_value_3_0= ruleSIGNAL )
+            // InternalSpaml.g:879:5: lv_value_3_0= ruleSIGNAL
             {
 
             					newCompositeNode(grammarAccess.getTransitionHandlerAccess().getValueSIGNALEnumRuleCall_2_0());
@@ -2368,7 +2426,7 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSIGNAL"
-    // InternalSpaml.g:859:1: ruleSIGNAL returns [Enumerator current=null] : ( (enumLiteral_0= 'LOW' ) | (enumLiteral_1= 'HIGH' ) ) ;
+    // InternalSpaml.g:900:1: ruleSIGNAL returns [Enumerator current=null] : ( (enumLiteral_0= 'LOW' ) | (enumLiteral_1= 'HIGH' ) ) ;
     public final Enumerator ruleSIGNAL() throws RecognitionException {
         Enumerator current = null;
 
@@ -2379,33 +2437,33 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSpaml.g:865:2: ( ( (enumLiteral_0= 'LOW' ) | (enumLiteral_1= 'HIGH' ) ) )
-            // InternalSpaml.g:866:2: ( (enumLiteral_0= 'LOW' ) | (enumLiteral_1= 'HIGH' ) )
+            // InternalSpaml.g:906:2: ( ( (enumLiteral_0= 'LOW' ) | (enumLiteral_1= 'HIGH' ) ) )
+            // InternalSpaml.g:907:2: ( (enumLiteral_0= 'LOW' ) | (enumLiteral_1= 'HIGH' ) )
             {
-            // InternalSpaml.g:866:2: ( (enumLiteral_0= 'LOW' ) | (enumLiteral_1= 'HIGH' ) )
-            int alt20=2;
-            int LA20_0 = input.LA(1);
+            // InternalSpaml.g:907:2: ( (enumLiteral_0= 'LOW' ) | (enumLiteral_1= 'HIGH' ) )
+            int alt19=2;
+            int LA19_0 = input.LA(1);
 
-            if ( (LA20_0==34) ) {
-                alt20=1;
+            if ( (LA19_0==33) ) {
+                alt19=1;
             }
-            else if ( (LA20_0==35) ) {
-                alt20=2;
+            else if ( (LA19_0==34) ) {
+                alt19=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 20, 0, input);
+                    new NoViableAltException("", 19, 0, input);
 
                 throw nvae;
             }
-            switch (alt20) {
+            switch (alt19) {
                 case 1 :
-                    // InternalSpaml.g:867:3: (enumLiteral_0= 'LOW' )
+                    // InternalSpaml.g:908:3: (enumLiteral_0= 'LOW' )
                     {
-                    // InternalSpaml.g:867:3: (enumLiteral_0= 'LOW' )
-                    // InternalSpaml.g:868:4: enumLiteral_0= 'LOW'
+                    // InternalSpaml.g:908:3: (enumLiteral_0= 'LOW' )
+                    // InternalSpaml.g:909:4: enumLiteral_0= 'LOW'
                     {
-                    enumLiteral_0=(Token)match(input,34,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,33,FOLLOW_2); 
 
                     				current = grammarAccess.getSIGNALAccess().getLOWEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getSIGNALAccess().getLOWEnumLiteralDeclaration_0());
@@ -2417,12 +2475,12 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSpaml.g:875:3: (enumLiteral_1= 'HIGH' )
+                    // InternalSpaml.g:916:3: (enumLiteral_1= 'HIGH' )
                     {
-                    // InternalSpaml.g:875:3: (enumLiteral_1= 'HIGH' )
-                    // InternalSpaml.g:876:4: enumLiteral_1= 'HIGH'
+                    // InternalSpaml.g:916:3: (enumLiteral_1= 'HIGH' )
+                    // InternalSpaml.g:917:4: enumLiteral_1= 'HIGH'
                     {
-                    enumLiteral_1=(Token)match(input,35,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,34,FOLLOW_2); 
 
                     				current = grammarAccess.getSIGNALAccess().getHIGHEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getSIGNALAccess().getHIGHEnumLiteralDeclaration_1());
@@ -2456,7 +2514,7 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOPERATION"
-    // InternalSpaml.g:886:1: ruleOPERATION returns [Enumerator current=null] : ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) ) ;
+    // InternalSpaml.g:927:1: ruleOPERATION returns [Enumerator current=null] : ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) ) ;
     public final Enumerator ruleOPERATION() throws RecognitionException {
         Enumerator current = null;
 
@@ -2467,33 +2525,33 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSpaml.g:892:2: ( ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) ) )
-            // InternalSpaml.g:893:2: ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) )
+            // InternalSpaml.g:933:2: ( ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) ) )
+            // InternalSpaml.g:934:2: ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) )
             {
-            // InternalSpaml.g:893:2: ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) )
-            int alt21=2;
-            int LA21_0 = input.LA(1);
+            // InternalSpaml.g:934:2: ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) )
+            int alt20=2;
+            int LA20_0 = input.LA(1);
 
-            if ( (LA21_0==36) ) {
-                alt21=1;
+            if ( (LA20_0==35) ) {
+                alt20=1;
             }
-            else if ( (LA21_0==37) ) {
-                alt21=2;
+            else if ( (LA20_0==36) ) {
+                alt20=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 21, 0, input);
+                    new NoViableAltException("", 20, 0, input);
 
                 throw nvae;
             }
-            switch (alt21) {
+            switch (alt20) {
                 case 1 :
-                    // InternalSpaml.g:894:3: (enumLiteral_0= 'AND' )
+                    // InternalSpaml.g:935:3: (enumLiteral_0= 'AND' )
                     {
-                    // InternalSpaml.g:894:3: (enumLiteral_0= 'AND' )
-                    // InternalSpaml.g:895:4: enumLiteral_0= 'AND'
+                    // InternalSpaml.g:935:3: (enumLiteral_0= 'AND' )
+                    // InternalSpaml.g:936:4: enumLiteral_0= 'AND'
                     {
-                    enumLiteral_0=(Token)match(input,36,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,35,FOLLOW_2); 
 
                     				current = grammarAccess.getOPERATIONAccess().getANDEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getOPERATIONAccess().getANDEnumLiteralDeclaration_0());
@@ -2505,12 +2563,12 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSpaml.g:902:3: (enumLiteral_1= 'OR' )
+                    // InternalSpaml.g:943:3: (enumLiteral_1= 'OR' )
                     {
-                    // InternalSpaml.g:902:3: (enumLiteral_1= 'OR' )
-                    // InternalSpaml.g:903:4: enumLiteral_1= 'OR'
+                    // InternalSpaml.g:943:3: (enumLiteral_1= 'OR' )
+                    // InternalSpaml.g:944:4: enumLiteral_1= 'OR'
                     {
-                    enumLiteral_1=(Token)match(input,37,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,36,FOLLOW_2); 
 
                     				current = grammarAccess.getOPERATIONAccess().getOREnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getOPERATIONAccess().getOREnumLiteralDeclaration_1());
@@ -2557,15 +2615,17 @@ public class InternalSpamlParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000E30000L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000040030L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000180040L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000004180070L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000001804180070L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000040000L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000003000000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000C00000000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000004000020L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x00000001F8000000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000003000000000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000180000000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000201000000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000600000000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000001804000020L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x00000000C8000000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000028000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x00000000C0000000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000101000000L});
 
 }
