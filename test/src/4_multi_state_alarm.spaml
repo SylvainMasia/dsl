@@ -13,14 +13,14 @@ Program multi_state_alarm initialState initial {
     }
     
     noiseon {
-    	red_led = LOW
-    	buzzer = HIGH
-    	button = HIGH -> ledon
+        red_led = LOW
+        buzzer = HIGH
+        button = HIGH -> ledon
     }
     
     ledon {
-    	red_led = HIGH
-    	buzzer = LOW
-    	button = HIGH -> initial
+        red_led = HIGH
+        buzzer = LOW
+        button = HIGH -> initial
     }
 }

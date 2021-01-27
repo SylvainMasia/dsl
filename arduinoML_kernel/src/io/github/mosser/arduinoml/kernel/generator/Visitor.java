@@ -11,7 +11,9 @@ public abstract class Visitor<T> {
 
 	public abstract void visit(App app);
 
-	public abstract void visit(TransitionHandler handler);
+	public abstract void visit(Condition condition);
+	public abstract void visit(LogicalCondition condition);
+	public abstract void visit(TemporalCondition condition);
 	public abstract void visit(State state);
 	public abstract void visit(Transition transition);
 	public abstract void visit(Action action);

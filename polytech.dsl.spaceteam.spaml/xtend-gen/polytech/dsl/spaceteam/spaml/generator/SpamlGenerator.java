@@ -4,7 +4,6 @@
 package polytech.dsl.spaceteam.spaml.generator;
 
 import arduinoML.Actuator;
-import arduinoML.Condition;
 import arduinoML.LogicalCondition;
 import arduinoML.OPERATION;
 import arduinoML.PluggedElement;
@@ -17,9 +16,9 @@ import arduinoML.TemporalCondition;
 import com.google.common.collect.Iterables;
 import io.github.mosser.arduinoml.kernel.App;
 import io.github.mosser.arduinoml.kernel.behavioral.Action;
+import io.github.mosser.arduinoml.kernel.behavioral.Condition;
 import io.github.mosser.arduinoml.kernel.behavioral.State;
 import io.github.mosser.arduinoml.kernel.behavioral.Transition;
-import io.github.mosser.arduinoml.kernel.behavioral.TransitionHandler;
 import io.github.mosser.arduinoml.kernel.generator.ToWiring;
 import io.github.mosser.arduinoml.kernel.structural.Brick;
 import java.util.ArrayList;
@@ -119,18 +118,26 @@ public class SpamlGenerator extends AbstractGenerator {
     return initialState;
   }
   
-  private TransitionHandler convertConditionToMosser(final Condition condition) {
-    Object _xifexpression = null;
+  private Condition convertConditionToMosser(final arduinoML.Condition condition) {
     if ((condition instanceof LogicalCondition)) {
-      _xifexpression = null;
-    } else {
-      Object _xifexpression_1 = null;
-      if ((condition instanceof TemporalCondition)) {
-        _xifexpression_1 = null;
+      final io.github.mosser.arduinoml.kernel.behavioral.LogicalCondition mosserCondition = new io.github.mosser.arduinoml.kernel.behavioral.LogicalCondition();
+      SIGNAL _value = ((LogicalCondition)condition).getValue();
+      boolean _tripleEquals = (_value == SIGNAL.HIGH);
+      if (_tripleEquals) {
+        mosserCondition.setValue(io.github.mosser.arduinoml.kernel.structural.SIGNAL.HIGH);
+      } else {
+        mosserCondition.setValue(io.github.mosser.arduinoml.kernel.structural.SIGNAL.LOW);
       }
-      _xifexpression = _xifexpression_1;
+      mosserCondition.setSensor(this.convertSpamlSensorToMosser(((LogicalCondition)condition).getSensor()));
+      return mosserCondition;
+    } else {
+      if ((condition instanceof TemporalCondition)) {
+        final io.github.mosser.arduinoml.kernel.behavioral.TemporalCondition mosserCondition_1 = new io.github.mosser.arduinoml.kernel.behavioral.TemporalCondition();
+        mosserCondition_1.setDelay(((TemporalCondition)condition).getDelay());
+        return mosserCondition_1;
+      }
     }
-    return ((TransitionHandler)_xifexpression);
+    return null;
   }
   
   private List<Transition> getTransitionsFromState(final arduinoML.State state) {
@@ -149,6 +156,12 @@ public class SpamlGenerator extends AbstractGenerator {
         } else {
           transition.setOperation(io.github.mosser.arduinoml.kernel.structural.OPERATION.OR);
         }
+        final ArrayList<Condition> conditions = new ArrayList<Condition>();
+        EList<arduinoML.Condition> _conditions = t.getConditions();
+        for (final arduinoML.Condition c : _conditions) {
+          conditions.add(this.convertConditionToMosser(c));
+        }
+        transition.setConditions(conditions);
         transitions.add(transition);
       }
     }
@@ -182,6 +195,7 @@ public class SpamlGenerator extends AbstractGenerator {
       {
         final State state = new State();
         state.setName(s.getName());
+        state.setTransitions(this.getTransitionsFromState(s));
         state.setActions(this.getActionsFromState(s));
         states.add(state);
       }

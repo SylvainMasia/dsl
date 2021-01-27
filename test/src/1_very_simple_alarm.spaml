@@ -1,8 +1,8 @@
 Program very_simpe_alarm initialState off {
     pluggedElements
-    Actuator red_led 1
-    Actuator buzzer 2
-    SensorDigital button 3
+    Actuator red_led 2
+    Actuator buzzer 3
+    SensorDigital button 4
 
     states
     off {
@@ -13,6 +13,6 @@ Program very_simpe_alarm initialState off {
     on {
         red_led = HIGH
         buzzer = HIGH
-        button = LOW -> off
-    }
+        button = LOW -> off 
+    }  
 }

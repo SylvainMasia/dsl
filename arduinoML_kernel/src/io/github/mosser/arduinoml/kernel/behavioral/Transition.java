@@ -1,5 +1,6 @@
 package io.github.mosser.arduinoml.kernel.behavioral;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import io.github.mosser.arduinoml.kernel.generator.Visitable;
@@ -7,12 +8,9 @@ import io.github.mosser.arduinoml.kernel.generator.Visitor;
 import io.github.mosser.arduinoml.kernel.structural.OPERATION;
 
 public class Transition implements Visitable {
-
-	private List<TransitionHandler> handlers;
+	private List<Condition> conditions;
 	private State next;
-	private OPERATION operation;
-	private int delay = 0;
-	
+	private OPERATION operation;	
 	
 	public OPERATION getOperation() {
 		return operation;
@@ -30,20 +28,29 @@ public class Transition implements Visitable {
 		this.next = next;
 	}
 
-	public List<TransitionHandler> getHandlers() {
-		return handlers;
+	public List<Condition> getConditions() {
+		return conditions;
 	}
 
-	public void setHandlers(List<TransitionHandler> handlers) {
-		this.handlers = handlers;
+	public void setConditions(List<Condition> conditions) {
+		boolean hasTemporal = false;
+		for (Condition c : conditions) {
+			if (c instanceof TemporalCondition && hasTemporal) {
+				throw new RuntimeException("Pas possible d'avoir deux temporal");
+			} else if (c instanceof TemporalCondition) {
+				hasTemporal = true;
+			}
+		}
+		this.conditions = conditions;
 	}
-
-	public int getDelay() {
-		return delay;
-	}
-
-	public void setDelay(int delay) {
-		this.delay = delay;
+	
+	public int getTemporal() {
+		for (Condition c : conditions) {
+			if (c instanceof TemporalCondition) {
+				return ((TemporalCondition) c).getDelay();
+			}
+		}
+		return -1;
 	}
 
 	@Override

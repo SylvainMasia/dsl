@@ -105,21 +105,20 @@ class SpamlGenerator extends AbstractGenerator {
 		return initialState;
 	}
 	
-	private def io.github.mosser.arduinoml.kernel.behavioral.TransitionHandler convertConditionToMosser(Condition condition) {
+	private def io.github.mosser.arduinoml.kernel.behavioral.Condition convertConditionToMosser(Condition condition) {
 		if (condition instanceof LogicalCondition) {
-			//val mosserCondition = new io.github.mosser.arduinoml.kernel.behavioral.LogicalCondition();
-			//if (condition.value === SIGNAL.HIGH) {
-			//	mosserCondition.value = io.github.mosser.arduinoml.kernel.structural.SIGNAL.HIGH;
-			//} else {
-			//	mosserCondition.value = io.github.mosser.arduinoml.kernel.structural.SIGNAL.LOW;
-			//}
-			//mosserCondition.sensor = convertSpamlSensorToMosser(condition.sensor);
-			//return mosserCondition
+			val mosserCondition = new io.github.mosser.arduinoml.kernel.behavioral.LogicalCondition();
+			if (condition.value === SIGNAL.HIGH) {
+				mosserCondition.value = io.github.mosser.arduinoml.kernel.structural.SIGNAL.HIGH;
+			} else {
+				mosserCondition.value = io.github.mosser.arduinoml.kernel.structural.SIGNAL.LOW;
+			}
+			mosserCondition.sensor = convertSpamlSensorToMosser(condition.sensor);
+			return mosserCondition
 		} else if (condition instanceof TemporalCondition) {
-			// TODO create conditions in mosser
-			//val mosserCondition = new io.github.mosser.arduinoml.kernel.behavioral.TemporalCondition();
-			//mosserCondition.delay = condition.delay;
-			//return mosserCondition
+			val mosserCondition = new io.github.mosser.arduinoml.kernel.behavioral.TemporalCondition();
+			mosserCondition.delay = condition.delay;
+			return mosserCondition
 		}
 	}
 	
@@ -138,12 +137,11 @@ class SpamlGenerator extends AbstractGenerator {
 				transition.operation = io.github.mosser.arduinoml.kernel.structural.OPERATION.OR;
 			}
 			
-			//val conditions = new ArrayList<io.github.mosser.arduinoml.kernel.behavioral.Condition>();
-			//for (Condition c : t.conditions) {
-			//	conditions.add(convertConditionToMosser(c));
-			//}
-			//TODO transition.conditions = handlers;
-			
+			val conditions = new ArrayList<io.github.mosser.arduinoml.kernel.behavioral.Condition>();
+			for (Condition c : t.conditions) {
+				conditions.add(convertConditionToMosser(c));
+			}
+			transition.conditions = conditions;
 			transitions.add(transition);
 		}
 		return transitions;
@@ -172,7 +170,7 @@ class SpamlGenerator extends AbstractGenerator {
 		for (State s : program.states) {
 			val state = new io.github.mosser.arduinoml.kernel.behavioral.State();
 			state.name = s.name;
-			//TODO state.transitions = getTransitionsFromState(s);
+			state.transitions = getTransitionsFromState(s);
 			state.actions = getActionsFromState(s);
 			states.add(state);
 		}

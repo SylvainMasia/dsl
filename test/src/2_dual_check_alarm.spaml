@@ -9,11 +9,11 @@ Program dual_check_alarm initialState off {
     off {
         red_led = LOW
         buzzer = LOW
-        button = HIGH && button2 = HIGH <- AND -> on
+        AND(button = HIGH, button2 = HIGH) -> on 
     }
     on {
         red_led = HIGH
         buzzer = HIGH
-        button = LOW && button2 = LOW <- OR -> off 
+        OR(button = LOW, button2 = LOW) -> off 
     }
 }

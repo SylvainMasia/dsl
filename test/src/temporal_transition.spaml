@@ -1,7 +1,9 @@
 Program temporal_transition initialState off {
     pluggedElements
-    ActuatorDigital LED1 1
-    SensorDigital B1 2
+    Actuator LED1 1
+    Actuator LED2 2
+    SensorDigital B1 3
+    SensorDigital B2 4
 
     states
     off {
@@ -10,6 +12,12 @@ Program temporal_transition initialState off {
     }
     on {
         LED1 = HIGH
-        800 -> off
+        OR(B1 = HIGH, 800) -> off
+        B2 = HIGH -> other
+    }
+    other {
+        LED1 = HIGH
+        LED2 = HIGH
+        500 -> off
     }
 }
