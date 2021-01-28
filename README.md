@@ -16,6 +16,9 @@ Rigaut François
   - contient le fichier SpamlGenerator.xtend
     - le langage permet d'écrire via 2 syntaxes : une verbose et une non verbose
   - contient le fichier SpamlValidator.xtend
-    - nous avons testé qu'un meme pin ne peut pas être attribué plusieurs fois ou que le pin existe (basé sur le Arduino Uno R3), ainsi qu'une variable et un state ne peuvent pas avoir le même nom 
+    - nous avons testé qu'un meme pin ne peut pas être attribué plusieurs fois ou que le pin existe (basé sur le Arduino Uno R3), ainsi qu'une variable et un state ne peuvent pas avoir le même nom
+- polytech.dsl.spaceteam.internal.spaml
+	- contient le dsl interne fait en java
+	- les 5 scénarios sont en commentaire dans le main
 - le dossier test contient des scénarios écrits en .Spaml
   - nous avons choisi comme scénario complémentaire le "Temporal"

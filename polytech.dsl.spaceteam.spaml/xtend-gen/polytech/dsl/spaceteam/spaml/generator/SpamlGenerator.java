@@ -114,6 +114,7 @@ public class SpamlGenerator extends AbstractGenerator {
   private State constructInitialState(final Program program) {
     final State initialState = new State();
     initialState.setName(program.getInitialState().getName());
+    initialState.setTransitions(this.getTransitionsFromState(program.getInitialState()));
     initialState.setActions(this.getActionsFromState(program.getInitialState()));
     return initialState;
   }

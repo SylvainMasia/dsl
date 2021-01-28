@@ -100,7 +100,7 @@ class SpamlGenerator extends AbstractGenerator {
 	private def io.github.mosser.arduinoml.kernel.behavioral.State constructInitialState(Program program) {
 		val initialState = new io.github.mosser.arduinoml.kernel.behavioral.State();
 		initialState.name = program.initialState.name;
-		//TODO initialState.transitions = getTransitionsFromState(program.initialState);
+		initialState.transitions = getTransitionsFromState(program.initialState);
 		initialState.actions = getActionsFromState(program.initialState);
 		return initialState;
 	}

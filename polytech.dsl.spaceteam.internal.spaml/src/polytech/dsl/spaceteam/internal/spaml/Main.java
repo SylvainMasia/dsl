@@ -1,0 +1,149 @@
+package polytech.dsl.spaceteam.internal.spaml;
+
+public class Main {
+	public static void main(String[] args) {
+		/*
+		// ########### SCENARIO 1 ###########
+		Program.create()
+			.setName("very_simple_alarm")
+			.addPluggedElement(Actuator.create().setPin(3).setName("red_led"))
+			.addPluggedElement(Actuator.create().setPin(4).setName("buzzer"))
+			.addPluggedElement(SensorDigital.create().setPin(2).setName("button"))
+			.setInitialState(State.create().setName("off"))
+			.addState(State.create().setName("off")
+					.addAction(Action.create().setValue(SIGNAL.LOW).setActuator(Actuator.get("red_led")))
+					.addAction(Action.create().setValue(SIGNAL.LOW).setActuator(Actuator.get("buzzer")))
+					.addTransition(Transition.create().setNext(State.create().setName("on"))
+							.addCondition(LogicalCondition.create().setValue(SIGNAL.HIGH).setSensor(SensorDigital.get("button")))
+					)
+			)
+			.addState(State.create().setName("on")
+					.addAction(Action.create().setValue(SIGNAL.HIGH).setActuator(Actuator.get("red_led")))
+					.addAction(Action.create().setValue(SIGNAL.HIGH).setActuator(Actuator.get("buzzer")))
+					.addTransition(Transition.create().setNext(State.create().setName("off"))
+							.addCondition(LogicalCondition.create().setValue(SIGNAL.LOW).setSensor(SensorDigital.get("button")))
+					)
+			).generateArduinoCode();
+		*/
+			
+		/*
+		// ########### SCENARIO 2 ###########
+		Program.create()
+			.setName("dual_check_alarm")
+			.addPluggedElement(Actuator.create().setPin(4).setName("red_led"))
+			.addPluggedElement(Actuator.create().setPin(5).setName("buzzer"))
+			.addPluggedElement(SensorDigital.create().setPin(2).setName("button"))
+			.addPluggedElement(SensorDigital.create().setPin(3).setName("button2"))
+			.setInitialState(State.create().setName("off"))
+			.addState(State.create().setName("off")
+					.addAction(Action.create().setValue(SIGNAL.LOW).setActuator(Actuator.get("red_led")))
+					.addAction(Action.create().setValue(SIGNAL.LOW).setActuator(Actuator.get("buzzer")))
+					.addTransition(Transition.create().setNext(State.create().setName("on"))
+							.setOperation(OPERATION.AND)
+							.addCondition(LogicalCondition.create().setValue(SIGNAL.HIGH).setSensor(SensorDigital.get("button")))
+							.addCondition(LogicalCondition.create().setValue(SIGNAL.HIGH).setSensor(SensorDigital.get("button2")))
+					)
+			)
+			.addState(State.create().setName("on")
+					.addAction(Action.create().setValue(SIGNAL.HIGH).setActuator(Actuator.get("red_led")))
+					.addAction(Action.create().setValue(SIGNAL.HIGH).setActuator(Actuator.get("buzzer")))
+					.addTransition(Transition.create().setNext(State.create().setName("off"))
+							.setOperation(OPERATION.OR)
+							.addCondition(LogicalCondition.create().setValue(SIGNAL.LOW).setSensor(SensorDigital.get("button")))
+							.addCondition(LogicalCondition.create().setValue(SIGNAL.LOW).setSensor(SensorDigital.get("button2")))
+					)
+			).generateArduinoCode();
+		*/
+		
+		/*
+		// ########### SCENARIO 3 ###########
+		Program.create()
+			.setName("state_based_alarm")
+			.addPluggedElement(Actuator.create().setPin(4).setName("red_led"))
+			.addPluggedElement(SensorDigital.create().setPin(2).setName("button"))
+			.setInitialState(State.create().setName("off"))
+			.addState(State.create().setName("off")
+					.addAction(Action.create().setValue(SIGNAL.LOW).setActuator(Actuator.get("red_led")))
+					.addTransition(Transition.create().setNext(State.create().setName("on"))
+							.addCondition(LogicalCondition.create().setValue(SIGNAL.HIGH).setSensor(SensorDigital.get("button")))
+					)
+			)
+			.addState(State.create().setName("on")
+					.addAction(Action.create().setValue(SIGNAL.HIGH).setActuator(Actuator.get("red_led")))
+					.addTransition(Transition.create().setNext(State.create().setName("off"))
+							.setOperation(OPERATION.OR)
+							.addCondition(LogicalCondition.create().setValue(SIGNAL.HIGH).setSensor(SensorDigital.get("button")))
+					)
+			).generateArduinoCode();
+		*/
+		
+		/*
+		// ########### SCENARIO 4 ###########
+		Program.create()
+			.setName("multi_state_alarm")
+			.addPluggedElement(Actuator.create().setPin(3).setName("red_led"))
+			.addPluggedElement(Actuator.create().setPin(4).setName("buzzer"))
+			.addPluggedElement(SensorDigital.create().setPin(2).setName("button"))
+			.setInitialState(State.create().setName("initial"))
+			.addState(State.create().setName("initial")
+					.addAction(Action.create().setValue(SIGNAL.LOW).setActuator(Actuator.get("red_led")))
+					.addAction(Action.create().setValue(SIGNAL.LOW).setActuator(Actuator.get("buzzer")))
+					.addTransition(Transition.create().setNext(State.create().setName("noiseon"))
+							.addCondition(LogicalCondition.create().setValue(SIGNAL.HIGH).setSensor(SensorDigital.get("button")))
+					)
+			)
+			.addState(State.create().setName("noiseon")
+					.addAction(Action.create().setValue(SIGNAL.LOW).setActuator(Actuator.get("red_led")))
+					.addAction(Action.create().setValue(SIGNAL.HIGH).setActuator(Actuator.get("buzzer")))
+					.addTransition(Transition.create().setNext(State.create().setName("ledon"))
+							.addCondition(LogicalCondition.create().setValue(SIGNAL.HIGH).setSensor(SensorDigital.get("button")))
+					)
+			)
+			.addState(State.create().setName("ledon")
+					.addAction(Action.create().setValue(SIGNAL.HIGH).setActuator(Actuator.get("red_led")))
+					.addAction(Action.create().setValue(SIGNAL.LOW).setActuator(Actuator.get("buzzer")))
+					.addTransition(Transition.create().setNext(State.create().setName("initial"))
+							.addCondition(LogicalCondition.create().setValue(SIGNAL.HIGH).setSensor(SensorDigital.get("button")))
+					)
+			).generateArduinoCode();
+		*/
+		
+		/*
+		// ########### SCENARIO 4 ###########
+		Program.create()
+			.setName("temporal_transition")
+			.addPluggedElement(Actuator.create().setPin(4).setName("LED1"))
+			.addPluggedElement(Actuator.create().setPin(5).setName("LED2"))
+			.addPluggedElement(SensorDigital.create().setPin(2).setName("B1"))
+			.addPluggedElement(SensorDigital.create().setPin(3).setName("B2"))
+			.setInitialState(State.create().setName("off"))
+			.addState(State.create().setName("off")
+					.addAction(Action.create().setValue(SIGNAL.LOW).setActuator(Actuator.get("LED1")))
+					.addAction(Action.create().setValue(SIGNAL.LOW).setActuator(Actuator.get("LED2")))
+					.addTransition(Transition.create().setNext(State.create().setName("on"))
+							.addCondition(LogicalCondition.create().setValue(SIGNAL.HIGH).setSensor(SensorDigital.get("B1")))
+					)
+			)
+			.addState(State.create().setName("on")
+					.addAction(Action.create().setValue(SIGNAL.HIGH).setActuator(Actuator.get("LED1")))
+					.addAction(Action.create().setValue(SIGNAL.LOW).setActuator(Actuator.get("LED2")))
+					.addTransition(Transition.create().setNext(State.create().setName("off"))
+							.setOperation(OPERATION.AND)
+							.addCondition(LogicalCondition.create().setValue(SIGNAL.HIGH).setSensor(SensorDigital.get("B1")))
+							.addCondition(TemporalCondition.create().setDelay(4000))
+					)
+					.addTransition(Transition.create().setNext(State.create().setName("other"))
+							.addCondition(LogicalCondition.create().setValue(SIGNAL.HIGH).setSensor(SensorDigital.get("B2")))
+					)
+			)
+			.addState(State.create().setName("other")
+					.addAction(Action.create().setValue(SIGNAL.HIGH).setActuator(Actuator.get("LED1")))
+					.addAction(Action.create().setValue(SIGNAL.HIGH).setActuator(Actuator.get("LED2")))
+					.addTransition(Transition.create().setNext(State.create().setName("off"))
+							.addCondition(TemporalCondition.create().setDelay(3000))
+					)
+			).generateArduinoCode();
+			*/
+	}
+
+}
