@@ -7,9 +7,13 @@ import arduinoML.PluggedElement
 import org.eclipse.xtext.validation.Check
 import java.util.HashSet
 import arduinoML.Program
+import arduinoML.State
 import arduinoML.ArduinoMLPackage
 import arduinoML.SensorDigital
 import arduinoML.Actuator
+import arduinoML.Condition
+import arduinoML.Transition
+import arduinoML.TemporalCondition
 
 /**
  * This class contains custom validation rules. 
@@ -33,6 +37,23 @@ class SpamlValidator extends AbstractSpamlValidator {
 			}
 		}
 		return;
+	}
+	
+	@Check
+	def checkPluggedElementPinNotDouble(arduinoML.State state) {
+		var isADelayCondition = false;
+		for (var i = 0; i < state.transitions.size; i++) {
+			val t = state.transitions.get(i);
+			for (Condition condition : t.conditions) {
+				if (condition instanceof TemporalCondition) {
+					if (isADelayCondition == false) {
+						isADelayCondition = true;
+					} else {
+						error('A state can have only one TemporalCondition', ArduinoMLPackage.Literals.STATE__TRANSITIONS, i);
+					}
+				}
+			}
+		}
 	}
 	
 	@Check

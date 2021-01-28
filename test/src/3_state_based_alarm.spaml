@@ -1,8 +1,7 @@
 Program state_based_alarm initialState off {
     pluggedElements
-    Actuator red_led 1
+    Actuator red_led 4
     SensorDigital button 2
-    SensorDigital button2 3
 
     states
     off {
@@ -14,4 +13,4 @@ Program state_based_alarm initialState off {
         red_led = HIGH
         button = HIGH -> off
     }
-}
+} 

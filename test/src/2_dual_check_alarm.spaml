@@ -1,9 +1,9 @@
 Program dual_check_alarm initialState off {
     pluggedElements
-    Actuator red_led 1
-    Actuator buzzer 2
-    SensorDigital button 3
-    SensorDigital button2 4
+    Actuator red_led 4
+    Actuator buzzer 5
+    SensorDigital button 2
+    SensorDigital button2 3
 
     states
     off {

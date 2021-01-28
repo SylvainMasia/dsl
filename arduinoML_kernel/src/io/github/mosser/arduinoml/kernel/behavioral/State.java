@@ -41,29 +41,35 @@ public class State implements NamedElement, Visitable {
 	}
 	
 	public List<Transition> getTransitionsThatExitTemporal() {
-		List<Transition> transitions = new ArrayList<>();
-		for (Transition t : this.transitions) {
+		List<Transition> transitionsToReturn = new ArrayList<>();
+		for (Transition t : transitions) {
 			if (t.getTemporal() > -1) {
 				if (t.getOperation().equals(OPERATION.OR) && t.getConditions().size() > 1) { // case 500 -> off -> the default operator is
-					transitions.add(t);
+					transitionsToReturn.add(t);
 				}
 			} else {
-				transitions.add(t);
+				transitionsToReturn.add(t);
 			}
 		}
-		return transitions;
+		return transitionsToReturn;
 	}
 	
 	public List<Transition> getTransitionsAfterTemporal() {
-		List<Transition> transitions = new ArrayList<>();
+		List<Transition> transitionsToReturn = new ArrayList<>();
 		for (Transition t : transitions) {
 			if (t.getTemporal() > -1) {
 				if (t.getOperation().equals(OPERATION.AND)) {
-					transitions.add(t);
+					transitionsToReturn.add(t);
+				} else if(t.getOperation().equals(OPERATION.OR) && t.getConditions().size() == 1 && t.getConditions().get(0) instanceof TemporalCondition) {
+					// case if we have
+					// LED1 = HIGH
+			    	// LED2 = HIGH
+			    	// 500 -> off
+					transitionsToReturn.add(t);
 				}
 			}
 		}
-		return transitions;
+		return transitionsToReturn;
 	}
 	
 	public int getTemporal() {

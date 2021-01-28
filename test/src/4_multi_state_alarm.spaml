@@ -1,9 +1,8 @@
 Program multi_state_alarm initialState initial {
     pluggedElements
-    Actuator red_led 1
-    Actuator buzzer 2
-    SensorDigital button 3
-    SensorDigital button2 4
+    Actuator red_led 3
+    Actuator buzzer 4
+    SensorDigital button 2
 
     states
     initial {

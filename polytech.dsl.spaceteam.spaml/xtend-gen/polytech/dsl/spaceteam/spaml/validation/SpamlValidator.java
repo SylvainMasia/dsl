@@ -5,10 +5,14 @@ package polytech.dsl.spaceteam.spaml.validation;
 
 import arduinoML.Actuator;
 import arduinoML.ArduinoMLPackage;
+import arduinoML.Condition;
 import arduinoML.PluggedElement;
 import arduinoML.Program;
 import arduinoML.SensorDigital;
+import arduinoML.TemporalCondition;
+import arduinoML.Transition;
 import java.util.HashSet;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.validation.Check;
 import polytech.dsl.spaceteam.spaml.validation.AbstractSpamlValidator;
 
@@ -33,6 +37,26 @@ public class SpamlValidator extends AbstractSpamlValidator {
       }
     }
     return;
+  }
+  
+  @Check
+  public void checkPluggedElementPinNotDouble(final arduinoML.State state) {
+    boolean isADelayCondition = false;
+    for (int i = 0; (i < state.getTransitions().size()); i++) {
+      {
+        final Transition t = state.getTransitions().get(i);
+        EList<Condition> _conditions = t.getConditions();
+        for (final Condition condition : _conditions) {
+          if ((condition instanceof TemporalCondition)) {
+            if ((isADelayCondition == false)) {
+              isADelayCondition = true;
+            } else {
+              this.error("A state can have only one TemporalCondition", ArduinoMLPackage.Literals.STATE__TRANSITIONS, i);
+            }
+          }
+        }
+      }
+    }
   }
   
   @Check

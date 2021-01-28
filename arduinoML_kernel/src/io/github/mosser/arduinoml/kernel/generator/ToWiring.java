@@ -94,25 +94,85 @@ public class ToWiring extends Visitor<StringBuffer> {
 			return;
 		}
 		if(context.get("pass") == PASS.TWO) {
-			w("\t\tcase " + state.getName() + ":\n");
+			// ajout des accolades au case pour definir variable dedans
+			w("\t\tcase " + state.getName() + ": {\n");
 			for (Action action : state.getActions()) {
 				action.accept(this);
 			}
 			
 			if (state.getTemporal() > -1) {
-				w("\t\t\tint time = millis() {\n");
-				w("\t\t\t\twhile(millis() < time + " + state.getTemporal() + ") {\n");
-				visitTransitions(state.getTransitionsThatExitTemporal());
-				w("\t\t\t\t}\n");
-				//visitTransitions(state.getTransitionsAfterTemporal());
+				w("\t\t\tint time" + state.getName() +" = millis();\n");
+				w("\t\t\twhile(millis() < time" + state.getName() +" + " + state.getTemporal() + ") {\n");
+				visitTransitionsThatExitTemporal(state.getTransitionsThatExitTemporal());
 				w("\t\t\t}\n");
+				visitTransitionsAfterTemporal(state.getTransitionsAfterTemporal());
 			} else {
 				visitTransitions(state.getTransitions());
 			}
-			w("\t\tbreak;\n");
+			w("\t\t} break;\n");
 			return;
 		}
 	}
+	
+	public void visitTransitionsAfterTemporal(List<Transition> transitions) {
+		w("\t\t\twhile(1){\n");
+		for (Transition t : transitions) {
+			if (t.getTemporal() > -1 && t.getConditions().size() == 1) {
+				w("\t\t\t\tcurrentState = " + t.getNext().getName() + ";\n");
+				w("\t\t\t\tbreak;\n");
+			} else {
+				visitTransitionThatExitTemporal(t);
+			}
+		}
+		w("\t\t\t}\n");
+	}
+	
+	public void visitTransitionsThatExitTemporal(List<Transition> transitions) {
+		for (Transition t : transitions) {
+			visitTransitionThatExitTemporal(t);
+		}
+	}
+	
+    public void visitTransitionThatExitTemporal(Transition transition) {
+		if(context.get("pass") == PASS.ONE) {
+			return;
+		}
+		if(context.get("pass") == PASS.TWO) {
+
+			for (Condition c : transition.getConditions()) {
+				if (c instanceof LogicalCondition) {
+					LogicalCondition lc = (LogicalCondition) c;
+					String sensorName = lc.getSensor().getName();
+					w(String.format("\t\t\t\t%sBounceGuard = millis() - %sLastDebounceTime > debounce;\n", sensorName, sensorName));
+				}
+			}
+			
+            wNoNewLine(String.format("\t\t\t\tif("));
+            for (int i = 0; i < transition.getConditions().size(); i++) {
+                this.visit(transition.getConditions().get(i));
+                if (i < transition.getConditions().size() -1) {
+                	if (transition.getConditions().get(i + 1) instanceof LogicalCondition) {
+	                    if (transition.getOperation().equals(OPERATION.AND)) {
+	                        wNoNewLine(String.format(" && "));
+	                    } else {
+	                        wNoNewLine(String.format(" || "));
+	                    }
+                	}
+                }
+            }
+            w(String.format(") {\n"));
+			for (Condition c : transition.getConditions()) {
+				if (c instanceof LogicalCondition) {
+					LogicalCondition lc = (LogicalCondition) c;
+					String sensorName = lc.getSensor().getName();
+					w(String.format("\t\t\t\t\t%sLastDebounceTime = millis();\n", sensorName));
+				}
+			}
+             w("\t\t\t\t\tcurrentState = " + transition.getNext().getName() + ";\n");
+             w("\t\t\t\t\tbreak;\n");
+			w("\t\t\t\t}\n");
+		}
+    }
 	
 	public void visitTransitions(List<Transition> transitions) {
 		for (Transition t : transitions) {

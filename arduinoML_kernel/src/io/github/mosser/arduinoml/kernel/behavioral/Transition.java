@@ -52,6 +52,15 @@ public class Transition implements Visitable {
 		}
 		return -1;
 	}
+	
+	@Override
+	public String toString() {
+		String conditionsString = "";
+		for (Condition c : conditions) {
+			conditionsString += c.toString();
+		}
+		return "Transitions : " + conditionsString;
+	}
 
 	@Override
 	public void accept(Visitor visitor) {
