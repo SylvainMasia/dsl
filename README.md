@@ -20,5 +20,5 @@ Rigaut François
 - polytech.dsl.spaceteam.internal.spaml
 	- contient le dsl interne fait en java
 	- les 5 scénarios sont en commentaire dans le main
-- le dossier test contient des scénarios écrits en .Spaml
+-test_scenario_external_dsl -> contient des scénarios écrits en .Spaml
   - nous avons choisi comme scénario complémentaire le "Temporal"
