@@ -22,3 +22,37 @@ Rigaut François
 	- les 5 scénarios sont en commentaire dans le main
 -test_scenario_external_dsl -> contient des scénarios écrits en .Spaml
   - nous avons choisi comme scénario complémentaire le "Temporal"
+
+
+
+# Syntaxe BNF de SPAML
+
+```BNF
+<name> ::= [-A-Za-z_]+
+<state_name> ::= [-A-Za-z_]+
+<plugged_elem_name> ::= [-A-Za-z_][-A-Za-z_0-9]*
+
+<plugged_elem_class> ::= "Actuator" | "SensorDigital" | "SensorAnalog"
+<plugged_port> ::= [0-9]+
+<plugged_elem> ::= <plugged_elem_class> <plugged_elem_name> <plugged_port>
+<plugged_elem_list> ::= <plugged_elem> "+" <plugged_elem_list> | <plugged_elem>
+<plugged_elements> ::= "pluggedElements" <plugged_elem_list>
+
+<plugged_action> ::= <plugged_elem_name> "=" ("LOW" | "HIGH")
+<temporal_action> ::= [0-9]+
+<action> ::= <plugged_action> | <temporal_action>
+<condition> ::= <action> | 
+				"AND(" <condition> "," <condition> ")" |
+				"OR(" <condition> "," <condition> ")"
+
+<transition> ::= <condition> "->" <state_name>
+<instruction> ::= <transition> | <plugged_action>
+
+<instruction_set> ::= <instruction> <instruction_set> | <instruction>
+<state> ::= <state_name> "{" <instruction_set> "}"
+<state_list> ::= <state> <state_list> | <state>
+<states> ::= "states" <state_list>
+
+<program> ::= "Program" <name> "initialState" <state_name> "{" <plugged_elements> <states> "}"
+```
+
