@@ -21,8 +21,8 @@ public class LogicalCondition extends Condition{
 		return sensor;
 	}
 
-	public LogicalCondition setSensor(Sensor sensor) {
-		this.sensor = sensor;
+	public LogicalCondition setSensor(String sensor) {
+		this.sensor = Sensor.get(sensor);
 		return this;
 	}
 }

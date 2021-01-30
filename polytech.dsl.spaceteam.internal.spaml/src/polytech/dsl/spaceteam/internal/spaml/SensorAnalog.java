@@ -16,8 +16,4 @@ public class SensorAnalog extends Sensor {
         this.pin = pin;
         return this;
     }
-
-    public static SensorAnalog get(String name) {
-        return (SensorAnalog) Program.getDeclaredPluggedElements().get(name);
-    }
 }
