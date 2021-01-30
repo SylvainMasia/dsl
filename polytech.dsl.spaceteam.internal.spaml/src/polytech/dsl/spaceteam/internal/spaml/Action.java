@@ -21,8 +21,8 @@ public class Action {
 		return actuator;
 	}
 
-	public Action setActuator(Actuator actuator) {
-		this.actuator = actuator;
+	public Action setActuator(String actuator) {
+		this.actuator = Actuator.get(actuator);
 		return this;
 	}
 }

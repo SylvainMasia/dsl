@@ -34,8 +34,8 @@ public class Transition {
 		return this;
 	}
 
-	public Transition setNext(State next) {
-		this.next = next;
+	public Transition setNext(String next) {
+		this.next = State.create().setName(next);
 		return this;
 	}
 }

@@ -16,8 +16,4 @@ public class SensorDigital extends Sensor {
         this.pin = pin;
         return this;
     }
-
-    public static SensorDigital get(String name) {
-        return (SensorDigital) Program.getDeclaredPluggedElements().get(name);
-    }
 }
