@@ -14,12 +14,12 @@ Program temporal_transition initialState off {
     on {
         LED1 = HIGH
         LED2 = LOW
-        AND(B1 = HIGH, 4000) -> off // means that we after 8 seconds if we press B1 we will get to the state off
-        B2 = HIGH -> other
+        AND(B1 = HIGH, 4000) -> off // means that we after 4 seconds if we press B1 we will get to the state off
+        B2 = HIGH -> other // if we press B2 during the 4 seconds we will change the state to other
     }
     other {
         LED1 = HIGH
         LED2 = HIGH
-        3000 -> off
+        3000 -> off // after 3 seconds we will move to state off
     }
-} 
+}

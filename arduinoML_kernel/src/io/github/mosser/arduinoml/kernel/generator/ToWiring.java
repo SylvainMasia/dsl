@@ -105,7 +105,9 @@ public class ToWiring extends Visitor<StringBuffer> {
 				w("\t\t\twhile(millis() < time" + state.getName() +" + " + state.getTemporal() + ") {\n");
 				visitTransitionsThatExitTemporal(state.getTransitionsThatExitTemporal());
 				w("\t\t\t}\n");
-				visitTransitionsAfterTemporal(state.getTransitionsAfterTemporal());
+				List<Transition> transitions = state.getTransitionsAfterTemporal();
+				transitions.addAll(state.getTransitionsThatExitTemporal());
+				visitTransitionsAfterTemporal(transitions, state.getName());
 			} else {
 				visitTransitions(state.getTransitions());
 			}
@@ -114,12 +116,11 @@ public class ToWiring extends Visitor<StringBuffer> {
 		}
 	}
 	
-	public void visitTransitionsAfterTemporal(List<Transition> transitions) {
-		w("\t\t\twhile(1){\n");
+	public void visitTransitionsAfterTemporal(List<Transition> transitions, String stateName) {
+		w("\t\t\twhile(currentState == " + stateName  + "){\n");
 		for (Transition t : transitions) {
 			if (t.getTemporal() > -1 && t.getConditions().size() == 1) {
 				w("\t\t\t\tcurrentState = " + t.getNext().getName() + ";\n");
-				w("\t\t\t\tbreak;\n");
 			} else {
 				visitTransitionThatExitTemporal(t);
 			}
